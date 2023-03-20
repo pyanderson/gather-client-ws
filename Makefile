@@ -55,7 +55,7 @@ docs:
 	open docs/_build/html/index.html
 
 protoc:
-	protoc --python_out=./gather_client_ws --mypy_out=./gather_client_ws ./gather_client_ws/events.proto
+	protoc --python_out=. --mypy_out=. ./gather_client_ws/events.proto
 
 release: clean
 	make dist

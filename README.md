@@ -55,7 +55,7 @@ async def main():
 
 asyncio.run(main())
 
-# Expected output
+# Output
 [2023-03-19 22:56:33,840][INFO] Connected to wss://engine-a00a0.aaa0-.prod.do.gather.town:443/
 [2023-03-19 22:56:34,351][INFO] Connected as user USER_ID
 transactionStatus

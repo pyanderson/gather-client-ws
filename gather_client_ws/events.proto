@@ -1,0 +1,1874 @@
+syntax = "proto3";
+
+/************************* READ ME before modifying! *****************************
+
+** High level **
+- everything is an event
+- static, isolated message types
+- no breaking changes
+- this is the source of truth for the Types of things that cross the wire
+- run `npm run protoc` in gather-game-common to compile
+
+
+  vvv
+  vvv
+  vvv
+vvvvvvv
+ vvvvv
+  vvv
+   v
+
+
+** How to change this file **
+
+If you just want to add a new action/event, no problem. Just copy a similar one and pattern-match
+
+Otherwise:
+
+changes which are safe (non-breaking)
+- adding a new message type (action/event) with anything you want
+- adding a new optional field to any message type
+- adding a new required field to an event (not action!)
+- making an action (not event!) field optional
+- changing the name of a field or class, but NOT type or number
+
+changes which are NOT safe, and require review from Nate
+- changing a field number or type
+- deleting a field or message type
+- making an optional action field required (or adding a new non-optional field on an existing action)
+- making a required event field optional
+
+** Important notes **
+ - the field name must be the same as its type for ServerClientEvent and ClientServerAction
+ - all map events must contain mapId
+
+That's it. Go wild. They're all isolated, like http server endpoints, so having a bajillion is harmless.
+Just make sure not to make backwards-incompatible changes in the game server -- it always has to support
+all of the events/actions in here even if the current game client doesn't use them.
+
+   ^
+  ^^^
+ ^^^^^
+^^^^^^^
+  ^^^
+  ^^^
+  ^^^
+
+If you're curious, the reason behind all of those rules is that we can make sure the game servers are always
+running the most recent code, but we can't do the same for clients. So all changes have to be backwards compatible
+with old clients, but not old game servers. (We would have to worry about old game servers too if they didn't deploy
+faster than the app.)
+
+
+Annoying details:
+- if there are ever merge conflicts in the generated files, just run `npm run protoc` again. this file is the source of truth
+- if you change this file, you MUST deploy the game server before the client,
+    otherwise the client will try to subscribe to unknown event types and fail
+
+(*TODO @Nate: add note on how to actually deprecate stuff later)
+
+
+** For the full philosophy, reasoning, and details, see:
+   https://www.notion.so/Engine-Interface-34c3b7fe1fcb4d23910f181f76352dfe
+
+*********************************************************************************/
+
+// ************************************************************************************* //
+//
+//                                 shared types                                          //
+//
+// ************************************************************************************* //
+
+message SpriteDirectionEnum {
+  enum ENUM {
+    Stand = 0;
+    Down = 1;
+    DownAlt = 2;
+    Up = 3;
+    UpAlt = 4;
+    Left = 5;
+    LeftAlt = 6;
+    Right = 7;
+    RightAlt = 8;
+    Dance1 = 9;
+    Dance2 = 10;
+    Dance3 = 11;
+    Dance4 = 12;
+  }
+}
+
+message MoveDirectionEnum {
+  enum ENUM {
+    Left = 0;
+    Right = 1;
+    Up = 2;
+    Down = 3;
+    Dance = 4;
+  }
+}
+
+message InteractionEnum {
+  enum ENUM {
+    NONE = 0;
+    EMBEDDED_WEBSITE = 1;
+    POSTER = 2;
+    VIDEO = 3;
+    EXTERNAL_CALL = 4;
+    EXTENSION = 5;
+    NOTE = 6;
+    MODAL_EXTENSION = 7;
+    COMPONENT_MODAL = 8;
+    SIDE_PANEL_TRIGGER = 9;
+  }
+}
+
+message PlayerInitInfo {
+  optional string name = 1;
+  optional uint32 x = 3;
+  optional uint32 y = 4;
+  optional string map = 5;
+  optional string affiliation = 6;
+  optional bool busy = 7;
+  optional string textStatus = 8;
+  optional string emojiStatus = 9;
+  optional DBOutfit currentlyEquippedWearables = 10;
+  optional string focusModeEndTime = 11;
+  optional string currentDesk = 13;
+  optional string itemString = 14;
+  optional bool isNpc = 15;
+  optional bool isRecordingClient = 16;
+}
+
+message DBOutfit {
+  string skin = 1;
+  string hair = 2;
+  string facial_hair = 3;
+  string top = 4;
+  string bottom = 5;
+  string shoes = 6;
+  string hat = 7;
+  string glasses = 8;
+  string other = 9;
+  optional string costume = 10;
+  optional string mobility = 11;
+  optional string jacket = 12;
+}
+
+// Defines how to slice an incoming animation spritesheet
+message WireObjectSpritesheetFraming {
+  int32 frameWidth = 1;
+  int32 frameHeight = 2;
+}
+
+// Defines an Spritesheet referencing frames from the split spritesheet
+message WireObjectSpriteAnimConfig {
+  /*
+   * Defines how to interpret the `sequence `field. If `true`, `sequence` is interpreted as a set of
+   * animation key frames which are interpolated between for the animation.
+   * For example, `sequence: [0,10], useSequenceAsRange: true` would mean the animation spans frames
+   * 0 _through_ 10 (inclusive). Use this when your animation uses sequential frames.
+   *
+   * Default: `false`
+   */
+  optional bool useSequenceAsRange = 1;
+  /**
+   * Defines which spritesheet frames make up this animation.
+   *
+   * **By default,** `sequence` should be an array of arbitrary frame numbers defining this animation.
+   *   ex: [4,5,4,5,4,6,6,6] animates between frames 4, 5, and 6 - but not necessarily in sequential order.
+   *
+   * **When `useSequenceAsRange` is `true`,** this should be set to two integers defining the **start** and **end** caps.
+   *   ex: [0, 10] means this animation starts on frame 0 and ends on frame 10 (inclusive).
+   *       (This is equivalent to setting sequence to `[0, 1, 2, ...]`)
+   */
+  repeated uint32 sequence = 2;
+  // Does this animation repeat or should it stop on the last frame? (Default: false)
+  optional bool loop = 3;
+  // Frames per second this animation should display.
+  uint32 frameRate = 4;
+}
+
+// Animated objects need to declare their spritesheet, how to slice it, and the different Spritesheets
+// provided by the given spritesheet.
+message WireObjectSpritesheet {
+  string spritesheetUrl = 1;
+  WireObjectSpritesheetFraming framing = 2;
+  map<string, WireObjectSpriteAnimConfig> animations = 3;
+  optional string currentAnim = 4;
+}
+
+message WireObject {
+  optional string templateId = 1;
+  optional string _name = 2;
+  repeated string _tags = 3; // repeated is inherently optional
+  optional uint32 x = 4;
+  optional uint32 y = 5;
+  optional float offsetX = 6;
+  optional float offsetY = 7;
+  optional string color = 8;
+  optional uint32 orientation = 9;
+  optional string normal = 10;
+  optional string highlighted = 11;
+  optional InteractionEnum.ENUM type = 12;
+  optional uint32 width = 13; // deprecating hopefully?
+  optional uint32 height = 14; // deprecating hopefully?
+  optional string extensionClass = 15; // experimental
+  optional string previewMessage = 16;
+  optional uint32 distThreshold = 17;
+  optional string propertiesJson = 18;
+  optional Sound sound = 19;
+  optional ObjectTime objectStartTime = 20;
+  optional ObjectTime objectExpireTime = 21;
+  optional string id = 22;
+  optional string customState = 23;
+  optional string objectPlacerId = 24;
+  optional uint32 numGoKarts = 25; // experimental - this should have been in customState
+  optional WireObjectSpritesheet spritesheet = 26;
+}
+
+message SpaceMemberInfo {
+  map<string, bool> roles = 1;
+  optional string name = 2;
+  optional DBOutfit currentlyEquippedWearables = 4;
+  optional DeskInfo deskInfo = 5;
+  optional bool allowScreenPointer = 6;
+}
+
+//                                             (see top of file for how to safely make changes)
+
+message BackedUpDeskObject {
+  WireObject obj = 1;
+  uint32 offsetX = 2;
+  uint32 offsetY = 3;
+}
+
+message DeskObjects {
+  map<string, BackedUpDeskObject> objects = 1;
+}
+
+// deprecating
+message DeskInfo {
+  string deskId = 1;
+  optional string description = 2;
+  optional bool locked = 3;
+}
+
+message DeskInfoV2 {
+  optional string deskId = 1;
+  optional string description = 2;
+  optional bool locked = 3;
+  // this isn't up to date with what's actually on/around someone's desk, it just exists as a way to back up and restore those objects while they're switching desks
+  optional DeskObjects lastDeskObjects = 4;
+  optional string mapId = 5;
+}
+
+message Sound {
+  string src = 1;
+  float volume = 2;
+  bool loop = 3;
+  uint32 maxDistance = 4;
+  optional bool isPositional = 5;
+}
+
+message ObjectTime {
+  uint32 _seconds = 1;
+  optional string _timezone = 2;
+}
+
+message Space {
+  string spaceId = 1;
+  uint32 x = 2;
+  uint32 y = 3;
+  optional bool colored = 4;
+}
+
+message NookCoords {
+  repeated WirePoint coords = 1;
+}
+
+message AllowedUsers {
+  repeated string users = 1;
+}
+
+message RequestUser {
+  optional string name = 1;
+}
+
+message RequestedUsers {
+  // maps uid to optional player metadata about users who requested to join
+  map<string, RequestUser> users = 1;
+}
+
+message RecordingInfo {
+  bool active = 3;
+  optional string initiatingPlayer = 1;
+  optional string egressId = 4;
+}
+
+message NookDiff {
+  optional NookCoords nookCoords = 1;
+  optional bool colored = 2;
+  optional string name = 3;
+  optional bool bookable = 4;
+  optional uint32 capacity = 5;
+  optional bool restricted = 6;
+  optional AllowedUsers allowedUsers = 7;
+  optional RequestedUsers requestedUsers = 8;
+  optional bool isInMeeting = 9;
+  optional bool isDesk = 10;
+  optional RecordingInfo recordingInfo = 11;
+}
+
+message WirePoint {
+  uint32 x = 1;
+  uint32 y = 2;
+}
+
+message SpawnPoint {
+  uint32 x = 1;
+  uint32 y = 2;
+  optional string spawnId = 3;
+}
+
+message Portal {
+  uint32 x = 1;
+  uint32 y = 2;
+  optional string targetMap = 3;
+  optional string targetUrl = 4;
+  optional uint32 targetX = 5;
+  optional uint32 targetY = 6;
+}
+
+message Announcer {
+  uint32 x = 1;
+  uint32 y = 2;
+}
+
+// deprecating
+message Asset {
+  float x = 1;
+  float y = 2;
+  string src = 3;
+  optional uint32 width = 4;
+  optional uint32 height = 5;
+  optional bool inFront = 6;
+}
+
+message AreaPosition {
+  uint32 x1 = 1;
+  uint32 y1 = 2;
+  uint32 x2 = 3;
+  uint32 y2 = 4;
+}
+
+message WireArea {
+  optional string category = 1;
+  repeated AreaPosition coords = 2;
+}
+
+message DBDesk {
+  repeated AreaPosition coords = 1;
+}
+
+message MapSetDimensions {
+  string mapId = 1;
+  uint32 width = 2;
+  uint32 height = 3;
+}
+
+// this is the new version of impassable. maybe we should rename it?
+message MapSetCollisions {
+  string mapId = 1;
+  uint32 x = 2; // this is the x,y,w,h of the rectangle being updated by this mask
+  uint32 y = 3;
+  uint32 w = 4;
+  uint32 h = 5;
+  string mask = 6; // base64 encoded string of bytes, 0x00 is walkable 0x01 is impassable
+  // wait a second, isn't there a 'bytes' type? we should deprecate this and use that :P
+  // also I'd love to have w/h optional and default to 1
+  // also technically only one of w/h are needed since we have the length of the bytestring
+}
+
+message MapSetCollisionsBits {
+  string mapId = 1;
+  bool overwrite = 2; // indicates whether to overwrite previous collision data (i.e. this represents the entire map) or merge
+  uint32 x = 3; // this is the x,y,w,h of the rectangle being updated by this mask
+  uint32 y = 4;
+  uint32 w = 5;
+  uint32 h = 6;
+  // the mask stored as bits where 0 is walkable and 1 is impassable
+  // to read a single bit:
+  //  byteIndex = ((y * w + x) / 8) | 0
+  //  bitIndex  = 1 << ((y * w + x) % 8)
+  //  impassable = (mask[byteIndex] & (1 << bitIndex)) !== 0
+  bytes mask = 7;
+}
+
+message MapSetBackgroundImagePath {
+  string mapId = 1;
+  string backgroundImagePath = 2; // url
+}
+
+message MapSetForegroundImagePath {
+  string mapId = 1;
+  string foregroundImagePath = 2;
+  optional bool delete = 3;
+}
+
+//                                             (see top of file for how to safely make changes)
+
+message MapSetSprites {
+  string mapId = 1;
+  repeated uint32 sprites = 2;
+  optional bool delete = 3;
+}
+
+// deprecating
+message MapSetSpaces {
+  string mapId = 1;
+  repeated Space spaces = 2;
+}
+
+message MapSetNooks {
+  string mapId = 1;
+  map<string, NookDiff> nooks = 2;
+  optional bool overwrite = 3;
+}
+
+message MapSetSpawn {
+  string mapId = 1;
+  WirePoint spawn = 2;
+  optional bool delete = 3;
+}
+
+message MapSetSpawns {
+  string mapId = 1;
+  repeated SpawnPoint spawns = 2;
+}
+
+message MapSetPortals {
+  string mapId = 1;
+  repeated Portal portals = 2;
+}
+
+message MapSetAnnouncer {
+  string mapId = 1;
+  repeated Announcer announcer = 2;
+}
+
+// deprecating
+message MapSetAssets {
+  string mapId = 1;
+  repeated Asset assets = 2;
+  optional bool delete = 3;
+}
+
+message MapSetObjects {
+  string mapId = 1;
+  map<uint32, WireObject> objects = 2;
+  optional bool updatesAreOverwrites = 3;
+}
+
+message MapSetName {
+  string mapId = 1;
+  string name = 2;
+  optional bool delete = 3;
+}
+
+message MapSetMuteOnEntry {
+  string mapId = 1;
+  bool muteOnEntry = 2;
+  optional bool delete = 3;
+}
+
+message MapSetUseDrawnBG {
+  string mapId = 1;
+  bool useDrawnBG = 2;
+  optional bool delete = 3;
+}
+
+message MapSetWalls {
+  string mapId = 1;
+  map<string, string> walls = 2;
+  optional bool delete = 3;
+}
+
+message MapSetFloors {
+  string mapId = 1;
+  map<string, string> floors = 2;
+  optional bool delete = 3;
+}
+
+message MapSetAreas {
+  string mapId = 1;
+  map<string, WireArea> areas = 2;
+  optional bool delete = 3;
+}
+
+message MapDeleteObject {
+  string mapId = 1;
+  uint32 key = 2;
+}
+
+message MapDeleteObjectById {
+  string mapId = 1;
+  string id = 2;
+}
+
+message MapSetMiniMapImagePath {
+  string mapId = 1;
+  string miniMapImagePath = 2;
+  optional bool delete = 3;
+}
+
+message MapSetEnabledChats {
+  string mapId = 1;
+  repeated string enabledChats = 2;
+  optional bool delete = 3;
+}
+
+message MapSetDescription {
+  string mapId = 1;
+  string description = 2;
+  optional bool delete = 3;
+}
+
+message MapSetDecoration {
+  string mapId = 1;
+  string decoration = 2;
+  optional bool delete = 3;
+}
+
+message MapSetTutorialTasks {
+  string mapId = 1;
+  WireTutorialTasks tutorialTasks = 2;
+  optional bool delete = 3;
+}
+
+message WireTutorialTasks {
+  string groupSetId = 1;
+  repeated TutorialTaskMapArea areas = 2;
+  optional bool autoStart = 3;
+}
+
+message TutorialTaskMapArea {
+  string areaId = 1;
+  uint32 x = 2;
+  uint32 y = 3;
+  uint32 height = 4;
+  uint32 width = 5;
+}
+
+message MapSetScript {
+  string mapId = 1;
+  string script = 2;
+  optional bool delete = 3;
+}
+
+message Inventory {
+  map<string, InventoryItem> items = 1;
+  map<string, string> order = 2;
+}
+
+message InventoryItem {
+  uint32 count = 1;
+}
+
+message SpaceItem {
+  string name = 1;
+  optional string category = 2;
+  optional string description = 3;
+  string previewUrl = 4;
+  map<string, string> meta = 5;
+  map<string, ItemAbility> abilities = 6;
+}
+
+message ItemAbility {
+  string name = 1;
+}
+
+message MapLocation {
+  string map = 1;
+  uint32 x = 2;
+  uint32 y = 3;
+}
+
+// ************************************************************************************* //
+//
+//                             server-->client types                                     //
+//
+// ************************************************************************************* //
+
+message ServerClientBatch {
+  repeated ServerClientEvent events = 1;
+  // don't add more stuff here
+}
+// For any event that begins with player, the client will look for an encId field,
+// and dynamically apply all remaining properties onto that player object.
+// More info VVVVVV
+// https://www.notion.so/Working-With-Dynamic-Player-State-c87d0f345ca9471695e8c3b1f7c88ddd
+
+
+// note: events marked "deprecating" are likely to be removed soon, don't use them
+//       events marked "experimental" may not work in every space or be otherwise unreliable. also more likely to have (non-sudden) breaking changes
+
+message ServerClientEvent {
+  oneof event {
+    Info info = 100;
+    Warn warn = 101;
+    ErrorEvent error = 102;
+    Ready ready = 103;
+    ServerHeartbeat serverHeartbeat = 105;
+    TransactionStatus transactionStatus = 107;
+    PlayerMoves playerMoves = 1;
+    PlayerSetsStatus playerSetsStatus = 5;
+    PlayerSpotlights playerSpotlights = 6;
+    PlayerRings playerRings = 7;
+    PlayerChats playerChats = 9;
+    PlayerInteracts playerInteracts = 10;
+    PlayerGhosts playerGhosts = 11;
+    PlayerEntersWhisper playerEntersWhisper = 12; // deprecating
+    PlayerLeavesWhisper playerLeavesWhisper = 13;
+    PlayerActivelySpeaks playerActivelySpeaks = 14;
+    PlayerSetsWorkCondition playerSetsWorkCondition = 16;
+    PlayerSetsName playerSetsName = 17;
+    PlayerSetsTextStatus playerSetsTextStatus = 18;
+    PlayerSetsEmojiStatus playerSetsEmojiStatus = 19;
+    PlayerSetsAffiliation playerSetsAffiliation = 20;
+    PlayerExits playerExits = 21;
+    RespawnComplete respawnComplete = 39; // deprecated
+    PlayerSetsOutfitString playerSetsOutfitString = 40;
+    PlayerSetsIsSignedIn playerSetsIsSignedIn = 41;
+    SpaceOverwrites spaceOverwrites = 44;
+    SpaceIsClosed spaceIsClosed = 45;
+    PlayerEntersPortal playerEntersPortal = 46;
+    SpaceSetsIdMapping spaceSetsIdMapping = 47;
+    PlayerSetsLastActive playerSetsLastActive = 48; // experimental
+    PlayerShootsConfetti playerShootsConfetti = 49; // experimental
+    PlayerSetsEventStatus playerSetsEventStatus = 50; // experimental
+    PlayerSetsInConversation playerSetsInConversation = 51; // experimental
+    PlayerSetsCurrentDesk playerSetsCurrentDesk = 52; // experimental
+    PlayerSetsCurrentArea playerSetsCurrentArea = 53; // experimental
+    PlayerSetsImagePointer playerSetsImagePointer = 54;
+    CookieFound cookieFound = 55; // experimental
+    PlayerEntersWhisperV2 playerEntersWhisperV2 = 56;
+    PlayerSetsGoKartId playerSetsGoKartId = 57; // deprecated
+    MapSetDimensions mapSetDimensions = 58;
+    MapSetCollisions mapSetCollisions = 59;
+    MapSetBackgroundImagePath mapSetBackgroundImagePath = 60;
+    MapSetForegroundImagePath mapSetForegroundImagePath = 61;
+    MapSetSprites mapSetSprites = 62; // deprecating
+    MapSetSpaces mapSetSpaces = 63; // deprecating
+    MapSetSpawns mapSetSpawns = 64;
+    MapSetPortals mapSetPortals = 65;
+    MapSetAnnouncer mapSetAnnouncer = 66;
+    MapSetAssets mapSetAssets = 69; // deprecating
+    MapSetObjects mapSetObjects = 70;
+    MapSetName mapSetName = 71;
+    MapSetMuteOnEntry mapSetMuteOnEntry = 73;
+    MapSetUseDrawnBG mapSetUseDrawnBG = 74;
+    MapSetWalls mapSetWalls = 75;
+    MapSetFloors mapSetFloors = 76;
+    MapSetAreas mapSetAreas = 77; // experimental
+    MapDeleteObject mapDeleteObject = 78;
+    MapSetSpawn mapSetSpawn = 79; // deprecating
+    PlayerSetsIsAlone playerSetsIsAlone = 80; // experimental
+    PlayerJoins playerJoins = 81;
+    MapSetEnabledChats mapSetEnabledChats = 82;
+    MapSetDescription mapSetDescription = 83;
+    MapSetDecoration mapSetDecoration = 84;
+    MapSetTutorialTasks mapSetTutorialTasks = 85;
+    MapSetMiniMapImagePath mapSetMiniMapImagePath = 86;
+    SpacePlaysSound spacePlaysSound = 87;
+    MapSetScript mapSetScript = 88; // experimental
+    PlayerSetsIsMobile playerSetsIsMobile = 90; // experimental
+    SetScreenPointerServer setScreenPointerServer = 91;
+    PlayerSetsEmoteV2 playerSetsEmoteV2 = 92;
+    PlayerSetsFocusModeEndTime playerSetsFocusModeEndTime = 93; // experimental
+    SpaceSetsSpaceMembers spaceSetsSpaceMembers = 94;
+    CustomEvent customEvent = 95;
+    PlayerBlocks playerBlocks = 97;
+    PlayerUpdatesFocusModeStatus playerUpdatesFocusModeStatus = 98;
+    PlayerNotifies playerNotifies = 99;
+    PlayerSetsItemString playerSetsItemString = 108;
+    PlayerTriggersItem playerTriggersItem = 109;
+    PlayerSetsFollowTarget playerSetsFollowTarget = 110;
+    PlayerRequestsToLead playerRequestsToLead = 111;
+    PlayerSetsManualVideoSrc playerSetsManualVideoSrc = 112;
+    PlayerSetsIsNpc playerSetsIsNpc = 113;
+    PlayerSetsSubtitle playerSetsSubtitle = 114;
+    MapCommitsChanges mapCommitsChanges = 115;
+    PlayerUpdatesSession playerUpdatesSession = 116;
+    MapMoveObject mapMoveObject = 117;
+    PlayerEditsChatMessage playerEditsChatMessage = 118;
+    FXShakeObject fxShakeObject = 119;
+    FXShakeCamera fxShakeCamera = 120;
+    PlayerSendsCommand playerSendsCommand = 121;
+    SpaceRegistersCommand spaceRegistersCommand = 122;
+    SpeakerUpdatesSession speakerUpdatesSession = 123;
+    PlayerUpdatesInventory playerUpdatesInventory = 124;
+    SpaceUpdatesItems spaceUpdatesItems = 125;
+    PlayerSetsVehicleId playerSetsVehicleId = 126;
+    PlayerSetsSpeedModifier playerSetsSpeedModifier = 127;
+    PlayerHighFives playerHighFives = 128;
+    SpaceStopsSound spaceStopsSound = 130;
+    HipToBeSquare hipToBeSquare = 131;
+    PlayerCrafts playerCrafts = 132;
+    PlayerTriggersInventoryItem playerTriggersInventoryItem = 133;
+    PlayerSetsAllowScreenPointer playerSetsAllowScreenPointer = 134;
+    PrecomputedEnterLocation precomputedEnterLocation = 135;
+    GotRequestMute gotRequestMute = 136;
+    PlayerSetsDeskInfo playerSetsDeskInfo = 137;
+    MapSetNooks mapSetNooks = 138;
+    DynamicGates dynamicGates = 139;
+    PlayerWaves playerWaves = 140;
+    PlayerSetsPronouns playerSetsPronouns = 141;
+    PlayerSetsTitle playerSetsTitle = 142;
+    PlayerSetsTimezone playerSetsTimezone= 143;
+    PlayerSetsDescription playerSetsDescription = 144;
+    PlayerSetsPhone playerSetsPhone = 145;
+    PlayerSetsPersonalImageUrl playerSetsPersonalImageUrl = 146;
+    PlayerSetsProfileImageUrl playerSetsProfileImageUrl = 147;
+    SpaceSetsCapacity spaceSetsCapacity = 148;
+    SpaceOverCapacityDeniesUser spaceOverCapacityDeniesUser = 149;
+    PlayerSetsAway playerSetsAway = 150;
+    MapSetCollisionsBits mapSetCollisionsBits = 151;
+    PlayerSetsCity playerSetsCity = 152;
+    PlayerSetsCountry playerSetsCountry = 153;
+    PlayerSetsStartDate playerSetsStartDate = 154;
+    PlayerSetsIsRecordingClient playerSetsIsRecordingClient = 155;
+    PlayerStartsRecording playerStartsRecording = 156;
+    // add lots more stuff here!
+  }
+}
+
+
+//                                             (see top of file for how to safely make changes)
+
+message ServerHeartbeat {
+  uint32 lastRTT = 1; // deprecating
+}
+
+message Info {
+  string message = 1;
+}
+
+message Warn {
+  string message = 1;
+}
+
+message ErrorEvent {
+  string message = 1;
+  uint32 code = 2;
+}
+
+message Ready {
+  string id = 1;
+}
+
+message TransactionStatus {
+  uint32 txnId = 1;
+  bool succeeded = 2;
+  optional string reason = 3;
+}
+
+// good pattern: NounVerb names, e.g. PlayerExitsSpace, PlayerMoves, ImpassableChanges, BackgroundChanges, ObjectChanges
+/*
+IMPORTANT:
+If an event begins with player... and includes the field encId, then all subsequent fields will
+be automatically applied to the local player state in gather-game-client, unless you add a special case; see the switch statement there.
+If you need to affect a second player- e.g for whisper, use encIdTarget, and changes will also be applied to the second player.
+
+If you follow the patterns described below, this will mostly work seamlessly, but there is an implied assertion that you will
+follow the pattern.
+*/
+
+// Always sent as the first message about any given player. If there are fields that must be initialized on clients
+// immediately, they should be included in this message.
+message PlayerJoins {
+  uint32 encId = 1;
+}
+
+message GotRequestMute {
+  string muterId = 1;
+  bool video = 2;
+}
+
+message PlayerMoves {
+  uint32 encId = 1;
+  // all optional, only send what's changed
+  optional uint32 x = 2;
+  optional uint32 y = 3;
+  optional SpriteDirectionEnum.ENUM direction = 4;
+  optional string mapId = 5;
+  uint32 lastInputId = 6;
+}
+
+message PlayerSetsStatus {
+  uint32 encId = 1;
+  bool busy = 2;
+}
+
+message PlayerSpotlights {
+  uint32 encId = 2; // the person who is being spotlit
+  uint32 spotlightedBy = 1; // the person who is doing the spotlighting; legacy \holdover
+  uint32 spotlighted = 3;
+}
+
+message PlayerRings {
+  uint32 encId = 1; // the ringer
+}
+
+message PlayerSetsImagePointer {
+  uint32 encId = 1;
+  string objectId = 2;
+  double x = 3;
+  double y = 4;
+}
+
+message SetScreenPointerServer {
+  uint32 encId = 1;
+  string screenId = 2;
+  double x = 3;
+  double y = 4;
+  string color = 5;
+}
+
+message PlayerChats {
+  string senderId = 1;
+  string recipient = 2;
+  string contents = 3;
+  string senderName = 4;
+  optional Timestamp timestamp = 5; // deprecating
+  string messageType = 6;
+  double unixTime = 7;
+  optional string id = 8;
+  optional string roomId = 9;
+  optional bool approved = 10;
+  optional string nookId = 11;
+}
+
+message PlayerWaves {
+  uint32 encId = 1;
+  string targetId = 2;
+  bool isReply = 3;
+}
+
+// deprecating this
+message Timestamp {
+  float seconds = 1;
+  float nanoseconds = 2;
+}
+
+message PlayerInteracts {
+  uint32 encId = 1;
+  string objId = 2;
+  optional string mapId = 4;
+  optional string dataJson = 3; // JSON string
+}
+
+message PlayerGhosts {
+  uint32 encId = 1;
+  uint32 ghost = 2;
+}
+
+message PlayerEntersWhisper {
+  uint32 encId = 1;
+  string whisperRecipient = 2;
+  string whisperId = 3;
+}
+message PlayerEntersWhisperV2 {
+  uint32 encId = 1;
+  uint32 encIdTarget = 2; // the person you intend to be whispering; will apply whisperId property to them as well
+  string whisperId = 3;
+}
+message PlayerLeavesWhisper {
+  uint32 encId = 1;
+}
+message PlayerActivelySpeaks {
+  uint32 encId = 1;
+  uint32 activelySpeaking = 2;
+}
+
+message PlayerSetsEmoteV2 {
+  uint32 encId = 1;
+  optional string emote = 2;
+  optional uint32 count = 3;
+}
+
+message PlayerSetsWorkCondition {
+  uint32 encId = 1;
+  uint32 workCondition = 2;
+}
+
+message PlayerSetsLastActive {
+  uint32 encId = 1;
+  string lastActive = 2;
+}
+
+message PlayerSetsName {
+  uint32 encId = 1;
+  string name = 2;
+}
+
+message PlayerSetsTextStatus {
+  uint32 encId = 1;
+  string textStatus = 2;
+}
+
+message PlayerSetsPronouns {
+  uint32 encId = 1;
+  string pronouns = 2;
+}
+
+message PlayerSetsTitle {
+  uint32 encId = 1;
+  string title = 2;
+}
+
+message PlayerSetsCity {
+  uint32 encId = 1;
+  string city = 2;
+}
+
+message PlayerSetsCountry {
+  uint32 encId = 1;
+  string country = 2;
+}
+
+message PlayerSetsStartDate {
+  uint32 encId = 1;
+  string startDate = 2;
+}
+
+message PlayerSetsTimezone {
+  uint32 encId = 1;
+  string timezone = 2;
+}
+
+message PlayerSetsPhone {
+  uint32 encId = 1;
+  string phone = 2;
+}
+
+message PlayerSetsDescription {
+  uint32 encId = 1;
+  string description = 2;
+}
+
+message PlayerSetsProfileImageUrl {
+  uint32 encId = 1;
+  string profileImageUrl = 2;
+}
+
+message PlayerSetsPersonalImageUrl {
+  uint32 encId = 1;
+  string personalImageUrl = 2;
+}
+
+message PlayerSetsIsMobile {
+  uint32 encId = 1;
+  bool isMobile = 2;
+}
+
+message PlayerSetsEmojiStatus {
+  uint32 encId = 1;
+  string emojiStatus = 2;
+}
+
+message PlayerSetsAffiliation {
+  uint32 encId = 1;
+  string affiliation = 2;
+}
+
+message PlayerExits {
+  uint32 encId = 1;
+}
+
+message PlayerSetsOutfitString {
+  uint32 encId = 1;
+  string outfitString = 2;
+}
+
+message PlayerSetsIsSignedIn {
+  uint32 encId = 1;
+  bool isSignedIn = 2;
+}
+
+//                                             (see top of file for how to safely make changes)
+
+message RespawnComplete {}
+
+// It's pretty wack that we're using JSON to serialize / deserialize space data here.
+// TODO: improve this by splitting this up into several events or using a better message interface
+// for this or something that doesn't require the client to JSON.parse().
+message SpaceOverwrites {
+  string spaceData = 1;
+}
+
+message DynamicGate {
+  float exposure = 1;
+  repeated string spaces = 2; // to hardcode a list of spaces that should have it on
+}
+
+message DynamicGates {
+  DynamicGate livekitEnabled = 1;
+  // BEFORE ADDING MORE OF THESE, DO A PROPER DESIGN AND RFC PLEASE!
+}
+
+message SpaceSetsSpaceMembers {
+  map<string, SpaceMemberInfo> members = 1;
+}
+
+message SpaceIsClosed {}
+
+message PlayerEntersPortal {
+  string targetUrl = 1;
+  optional bool bypassPrompt = 2;
+}
+
+message CookieFound {
+  uint32 encId = 1;
+}
+
+// Each client has a unique string id, but this is costly to send over the wire
+// so an integer value is used in its place and then converted back to the
+// corresponding string id on the client and server.
+// This event provides the mapping between a player's string id [uid]
+// and their corresponding integer id [encId].
+// (see "Player..." events above for use of encId)
+message SpaceSetsIdMapping {
+  string uid = 1;
+  uint32 encId = 2;
+}
+
+message PlayerShootsConfetti {
+  uint32 encId = 1; // the confetti shooter
+}
+
+message PlayerSetsEventStatus {
+  uint32 encId = 1;
+  string eventStatus = 2;
+}
+
+message PlayerSetsInConversation {
+  uint32 encId = 1;
+  bool inConversation = 2;
+}
+
+message PlayerSetsCurrentDesk {
+  uint32 encId = 1;
+  string currentDesk = 2;
+}
+
+message PlayerSetsCurrentArea {
+  uint32 encId = 1;
+  string currentArea = 2;
+}
+
+message PlayerSetsGoKartId {
+  uint32 encId = 1;
+  string goKartId = 2;
+}
+
+message PlayerSetsVehicleId {
+  uint32 encId = 1;
+  string vehicleId = 2;
+  string action = 3;
+  string previousVehicleId = 4;
+}
+
+message PlayerSetsSpeedModifier {
+  uint32 encId = 1;
+  float speedModifier = 2;
+}
+
+message PlayerSetsIsAlone {
+  uint32 encId = 1;
+  bool isAlone = 2;
+}
+
+message SpacePlaysSound {
+  string src = 2;
+  float volume = 3;
+}
+
+message SpaceStopsSound {
+  string src = 2;
+}
+
+message PlayerSetsFocusModeEndTime {
+  uint32 encId = 1;
+  string focusModeEndTime = 2;
+}
+
+message PlayerBlocks {
+  string blockedBy = 1;
+  bool blocked = 2;
+}
+
+message CustomEvent {
+  string name = 1;
+  string payload = 2;
+}
+
+message PlayerUpdatesFocusModeStatus {
+  uint32 encId = 1;
+  bool isInFocusMode = 2;
+}
+
+message PlayerSetsItemString {
+  uint32 encId = 1;
+  string itemString = 2;
+}
+
+message PlayerTriggersItem {
+  uint32 encId = 1;
+  optional string closestObject = 2;
+  optional string closestObjectTemplate = 3;
+}
+
+message PlayerNotifies {
+  uint32 encId = 1;
+  string notification = 2;
+}
+
+message PlayerSetsFollowTarget {
+  uint32 encId = 1;
+  string followTarget = 2;
+}
+
+message PlayerRequestsToLead {
+  uint32 encId = 1;
+  string snapshot = 2;
+}
+
+message PlayerSetsManualVideoSrc {
+  uint32 encId = 1;
+  string manualVideoSrc = 2;
+}
+
+message PlayerSetsIsNpc {
+  uint32 encId = 1;
+  bool isNpc = 2;
+}
+
+message PlayerSetsSubtitle {
+  uint32 encId = 1;
+  string subtitle = 2;
+}
+
+message PlayerCrafts {
+  uint32 encId = 1;
+  map<string, uint32> inputs = 2;
+}
+
+message MapMoveObject {
+  string mapId = 1;
+  string objectId = 2;
+
+  float targetX = 3;
+  float targetY = 4;
+
+  optional float targetXOffset = 5;
+  optional float targetYOffset = 6;
+  // Time it takes to move object (in milliseconds)
+  float duration = 7;
+
+  // "Linear" (default) | "Cubic" | "Elastic" | "Bounce" | "Back"
+  // ---
+  // Linear = constant speed.
+  // Cubic = slight easing.
+  // Elastic = spring-like motion; object overshoots point and ping-pongs until settling on the target.
+  // Bounce = similar to a bouncing object coming to rest
+  // Back = object slightly overshoots point and quickly settles back onto target.
+  optional string easing = 8;
+}
+
+message PlayerEditsChatMessage {
+  string id = 1;
+  optional uint32 likes = 2;
+  optional bool replied = 3;
+  optional ChatReply reply = 4;
+  optional bool approved = 5;
+}
+
+message FXShakeObject {
+  string mapId = 1;
+  string targetId = 2;
+  optional float intensity = 3;
+  optional float durationMs = 4;
+  optional uint32 mode = 5;
+}
+
+message FXShakeCamera {
+  optional float intensity = 1;
+  optional float durationMs = 2;
+  // Map on which this should be applied (empty = entire space shakes)
+  optional string mapId = 3;
+  // User ID this shake should apply to (empty = everyone in the given map or space will shake)
+  // If mapID _and_ a target is provided, the map ID is disregarded and only the target user will shake.
+  optional string targetUserId = 4;
+}
+
+message PlayerHighFives {
+  uint32 encId = 1;
+  uint32 encIdTarget = 2;
+}
+
+message PlayerSendsCommand {
+  uint32 encId = 1;
+  string command = 2;
+}
+
+message SpaceRegistersCommand {
+  string command = 2;
+}
+
+message PlayerUpdatesInventory {
+  uint32 encId = 1;
+  map<string, InventoryItem> items = 2; // maps item ids to item data
+  map<string, string> order = 3; // maps item ids to order string (e.g. "1,2" or "left-hand")
+  // these are both deltas, object merge with whatever the player already has
+}
+
+message SpaceUpdatesItems {
+  map<string, SpaceItem> items = 1; // maps item id to the full info about that Item
+  // ^updates dict of currently supported items, doesn't overwrite the full list
+}
+
+message PlayerTriggersInventoryItem {
+  uint32 encId = 1;
+  string itemId = 2;
+  string abilityId = 3;
+}
+
+message PlayerSetsAllowScreenPointer {
+  uint32 encId = 1;
+  bool allowScreenPointer = 2;
+}
+
+message PrecomputedEnterLocation {
+  MapLocation enterLocation = 1;
+}
+
+message PlayerSetsDeskInfo {
+  uint32 encId = 1;
+  DeskInfoV2 deskInfo = 2;
+}
+
+message SpaceSetsCapacity {
+  uint32 capacity = 1;
+}
+
+message SpaceOverCapacityDeniesUser {
+  string userId = 1;
+}
+
+message PlayerSetsAway {
+  uint32 encId = 1;
+  bool away = 2;
+}
+
+message PlayerSetsIsRecordingClient { 
+  uint32 encId = 1;
+  bool isRecordingClient = 2;
+}
+
+message PlayerStartsRecording {
+  uint32 encId = 1;
+  string nookId = 2;
+  optional bool cancel = 3;
+}
+
+// ************************************************************************************* //
+//
+//                             client-->server types                                     //
+//
+// ************************************************************************************* //
+
+message ClientServerBatch {
+  repeated ClientServerAction actions = 1;
+  // don't add more stuff here
+}
+
+// note: actions marked "deprecating" are likely to be removed soon, don't use them
+//       actions marked "experimental" may not work in every space or be otherwise unreliable. also more likely to have (non-sudden) breaking changes
+
+// WARNING: actions are NOT guaranteed to be processed in the order received
+
+message ClientServerAction {
+  // future: optional txnID field
+  optional uint32 txnId = 100;
+  oneof action {
+    ClientHeartbeat clientHeartbeat = 1;
+    ClientBackupHeartbeat clientBackupHeartbeat = 2;
+    UpdateSubscriptions updateSubscriptions = 3;
+    Move move = 5;
+    SetAffiliation setAffiliation = 7;
+    SetStatus setStatus = 8;
+    Spotlight spotlight = 9;
+    Ring ring = 10;
+    Ban ban = 12;
+    Kick kick = 13;
+    SetImpassable setImpassable = 14; // deprecating
+    Chat chat = 15;
+    Interact interact = 18;
+    EnterWhisper enterWhisper = 19;
+    LeaveWhisper leaveWhisper = 20;
+    SetEmojiStatus setEmojiStatus = 21;
+    ActivelySpeaking activelySpeaking = 22;
+    SetName setName = 24;
+    SetTextStatus setTextStatus = 25;
+    Teleport teleport = 26;
+    Exit exit = 27;
+    Enter enter = 28;
+    SetWorkCondition setWorkCondition = 29;
+    Respawn respawn = 30;
+    Spawn spawn = 31;
+    Ghost ghost = 32;
+    Init init = 33;
+    SetOutfitString setOutfitString = 34;
+    ShootConfetti shootConfetti = 36; // experimental
+    SetEventStatus setEventStatus = 37; // experimental
+    SetInConversation setInConversation = 38; // experimental
+    SetCurrentDesk setCurrentDesk = 39; // experimental
+    SetCurrentArea setCurrentArea = 40; // experimental
+    SetImagePointer setImagePointer = 41;
+    SetGoKartId setGoKartId = 42; // deprecated
+    MapSetDimensions mapSetDimensions = 43;
+    MapSetCollisions mapSetCollisions = 44;
+    MapSetBackgroundImagePath mapSetBackgroundImagePath = 45;
+    MapSetForegroundImagePath mapSetForegroundImagePath = 46;
+    MapSetSprites mapSetSprites = 47;
+    MapSetSpawns mapSetSpawns = 48;
+    MapSetSpaces mapSetSpaces = 49; // deprecating
+    MapSetPortals mapSetPortals = 50;
+    MapSetAnnouncer mapSetAnnouncer = 51;
+    MapSetAssets mapSetAssets = 54; // deprecating (use type 0 objects)
+    MapSetObjects mapSetObjects = 55;
+    MapSetName mapSetName = 56;
+    MapSetMuteOnEntry mapSetMuteOnEntry = 58;
+    MapSetUseDrawnBG mapSetUseDrawnBG = 59;
+    MapSetWalls mapSetWalls = 60;
+    MapSetFloors mapSetFloors = 61;
+    MapSetAreas mapSetAreas = 62; // experimental
+    MapAddObject mapAddObject = 63;
+    MapDeleteObject mapDeleteObject = 64;
+    MapSetSpawn mapSetSpawn = 65; // deprecating
+    SetIsAlone setIsAlone = 66; // experimental
+    MapSetMiniMapImagePath mapSetMiniMapImagePath = 67;
+    MapSetEnabledChats mapSetEnabledChats = 68;
+    MapSetDescription mapSetDescription = 69;
+    MapSetDecoration mapSetDecoration = 70;
+    MapSetTutorialTasks mapSetTutorialTasks = 71;
+    PlaySound playSound = 72;
+    MapSetScript mapSetScript = 73;
+    SetIsMobile setIsMobile = 75;
+    SetScreenPointer setScreenPointer = 76;
+    SetEmoteV2 setEmoteV2 = 77;
+    SetFocusModeEndTime setFocusModeEndTime = 78; // experimental
+    MapDeleteObjectById mapDeleteObjectById = 79;
+    CustomAction customAction = 80;
+    Block block = 82;
+    SetItemString setItemString = 83;
+    TriggerItem triggerItem = 84;
+    Notify notify = 85;
+    SetFollowTarget setFollowTarget = 86;
+    RequestToLead requestToLead = 87;
+    EnterPortal enterPortal = 88;
+    SetManualVideoSrc setManualVideoSrc = 89;
+    SetSubtitle setSubtitle = 90;
+    PlayerUpdatesSession playerUpdatesSession = 91;
+    MapMoveObject mapMoveObject = 92;
+    ChatMessageUpdated chatMessageUpdated = 93;
+    FXShakeObject fxShakeObject = 94;
+    FXShakeCamera fxShakeCamera = 95;
+    RegisterCommand registerCommand = 96;
+    SendCommand sendCommand = 97;
+    SpeakerUpdatesSession speakerUpdatesSession = 98;
+    AddInventoryItem addInventoryItem = 101;
+    RemoveInventoryItem removeInventoryItem = 102;
+    SetVehicleId setVehicleId = 103;
+    SetSpeedModifier setSpeedModifier = 104;
+    HighFive highFive = 105;
+    SpaceUpdatesItems updateSpaceItems = 107;
+    StopSound stopSound = 108;
+    HipToBeSquare hipToBeSquare = 109;
+    Craft craft = 110;
+    TriggerInventoryItem triggerInventoryItem = 111;
+    SetAllowScreenPointer setAllowScreenPointer = 112;
+    PrecomputeEnter precomputeEnter = 113;
+    RequestMute requestMute = 114;
+    SetDeskInfo setDeskInfo = 115;
+    MapSetNooks mapSetNooks = 116;
+    RequestToJoinNook requestToJoinNook = 117;
+    UpdateNookPermission updateNookPermission = 118;
+    Wave wave = 119;
+    SetPronouns setPronouns = 120;
+    SetTitle setTitle = 121;
+    SetTimezone setTimezone = 122;
+    SetPhone setPhone = 123;
+    SetDescription setDescription = 124;
+    SetProfileImageUrl setProfileImageUrl = 125;
+    SetPersonalImageUrl setPersonalImageUrl = 126;
+    SetAway setAway = 127;
+    SetCity setCity = 128;
+    SetCountry setCountry = 129;
+    SetStartDate setStartDate = 130;
+    StartRecording startRecording = 131;
+    // add lots more stuff here!
+  }
+}
+
+//                                             (see top of file for how to safely make changes)
+
+
+// for self-actions, don't need player ID because it's a property of the connection
+
+// tbh this is half heartbeat half for measuring ping
+message ClientHeartbeat { }
+
+// this is because we've attached timings and stuff to the former one, don't want to interfere
+message ClientBackupHeartbeat { }
+
+message UpdateSubscriptions {
+  map<string, bool> subscriptions = 1;
+  map<string, uint64> mapUpdateIds = 2;
+}
+
+message Move {
+  MoveDirectionEnum.ENUM dir = 1;
+  bool stopped = 2;
+  uint32 inputId = 3;
+  optional string targetId = 4;
+}
+
+message RequestMute {
+  string target = 1;
+  bool video = 2;
+}
+
+message SetAffiliation {
+  string affiliation = 1;
+  optional string targetId = 2;
+}
+
+message SetStatus {
+  bool status = 1;
+  optional string targetId = 2;
+}
+
+message SetOutfitString {
+  string outfitString = 1;
+  optional string targetId = 3;
+}
+
+message Spotlight {
+  string spotlightedUser = 1;
+  bool isSpotlighted = 2;
+}
+
+message Ring {
+  string user = 1;
+}
+
+message SetImagePointer {
+  string objectId = 1;
+  double x = 2;
+  double y = 3;
+}
+
+message SetScreenPointer {
+  string screenId = 1;
+  double x = 2;
+  double y = 3;
+}
+
+message Ban {
+  string user = 1;
+}
+
+message Kick {
+  string user = 1;
+}
+
+message Block {
+  string blockedUserId = 1;
+  bool blocked = 2;
+}
+
+message SetImpassable {
+  string mapId = 1;
+  uint32 x = 2;
+  uint32 y = 3;
+  bool impassable = 4;
+}
+
+message Chat {
+  string chatRecipient = 1;
+  string contents = 2;
+  repeated string localPlayerIds = 3;
+  string mapId = 4;
+  optional string id = 5;
+  optional string nookId = 6;
+}
+
+message Notify {
+  string notification = 1;
+}
+
+message Interact {
+  string objId = 1;
+  optional string mapId = 3;
+  optional string dataJson = 2; // JSON string
+}
+
+message ActivelySpeaking {
+  bool activelySpeaking = 1;
+}
+
+message EnterWhisper {
+  string recipientId = 1;
+  MoveDirectionEnum.ENUM dir = 2;
+}
+
+//                                             (see top of file for how to safely make changes)
+
+message LeaveWhisper {}
+
+message Ghost {
+  uint32 ghost = 1;
+  // why is this a uint32? it is in the original impl so.. it stays
+  optional string targetId = 2;
+}
+
+message SetEmoteV2 {
+  optional string emote = 1;
+  optional string targetId = 2;
+  optional uint32 count = 3;
+}
+
+message SetName {
+  string name = 1;
+  optional string targetId = 2;
+}
+
+message SetTextStatus {
+  string textStatus = 1;
+  optional string targetId = 2;
+}
+
+message SetPronouns {
+  string pronouns = 1;
+  optional string targetId = 2;
+}
+
+message SetTitle {
+  string title = 1;
+  optional string targetId = 2;
+}
+
+message SetCity {
+  string city = 1;
+  optional string targetId = 2;
+}
+
+message SetCountry {
+  string country = 1;
+  optional string targetId = 2;
+}
+
+message SetStartDate {
+  string startDate = 1;
+  optional string targetId = 2;
+}
+
+message SetTimezone {
+  string timezone = 1;
+  optional string targetId = 2;
+}
+
+message SetPhone {
+  string phone = 1;
+  optional string targetId = 2;
+}
+
+message SetDescription {
+  string description = 1;
+  optional string targetId = 2;
+}
+
+message SetProfileImageUrl {
+  string profileImageUrl = 1;
+  optional string targetId = 2;
+}
+
+message SetPersonalImageUrl {
+  string personalImageUrl = 1;
+  optional string targetId = 2;
+}
+
+message Exit {}
+
+message Enter {
+  optional PlayerInitInfo info = 1;
+  optional string spawnToken = 2;
+  optional string targetId = 3;
+}
+
+message PrecomputeEnter {
+  optional MapLocation enterLocation = 1;
+  optional string spawnToken = 2;
+}
+
+message SetEmojiStatus {
+  string emojiStatus = 1;
+  optional string targetId = 2;
+}
+
+message Teleport {
+  string mapId = 1;
+  uint32 x = 2;
+  uint32 y = 3;
+  optional string targetId = 4;
+  optional SpriteDirectionEnum.ENUM direction = 5;
+}
+
+message SetWorkCondition {
+  bool workCondition = 1;
+  optional string targetId = 2;
+}
+
+message Spawn {
+  string spawnToken = 1;
+}
+
+message Respawn {}
+
+message RequestToJoinNook {
+  string nookId = 1;
+  string mapId = 2;
+  optional string name = 3;
+}
+
+message UpdateNookPermission {
+  string playerId = 1;
+  string nookId = 2;
+  bool granted = 3;
+}
+
+message Init {
+  string spaceId = 1;
+  oneof auth {
+    string token = 2;
+    string apiKey = 3;
+  }
+}
+
+message MapAddObject {
+  string mapId = 1;
+  WireObject object = 2;
+}
+
+message ShootConfetti {
+  optional string targetId = 1;
+}
+
+message SetEventStatus {
+  string eventStatus = 1;
+  optional string targetId = 2;
+}
+
+message SetInConversation {
+  bool inConversation = 1;
+  optional string targetId = 2;
+}
+
+message SetCurrentDesk {
+  string currentDesk = 1;
+  optional string targetId = 2;
+}
+
+message SetCurrentArea {
+  string currentArea = 1;
+  optional string targetId = 2;
+}
+
+message SetGoKartId {
+  string goKartId = 1;
+  optional string targetId = 2;
+}
+
+message SetVehicleId {
+  string vehicleId = 1;
+  optional string targetId = 2;
+  optional string action = 3;
+}
+
+message SetSpeedModifier {
+  float speedModifier = 1;
+  optional string targetId = 2;
+}
+
+message SetIsAlone {
+  bool isAlone = 1;
+  optional string targetId = 2;
+}
+
+message SetIsMobile {
+  bool isMobile = 1;
+}
+
+message PlaySound {
+  string src = 1;
+  float volume = 2;
+  optional string targetId = 3;
+}
+
+message StopSound {
+  string src = 1;
+  optional string targetId = 3;
+}
+
+message SetFocusModeEndTime {
+  string focusModeEndTime = 1;
+  optional string targetId = 2;
+}
+
+message SetItemString {
+  string itemString = 1;
+  optional string targetId = 2;
+}
+
+message TriggerItem {
+  optional string closestObject = 1;
+  optional string closestObjectTemplate = 3;
+}
+
+message CustomAction {
+  string name = 1;
+  string payload = 2;
+  repeated string recipients = 3;
+  optional bool sendToAll = 4;
+}
+
+message SetFollowTarget {
+  string followTarget = 1;
+  optional string targetId = 2;
+}
+
+message RequestToLead {
+  string target = 1;
+  string snapshot = 2;
+}
+
+message EnterPortal {
+  string targetUrl = 1;
+  optional bool bypassPrompt = 2;
+  optional string targetId = 3;
+}
+
+message SetManualVideoSrc {
+  string manualVideoSrc = 1;
+  optional string targetId = 2;
+}
+
+message SetSubtitle {
+  string subtitle = 1;
+  optional string targetId = 2;
+}
+
+message MapCommitsChanges {
+  string mapId = 1;
+  uint64 updateId = 2;
+}
+
+// Deprecated, can remove?
+message PlayerUpdatesSession {
+  optional bool roomChecked = 1;
+  optional bool chatChecked = 2;
+  optional bool qaChecked = 3;
+  optional bool approveQuestionsChecked = 4;
+  string roomId = 5;
+}
+
+message SpeakerUpdatesSession {
+  string sessionId = 1;
+  optional bool customizeRoomEnabled = 2;
+  optional bool chatEnabled = 3;
+  optional bool qaEnabled = 4;
+  optional bool approveQuestionsEnabled = 5;
+  optional bool massMuteEnabled = 6;
+}
+
+message ChatReply {
+  string senderId = 1;
+  string senderName = 2;
+  string contents = 3;
+}
+
+message ChatMessageUpdated {
+  string id = 1;
+}
+message SendCommand {
+  string command = 1;
+  optional string targetId = 2;
+}
+
+message RegisterCommand {
+  string command = 1;
+}
+
+message Craft {
+  map<string, int32> inputs = 1;
+}
+
+message HighFive {
+  string targetId = 1;
+}
+
+message AddInventoryItem {
+  string itemId = 1;
+  uint64 delta = 2;
+  string targetId = 3;
+}
+
+message RemoveInventoryItem {
+  string itemId = 1;
+  uint64 delta = 2;
+  optional string targetId = 3;
+}
+
+message HipToBeSquare {
+  string data = 1;
+}
+
+message TriggerInventoryItem {
+  string itemId = 1;
+  string abilityId = 2;
+}
+
+message SetAllowScreenPointer {
+  bool allowScreenPointer = 1;
+}
+
+message SetDeskInfo {
+  DeskInfoV2 deskInfo = 1;
+  optional string targetId = 2;
+}
+
+message Wave {
+  string user = 1;
+  bool isReply = 2;
+}
+
+message SetAway {
+  bool away = 1;
+  optional string targetId = 2;
+}
+
+message StartRecording {
+  string nookId = 1; 
+  optional bool cancel = 2;
+}

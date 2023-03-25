@@ -82,13 +82,13 @@ class GatherClient:
         self._user_id = event.ready.id
         self._logger.info(f"Connected as user {self._user_id}")
 
-    async def run(self, producer):
+    async def run(self, producer, *args, **kwargs):
         await self._connect()
         _, pending = await asyncio.wait(
             [
                 asyncio.create_task(self._consumer()),
                 asyncio.create_task(self._heartbeat()),
-                asyncio.create_task(producer(self)),
+                asyncio.create_task(producer(self, *args, **kwargs)),
             ],
             return_when=asyncio.FIRST_COMPLETED,
         )

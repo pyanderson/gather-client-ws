@@ -59,7 +59,7 @@ protoc:
 
 release: clean
 	make dist
-	twine upload -r gather_client_ws dist/*
+	twine upload -r gather-client-ws dist/*
 
 dist: clean
 	python setup.py sdist

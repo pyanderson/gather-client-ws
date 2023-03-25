@@ -33,6 +33,34 @@ asyncio.run(main())
 [2023-03-19 22:44:57,637][INFO] Connected as user USER_ID
 ```
 
+### Adding extra args and kwargs
+
+``` python
+import asyncio
+
+from gather_client_ws import GatherClient
+
+
+async def producer(client, *args, **kwargs):
+    await client.set_text_status("new status text")
+    await client.set_emoji_status("😁")
+    print(args)
+    print(kwargs)
+
+
+async def main():
+    client = GatherClient(api_key=API_KEY, space_id=SPACE_ID)
+    await client.run(producer, 'arg', k='kwarg')
+
+
+asyncio.run(main())
+
+# Output
+[2023-03-19 22:44:57,340][INFO] Connected to wss://engine-a00a0.aaa0-.prod.do.gather.town:443/
+[2023-03-19 22:44:57,637][INFO] Connected as user USER_ID
+('arg',)
+{'k': 'kwarg'}
+```
 ### Server response callback
 A callback function can be defined, this function will receive the `client` and the `ServerClientBatch` message:
 

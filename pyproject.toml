@@ -5,7 +5,7 @@ line-length = 79
 profile = "black"
 
 [tool.bumpversion]
-current_version = "0.0.3"
+current_version = "0.0.4"
 commit = true
 tag = true
 message = "v{current_version} → v{new_version}"

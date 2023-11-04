@@ -3,3 +3,13 @@ line-length = 79
 
 [tool.isort]
 profile = "black"
+
+[tool.bumpversion]
+current_version = "0.0.3"
+commit = true
+tag = true
+message = "version: {current_version} → {new_version}"
+
+
+[[tool.bumpversion.files]]
+filename = "gather_client_ws/__init__.py"

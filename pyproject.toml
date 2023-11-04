@@ -8,7 +8,8 @@ profile = "black"
 current_version = "0.0.3"
 commit = true
 tag = true
-message = "version: {current_version} → {new_version}"
+message = "v{current_version} → v{new_version}"
+tag_message = "v{current_version} → v{new_version}"
 
 
 [[tool.bumpversion.files]]

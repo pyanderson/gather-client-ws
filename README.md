@@ -168,5 +168,4 @@ async method(*args, **kwargs) method of gather_client_ws.client.GatherClient ins
             inputs (InputsEntry)
 ```
 
-
 You can check all available actions [here](ACTIONS.md).

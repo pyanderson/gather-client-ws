@@ -19,14 +19,26 @@ else:
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
 @typing_extensions.final
-class SpriteDirectionEnum(google.protobuf.message.Message):
+class Deprecated(google.protobuf.message.Message):
     """************************************************************************************* //
 
                                     shared types                                          //
 
     ************************************************************************************* //
+
+    common type for all deprecated message data, so that the $case is decoded but not the data
     """
 
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    def __init__(
+        self,
+    ) -> None: ...
+
+global___Deprecated = Deprecated
+
+@typing_extensions.final
+class SpriteDirectionEnum(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     class _ENUM:
@@ -152,10 +164,8 @@ class PlayerInitInfo(google.protobuf.message.Message):
     EMOJISTATUS_FIELD_NUMBER: builtins.int
     CURRENTLYEQUIPPEDWEARABLES_FIELD_NUMBER: builtins.int
     FOCUSMODEENDTIME_FIELD_NUMBER: builtins.int
-    CURRENTDESK_FIELD_NUMBER: builtins.int
     ITEMSTRING_FIELD_NUMBER: builtins.int
     ISNPC_FIELD_NUMBER: builtins.int
-    ISRECORDINGCLIENT_FIELD_NUMBER: builtins.int
     name: builtins.str
     x: builtins.int
     y: builtins.int
@@ -167,10 +177,8 @@ class PlayerInitInfo(google.protobuf.message.Message):
     @property
     def currentlyEquippedWearables(self) -> global___DBOutfit: ...
     focusModeEndTime: builtins.str
-    currentDesk: builtins.str
     itemString: builtins.str
     isNpc: builtins.bool
-    isRecordingClient: builtins.bool
     def __init__(
         self,
         *,
@@ -184,19 +192,15 @@ class PlayerInitInfo(google.protobuf.message.Message):
         emojiStatus: builtins.str | None = ...,
         currentlyEquippedWearables: global___DBOutfit | None = ...,
         focusModeEndTime: builtins.str | None = ...,
-        currentDesk: builtins.str | None = ...,
         itemString: builtins.str | None = ...,
         isNpc: builtins.bool | None = ...,
-        isRecordingClient: builtins.bool | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["_affiliation", b"_affiliation", "_busy", b"_busy", "_currentDesk", b"_currentDesk", "_currentlyEquippedWearables", b"_currentlyEquippedWearables", "_emojiStatus", b"_emojiStatus", "_focusModeEndTime", b"_focusModeEndTime", "_isNpc", b"_isNpc", "_isRecordingClient", b"_isRecordingClient", "_itemString", b"_itemString", "_map", b"_map", "_name", b"_name", "_textStatus", b"_textStatus", "_x", b"_x", "_y", b"_y", "affiliation", b"affiliation", "busy", b"busy", "currentDesk", b"currentDesk", "currentlyEquippedWearables", b"currentlyEquippedWearables", "emojiStatus", b"emojiStatus", "focusModeEndTime", b"focusModeEndTime", "isNpc", b"isNpc", "isRecordingClient", b"isRecordingClient", "itemString", b"itemString", "map", b"map", "name", b"name", "textStatus", b"textStatus", "x", b"x", "y", b"y"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["_affiliation", b"_affiliation", "_busy", b"_busy", "_currentDesk", b"_currentDesk", "_currentlyEquippedWearables", b"_currentlyEquippedWearables", "_emojiStatus", b"_emojiStatus", "_focusModeEndTime", b"_focusModeEndTime", "_isNpc", b"_isNpc", "_isRecordingClient", b"_isRecordingClient", "_itemString", b"_itemString", "_map", b"_map", "_name", b"_name", "_textStatus", b"_textStatus", "_x", b"_x", "_y", b"_y", "affiliation", b"affiliation", "busy", b"busy", "currentDesk", b"currentDesk", "currentlyEquippedWearables", b"currentlyEquippedWearables", "emojiStatus", b"emojiStatus", "focusModeEndTime", b"focusModeEndTime", "isNpc", b"isNpc", "isRecordingClient", b"isRecordingClient", "itemString", b"itemString", "map", b"map", "name", b"name", "textStatus", b"textStatus", "x", b"x", "y", b"y"]) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["_affiliation", b"_affiliation", "_busy", b"_busy", "_currentlyEquippedWearables", b"_currentlyEquippedWearables", "_emojiStatus", b"_emojiStatus", "_focusModeEndTime", b"_focusModeEndTime", "_isNpc", b"_isNpc", "_itemString", b"_itemString", "_map", b"_map", "_name", b"_name", "_textStatus", b"_textStatus", "_x", b"_x", "_y", b"_y", "affiliation", b"affiliation", "busy", b"busy", "currentlyEquippedWearables", b"currentlyEquippedWearables", "emojiStatus", b"emojiStatus", "focusModeEndTime", b"focusModeEndTime", "isNpc", b"isNpc", "itemString", b"itemString", "map", b"map", "name", b"name", "textStatus", b"textStatus", "x", b"x", "y", b"y"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["_affiliation", b"_affiliation", "_busy", b"_busy", "_currentlyEquippedWearables", b"_currentlyEquippedWearables", "_emojiStatus", b"_emojiStatus", "_focusModeEndTime", b"_focusModeEndTime", "_isNpc", b"_isNpc", "_itemString", b"_itemString", "_map", b"_map", "_name", b"_name", "_textStatus", b"_textStatus", "_x", b"_x", "_y", b"_y", "affiliation", b"affiliation", "busy", b"busy", "currentlyEquippedWearables", b"currentlyEquippedWearables", "emojiStatus", b"emojiStatus", "focusModeEndTime", b"focusModeEndTime", "isNpc", b"isNpc", "itemString", b"itemString", "map", b"map", "name", b"name", "textStatus", b"textStatus", "x", b"x", "y", b"y"]) -> None: ...
     @typing.overload
     def WhichOneof(self, oneof_group: typing_extensions.Literal["_affiliation", b"_affiliation"]) -> typing_extensions.Literal["affiliation"] | None: ...
     @typing.overload
     def WhichOneof(self, oneof_group: typing_extensions.Literal["_busy", b"_busy"]) -> typing_extensions.Literal["busy"] | None: ...
-    @typing.overload
-    def WhichOneof(self, oneof_group: typing_extensions.Literal["_currentDesk", b"_currentDesk"]) -> typing_extensions.Literal["currentDesk"] | None: ...
     @typing.overload
     def WhichOneof(self, oneof_group: typing_extensions.Literal["_currentlyEquippedWearables", b"_currentlyEquippedWearables"]) -> typing_extensions.Literal["currentlyEquippedWearables"] | None: ...
     @typing.overload
@@ -205,8 +209,6 @@ class PlayerInitInfo(google.protobuf.message.Message):
     def WhichOneof(self, oneof_group: typing_extensions.Literal["_focusModeEndTime", b"_focusModeEndTime"]) -> typing_extensions.Literal["focusModeEndTime"] | None: ...
     @typing.overload
     def WhichOneof(self, oneof_group: typing_extensions.Literal["_isNpc", b"_isNpc"]) -> typing_extensions.Literal["isNpc"] | None: ...
-    @typing.overload
-    def WhichOneof(self, oneof_group: typing_extensions.Literal["_isRecordingClient", b"_isRecordingClient"]) -> typing_extensions.Literal["isRecordingClient"] | None: ...
     @typing.overload
     def WhichOneof(self, oneof_group: typing_extensions.Literal["_itemString", b"_itemString"]) -> typing_extensions.Literal["itemString"] | None: ...
     @typing.overload
@@ -379,12 +381,14 @@ class WireObjectSpritesheet(google.protobuf.message.Message):
     FRAMING_FIELD_NUMBER: builtins.int
     ANIMATIONS_FIELD_NUMBER: builtins.int
     CURRENTANIM_FIELD_NUMBER: builtins.int
+    PAUSEANIMATIONSIFFPSBELOWFRAMERATE_FIELD_NUMBER: builtins.int
     spritesheetUrl: builtins.str
     @property
     def framing(self) -> global___WireObjectSpritesheetFraming: ...
     @property
     def animations(self) -> google.protobuf.internal.containers.MessageMap[builtins.str, global___WireObjectSpriteAnimConfig]: ...
     currentAnim: builtins.str
+    pauseAnimationsIfFpsBelowFramerate: builtins.bool
     def __init__(
         self,
         *,
@@ -392,10 +396,14 @@ class WireObjectSpritesheet(google.protobuf.message.Message):
         framing: global___WireObjectSpritesheetFraming | None = ...,
         animations: collections.abc.Mapping[builtins.str, global___WireObjectSpriteAnimConfig] | None = ...,
         currentAnim: builtins.str | None = ...,
+        pauseAnimationsIfFpsBelowFramerate: builtins.bool | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["_currentAnim", b"_currentAnim", "currentAnim", b"currentAnim", "framing", b"framing"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["_currentAnim", b"_currentAnim", "animations", b"animations", "currentAnim", b"currentAnim", "framing", b"framing", "spritesheetUrl", b"spritesheetUrl"]) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["_currentAnim", b"_currentAnim", "_pauseAnimationsIfFpsBelowFramerate", b"_pauseAnimationsIfFpsBelowFramerate", "currentAnim", b"currentAnim", "framing", b"framing", "pauseAnimationsIfFpsBelowFramerate", b"pauseAnimationsIfFpsBelowFramerate"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["_currentAnim", b"_currentAnim", "_pauseAnimationsIfFpsBelowFramerate", b"_pauseAnimationsIfFpsBelowFramerate", "animations", b"animations", "currentAnim", b"currentAnim", "framing", b"framing", "pauseAnimationsIfFpsBelowFramerate", b"pauseAnimationsIfFpsBelowFramerate", "spritesheetUrl", b"spritesheetUrl"]) -> None: ...
+    @typing.overload
     def WhichOneof(self, oneof_group: typing_extensions.Literal["_currentAnim", b"_currentAnim"]) -> typing_extensions.Literal["currentAnim"] | None: ...
+    @typing.overload
+    def WhichOneof(self, oneof_group: typing_extensions.Literal["_pauseAnimationsIfFpsBelowFramerate", b"_pauseAnimationsIfFpsBelowFramerate"]) -> typing_extensions.Literal["pauseAnimationsIfFpsBelowFramerate"] | None: ...
 
 global___WireObjectSpritesheet = WireObjectSpritesheet
 
@@ -429,6 +437,7 @@ class WireObject(google.protobuf.message.Message):
     OBJECTPLACERID_FIELD_NUMBER: builtins.int
     NUMGOKARTS_FIELD_NUMBER: builtins.int
     SPRITESHEET_FIELD_NUMBER: builtins.int
+    ZINDEX_FIELD_NUMBER: builtins.int
     templateId: builtins.str
     _name: builtins.str
     @property
@@ -448,23 +457,27 @@ class WireObject(google.protobuf.message.Message):
     height: builtins.int
     """deprecating hopefully?"""
     extensionClass: builtins.str
-    """experimental"""
+    """useful to tag an object with which extension should pay attention to it"""
     previewMessage: builtins.str
+    """Any custom value of `previewMessage` will be shown as is, not localized"""
     distThreshold: builtins.int
     propertiesJson: builtins.str
     @property
     def sound(self) -> global___Sound: ...
     @property
-    def objectStartTime(self) -> global___ObjectTime: ...
+    def objectStartTime(self) -> global___ObjectTime:
+        """deprecated on the product side"""
     @property
-    def objectExpireTime(self) -> global___ObjectTime: ...
+    def objectExpireTime(self) -> global___ObjectTime:
+        """deprecated on the product side"""
     id: builtins.str
     customState: builtins.str
     objectPlacerId: builtins.str
     numGoKarts: builtins.int
-    """experimental - this should have been in customState"""
+    """experimental - this should have been in customState :/"""
     @property
     def spritesheet(self) -> global___WireObjectSpritesheet: ...
+    zIndex: builtins.float
     def __init__(
         self,
         *,
@@ -494,9 +507,10 @@ class WireObject(google.protobuf.message.Message):
         objectPlacerId: builtins.str | None = ...,
         numGoKarts: builtins.int | None = ...,
         spritesheet: global___WireObjectSpritesheet | None = ...,
+        zIndex: builtins.float | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["X_name", b"X_name", "_color", b"_color", "_customState", b"_customState", "_distThreshold", b"_distThreshold", "_extensionClass", b"_extensionClass", "_height", b"_height", "_highlighted", b"_highlighted", "_id", b"_id", "_name", b"_name", "_normal", b"_normal", "_numGoKarts", b"_numGoKarts", "_objectExpireTime", b"_objectExpireTime", "_objectPlacerId", b"_objectPlacerId", "_objectStartTime", b"_objectStartTime", "_offsetX", b"_offsetX", "_offsetY", b"_offsetY", "_orientation", b"_orientation", "_previewMessage", b"_previewMessage", "_propertiesJson", b"_propertiesJson", "_sound", b"_sound", "_spritesheet", b"_spritesheet", "_templateId", b"_templateId", "_type", b"_type", "_width", b"_width", "_x", b"_x", "_y", b"_y", "color", b"color", "customState", b"customState", "distThreshold", b"distThreshold", "extensionClass", b"extensionClass", "height", b"height", "highlighted", b"highlighted", "id", b"id", "normal", b"normal", "numGoKarts", b"numGoKarts", "objectExpireTime", b"objectExpireTime", "objectPlacerId", b"objectPlacerId", "objectStartTime", b"objectStartTime", "offsetX", b"offsetX", "offsetY", b"offsetY", "orientation", b"orientation", "previewMessage", b"previewMessage", "propertiesJson", b"propertiesJson", "sound", b"sound", "spritesheet", b"spritesheet", "templateId", b"templateId", "type", b"type", "width", b"width", "x", b"x", "y", b"y"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["X_name", b"X_name", "_color", b"_color", "_customState", b"_customState", "_distThreshold", b"_distThreshold", "_extensionClass", b"_extensionClass", "_height", b"_height", "_highlighted", b"_highlighted", "_id", b"_id", "_name", b"_name", "_normal", b"_normal", "_numGoKarts", b"_numGoKarts", "_objectExpireTime", b"_objectExpireTime", "_objectPlacerId", b"_objectPlacerId", "_objectStartTime", b"_objectStartTime", "_offsetX", b"_offsetX", "_offsetY", b"_offsetY", "_orientation", b"_orientation", "_previewMessage", b"_previewMessage", "_propertiesJson", b"_propertiesJson", "_sound", b"_sound", "_spritesheet", b"_spritesheet", "_tags", b"_tags", "_templateId", b"_templateId", "_type", b"_type", "_width", b"_width", "_x", b"_x", "_y", b"_y", "color", b"color", "customState", b"customState", "distThreshold", b"distThreshold", "extensionClass", b"extensionClass", "height", b"height", "highlighted", b"highlighted", "id", b"id", "normal", b"normal", "numGoKarts", b"numGoKarts", "objectExpireTime", b"objectExpireTime", "objectPlacerId", b"objectPlacerId", "objectStartTime", b"objectStartTime", "offsetX", b"offsetX", "offsetY", b"offsetY", "orientation", b"orientation", "previewMessage", b"previewMessage", "propertiesJson", b"propertiesJson", "sound", b"sound", "spritesheet", b"spritesheet", "templateId", b"templateId", "type", b"type", "width", b"width", "x", b"x", "y", b"y"]) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["X_name", b"X_name", "_color", b"_color", "_customState", b"_customState", "_distThreshold", b"_distThreshold", "_extensionClass", b"_extensionClass", "_height", b"_height", "_highlighted", b"_highlighted", "_id", b"_id", "_name", b"_name", "_normal", b"_normal", "_numGoKarts", b"_numGoKarts", "_objectExpireTime", b"_objectExpireTime", "_objectPlacerId", b"_objectPlacerId", "_objectStartTime", b"_objectStartTime", "_offsetX", b"_offsetX", "_offsetY", b"_offsetY", "_orientation", b"_orientation", "_previewMessage", b"_previewMessage", "_propertiesJson", b"_propertiesJson", "_sound", b"_sound", "_spritesheet", b"_spritesheet", "_templateId", b"_templateId", "_type", b"_type", "_width", b"_width", "_x", b"_x", "_y", b"_y", "_zIndex", b"_zIndex", "color", b"color", "customState", b"customState", "distThreshold", b"distThreshold", "extensionClass", b"extensionClass", "height", b"height", "highlighted", b"highlighted", "id", b"id", "normal", b"normal", "numGoKarts", b"numGoKarts", "objectExpireTime", b"objectExpireTime", "objectPlacerId", b"objectPlacerId", "objectStartTime", b"objectStartTime", "offsetX", b"offsetX", "offsetY", b"offsetY", "orientation", b"orientation", "previewMessage", b"previewMessage", "propertiesJson", b"propertiesJson", "sound", b"sound", "spritesheet", b"spritesheet", "templateId", b"templateId", "type", b"type", "width", b"width", "x", b"x", "y", b"y", "zIndex", b"zIndex"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["X_name", b"X_name", "_color", b"_color", "_customState", b"_customState", "_distThreshold", b"_distThreshold", "_extensionClass", b"_extensionClass", "_height", b"_height", "_highlighted", b"_highlighted", "_id", b"_id", "_name", b"_name", "_normal", b"_normal", "_numGoKarts", b"_numGoKarts", "_objectExpireTime", b"_objectExpireTime", "_objectPlacerId", b"_objectPlacerId", "_objectStartTime", b"_objectStartTime", "_offsetX", b"_offsetX", "_offsetY", b"_offsetY", "_orientation", b"_orientation", "_previewMessage", b"_previewMessage", "_propertiesJson", b"_propertiesJson", "_sound", b"_sound", "_spritesheet", b"_spritesheet", "_tags", b"_tags", "_templateId", b"_templateId", "_type", b"_type", "_width", b"_width", "_x", b"_x", "_y", b"_y", "_zIndex", b"_zIndex", "color", b"color", "customState", b"customState", "distThreshold", b"distThreshold", "extensionClass", b"extensionClass", "height", b"height", "highlighted", b"highlighted", "id", b"id", "normal", b"normal", "numGoKarts", b"numGoKarts", "objectExpireTime", b"objectExpireTime", "objectPlacerId", b"objectPlacerId", "objectStartTime", b"objectStartTime", "offsetX", b"offsetX", "offsetY", b"offsetY", "orientation", b"orientation", "previewMessage", b"previewMessage", "propertiesJson", b"propertiesJson", "sound", b"sound", "spritesheet", b"spritesheet", "templateId", b"templateId", "type", b"type", "width", b"width", "x", b"x", "y", b"y", "zIndex", b"zIndex"]) -> None: ...
     @typing.overload
     def WhichOneof(self, oneof_group: typing_extensions.Literal["X_name", b"X_name"]) -> typing_extensions.Literal["_name"] | None: ...
     @typing.overload
@@ -547,6 +561,8 @@ class WireObject(google.protobuf.message.Message):
     def WhichOneof(self, oneof_group: typing_extensions.Literal["_x", b"_x"]) -> typing_extensions.Literal["x"] | None: ...
     @typing.overload
     def WhichOneof(self, oneof_group: typing_extensions.Literal["_y", b"_y"]) -> typing_extensions.Literal["y"] | None: ...
+    @typing.overload
+    def WhichOneof(self, oneof_group: typing_extensions.Literal["_zIndex", b"_zIndex"]) -> typing_extensions.Literal["zIndex"] | None: ...
 
 global___WireObject = WireObject
 
@@ -573,33 +589,34 @@ class SpaceMemberInfo(google.protobuf.message.Message):
     ROLES_FIELD_NUMBER: builtins.int
     NAME_FIELD_NUMBER: builtins.int
     CURRENTLYEQUIPPEDWEARABLES_FIELD_NUMBER: builtins.int
-    DESKINFO_FIELD_NUMBER: builtins.int
     ALLOWSCREENPOINTER_FIELD_NUMBER: builtins.int
+    ROLE_FIELD_NUMBER: builtins.int
     @property
-    def roles(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.bool]: ...
+    def roles(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.bool]:
+        """roles should be { [role in CoreRole]: boolean }, but we can't do string enums in protobuf
+        deprecating
+        """
     name: builtins.str
     @property
     def currentlyEquippedWearables(self) -> global___DBOutfit: ...
-    @property
-    def deskInfo(self) -> global___DeskInfo: ...
     allowScreenPointer: builtins.bool
+    role: builtins.str
+    """role should be CoreRole, but we can't do string enums in protobuf"""
     def __init__(
         self,
         *,
         roles: collections.abc.Mapping[builtins.str, builtins.bool] | None = ...,
         name: builtins.str | None = ...,
         currentlyEquippedWearables: global___DBOutfit | None = ...,
-        deskInfo: global___DeskInfo | None = ...,
         allowScreenPointer: builtins.bool | None = ...,
+        role: builtins.str = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["_allowScreenPointer", b"_allowScreenPointer", "_currentlyEquippedWearables", b"_currentlyEquippedWearables", "_deskInfo", b"_deskInfo", "_name", b"_name", "allowScreenPointer", b"allowScreenPointer", "currentlyEquippedWearables", b"currentlyEquippedWearables", "deskInfo", b"deskInfo", "name", b"name"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["_allowScreenPointer", b"_allowScreenPointer", "_currentlyEquippedWearables", b"_currentlyEquippedWearables", "_deskInfo", b"_deskInfo", "_name", b"_name", "allowScreenPointer", b"allowScreenPointer", "currentlyEquippedWearables", b"currentlyEquippedWearables", "deskInfo", b"deskInfo", "name", b"name", "roles", b"roles"]) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["_allowScreenPointer", b"_allowScreenPointer", "_currentlyEquippedWearables", b"_currentlyEquippedWearables", "_name", b"_name", "allowScreenPointer", b"allowScreenPointer", "currentlyEquippedWearables", b"currentlyEquippedWearables", "name", b"name"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["_allowScreenPointer", b"_allowScreenPointer", "_currentlyEquippedWearables", b"_currentlyEquippedWearables", "_name", b"_name", "allowScreenPointer", b"allowScreenPointer", "currentlyEquippedWearables", b"currentlyEquippedWearables", "name", b"name", "role", b"role", "roles", b"roles"]) -> None: ...
     @typing.overload
     def WhichOneof(self, oneof_group: typing_extensions.Literal["_allowScreenPointer", b"_allowScreenPointer"]) -> typing_extensions.Literal["allowScreenPointer"] | None: ...
     @typing.overload
     def WhichOneof(self, oneof_group: typing_extensions.Literal["_currentlyEquippedWearables", b"_currentlyEquippedWearables"]) -> typing_extensions.Literal["currentlyEquippedWearables"] | None: ...
-    @typing.overload
-    def WhichOneof(self, oneof_group: typing_extensions.Literal["_deskInfo", b"_deskInfo"]) -> typing_extensions.Literal["deskInfo"] | None: ...
     @typing.overload
     def WhichOneof(self, oneof_group: typing_extensions.Literal["_name", b"_name"]) -> typing_extensions.Literal["name"] | None: ...
 
@@ -665,34 +682,6 @@ class DeskObjects(google.protobuf.message.Message):
 global___DeskObjects = DeskObjects
 
 @typing_extensions.final
-class DeskInfo(google.protobuf.message.Message):
-    """deprecating"""
-
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    DESKID_FIELD_NUMBER: builtins.int
-    DESCRIPTION_FIELD_NUMBER: builtins.int
-    LOCKED_FIELD_NUMBER: builtins.int
-    deskId: builtins.str
-    description: builtins.str
-    locked: builtins.bool
-    def __init__(
-        self,
-        *,
-        deskId: builtins.str = ...,
-        description: builtins.str | None = ...,
-        locked: builtins.bool | None = ...,
-    ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["_description", b"_description", "_locked", b"_locked", "description", b"description", "locked", b"locked"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["_description", b"_description", "_locked", b"_locked", "description", b"description", "deskId", b"deskId", "locked", b"locked"]) -> None: ...
-    @typing.overload
-    def WhichOneof(self, oneof_group: typing_extensions.Literal["_description", b"_description"]) -> typing_extensions.Literal["description"] | None: ...
-    @typing.overload
-    def WhichOneof(self, oneof_group: typing_extensions.Literal["_locked", b"_locked"]) -> typing_extensions.Literal["locked"] | None: ...
-
-global___DeskInfo = DeskInfo
-
-@typing_extensions.final
 class DeskInfoV2(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -733,6 +722,24 @@ class DeskInfoV2(google.protobuf.message.Message):
 global___DeskInfoV2 = DeskInfoV2
 
 @typing_extensions.final
+class MapAndDesk(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    MAPID_FIELD_NUMBER: builtins.int
+    DESKID_FIELD_NUMBER: builtins.int
+    mapId: builtins.str
+    deskId: builtins.str
+    def __init__(
+        self,
+        *,
+        mapId: builtins.str = ...,
+        deskId: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["deskId", b"deskId", "mapId", b"mapId"]) -> None: ...
+
+global___MapAndDesk = MapAndDesk
+
+@typing_extensions.final
 class Sound(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -741,11 +748,13 @@ class Sound(google.protobuf.message.Message):
     LOOP_FIELD_NUMBER: builtins.int
     MAXDISTANCE_FIELD_NUMBER: builtins.int
     ISPOSITIONAL_FIELD_NUMBER: builtins.int
+    STREAM_FIELD_NUMBER: builtins.int
     src: builtins.str
     volume: builtins.float
     loop: builtins.bool
     maxDistance: builtins.int
     isPositional: builtins.bool
+    stream: builtins.bool
     def __init__(
         self,
         *,
@@ -754,15 +763,21 @@ class Sound(google.protobuf.message.Message):
         loop: builtins.bool = ...,
         maxDistance: builtins.int = ...,
         isPositional: builtins.bool | None = ...,
+        stream: builtins.bool | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["_isPositional", b"_isPositional", "isPositional", b"isPositional"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["_isPositional", b"_isPositional", "isPositional", b"isPositional", "loop", b"loop", "maxDistance", b"maxDistance", "src", b"src", "volume", b"volume"]) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["_isPositional", b"_isPositional", "_stream", b"_stream", "isPositional", b"isPositional", "stream", b"stream"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["_isPositional", b"_isPositional", "_stream", b"_stream", "isPositional", b"isPositional", "loop", b"loop", "maxDistance", b"maxDistance", "src", b"src", "stream", b"stream", "volume", b"volume"]) -> None: ...
+    @typing.overload
     def WhichOneof(self, oneof_group: typing_extensions.Literal["_isPositional", b"_isPositional"]) -> typing_extensions.Literal["isPositional"] | None: ...
+    @typing.overload
+    def WhichOneof(self, oneof_group: typing_extensions.Literal["_stream", b"_stream"]) -> typing_extensions.Literal["stream"] | None: ...
 
 global___Sound = Sound
 
 @typing_extensions.final
 class ObjectTime(google.protobuf.message.Message):
+    """Can be deprecated?"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     _SECONDS_FIELD_NUMBER: builtins.int
@@ -1089,7 +1104,7 @@ global___Announcer = Announcer
 
 @typing_extensions.final
 class Asset(google.protobuf.message.Message):
-    """deprecating"""
+    """deprecating (NGN-123)"""
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -1326,54 +1341,9 @@ class MapSetForegroundImagePath(google.protobuf.message.Message):
 global___MapSetForegroundImagePath = MapSetForegroundImagePath
 
 @typing_extensions.final
-class MapSetSprites(google.protobuf.message.Message):
+class MapSetNooks(google.protobuf.message.Message):
     """                                            (see top of file for how to safely make changes)"""
 
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    MAPID_FIELD_NUMBER: builtins.int
-    SPRITES_FIELD_NUMBER: builtins.int
-    DELETE_FIELD_NUMBER: builtins.int
-    mapId: builtins.str
-    @property
-    def sprites(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.int]: ...
-    delete: builtins.bool
-    def __init__(
-        self,
-        *,
-        mapId: builtins.str = ...,
-        sprites: collections.abc.Iterable[builtins.int] | None = ...,
-        delete: builtins.bool | None = ...,
-    ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["_delete", b"_delete", "delete", b"delete"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["_delete", b"_delete", "delete", b"delete", "mapId", b"mapId", "sprites", b"sprites"]) -> None: ...
-    def WhichOneof(self, oneof_group: typing_extensions.Literal["_delete", b"_delete"]) -> typing_extensions.Literal["delete"] | None: ...
-
-global___MapSetSprites = MapSetSprites
-
-@typing_extensions.final
-class MapSetSpaces(google.protobuf.message.Message):
-    """deprecating"""
-
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    MAPID_FIELD_NUMBER: builtins.int
-    SPACES_FIELD_NUMBER: builtins.int
-    mapId: builtins.str
-    @property
-    def spaces(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___Space]: ...
-    def __init__(
-        self,
-        *,
-        mapId: builtins.str = ...,
-        spaces: collections.abc.Iterable[global___Space] | None = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["mapId", b"mapId", "spaces", b"spaces"]) -> None: ...
-
-global___MapSetSpaces = MapSetSpaces
-
-@typing_extensions.final
-class MapSetNooks(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     @typing_extensions.final
@@ -1497,7 +1467,7 @@ global___MapSetAnnouncer = MapSetAnnouncer
 
 @typing_extensions.final
 class MapSetAssets(google.protobuf.message.Message):
-    """deprecating"""
+    """deprecating (NGN-123)"""
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -1522,7 +1492,7 @@ class MapSetAssets(google.protobuf.message.Message):
 global___MapSetAssets = MapSetAssets
 
 @typing_extensions.final
-class MapSetObjects(google.protobuf.message.Message):
+class MapSetObjectsV2(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     @typing_extensions.final
@@ -1531,13 +1501,13 @@ class MapSetObjects(google.protobuf.message.Message):
 
         KEY_FIELD_NUMBER: builtins.int
         VALUE_FIELD_NUMBER: builtins.int
-        key: builtins.int
+        key: builtins.str
         @property
         def value(self) -> global___WireObject: ...
         def __init__(
             self,
             *,
-            key: builtins.int = ...,
+            key: builtins.str = ...,
             value: global___WireObject | None = ...,
         ) -> None: ...
         def HasField(self, field_name: typing_extensions.Literal["value", b"value"]) -> builtins.bool: ...
@@ -1548,20 +1518,20 @@ class MapSetObjects(google.protobuf.message.Message):
     UPDATESAREOVERWRITES_FIELD_NUMBER: builtins.int
     mapId: builtins.str
     @property
-    def objects(self) -> google.protobuf.internal.containers.MessageMap[builtins.int, global___WireObject]: ...
+    def objects(self) -> google.protobuf.internal.containers.MessageMap[builtins.str, global___WireObject]: ...
     updatesAreOverwrites: builtins.bool
     def __init__(
         self,
         *,
         mapId: builtins.str = ...,
-        objects: collections.abc.Mapping[builtins.int, global___WireObject] | None = ...,
+        objects: collections.abc.Mapping[builtins.str, global___WireObject] | None = ...,
         updatesAreOverwrites: builtins.bool | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing_extensions.Literal["_updatesAreOverwrites", b"_updatesAreOverwrites", "updatesAreOverwrites", b"updatesAreOverwrites"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing_extensions.Literal["_updatesAreOverwrites", b"_updatesAreOverwrites", "mapId", b"mapId", "objects", b"objects", "updatesAreOverwrites", b"updatesAreOverwrites"]) -> None: ...
     def WhichOneof(self, oneof_group: typing_extensions.Literal["_updatesAreOverwrites", b"_updatesAreOverwrites"]) -> typing_extensions.Literal["updatesAreOverwrites"] | None: ...
 
-global___MapSetObjects = MapSetObjects
+global___MapSetObjectsV2 = MapSetObjectsV2
 
 @typing_extensions.final
 class MapSetName(google.protobuf.message.Message):
@@ -1755,22 +1725,22 @@ class MapSetAreas(google.protobuf.message.Message):
 global___MapSetAreas = MapSetAreas
 
 @typing_extensions.final
-class MapDeleteObject(google.protobuf.message.Message):
+class MapDeleteObjectByKey(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     MAPID_FIELD_NUMBER: builtins.int
     KEY_FIELD_NUMBER: builtins.int
     mapId: builtins.str
-    key: builtins.int
+    key: builtins.str
     def __init__(
         self,
         *,
         mapId: builtins.str = ...,
-        key: builtins.int = ...,
+        key: builtins.str = ...,
     ) -> None: ...
     def ClearField(self, field_name: typing_extensions.Literal["key", b"key", "mapId", b"mapId"]) -> None: ...
 
-global___MapDeleteObject = MapDeleteObject
+global___MapDeleteObjectByKey = MapDeleteObjectByKey
 
 @typing_extensions.final
 class MapDeleteObjectById(google.protobuf.message.Message):
@@ -2200,19 +2170,15 @@ class ServerClientEvent(google.protobuf.message.Message):
     PLAYERSPOTLIGHTS_FIELD_NUMBER: builtins.int
     PLAYERRINGS_FIELD_NUMBER: builtins.int
     PLAYERCHATS_FIELD_NUMBER: builtins.int
-    PLAYERINTERACTS_FIELD_NUMBER: builtins.int
     PLAYERGHOSTS_FIELD_NUMBER: builtins.int
     PLAYERENTERSWHISPER_FIELD_NUMBER: builtins.int
     PLAYERLEAVESWHISPER_FIELD_NUMBER: builtins.int
     PLAYERACTIVELYSPEAKS_FIELD_NUMBER: builtins.int
-    PLAYERSETSWORKCONDITION_FIELD_NUMBER: builtins.int
     PLAYERSETSNAME_FIELD_NUMBER: builtins.int
     PLAYERSETSTEXTSTATUS_FIELD_NUMBER: builtins.int
     PLAYERSETSEMOJISTATUS_FIELD_NUMBER: builtins.int
     PLAYERSETSAFFILIATION_FIELD_NUMBER: builtins.int
     PLAYEREXITS_FIELD_NUMBER: builtins.int
-    RESPAWNCOMPLETE_FIELD_NUMBER: builtins.int
-    PLAYERSETSOUTFITSTRING_FIELD_NUMBER: builtins.int
     PLAYERSETSISSIGNEDIN_FIELD_NUMBER: builtins.int
     SPACEOVERWRITES_FIELD_NUMBER: builtins.int
     SPACEISCLOSED_FIELD_NUMBER: builtins.int
@@ -2222,30 +2188,24 @@ class ServerClientEvent(google.protobuf.message.Message):
     PLAYERSHOOTSCONFETTI_FIELD_NUMBER: builtins.int
     PLAYERSETSEVENTSTATUS_FIELD_NUMBER: builtins.int
     PLAYERSETSINCONVERSATION_FIELD_NUMBER: builtins.int
-    PLAYERSETSCURRENTDESK_FIELD_NUMBER: builtins.int
     PLAYERSETSCURRENTAREA_FIELD_NUMBER: builtins.int
     PLAYERSETSIMAGEPOINTER_FIELD_NUMBER: builtins.int
     COOKIEFOUND_FIELD_NUMBER: builtins.int
     PLAYERENTERSWHISPERV2_FIELD_NUMBER: builtins.int
     PLAYERSETSGOKARTID_FIELD_NUMBER: builtins.int
     MAPSETDIMENSIONS_FIELD_NUMBER: builtins.int
-    MAPSETCOLLISIONS_FIELD_NUMBER: builtins.int
     MAPSETBACKGROUNDIMAGEPATH_FIELD_NUMBER: builtins.int
     MAPSETFOREGROUNDIMAGEPATH_FIELD_NUMBER: builtins.int
-    MAPSETSPRITES_FIELD_NUMBER: builtins.int
-    MAPSETSPACES_FIELD_NUMBER: builtins.int
     MAPSETSPAWNS_FIELD_NUMBER: builtins.int
     MAPSETPORTALS_FIELD_NUMBER: builtins.int
     MAPSETANNOUNCER_FIELD_NUMBER: builtins.int
     MAPSETASSETS_FIELD_NUMBER: builtins.int
-    MAPSETOBJECTS_FIELD_NUMBER: builtins.int
     MAPSETNAME_FIELD_NUMBER: builtins.int
     MAPSETMUTEONENTRY_FIELD_NUMBER: builtins.int
     MAPSETUSEDRAWNBG_FIELD_NUMBER: builtins.int
     MAPSETWALLS_FIELD_NUMBER: builtins.int
     MAPSETFLOORS_FIELD_NUMBER: builtins.int
     MAPSETAREAS_FIELD_NUMBER: builtins.int
-    MAPDELETEOBJECT_FIELD_NUMBER: builtins.int
     MAPSETSPAWN_FIELD_NUMBER: builtins.int
     PLAYERSETSISALONE_FIELD_NUMBER: builtins.int
     PLAYERJOINS_FIELD_NUMBER: builtins.int
@@ -2261,19 +2221,18 @@ class ServerClientEvent(google.protobuf.message.Message):
     PLAYERSETSEMOTEV2_FIELD_NUMBER: builtins.int
     PLAYERSETSFOCUSMODEENDTIME_FIELD_NUMBER: builtins.int
     SPACESETSSPACEMEMBERS_FIELD_NUMBER: builtins.int
+    SPACESETSSPACEUSERS_FIELD_NUMBER: builtins.int
     CUSTOMEVENT_FIELD_NUMBER: builtins.int
     PLAYERBLOCKS_FIELD_NUMBER: builtins.int
     PLAYERUPDATESFOCUSMODESTATUS_FIELD_NUMBER: builtins.int
     PLAYERNOTIFIES_FIELD_NUMBER: builtins.int
     PLAYERSETSITEMSTRING_FIELD_NUMBER: builtins.int
-    PLAYERTRIGGERSITEM_FIELD_NUMBER: builtins.int
     PLAYERSETSFOLLOWTARGET_FIELD_NUMBER: builtins.int
     PLAYERREQUESTSTOLEAD_FIELD_NUMBER: builtins.int
     PLAYERSETSMANUALVIDEOSRC_FIELD_NUMBER: builtins.int
     PLAYERSETSISNPC_FIELD_NUMBER: builtins.int
     PLAYERSETSSUBTITLE_FIELD_NUMBER: builtins.int
     MAPCOMMITSCHANGES_FIELD_NUMBER: builtins.int
-    PLAYERUPDATESSESSION_FIELD_NUMBER: builtins.int
     MAPMOVEOBJECT_FIELD_NUMBER: builtins.int
     PLAYEREDITSCHATMESSAGE_FIELD_NUMBER: builtins.int
     FXSHAKEOBJECT_FIELD_NUMBER: builtins.int
@@ -2311,8 +2270,21 @@ class ServerClientEvent(google.protobuf.message.Message):
     PLAYERSETSCITY_FIELD_NUMBER: builtins.int
     PLAYERSETSCOUNTRY_FIELD_NUMBER: builtins.int
     PLAYERSETSSTARTDATE_FIELD_NUMBER: builtins.int
-    PLAYERSETSISRECORDINGCLIENT_FIELD_NUMBER: builtins.int
     PLAYERSTARTSRECORDING_FIELD_NUMBER: builtins.int
+    ACCESSREQUESTSUPDATED_FIELD_NUMBER: builtins.int
+    ACCESSREQUESTRESPONDEDTO_FIELD_NUMBER: builtins.int
+    SPACESETSGUESTPASSSTATUSES_FIELD_NUMBER: builtins.int
+    PLAYERSETSAVAILABILITY_FIELD_NUMBER: builtins.int
+    SUBSCRIPTIONSUPDATED_FIELD_NUMBER: builtins.int
+    SPACEROLEPERMISSIONOVERRIDEUPDATED_FIELD_NUMBER: builtins.int
+    PLAYERSETSLASTRAISEDHAND_FIELD_NUMBER: builtins.int
+    PLAYERSETSCURRENTLYEQUIPPEDWEARABLES_FIELD_NUMBER: builtins.int
+    PLAYERSETSDISPLAYEMAIL_FIELD_NUMBER: builtins.int
+    MAPDELETEOBJECTBYKEY_FIELD_NUMBER: builtins.int
+    MAPSETOBJECTSV2_FIELD_NUMBER: builtins.int
+    PLAYERINTERACTSWITHOBJECT_FIELD_NUMBER: builtins.int
+    PLAYERTRIGGERSOBJECT_FIELD_NUMBER: builtins.int
+    CHIMESETSUSERINFO_FIELD_NUMBER: builtins.int
     @property
     def info(self) -> global___Info: ...
     @property
@@ -2336,18 +2308,14 @@ class ServerClientEvent(google.protobuf.message.Message):
     @property
     def playerChats(self) -> global___PlayerChats: ...
     @property
-    def playerInteracts(self) -> global___PlayerInteracts: ...
-    @property
     def playerGhosts(self) -> global___PlayerGhosts: ...
     @property
     def playerEntersWhisper(self) -> global___PlayerEntersWhisper:
-        """deprecating"""
+        """deprecating (NGN-114)"""
     @property
     def playerLeavesWhisper(self) -> global___PlayerLeavesWhisper: ...
     @property
     def playerActivelySpeaks(self) -> global___PlayerActivelySpeaks: ...
-    @property
-    def playerSetsWorkCondition(self) -> global___PlayerSetsWorkCondition: ...
     @property
     def playerSetsName(self) -> global___PlayerSetsName: ...
     @property
@@ -2358,11 +2326,6 @@ class ServerClientEvent(google.protobuf.message.Message):
     def playerSetsAffiliation(self) -> global___PlayerSetsAffiliation: ...
     @property
     def playerExits(self) -> global___PlayerExits: ...
-    @property
-    def respawnComplete(self) -> global___RespawnComplete:
-        """deprecated"""
-    @property
-    def playerSetsOutfitString(self) -> global___PlayerSetsOutfitString: ...
     @property
     def playerSetsIsSignedIn(self) -> global___PlayerSetsIsSignedIn: ...
     @property
@@ -2386,9 +2349,6 @@ class ServerClientEvent(google.protobuf.message.Message):
     def playerSetsInConversation(self) -> global___PlayerSetsInConversation:
         """experimental"""
     @property
-    def playerSetsCurrentDesk(self) -> global___PlayerSetsCurrentDesk:
-        """experimental"""
-    @property
     def playerSetsCurrentArea(self) -> global___PlayerSetsCurrentArea:
         """experimental"""
     @property
@@ -2400,21 +2360,13 @@ class ServerClientEvent(google.protobuf.message.Message):
     def playerEntersWhisperV2(self) -> global___PlayerEntersWhisperV2: ...
     @property
     def playerSetsGoKartId(self) -> global___PlayerSetsGoKartId:
-        """deprecated"""
+        """deprecated (NGN-709)"""
     @property
     def mapSetDimensions(self) -> global___MapSetDimensions: ...
-    @property
-    def mapSetCollisions(self) -> global___MapSetCollisions: ...
     @property
     def mapSetBackgroundImagePath(self) -> global___MapSetBackgroundImagePath: ...
     @property
     def mapSetForegroundImagePath(self) -> global___MapSetForegroundImagePath: ...
-    @property
-    def mapSetSprites(self) -> global___MapSetSprites:
-        """deprecating"""
-    @property
-    def mapSetSpaces(self) -> global___MapSetSpaces:
-        """deprecating"""
     @property
     def mapSetSpawns(self) -> global___MapSetSpawns: ...
     @property
@@ -2423,9 +2375,7 @@ class ServerClientEvent(google.protobuf.message.Message):
     def mapSetAnnouncer(self) -> global___MapSetAnnouncer: ...
     @property
     def mapSetAssets(self) -> global___MapSetAssets:
-        """deprecating"""
-    @property
-    def mapSetObjects(self) -> global___MapSetObjects: ...
+        """deprecating (NGN-123)"""
     @property
     def mapSetName(self) -> global___MapSetName: ...
     @property
@@ -2440,10 +2390,8 @@ class ServerClientEvent(google.protobuf.message.Message):
     def mapSetAreas(self) -> global___MapSetAreas:
         """experimental"""
     @property
-    def mapDeleteObject(self) -> global___MapDeleteObject: ...
-    @property
     def mapSetSpawn(self) -> global___MapSetSpawn:
-        """deprecating"""
+        """deprecating (NGN-104)"""
     @property
     def playerSetsIsAlone(self) -> global___PlayerSetsIsAlone:
         """experimental"""
@@ -2475,7 +2423,10 @@ class ServerClientEvent(google.protobuf.message.Message):
     def playerSetsFocusModeEndTime(self) -> global___PlayerSetsFocusModeEndTime:
         """experimental"""
     @property
-    def spaceSetsSpaceMembers(self) -> global___SpaceSetsSpaceMembers: ...
+    def spaceSetsSpaceMembers(self) -> global___SpaceSetsSpaceMembers:
+        """deprecating soon (NGN-762)"""
+    @property
+    def spaceSetsSpaceUsers(self) -> global___SpaceSetsSpaceUsers: ...
     @property
     def customEvent(self) -> global___CustomEvent: ...
     @property
@@ -2486,8 +2437,6 @@ class ServerClientEvent(google.protobuf.message.Message):
     def playerNotifies(self) -> global___PlayerNotifies: ...
     @property
     def playerSetsItemString(self) -> global___PlayerSetsItemString: ...
-    @property
-    def playerTriggersItem(self) -> global___PlayerTriggersItem: ...
     @property
     def playerSetsFollowTarget(self) -> global___PlayerSetsFollowTarget: ...
     @property
@@ -2500,8 +2449,6 @@ class ServerClientEvent(google.protobuf.message.Message):
     def playerSetsSubtitle(self) -> global___PlayerSetsSubtitle: ...
     @property
     def mapCommitsChanges(self) -> global___MapCommitsChanges: ...
-    @property
-    def playerUpdatesSession(self) -> global___PlayerUpdatesSession: ...
     @property
     def mapMoveObject(self) -> global___MapMoveObject: ...
     @property
@@ -2577,10 +2524,36 @@ class ServerClientEvent(google.protobuf.message.Message):
     @property
     def playerSetsStartDate(self) -> global___PlayerSetsStartDate: ...
     @property
-    def playerSetsIsRecordingClient(self) -> global___PlayerSetsIsRecordingClient: ...
+    def playerStartsRecording(self) -> global___PlayerStartsRecording: ...
     @property
-    def playerStartsRecording(self) -> global___PlayerStartsRecording:
-        """add lots more stuff here!"""
+    def accessRequestsUpdated(self) -> global___AccessRequestsUpdated: ...
+    @property
+    def accessRequestRespondedTo(self) -> global___AccessRequestRespondedTo: ...
+    @property
+    def spaceSetsGuestPassStatuses(self) -> global___SpaceSetsGuestPassStatuses: ...
+    @property
+    def playerSetsAvailability(self) -> global___PlayerSetsAvailability: ...
+    @property
+    def subscriptionsUpdated(self) -> global___SubscriptionsUpdated: ...
+    @property
+    def spaceRolePermissionOverrideUpdated(self) -> global___SpaceRolePermissionOverrideUpdated: ...
+    @property
+    def playerSetsLastRaisedHand(self) -> global___PlayerSetsLastRaisedHand: ...
+    @property
+    def playerSetsCurrentlyEquippedWearables(self) -> global___PlayerSetsCurrentlyEquippedWearables: ...
+    @property
+    def playerSetsDisplayEmail(self) -> global___PlayerSetsDisplayEmail: ...
+    @property
+    def mapDeleteObjectByKey(self) -> global___MapDeleteObjectByKey: ...
+    @property
+    def mapSetObjectsV2(self) -> global___MapSetObjectsV2: ...
+    @property
+    def playerInteractsWithObject(self) -> global___PlayerInteractsWithObject: ...
+    @property
+    def playerTriggersObject(self) -> global___PlayerTriggersObject: ...
+    @property
+    def chimeSetsUserInfo(self) -> global___ChimeSetsUserInfo:
+        """experimental"""
     def __init__(
         self,
         *,
@@ -2595,19 +2568,15 @@ class ServerClientEvent(google.protobuf.message.Message):
         playerSpotlights: global___PlayerSpotlights | None = ...,
         playerRings: global___PlayerRings | None = ...,
         playerChats: global___PlayerChats | None = ...,
-        playerInteracts: global___PlayerInteracts | None = ...,
         playerGhosts: global___PlayerGhosts | None = ...,
         playerEntersWhisper: global___PlayerEntersWhisper | None = ...,
         playerLeavesWhisper: global___PlayerLeavesWhisper | None = ...,
         playerActivelySpeaks: global___PlayerActivelySpeaks | None = ...,
-        playerSetsWorkCondition: global___PlayerSetsWorkCondition | None = ...,
         playerSetsName: global___PlayerSetsName | None = ...,
         playerSetsTextStatus: global___PlayerSetsTextStatus | None = ...,
         playerSetsEmojiStatus: global___PlayerSetsEmojiStatus | None = ...,
         playerSetsAffiliation: global___PlayerSetsAffiliation | None = ...,
         playerExits: global___PlayerExits | None = ...,
-        respawnComplete: global___RespawnComplete | None = ...,
-        playerSetsOutfitString: global___PlayerSetsOutfitString | None = ...,
         playerSetsIsSignedIn: global___PlayerSetsIsSignedIn | None = ...,
         spaceOverwrites: global___SpaceOverwrites | None = ...,
         spaceIsClosed: global___SpaceIsClosed | None = ...,
@@ -2617,30 +2586,24 @@ class ServerClientEvent(google.protobuf.message.Message):
         playerShootsConfetti: global___PlayerShootsConfetti | None = ...,
         playerSetsEventStatus: global___PlayerSetsEventStatus | None = ...,
         playerSetsInConversation: global___PlayerSetsInConversation | None = ...,
-        playerSetsCurrentDesk: global___PlayerSetsCurrentDesk | None = ...,
         playerSetsCurrentArea: global___PlayerSetsCurrentArea | None = ...,
         playerSetsImagePointer: global___PlayerSetsImagePointer | None = ...,
         cookieFound: global___CookieFound | None = ...,
         playerEntersWhisperV2: global___PlayerEntersWhisperV2 | None = ...,
         playerSetsGoKartId: global___PlayerSetsGoKartId | None = ...,
         mapSetDimensions: global___MapSetDimensions | None = ...,
-        mapSetCollisions: global___MapSetCollisions | None = ...,
         mapSetBackgroundImagePath: global___MapSetBackgroundImagePath | None = ...,
         mapSetForegroundImagePath: global___MapSetForegroundImagePath | None = ...,
-        mapSetSprites: global___MapSetSprites | None = ...,
-        mapSetSpaces: global___MapSetSpaces | None = ...,
         mapSetSpawns: global___MapSetSpawns | None = ...,
         mapSetPortals: global___MapSetPortals | None = ...,
         mapSetAnnouncer: global___MapSetAnnouncer | None = ...,
         mapSetAssets: global___MapSetAssets | None = ...,
-        mapSetObjects: global___MapSetObjects | None = ...,
         mapSetName: global___MapSetName | None = ...,
         mapSetMuteOnEntry: global___MapSetMuteOnEntry | None = ...,
         mapSetUseDrawnBG: global___MapSetUseDrawnBG | None = ...,
         mapSetWalls: global___MapSetWalls | None = ...,
         mapSetFloors: global___MapSetFloors | None = ...,
         mapSetAreas: global___MapSetAreas | None = ...,
-        mapDeleteObject: global___MapDeleteObject | None = ...,
         mapSetSpawn: global___MapSetSpawn | None = ...,
         playerSetsIsAlone: global___PlayerSetsIsAlone | None = ...,
         playerJoins: global___PlayerJoins | None = ...,
@@ -2656,19 +2619,18 @@ class ServerClientEvent(google.protobuf.message.Message):
         playerSetsEmoteV2: global___PlayerSetsEmoteV2 | None = ...,
         playerSetsFocusModeEndTime: global___PlayerSetsFocusModeEndTime | None = ...,
         spaceSetsSpaceMembers: global___SpaceSetsSpaceMembers | None = ...,
+        spaceSetsSpaceUsers: global___SpaceSetsSpaceUsers | None = ...,
         customEvent: global___CustomEvent | None = ...,
         playerBlocks: global___PlayerBlocks | None = ...,
         playerUpdatesFocusModeStatus: global___PlayerUpdatesFocusModeStatus | None = ...,
         playerNotifies: global___PlayerNotifies | None = ...,
         playerSetsItemString: global___PlayerSetsItemString | None = ...,
-        playerTriggersItem: global___PlayerTriggersItem | None = ...,
         playerSetsFollowTarget: global___PlayerSetsFollowTarget | None = ...,
         playerRequestsToLead: global___PlayerRequestsToLead | None = ...,
         playerSetsManualVideoSrc: global___PlayerSetsManualVideoSrc | None = ...,
         playerSetsIsNpc: global___PlayerSetsIsNpc | None = ...,
         playerSetsSubtitle: global___PlayerSetsSubtitle | None = ...,
         mapCommitsChanges: global___MapCommitsChanges | None = ...,
-        playerUpdatesSession: global___PlayerUpdatesSession | None = ...,
         mapMoveObject: global___MapMoveObject | None = ...,
         playerEditsChatMessage: global___PlayerEditsChatMessage | None = ...,
         fxShakeObject: global___FXShakeObject | None = ...,
@@ -2706,24 +2668,57 @@ class ServerClientEvent(google.protobuf.message.Message):
         playerSetsCity: global___PlayerSetsCity | None = ...,
         playerSetsCountry: global___PlayerSetsCountry | None = ...,
         playerSetsStartDate: global___PlayerSetsStartDate | None = ...,
-        playerSetsIsRecordingClient: global___PlayerSetsIsRecordingClient | None = ...,
         playerStartsRecording: global___PlayerStartsRecording | None = ...,
+        accessRequestsUpdated: global___AccessRequestsUpdated | None = ...,
+        accessRequestRespondedTo: global___AccessRequestRespondedTo | None = ...,
+        spaceSetsGuestPassStatuses: global___SpaceSetsGuestPassStatuses | None = ...,
+        playerSetsAvailability: global___PlayerSetsAvailability | None = ...,
+        subscriptionsUpdated: global___SubscriptionsUpdated | None = ...,
+        spaceRolePermissionOverrideUpdated: global___SpaceRolePermissionOverrideUpdated | None = ...,
+        playerSetsLastRaisedHand: global___PlayerSetsLastRaisedHand | None = ...,
+        playerSetsCurrentlyEquippedWearables: global___PlayerSetsCurrentlyEquippedWearables | None = ...,
+        playerSetsDisplayEmail: global___PlayerSetsDisplayEmail | None = ...,
+        mapDeleteObjectByKey: global___MapDeleteObjectByKey | None = ...,
+        mapSetObjectsV2: global___MapSetObjectsV2 | None = ...,
+        playerInteractsWithObject: global___PlayerInteractsWithObject | None = ...,
+        playerTriggersObject: global___PlayerTriggersObject | None = ...,
+        chimeSetsUserInfo: global___ChimeSetsUserInfo | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["cookieFound", b"cookieFound", "customEvent", b"customEvent", "dynamicGates", b"dynamicGates", "error", b"error", "event", b"event", "fxShakeCamera", b"fxShakeCamera", "fxShakeObject", b"fxShakeObject", "gotRequestMute", b"gotRequestMute", "hipToBeSquare", b"hipToBeSquare", "info", b"info", "mapCommitsChanges", b"mapCommitsChanges", "mapDeleteObject", b"mapDeleteObject", "mapMoveObject", b"mapMoveObject", "mapSetAnnouncer", b"mapSetAnnouncer", "mapSetAreas", b"mapSetAreas", "mapSetAssets", b"mapSetAssets", "mapSetBackgroundImagePath", b"mapSetBackgroundImagePath", "mapSetCollisions", b"mapSetCollisions", "mapSetCollisionsBits", b"mapSetCollisionsBits", "mapSetDecoration", b"mapSetDecoration", "mapSetDescription", b"mapSetDescription", "mapSetDimensions", b"mapSetDimensions", "mapSetEnabledChats", b"mapSetEnabledChats", "mapSetFloors", b"mapSetFloors", "mapSetForegroundImagePath", b"mapSetForegroundImagePath", "mapSetMiniMapImagePath", b"mapSetMiniMapImagePath", "mapSetMuteOnEntry", b"mapSetMuteOnEntry", "mapSetName", b"mapSetName", "mapSetNooks", b"mapSetNooks", "mapSetObjects", b"mapSetObjects", "mapSetPortals", b"mapSetPortals", "mapSetScript", b"mapSetScript", "mapSetSpaces", b"mapSetSpaces", "mapSetSpawn", b"mapSetSpawn", "mapSetSpawns", b"mapSetSpawns", "mapSetSprites", b"mapSetSprites", "mapSetTutorialTasks", b"mapSetTutorialTasks", "mapSetUseDrawnBG", b"mapSetUseDrawnBG", "mapSetWalls", b"mapSetWalls", "playerActivelySpeaks", b"playerActivelySpeaks", "playerBlocks", b"playerBlocks", "playerChats", b"playerChats", "playerCrafts", b"playerCrafts", "playerEditsChatMessage", b"playerEditsChatMessage", "playerEntersPortal", b"playerEntersPortal", "playerEntersWhisper", b"playerEntersWhisper", "playerEntersWhisperV2", b"playerEntersWhisperV2", "playerExits", b"playerExits", "playerGhosts", b"playerGhosts", "playerHighFives", b"playerHighFives", "playerInteracts", b"playerInteracts", "playerJoins", b"playerJoins", "playerLeavesWhisper", b"playerLeavesWhisper", "playerMoves", b"playerMoves", "playerNotifies", b"playerNotifies", "playerRequestsToLead", b"playerRequestsToLead", "playerRings", b"playerRings", "playerSendsCommand", b"playerSendsCommand", "playerSetsAffiliation", b"playerSetsAffiliation", "playerSetsAllowScreenPointer", b"playerSetsAllowScreenPointer", "playerSetsAway", b"playerSetsAway", "playerSetsCity", b"playerSetsCity", "playerSetsCountry", b"playerSetsCountry", "playerSetsCurrentArea", b"playerSetsCurrentArea", "playerSetsCurrentDesk", b"playerSetsCurrentDesk", "playerSetsDescription", b"playerSetsDescription", "playerSetsDeskInfo", b"playerSetsDeskInfo", "playerSetsEmojiStatus", b"playerSetsEmojiStatus", "playerSetsEmoteV2", b"playerSetsEmoteV2", "playerSetsEventStatus", b"playerSetsEventStatus", "playerSetsFocusModeEndTime", b"playerSetsFocusModeEndTime", "playerSetsFollowTarget", b"playerSetsFollowTarget", "playerSetsGoKartId", b"playerSetsGoKartId", "playerSetsImagePointer", b"playerSetsImagePointer", "playerSetsInConversation", b"playerSetsInConversation", "playerSetsIsAlone", b"playerSetsIsAlone", "playerSetsIsMobile", b"playerSetsIsMobile", "playerSetsIsNpc", b"playerSetsIsNpc", "playerSetsIsRecordingClient", b"playerSetsIsRecordingClient", "playerSetsIsSignedIn", b"playerSetsIsSignedIn", "playerSetsItemString", b"playerSetsItemString", "playerSetsLastActive", b"playerSetsLastActive", "playerSetsManualVideoSrc", b"playerSetsManualVideoSrc", "playerSetsName", b"playerSetsName", "playerSetsOutfitString", b"playerSetsOutfitString", "playerSetsPersonalImageUrl", b"playerSetsPersonalImageUrl", "playerSetsPhone", b"playerSetsPhone", "playerSetsProfileImageUrl", b"playerSetsProfileImageUrl", "playerSetsPronouns", b"playerSetsPronouns", "playerSetsSpeedModifier", b"playerSetsSpeedModifier", "playerSetsStartDate", b"playerSetsStartDate", "playerSetsStatus", b"playerSetsStatus", "playerSetsSubtitle", b"playerSetsSubtitle", "playerSetsTextStatus", b"playerSetsTextStatus", "playerSetsTimezone", b"playerSetsTimezone", "playerSetsTitle", b"playerSetsTitle", "playerSetsVehicleId", b"playerSetsVehicleId", "playerSetsWorkCondition", b"playerSetsWorkCondition", "playerShootsConfetti", b"playerShootsConfetti", "playerSpotlights", b"playerSpotlights", "playerStartsRecording", b"playerStartsRecording", "playerTriggersInventoryItem", b"playerTriggersInventoryItem", "playerTriggersItem", b"playerTriggersItem", "playerUpdatesFocusModeStatus", b"playerUpdatesFocusModeStatus", "playerUpdatesInventory", b"playerUpdatesInventory", "playerUpdatesSession", b"playerUpdatesSession", "playerWaves", b"playerWaves", "precomputedEnterLocation", b"precomputedEnterLocation", "ready", b"ready", "respawnComplete", b"respawnComplete", "serverHeartbeat", b"serverHeartbeat", "setScreenPointerServer", b"setScreenPointerServer", "spaceIsClosed", b"spaceIsClosed", "spaceOverCapacityDeniesUser", b"spaceOverCapacityDeniesUser", "spaceOverwrites", b"spaceOverwrites", "spacePlaysSound", b"spacePlaysSound", "spaceRegistersCommand", b"spaceRegistersCommand", "spaceSetsCapacity", b"spaceSetsCapacity", "spaceSetsIdMapping", b"spaceSetsIdMapping", "spaceSetsSpaceMembers", b"spaceSetsSpaceMembers", "spaceStopsSound", b"spaceStopsSound", "spaceUpdatesItems", b"spaceUpdatesItems", "speakerUpdatesSession", b"speakerUpdatesSession", "transactionStatus", b"transactionStatus", "warn", b"warn"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["cookieFound", b"cookieFound", "customEvent", b"customEvent", "dynamicGates", b"dynamicGates", "error", b"error", "event", b"event", "fxShakeCamera", b"fxShakeCamera", "fxShakeObject", b"fxShakeObject", "gotRequestMute", b"gotRequestMute", "hipToBeSquare", b"hipToBeSquare", "info", b"info", "mapCommitsChanges", b"mapCommitsChanges", "mapDeleteObject", b"mapDeleteObject", "mapMoveObject", b"mapMoveObject", "mapSetAnnouncer", b"mapSetAnnouncer", "mapSetAreas", b"mapSetAreas", "mapSetAssets", b"mapSetAssets", "mapSetBackgroundImagePath", b"mapSetBackgroundImagePath", "mapSetCollisions", b"mapSetCollisions", "mapSetCollisionsBits", b"mapSetCollisionsBits", "mapSetDecoration", b"mapSetDecoration", "mapSetDescription", b"mapSetDescription", "mapSetDimensions", b"mapSetDimensions", "mapSetEnabledChats", b"mapSetEnabledChats", "mapSetFloors", b"mapSetFloors", "mapSetForegroundImagePath", b"mapSetForegroundImagePath", "mapSetMiniMapImagePath", b"mapSetMiniMapImagePath", "mapSetMuteOnEntry", b"mapSetMuteOnEntry", "mapSetName", b"mapSetName", "mapSetNooks", b"mapSetNooks", "mapSetObjects", b"mapSetObjects", "mapSetPortals", b"mapSetPortals", "mapSetScript", b"mapSetScript", "mapSetSpaces", b"mapSetSpaces", "mapSetSpawn", b"mapSetSpawn", "mapSetSpawns", b"mapSetSpawns", "mapSetSprites", b"mapSetSprites", "mapSetTutorialTasks", b"mapSetTutorialTasks", "mapSetUseDrawnBG", b"mapSetUseDrawnBG", "mapSetWalls", b"mapSetWalls", "playerActivelySpeaks", b"playerActivelySpeaks", "playerBlocks", b"playerBlocks", "playerChats", b"playerChats", "playerCrafts", b"playerCrafts", "playerEditsChatMessage", b"playerEditsChatMessage", "playerEntersPortal", b"playerEntersPortal", "playerEntersWhisper", b"playerEntersWhisper", "playerEntersWhisperV2", b"playerEntersWhisperV2", "playerExits", b"playerExits", "playerGhosts", b"playerGhosts", "playerHighFives", b"playerHighFives", "playerInteracts", b"playerInteracts", "playerJoins", b"playerJoins", "playerLeavesWhisper", b"playerLeavesWhisper", "playerMoves", b"playerMoves", "playerNotifies", b"playerNotifies", "playerRequestsToLead", b"playerRequestsToLead", "playerRings", b"playerRings", "playerSendsCommand", b"playerSendsCommand", "playerSetsAffiliation", b"playerSetsAffiliation", "playerSetsAllowScreenPointer", b"playerSetsAllowScreenPointer", "playerSetsAway", b"playerSetsAway", "playerSetsCity", b"playerSetsCity", "playerSetsCountry", b"playerSetsCountry", "playerSetsCurrentArea", b"playerSetsCurrentArea", "playerSetsCurrentDesk", b"playerSetsCurrentDesk", "playerSetsDescription", b"playerSetsDescription", "playerSetsDeskInfo", b"playerSetsDeskInfo", "playerSetsEmojiStatus", b"playerSetsEmojiStatus", "playerSetsEmoteV2", b"playerSetsEmoteV2", "playerSetsEventStatus", b"playerSetsEventStatus", "playerSetsFocusModeEndTime", b"playerSetsFocusModeEndTime", "playerSetsFollowTarget", b"playerSetsFollowTarget", "playerSetsGoKartId", b"playerSetsGoKartId", "playerSetsImagePointer", b"playerSetsImagePointer", "playerSetsInConversation", b"playerSetsInConversation", "playerSetsIsAlone", b"playerSetsIsAlone", "playerSetsIsMobile", b"playerSetsIsMobile", "playerSetsIsNpc", b"playerSetsIsNpc", "playerSetsIsRecordingClient", b"playerSetsIsRecordingClient", "playerSetsIsSignedIn", b"playerSetsIsSignedIn", "playerSetsItemString", b"playerSetsItemString", "playerSetsLastActive", b"playerSetsLastActive", "playerSetsManualVideoSrc", b"playerSetsManualVideoSrc", "playerSetsName", b"playerSetsName", "playerSetsOutfitString", b"playerSetsOutfitString", "playerSetsPersonalImageUrl", b"playerSetsPersonalImageUrl", "playerSetsPhone", b"playerSetsPhone", "playerSetsProfileImageUrl", b"playerSetsProfileImageUrl", "playerSetsPronouns", b"playerSetsPronouns", "playerSetsSpeedModifier", b"playerSetsSpeedModifier", "playerSetsStartDate", b"playerSetsStartDate", "playerSetsStatus", b"playerSetsStatus", "playerSetsSubtitle", b"playerSetsSubtitle", "playerSetsTextStatus", b"playerSetsTextStatus", "playerSetsTimezone", b"playerSetsTimezone", "playerSetsTitle", b"playerSetsTitle", "playerSetsVehicleId", b"playerSetsVehicleId", "playerSetsWorkCondition", b"playerSetsWorkCondition", "playerShootsConfetti", b"playerShootsConfetti", "playerSpotlights", b"playerSpotlights", "playerStartsRecording", b"playerStartsRecording", "playerTriggersInventoryItem", b"playerTriggersInventoryItem", "playerTriggersItem", b"playerTriggersItem", "playerUpdatesFocusModeStatus", b"playerUpdatesFocusModeStatus", "playerUpdatesInventory", b"playerUpdatesInventory", "playerUpdatesSession", b"playerUpdatesSession", "playerWaves", b"playerWaves", "precomputedEnterLocation", b"precomputedEnterLocation", "ready", b"ready", "respawnComplete", b"respawnComplete", "serverHeartbeat", b"serverHeartbeat", "setScreenPointerServer", b"setScreenPointerServer", "spaceIsClosed", b"spaceIsClosed", "spaceOverCapacityDeniesUser", b"spaceOverCapacityDeniesUser", "spaceOverwrites", b"spaceOverwrites", "spacePlaysSound", b"spacePlaysSound", "spaceRegistersCommand", b"spaceRegistersCommand", "spaceSetsCapacity", b"spaceSetsCapacity", "spaceSetsIdMapping", b"spaceSetsIdMapping", "spaceSetsSpaceMembers", b"spaceSetsSpaceMembers", "spaceStopsSound", b"spaceStopsSound", "spaceUpdatesItems", b"spaceUpdatesItems", "speakerUpdatesSession", b"speakerUpdatesSession", "transactionStatus", b"transactionStatus", "warn", b"warn"]) -> None: ...
-    def WhichOneof(self, oneof_group: typing_extensions.Literal["event", b"event"]) -> typing_extensions.Literal["info", "warn", "error", "ready", "serverHeartbeat", "transactionStatus", "playerMoves", "playerSetsStatus", "playerSpotlights", "playerRings", "playerChats", "playerInteracts", "playerGhosts", "playerEntersWhisper", "playerLeavesWhisper", "playerActivelySpeaks", "playerSetsWorkCondition", "playerSetsName", "playerSetsTextStatus", "playerSetsEmojiStatus", "playerSetsAffiliation", "playerExits", "respawnComplete", "playerSetsOutfitString", "playerSetsIsSignedIn", "spaceOverwrites", "spaceIsClosed", "playerEntersPortal", "spaceSetsIdMapping", "playerSetsLastActive", "playerShootsConfetti", "playerSetsEventStatus", "playerSetsInConversation", "playerSetsCurrentDesk", "playerSetsCurrentArea", "playerSetsImagePointer", "cookieFound", "playerEntersWhisperV2", "playerSetsGoKartId", "mapSetDimensions", "mapSetCollisions", "mapSetBackgroundImagePath", "mapSetForegroundImagePath", "mapSetSprites", "mapSetSpaces", "mapSetSpawns", "mapSetPortals", "mapSetAnnouncer", "mapSetAssets", "mapSetObjects", "mapSetName", "mapSetMuteOnEntry", "mapSetUseDrawnBG", "mapSetWalls", "mapSetFloors", "mapSetAreas", "mapDeleteObject", "mapSetSpawn", "playerSetsIsAlone", "playerJoins", "mapSetEnabledChats", "mapSetDescription", "mapSetDecoration", "mapSetTutorialTasks", "mapSetMiniMapImagePath", "spacePlaysSound", "mapSetScript", "playerSetsIsMobile", "setScreenPointerServer", "playerSetsEmoteV2", "playerSetsFocusModeEndTime", "spaceSetsSpaceMembers", "customEvent", "playerBlocks", "playerUpdatesFocusModeStatus", "playerNotifies", "playerSetsItemString", "playerTriggersItem", "playerSetsFollowTarget", "playerRequestsToLead", "playerSetsManualVideoSrc", "playerSetsIsNpc", "playerSetsSubtitle", "mapCommitsChanges", "playerUpdatesSession", "mapMoveObject", "playerEditsChatMessage", "fxShakeObject", "fxShakeCamera", "playerSendsCommand", "spaceRegistersCommand", "speakerUpdatesSession", "playerUpdatesInventory", "spaceUpdatesItems", "playerSetsVehicleId", "playerSetsSpeedModifier", "playerHighFives", "spaceStopsSound", "hipToBeSquare", "playerCrafts", "playerTriggersInventoryItem", "playerSetsAllowScreenPointer", "precomputedEnterLocation", "gotRequestMute", "playerSetsDeskInfo", "mapSetNooks", "dynamicGates", "playerWaves", "playerSetsPronouns", "playerSetsTitle", "playerSetsTimezone", "playerSetsDescription", "playerSetsPhone", "playerSetsPersonalImageUrl", "playerSetsProfileImageUrl", "spaceSetsCapacity", "spaceOverCapacityDeniesUser", "playerSetsAway", "mapSetCollisionsBits", "playerSetsCity", "playerSetsCountry", "playerSetsStartDate", "playerSetsIsRecordingClient", "playerStartsRecording"] | None: ...
+    def HasField(self, field_name: typing_extensions.Literal["accessRequestRespondedTo", b"accessRequestRespondedTo", "accessRequestsUpdated", b"accessRequestsUpdated", "chimeSetsUserInfo", b"chimeSetsUserInfo", "cookieFound", b"cookieFound", "customEvent", b"customEvent", "dynamicGates", b"dynamicGates", "error", b"error", "event", b"event", "fxShakeCamera", b"fxShakeCamera", "fxShakeObject", b"fxShakeObject", "gotRequestMute", b"gotRequestMute", "hipToBeSquare", b"hipToBeSquare", "info", b"info", "mapCommitsChanges", b"mapCommitsChanges", "mapDeleteObjectByKey", b"mapDeleteObjectByKey", "mapMoveObject", b"mapMoveObject", "mapSetAnnouncer", b"mapSetAnnouncer", "mapSetAreas", b"mapSetAreas", "mapSetAssets", b"mapSetAssets", "mapSetBackgroundImagePath", b"mapSetBackgroundImagePath", "mapSetCollisionsBits", b"mapSetCollisionsBits", "mapSetDecoration", b"mapSetDecoration", "mapSetDescription", b"mapSetDescription", "mapSetDimensions", b"mapSetDimensions", "mapSetEnabledChats", b"mapSetEnabledChats", "mapSetFloors", b"mapSetFloors", "mapSetForegroundImagePath", b"mapSetForegroundImagePath", "mapSetMiniMapImagePath", b"mapSetMiniMapImagePath", "mapSetMuteOnEntry", b"mapSetMuteOnEntry", "mapSetName", b"mapSetName", "mapSetNooks", b"mapSetNooks", "mapSetObjectsV2", b"mapSetObjectsV2", "mapSetPortals", b"mapSetPortals", "mapSetScript", b"mapSetScript", "mapSetSpawn", b"mapSetSpawn", "mapSetSpawns", b"mapSetSpawns", "mapSetTutorialTasks", b"mapSetTutorialTasks", "mapSetUseDrawnBG", b"mapSetUseDrawnBG", "mapSetWalls", b"mapSetWalls", "playerActivelySpeaks", b"playerActivelySpeaks", "playerBlocks", b"playerBlocks", "playerChats", b"playerChats", "playerCrafts", b"playerCrafts", "playerEditsChatMessage", b"playerEditsChatMessage", "playerEntersPortal", b"playerEntersPortal", "playerEntersWhisper", b"playerEntersWhisper", "playerEntersWhisperV2", b"playerEntersWhisperV2", "playerExits", b"playerExits", "playerGhosts", b"playerGhosts", "playerHighFives", b"playerHighFives", "playerInteractsWithObject", b"playerInteractsWithObject", "playerJoins", b"playerJoins", "playerLeavesWhisper", b"playerLeavesWhisper", "playerMoves", b"playerMoves", "playerNotifies", b"playerNotifies", "playerRequestsToLead", b"playerRequestsToLead", "playerRings", b"playerRings", "playerSendsCommand", b"playerSendsCommand", "playerSetsAffiliation", b"playerSetsAffiliation", "playerSetsAllowScreenPointer", b"playerSetsAllowScreenPointer", "playerSetsAvailability", b"playerSetsAvailability", "playerSetsAway", b"playerSetsAway", "playerSetsCity", b"playerSetsCity", "playerSetsCountry", b"playerSetsCountry", "playerSetsCurrentArea", b"playerSetsCurrentArea", "playerSetsCurrentlyEquippedWearables", b"playerSetsCurrentlyEquippedWearables", "playerSetsDescription", b"playerSetsDescription", "playerSetsDeskInfo", b"playerSetsDeskInfo", "playerSetsDisplayEmail", b"playerSetsDisplayEmail", "playerSetsEmojiStatus", b"playerSetsEmojiStatus", "playerSetsEmoteV2", b"playerSetsEmoteV2", "playerSetsEventStatus", b"playerSetsEventStatus", "playerSetsFocusModeEndTime", b"playerSetsFocusModeEndTime", "playerSetsFollowTarget", b"playerSetsFollowTarget", "playerSetsGoKartId", b"playerSetsGoKartId", "playerSetsImagePointer", b"playerSetsImagePointer", "playerSetsInConversation", b"playerSetsInConversation", "playerSetsIsAlone", b"playerSetsIsAlone", "playerSetsIsMobile", b"playerSetsIsMobile", "playerSetsIsNpc", b"playerSetsIsNpc", "playerSetsIsSignedIn", b"playerSetsIsSignedIn", "playerSetsItemString", b"playerSetsItemString", "playerSetsLastActive", b"playerSetsLastActive", "playerSetsLastRaisedHand", b"playerSetsLastRaisedHand", "playerSetsManualVideoSrc", b"playerSetsManualVideoSrc", "playerSetsName", b"playerSetsName", "playerSetsPersonalImageUrl", b"playerSetsPersonalImageUrl", "playerSetsPhone", b"playerSetsPhone", "playerSetsProfileImageUrl", b"playerSetsProfileImageUrl", "playerSetsPronouns", b"playerSetsPronouns", "playerSetsSpeedModifier", b"playerSetsSpeedModifier", "playerSetsStartDate", b"playerSetsStartDate", "playerSetsStatus", b"playerSetsStatus", "playerSetsSubtitle", b"playerSetsSubtitle", "playerSetsTextStatus", b"playerSetsTextStatus", "playerSetsTimezone", b"playerSetsTimezone", "playerSetsTitle", b"playerSetsTitle", "playerSetsVehicleId", b"playerSetsVehicleId", "playerShootsConfetti", b"playerShootsConfetti", "playerSpotlights", b"playerSpotlights", "playerStartsRecording", b"playerStartsRecording", "playerTriggersInventoryItem", b"playerTriggersInventoryItem", "playerTriggersObject", b"playerTriggersObject", "playerUpdatesFocusModeStatus", b"playerUpdatesFocusModeStatus", "playerUpdatesInventory", b"playerUpdatesInventory", "playerWaves", b"playerWaves", "precomputedEnterLocation", b"precomputedEnterLocation", "ready", b"ready", "serverHeartbeat", b"serverHeartbeat", "setScreenPointerServer", b"setScreenPointerServer", "spaceIsClosed", b"spaceIsClosed", "spaceOverCapacityDeniesUser", b"spaceOverCapacityDeniesUser", "spaceOverwrites", b"spaceOverwrites", "spacePlaysSound", b"spacePlaysSound", "spaceRegistersCommand", b"spaceRegistersCommand", "spaceRolePermissionOverrideUpdated", b"spaceRolePermissionOverrideUpdated", "spaceSetsCapacity", b"spaceSetsCapacity", "spaceSetsGuestPassStatuses", b"spaceSetsGuestPassStatuses", "spaceSetsIdMapping", b"spaceSetsIdMapping", "spaceSetsSpaceMembers", b"spaceSetsSpaceMembers", "spaceSetsSpaceUsers", b"spaceSetsSpaceUsers", "spaceStopsSound", b"spaceStopsSound", "spaceUpdatesItems", b"spaceUpdatesItems", "speakerUpdatesSession", b"speakerUpdatesSession", "subscriptionsUpdated", b"subscriptionsUpdated", "transactionStatus", b"transactionStatus", "warn", b"warn"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["accessRequestRespondedTo", b"accessRequestRespondedTo", "accessRequestsUpdated", b"accessRequestsUpdated", "chimeSetsUserInfo", b"chimeSetsUserInfo", "cookieFound", b"cookieFound", "customEvent", b"customEvent", "dynamicGates", b"dynamicGates", "error", b"error", "event", b"event", "fxShakeCamera", b"fxShakeCamera", "fxShakeObject", b"fxShakeObject", "gotRequestMute", b"gotRequestMute", "hipToBeSquare", b"hipToBeSquare", "info", b"info", "mapCommitsChanges", b"mapCommitsChanges", "mapDeleteObjectByKey", b"mapDeleteObjectByKey", "mapMoveObject", b"mapMoveObject", "mapSetAnnouncer", b"mapSetAnnouncer", "mapSetAreas", b"mapSetAreas", "mapSetAssets", b"mapSetAssets", "mapSetBackgroundImagePath", b"mapSetBackgroundImagePath", "mapSetCollisionsBits", b"mapSetCollisionsBits", "mapSetDecoration", b"mapSetDecoration", "mapSetDescription", b"mapSetDescription", "mapSetDimensions", b"mapSetDimensions", "mapSetEnabledChats", b"mapSetEnabledChats", "mapSetFloors", b"mapSetFloors", "mapSetForegroundImagePath", b"mapSetForegroundImagePath", "mapSetMiniMapImagePath", b"mapSetMiniMapImagePath", "mapSetMuteOnEntry", b"mapSetMuteOnEntry", "mapSetName", b"mapSetName", "mapSetNooks", b"mapSetNooks", "mapSetObjectsV2", b"mapSetObjectsV2", "mapSetPortals", b"mapSetPortals", "mapSetScript", b"mapSetScript", "mapSetSpawn", b"mapSetSpawn", "mapSetSpawns", b"mapSetSpawns", "mapSetTutorialTasks", b"mapSetTutorialTasks", "mapSetUseDrawnBG", b"mapSetUseDrawnBG", "mapSetWalls", b"mapSetWalls", "playerActivelySpeaks", b"playerActivelySpeaks", "playerBlocks", b"playerBlocks", "playerChats", b"playerChats", "playerCrafts", b"playerCrafts", "playerEditsChatMessage", b"playerEditsChatMessage", "playerEntersPortal", b"playerEntersPortal", "playerEntersWhisper", b"playerEntersWhisper", "playerEntersWhisperV2", b"playerEntersWhisperV2", "playerExits", b"playerExits", "playerGhosts", b"playerGhosts", "playerHighFives", b"playerHighFives", "playerInteractsWithObject", b"playerInteractsWithObject", "playerJoins", b"playerJoins", "playerLeavesWhisper", b"playerLeavesWhisper", "playerMoves", b"playerMoves", "playerNotifies", b"playerNotifies", "playerRequestsToLead", b"playerRequestsToLead", "playerRings", b"playerRings", "playerSendsCommand", b"playerSendsCommand", "playerSetsAffiliation", b"playerSetsAffiliation", "playerSetsAllowScreenPointer", b"playerSetsAllowScreenPointer", "playerSetsAvailability", b"playerSetsAvailability", "playerSetsAway", b"playerSetsAway", "playerSetsCity", b"playerSetsCity", "playerSetsCountry", b"playerSetsCountry", "playerSetsCurrentArea", b"playerSetsCurrentArea", "playerSetsCurrentlyEquippedWearables", b"playerSetsCurrentlyEquippedWearables", "playerSetsDescription", b"playerSetsDescription", "playerSetsDeskInfo", b"playerSetsDeskInfo", "playerSetsDisplayEmail", b"playerSetsDisplayEmail", "playerSetsEmojiStatus", b"playerSetsEmojiStatus", "playerSetsEmoteV2", b"playerSetsEmoteV2", "playerSetsEventStatus", b"playerSetsEventStatus", "playerSetsFocusModeEndTime", b"playerSetsFocusModeEndTime", "playerSetsFollowTarget", b"playerSetsFollowTarget", "playerSetsGoKartId", b"playerSetsGoKartId", "playerSetsImagePointer", b"playerSetsImagePointer", "playerSetsInConversation", b"playerSetsInConversation", "playerSetsIsAlone", b"playerSetsIsAlone", "playerSetsIsMobile", b"playerSetsIsMobile", "playerSetsIsNpc", b"playerSetsIsNpc", "playerSetsIsSignedIn", b"playerSetsIsSignedIn", "playerSetsItemString", b"playerSetsItemString", "playerSetsLastActive", b"playerSetsLastActive", "playerSetsLastRaisedHand", b"playerSetsLastRaisedHand", "playerSetsManualVideoSrc", b"playerSetsManualVideoSrc", "playerSetsName", b"playerSetsName", "playerSetsPersonalImageUrl", b"playerSetsPersonalImageUrl", "playerSetsPhone", b"playerSetsPhone", "playerSetsProfileImageUrl", b"playerSetsProfileImageUrl", "playerSetsPronouns", b"playerSetsPronouns", "playerSetsSpeedModifier", b"playerSetsSpeedModifier", "playerSetsStartDate", b"playerSetsStartDate", "playerSetsStatus", b"playerSetsStatus", "playerSetsSubtitle", b"playerSetsSubtitle", "playerSetsTextStatus", b"playerSetsTextStatus", "playerSetsTimezone", b"playerSetsTimezone", "playerSetsTitle", b"playerSetsTitle", "playerSetsVehicleId", b"playerSetsVehicleId", "playerShootsConfetti", b"playerShootsConfetti", "playerSpotlights", b"playerSpotlights", "playerStartsRecording", b"playerStartsRecording", "playerTriggersInventoryItem", b"playerTriggersInventoryItem", "playerTriggersObject", b"playerTriggersObject", "playerUpdatesFocusModeStatus", b"playerUpdatesFocusModeStatus", "playerUpdatesInventory", b"playerUpdatesInventory", "playerWaves", b"playerWaves", "precomputedEnterLocation", b"precomputedEnterLocation", "ready", b"ready", "serverHeartbeat", b"serverHeartbeat", "setScreenPointerServer", b"setScreenPointerServer", "spaceIsClosed", b"spaceIsClosed", "spaceOverCapacityDeniesUser", b"spaceOverCapacityDeniesUser", "spaceOverwrites", b"spaceOverwrites", "spacePlaysSound", b"spacePlaysSound", "spaceRegistersCommand", b"spaceRegistersCommand", "spaceRolePermissionOverrideUpdated", b"spaceRolePermissionOverrideUpdated", "spaceSetsCapacity", b"spaceSetsCapacity", "spaceSetsGuestPassStatuses", b"spaceSetsGuestPassStatuses", "spaceSetsIdMapping", b"spaceSetsIdMapping", "spaceSetsSpaceMembers", b"spaceSetsSpaceMembers", "spaceSetsSpaceUsers", b"spaceSetsSpaceUsers", "spaceStopsSound", b"spaceStopsSound", "spaceUpdatesItems", b"spaceUpdatesItems", "speakerUpdatesSession", b"speakerUpdatesSession", "subscriptionsUpdated", b"subscriptionsUpdated", "transactionStatus", b"transactionStatus", "warn", b"warn"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing_extensions.Literal["event", b"event"]) -> typing_extensions.Literal["info", "warn", "error", "ready", "serverHeartbeat", "transactionStatus", "playerMoves", "playerSetsStatus", "playerSpotlights", "playerRings", "playerChats", "playerGhosts", "playerEntersWhisper", "playerLeavesWhisper", "playerActivelySpeaks", "playerSetsName", "playerSetsTextStatus", "playerSetsEmojiStatus", "playerSetsAffiliation", "playerExits", "playerSetsIsSignedIn", "spaceOverwrites", "spaceIsClosed", "playerEntersPortal", "spaceSetsIdMapping", "playerSetsLastActive", "playerShootsConfetti", "playerSetsEventStatus", "playerSetsInConversation", "playerSetsCurrentArea", "playerSetsImagePointer", "cookieFound", "playerEntersWhisperV2", "playerSetsGoKartId", "mapSetDimensions", "mapSetBackgroundImagePath", "mapSetForegroundImagePath", "mapSetSpawns", "mapSetPortals", "mapSetAnnouncer", "mapSetAssets", "mapSetName", "mapSetMuteOnEntry", "mapSetUseDrawnBG", "mapSetWalls", "mapSetFloors", "mapSetAreas", "mapSetSpawn", "playerSetsIsAlone", "playerJoins", "mapSetEnabledChats", "mapSetDescription", "mapSetDecoration", "mapSetTutorialTasks", "mapSetMiniMapImagePath", "spacePlaysSound", "mapSetScript", "playerSetsIsMobile", "setScreenPointerServer", "playerSetsEmoteV2", "playerSetsFocusModeEndTime", "spaceSetsSpaceMembers", "spaceSetsSpaceUsers", "customEvent", "playerBlocks", "playerUpdatesFocusModeStatus", "playerNotifies", "playerSetsItemString", "playerSetsFollowTarget", "playerRequestsToLead", "playerSetsManualVideoSrc", "playerSetsIsNpc", "playerSetsSubtitle", "mapCommitsChanges", "mapMoveObject", "playerEditsChatMessage", "fxShakeObject", "fxShakeCamera", "playerSendsCommand", "spaceRegistersCommand", "speakerUpdatesSession", "playerUpdatesInventory", "spaceUpdatesItems", "playerSetsVehicleId", "playerSetsSpeedModifier", "playerHighFives", "spaceStopsSound", "hipToBeSquare", "playerCrafts", "playerTriggersInventoryItem", "playerSetsAllowScreenPointer", "precomputedEnterLocation", "gotRequestMute", "playerSetsDeskInfo", "mapSetNooks", "dynamicGates", "playerWaves", "playerSetsPronouns", "playerSetsTitle", "playerSetsTimezone", "playerSetsDescription", "playerSetsPhone", "playerSetsPersonalImageUrl", "playerSetsProfileImageUrl", "spaceSetsCapacity", "spaceOverCapacityDeniesUser", "playerSetsAway", "mapSetCollisionsBits", "playerSetsCity", "playerSetsCountry", "playerSetsStartDate", "playerStartsRecording", "accessRequestsUpdated", "accessRequestRespondedTo", "spaceSetsGuestPassStatuses", "playerSetsAvailability", "subscriptionsUpdated", "spaceRolePermissionOverrideUpdated", "playerSetsLastRaisedHand", "playerSetsCurrentlyEquippedWearables", "playerSetsDisplayEmail", "mapDeleteObjectByKey", "mapSetObjectsV2", "playerInteractsWithObject", "playerTriggersObject", "chimeSetsUserInfo"] | None: ...
 
 global___ServerClientEvent = ServerClientEvent
 
 @typing_extensions.final
-class ServerHeartbeat(google.protobuf.message.Message):
-    """                                            (see top of file for how to safely make changes)"""
+class SubscriptionsUpdated(google.protobuf.message.Message):
+    """                                            (see top of file for how to safely make changes)
 
+    the events the client is subscribed to has been changed on the server
+    """
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    SUBSCRIPTIONS_FIELD_NUMBER: builtins.int
+    @property
+    def subscriptions(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """array of event names the client will be notified about"""
+    def __init__(
+        self,
+        *,
+        subscriptions: collections.abc.Iterable[builtins.str] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["subscriptions", b"subscriptions"]) -> None: ...
+
+global___SubscriptionsUpdated = SubscriptionsUpdated
+
+@typing_extensions.final
+class ServerHeartbeat(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     LASTRTT_FIELD_NUMBER: builtins.int
     lastRTT: builtins.int
-    """deprecating"""
+    """no longer used"""
     def __init__(
         self,
         *,
@@ -2924,6 +2919,35 @@ class PlayerSetsStatus(google.protobuf.message.Message):
 global___PlayerSetsStatus = PlayerSetsStatus
 
 @typing_extensions.final
+class PlayerSetsAvailability(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    ENCID_FIELD_NUMBER: builtins.int
+    STATUS_FIELD_NUMBER: builtins.int
+    STATUSUPDATEDAT_FIELD_NUMBER: builtins.int
+    STATUSENDOPTION_FIELD_NUMBER: builtins.int
+    encId: builtins.int
+    status: builtins.str
+    statusUpdatedAt: builtins.str
+    statusEndOption: builtins.str
+    def __init__(
+        self,
+        *,
+        encId: builtins.int = ...,
+        status: builtins.str = ...,
+        statusUpdatedAt: builtins.str | None = ...,
+        statusEndOption: builtins.str | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["_statusEndOption", b"_statusEndOption", "_statusUpdatedAt", b"_statusUpdatedAt", "statusEndOption", b"statusEndOption", "statusUpdatedAt", b"statusUpdatedAt"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["_statusEndOption", b"_statusEndOption", "_statusUpdatedAt", b"_statusUpdatedAt", "encId", b"encId", "status", b"status", "statusEndOption", b"statusEndOption", "statusUpdatedAt", b"statusUpdatedAt"]) -> None: ...
+    @typing.overload
+    def WhichOneof(self, oneof_group: typing_extensions.Literal["_statusEndOption", b"_statusEndOption"]) -> typing_extensions.Literal["statusEndOption"] | None: ...
+    @typing.overload
+    def WhichOneof(self, oneof_group: typing_extensions.Literal["_statusUpdatedAt", b"_statusUpdatedAt"]) -> typing_extensions.Literal["statusUpdatedAt"] | None: ...
+
+global___PlayerSetsAvailability = PlayerSetsAvailability
+
+@typing_extensions.final
 class PlayerSpotlights(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -3034,7 +3058,7 @@ class PlayerChats(google.protobuf.message.Message):
     senderName: builtins.str
     @property
     def timestamp(self) -> global___Timestamp:
-        """deprecating"""
+        """deprecating (NGN-710)"""
     messageType: builtins.str
     unixTime: builtins.float
     id: builtins.str
@@ -3094,7 +3118,7 @@ global___PlayerWaves = PlayerWaves
 
 @typing_extensions.final
 class Timestamp(google.protobuf.message.Message):
-    """deprecating this"""
+    """deprecating this (NGN-710)"""
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -3113,34 +3137,31 @@ class Timestamp(google.protobuf.message.Message):
 global___Timestamp = Timestamp
 
 @typing_extensions.final
-class PlayerInteracts(google.protobuf.message.Message):
+class PlayerInteractsWithObject(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     ENCID_FIELD_NUMBER: builtins.int
-    OBJID_FIELD_NUMBER: builtins.int
     MAPID_FIELD_NUMBER: builtins.int
+    KEY_FIELD_NUMBER: builtins.int
     DATAJSON_FIELD_NUMBER: builtins.int
     encId: builtins.int
-    objId: builtins.str
     mapId: builtins.str
+    key: builtins.str
     dataJson: builtins.str
     """JSON string"""
     def __init__(
         self,
         *,
         encId: builtins.int = ...,
-        objId: builtins.str = ...,
-        mapId: builtins.str | None = ...,
+        mapId: builtins.str = ...,
+        key: builtins.str = ...,
         dataJson: builtins.str | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["_dataJson", b"_dataJson", "_mapId", b"_mapId", "dataJson", b"dataJson", "mapId", b"mapId"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["_dataJson", b"_dataJson", "_mapId", b"_mapId", "dataJson", b"dataJson", "encId", b"encId", "mapId", b"mapId", "objId", b"objId"]) -> None: ...
-    @typing.overload
+    def HasField(self, field_name: typing_extensions.Literal["_dataJson", b"_dataJson", "dataJson", b"dataJson"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["_dataJson", b"_dataJson", "dataJson", b"dataJson", "encId", b"encId", "key", b"key", "mapId", b"mapId"]) -> None: ...
     def WhichOneof(self, oneof_group: typing_extensions.Literal["_dataJson", b"_dataJson"]) -> typing_extensions.Literal["dataJson"] | None: ...
-    @typing.overload
-    def WhichOneof(self, oneof_group: typing_extensions.Literal["_mapId", b"_mapId"]) -> typing_extensions.Literal["mapId"] | None: ...
 
-global___PlayerInteracts = PlayerInteracts
+global___PlayerInteractsWithObject = PlayerInteractsWithObject
 
 @typing_extensions.final
 class PlayerGhosts(google.protobuf.message.Message):
@@ -3263,22 +3284,22 @@ class PlayerSetsEmoteV2(google.protobuf.message.Message):
 global___PlayerSetsEmoteV2 = PlayerSetsEmoteV2
 
 @typing_extensions.final
-class PlayerSetsWorkCondition(google.protobuf.message.Message):
+class PlayerSetsLastRaisedHand(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     ENCID_FIELD_NUMBER: builtins.int
-    WORKCONDITION_FIELD_NUMBER: builtins.int
+    LASTRAISEDHAND_FIELD_NUMBER: builtins.int
     encId: builtins.int
-    workCondition: builtins.int
+    lastRaisedHand: builtins.str
     def __init__(
         self,
         *,
         encId: builtins.int = ...,
-        workCondition: builtins.int = ...,
+        lastRaisedHand: builtins.str = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["encId", b"encId", "workCondition", b"workCondition"]) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["encId", b"encId", "lastRaisedHand", b"lastRaisedHand"]) -> None: ...
 
-global___PlayerSetsWorkCondition = PlayerSetsWorkCondition
+global___PlayerSetsLastRaisedHand = PlayerSetsLastRaisedHand
 
 @typing_extensions.final
 class PlayerSetsLastActive(google.protobuf.message.Message):
@@ -3461,6 +3482,24 @@ class PlayerSetsPhone(google.protobuf.message.Message):
 global___PlayerSetsPhone = PlayerSetsPhone
 
 @typing_extensions.final
+class PlayerSetsDisplayEmail(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    ENCID_FIELD_NUMBER: builtins.int
+    DISPLAYEMAIL_FIELD_NUMBER: builtins.int
+    encId: builtins.int
+    displayEmail: builtins.str
+    def __init__(
+        self,
+        *,
+        encId: builtins.int = ...,
+        displayEmail: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["displayEmail", b"displayEmail", "encId", b"encId"]) -> None: ...
+
+global___PlayerSetsDisplayEmail = PlayerSetsDisplayEmail
+
+@typing_extensions.final
 class PlayerSetsDescription(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -3584,22 +3623,24 @@ class PlayerExits(google.protobuf.message.Message):
 global___PlayerExits = PlayerExits
 
 @typing_extensions.final
-class PlayerSetsOutfitString(google.protobuf.message.Message):
+class PlayerSetsCurrentlyEquippedWearables(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     ENCID_FIELD_NUMBER: builtins.int
-    OUTFITSTRING_FIELD_NUMBER: builtins.int
+    CURRENTLYEQUIPPEDWEARABLES_FIELD_NUMBER: builtins.int
     encId: builtins.int
-    outfitString: builtins.str
+    @property
+    def currentlyEquippedWearables(self) -> global___DBOutfit: ...
     def __init__(
         self,
         *,
         encId: builtins.int = ...,
-        outfitString: builtins.str = ...,
+        currentlyEquippedWearables: global___DBOutfit | None = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["encId", b"encId", "outfitString", b"outfitString"]) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["currentlyEquippedWearables", b"currentlyEquippedWearables"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["currentlyEquippedWearables", b"currentlyEquippedWearables", "encId", b"encId"]) -> None: ...
 
-global___PlayerSetsOutfitString = PlayerSetsOutfitString
+global___PlayerSetsCurrentlyEquippedWearables = PlayerSetsCurrentlyEquippedWearables
 
 @typing_extensions.final
 class PlayerSetsIsSignedIn(google.protobuf.message.Message):
@@ -3620,20 +3661,10 @@ class PlayerSetsIsSignedIn(google.protobuf.message.Message):
 global___PlayerSetsIsSignedIn = PlayerSetsIsSignedIn
 
 @typing_extensions.final
-class RespawnComplete(google.protobuf.message.Message):
-    """                                            (see top of file for how to safely make changes)"""
-
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    def __init__(
-        self,
-    ) -> None: ...
-
-global___RespawnComplete = RespawnComplete
-
-@typing_extensions.final
 class SpaceOverwrites(google.protobuf.message.Message):
-    """It's pretty wack that we're using JSON to serialize / deserialize space data here.
+    """                                            (see top of file for how to safely make changes)
+
+    It's pretty wack that we're using JSON to serialize / deserialize space data here.
     TODO: improve this by splitting this up into several events or using a better message interface
     for this or something that doesn't require the client to JSON.parse().
     """
@@ -3657,17 +3688,28 @@ class DynamicGate(google.protobuf.message.Message):
 
     EXPOSURE_FIELD_NUMBER: builtins.int
     SPACES_FIELD_NUMBER: builtins.int
+    REFRESHONCHANGE_FIELD_NUMBER: builtins.int
+    MINIMUMBUILDTIMESTAMP_FIELD_NUMBER: builtins.int
     exposure: builtins.float
     @property
     def spaces(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
         """to hardcode a list of spaces that should have it on"""
+    refreshOnChange: builtins.bool
+    minimumBuildTimestamp: builtins.int
     def __init__(
         self,
         *,
         exposure: builtins.float = ...,
         spaces: collections.abc.Iterable[builtins.str] | None = ...,
+        refreshOnChange: builtins.bool | None = ...,
+        minimumBuildTimestamp: builtins.int | None = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["exposure", b"exposure", "spaces", b"spaces"]) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["_minimumBuildTimestamp", b"_minimumBuildTimestamp", "_refreshOnChange", b"_refreshOnChange", "minimumBuildTimestamp", b"minimumBuildTimestamp", "refreshOnChange", b"refreshOnChange"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["_minimumBuildTimestamp", b"_minimumBuildTimestamp", "_refreshOnChange", b"_refreshOnChange", "exposure", b"exposure", "minimumBuildTimestamp", b"minimumBuildTimestamp", "refreshOnChange", b"refreshOnChange", "spaces", b"spaces"]) -> None: ...
+    @typing.overload
+    def WhichOneof(self, oneof_group: typing_extensions.Literal["_minimumBuildTimestamp", b"_minimumBuildTimestamp"]) -> typing_extensions.Literal["minimumBuildTimestamp"] | None: ...
+    @typing.overload
+    def WhichOneof(self, oneof_group: typing_extensions.Literal["_refreshOnChange", b"_refreshOnChange"]) -> typing_extensions.Literal["refreshOnChange"] | None: ...
 
 global___DynamicGate = DynamicGate
 
@@ -3676,16 +3718,40 @@ class DynamicGates(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     LIVEKITENABLED_FIELD_NUMBER: builtins.int
+    LIVEKITSELFHOSTENABLED_FIELD_NUMBER: builtins.int
+    AGORAENABLED_FIELD_NUMBER: builtins.int
+    CHIMEENABLED_FIELD_NUMBER: builtins.int
+    GATHERENABLED_FIELD_NUMBER: builtins.int
     @property
-    def livekitEnabled(self) -> global___DynamicGate:
+    def livekitEnabled(self) -> global___DynamicGate: ...
+    @property
+    def livekitSelfhostEnabled(self) -> global___DynamicGate: ...
+    @property
+    def agoraEnabled(self) -> global___DynamicGate: ...
+    @property
+    def chimeEnabled(self) -> global___DynamicGate: ...
+    @property
+    def gatherEnabled(self) -> global___DynamicGate:
         """BEFORE ADDING MORE OF THESE, DO A PROPER DESIGN AND RFC PLEASE!"""
     def __init__(
         self,
         *,
         livekitEnabled: global___DynamicGate | None = ...,
+        livekitSelfhostEnabled: global___DynamicGate | None = ...,
+        agoraEnabled: global___DynamicGate | None = ...,
+        chimeEnabled: global___DynamicGate | None = ...,
+        gatherEnabled: global___DynamicGate | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["livekitEnabled", b"livekitEnabled"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["livekitEnabled", b"livekitEnabled"]) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["_agoraEnabled", b"_agoraEnabled", "_chimeEnabled", b"_chimeEnabled", "_gatherEnabled", b"_gatherEnabled", "_livekitSelfhostEnabled", b"_livekitSelfhostEnabled", "agoraEnabled", b"agoraEnabled", "chimeEnabled", b"chimeEnabled", "gatherEnabled", b"gatherEnabled", "livekitEnabled", b"livekitEnabled", "livekitSelfhostEnabled", b"livekitSelfhostEnabled"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["_agoraEnabled", b"_agoraEnabled", "_chimeEnabled", b"_chimeEnabled", "_gatherEnabled", b"_gatherEnabled", "_livekitSelfhostEnabled", b"_livekitSelfhostEnabled", "agoraEnabled", b"agoraEnabled", "chimeEnabled", b"chimeEnabled", "gatherEnabled", b"gatherEnabled", "livekitEnabled", b"livekitEnabled", "livekitSelfhostEnabled", b"livekitSelfhostEnabled"]) -> None: ...
+    @typing.overload
+    def WhichOneof(self, oneof_group: typing_extensions.Literal["_agoraEnabled", b"_agoraEnabled"]) -> typing_extensions.Literal["agoraEnabled"] | None: ...
+    @typing.overload
+    def WhichOneof(self, oneof_group: typing_extensions.Literal["_chimeEnabled", b"_chimeEnabled"]) -> typing_extensions.Literal["chimeEnabled"] | None: ...
+    @typing.overload
+    def WhichOneof(self, oneof_group: typing_extensions.Literal["_gatherEnabled", b"_gatherEnabled"]) -> typing_extensions.Literal["gatherEnabled"] | None: ...
+    @typing.overload
+    def WhichOneof(self, oneof_group: typing_extensions.Literal["_livekitSelfhostEnabled", b"_livekitSelfhostEnabled"]) -> typing_extensions.Literal["livekitSelfhostEnabled"] | None: ...
 
 global___DynamicGates = DynamicGates
 
@@ -3722,6 +3788,56 @@ class SpaceSetsSpaceMembers(google.protobuf.message.Message):
     def ClearField(self, field_name: typing_extensions.Literal["members", b"members"]) -> None: ...
 
 global___SpaceSetsSpaceMembers = SpaceSetsSpaceMembers
+
+@typing_extensions.final
+class WireSpaceUser(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    ROLE_FIELD_NUMBER: builtins.int
+    role: builtins.str
+    """role should be CoreRole, but we can't do string enums in protobuf"""
+    def __init__(
+        self,
+        *,
+        role: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["role", b"role"]) -> None: ...
+
+global___WireSpaceUser = WireSpaceUser
+
+@typing_extensions.final
+class SpaceSetsSpaceUsers(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    @typing_extensions.final
+    class SpaceUsersEntry(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        KEY_FIELD_NUMBER: builtins.int
+        VALUE_FIELD_NUMBER: builtins.int
+        key: builtins.str
+        @property
+        def value(self) -> global___WireSpaceUser: ...
+        def __init__(
+            self,
+            *,
+            key: builtins.str = ...,
+            value: global___WireSpaceUser | None = ...,
+        ) -> None: ...
+        def HasField(self, field_name: typing_extensions.Literal["value", b"value"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing_extensions.Literal["key", b"key", "value", b"value"]) -> None: ...
+
+    SPACEUSERS_FIELD_NUMBER: builtins.int
+    @property
+    def spaceUsers(self) -> google.protobuf.internal.containers.MessageMap[builtins.str, global___WireSpaceUser]: ...
+    def __init__(
+        self,
+        *,
+        spaceUsers: collections.abc.Mapping[builtins.str, global___WireSpaceUser] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["spaceUsers", b"spaceUsers"]) -> None: ...
+
+global___SpaceSetsSpaceUsers = SpaceSetsSpaceUsers
 
 @typing_extensions.final
 class SpaceIsClosed(google.protobuf.message.Message):
@@ -3845,24 +3961,6 @@ class PlayerSetsInConversation(google.protobuf.message.Message):
     def ClearField(self, field_name: typing_extensions.Literal["encId", b"encId", "inConversation", b"inConversation"]) -> None: ...
 
 global___PlayerSetsInConversation = PlayerSetsInConversation
-
-@typing_extensions.final
-class PlayerSetsCurrentDesk(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    ENCID_FIELD_NUMBER: builtins.int
-    CURRENTDESK_FIELD_NUMBER: builtins.int
-    encId: builtins.int
-    currentDesk: builtins.str
-    def __init__(
-        self,
-        *,
-        encId: builtins.int = ...,
-        currentDesk: builtins.str = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["currentDesk", b"currentDesk", "encId", b"encId"]) -> None: ...
-
-global___PlayerSetsCurrentDesk = PlayerSetsCurrentDesk
 
 @typing_extensions.final
 class PlayerSetsCurrentArea(google.protobuf.message.Message):
@@ -4084,30 +4182,31 @@ class PlayerSetsItemString(google.protobuf.message.Message):
 global___PlayerSetsItemString = PlayerSetsItemString
 
 @typing_extensions.final
-class PlayerTriggersItem(google.protobuf.message.Message):
+class PlayerTriggersObject(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     ENCID_FIELD_NUMBER: builtins.int
-    CLOSESTOBJECT_FIELD_NUMBER: builtins.int
-    CLOSESTOBJECTTEMPLATE_FIELD_NUMBER: builtins.int
+    MAPID_FIELD_NUMBER: builtins.int
+    KEY_FIELD_NUMBER: builtins.int
     encId: builtins.int
-    closestObject: builtins.str
-    closestObjectTemplate: builtins.str
+    mapId: builtins.str
+    """mapId and key are optional because the same action is used (with empty data) to drop the thing you're carrying"""
+    key: builtins.str
     def __init__(
         self,
         *,
         encId: builtins.int = ...,
-        closestObject: builtins.str | None = ...,
-        closestObjectTemplate: builtins.str | None = ...,
+        mapId: builtins.str | None = ...,
+        key: builtins.str | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["_closestObject", b"_closestObject", "_closestObjectTemplate", b"_closestObjectTemplate", "closestObject", b"closestObject", "closestObjectTemplate", b"closestObjectTemplate"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["_closestObject", b"_closestObject", "_closestObjectTemplate", b"_closestObjectTemplate", "closestObject", b"closestObject", "closestObjectTemplate", b"closestObjectTemplate", "encId", b"encId"]) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["_key", b"_key", "_mapId", b"_mapId", "key", b"key", "mapId", b"mapId"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["_key", b"_key", "_mapId", b"_mapId", "encId", b"encId", "key", b"key", "mapId", b"mapId"]) -> None: ...
     @typing.overload
-    def WhichOneof(self, oneof_group: typing_extensions.Literal["_closestObject", b"_closestObject"]) -> typing_extensions.Literal["closestObject"] | None: ...
+    def WhichOneof(self, oneof_group: typing_extensions.Literal["_key", b"_key"]) -> typing_extensions.Literal["key"] | None: ...
     @typing.overload
-    def WhichOneof(self, oneof_group: typing_extensions.Literal["_closestObjectTemplate", b"_closestObjectTemplate"]) -> typing_extensions.Literal["closestObjectTemplate"] | None: ...
+    def WhichOneof(self, oneof_group: typing_extensions.Literal["_mapId", b"_mapId"]) -> typing_extensions.Literal["mapId"] | None: ...
 
-global___PlayerTriggersItem = PlayerTriggersItem
+global___PlayerTriggersObject = PlayerTriggersObject
 
 @typing_extensions.final
 class PlayerNotifies(google.protobuf.message.Message):
@@ -4418,15 +4517,20 @@ class PlayerHighFives(google.protobuf.message.Message):
 
     ENCID_FIELD_NUMBER: builtins.int
     ENCIDTARGET_FIELD_NUMBER: builtins.int
+    EMOTE_FIELD_NUMBER: builtins.int
     encId: builtins.int
     encIdTarget: builtins.int
+    emote: builtins.str
     def __init__(
         self,
         *,
         encId: builtins.int = ...,
         encIdTarget: builtins.int = ...,
+        emote: builtins.str | None = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["encId", b"encId", "encIdTarget", b"encIdTarget"]) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["_emote", b"_emote", "emote", b"emote"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["_emote", b"_emote", "emote", b"emote", "encId", b"encId", "encIdTarget", b"encIdTarget"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing_extensions.Literal["_emote", b"_emote"]) -> typing_extensions.Literal["emote"] | None: ...
 
 global___PlayerHighFives = PlayerHighFives
 
@@ -4682,45 +4786,194 @@ class PlayerSetsAway(google.protobuf.message.Message):
 global___PlayerSetsAway = PlayerSetsAway
 
 @typing_extensions.final
-class PlayerSetsIsRecordingClient(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    ENCID_FIELD_NUMBER: builtins.int
-    ISRECORDINGCLIENT_FIELD_NUMBER: builtins.int
-    encId: builtins.int
-    isRecordingClient: builtins.bool
-    def __init__(
-        self,
-        *,
-        encId: builtins.int = ...,
-        isRecordingClient: builtins.bool = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["encId", b"encId", "isRecordingClient", b"isRecordingClient"]) -> None: ...
-
-global___PlayerSetsIsRecordingClient = PlayerSetsIsRecordingClient
-
-@typing_extensions.final
 class PlayerStartsRecording(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     ENCID_FIELD_NUMBER: builtins.int
     NOOKID_FIELD_NUMBER: builtins.int
-    CANCEL_FIELD_NUMBER: builtins.int
+    INITIALIZING_FIELD_NUMBER: builtins.int
     encId: builtins.int
     nookId: builtins.str
-    cancel: builtins.bool
+    initializing: builtins.bool
     def __init__(
         self,
         *,
         encId: builtins.int = ...,
         nookId: builtins.str = ...,
-        cancel: builtins.bool | None = ...,
+        initializing: builtins.bool | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["_cancel", b"_cancel", "cancel", b"cancel"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["_cancel", b"_cancel", "cancel", b"cancel", "encId", b"encId", "nookId", b"nookId"]) -> None: ...
-    def WhichOneof(self, oneof_group: typing_extensions.Literal["_cancel", b"_cancel"]) -> typing_extensions.Literal["cancel"] | None: ...
+    def HasField(self, field_name: typing_extensions.Literal["_initializing", b"_initializing", "initializing", b"initializing"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["_initializing", b"_initializing", "encId", b"encId", "initializing", b"initializing", "nookId", b"nookId"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing_extensions.Literal["_initializing", b"_initializing"]) -> typing_extensions.Literal["initializing"] | None: ...
 
 global___PlayerStartsRecording = PlayerStartsRecording
+
+@typing_extensions.final
+class AccessRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    GUESTID_FIELD_NUMBER: builtins.int
+    MEMBERID_FIELD_NUMBER: builtins.int
+    REQUESTEDATUNIXTIME_FIELD_NUMBER: builtins.int
+    GUESTNAME_FIELD_NUMBER: builtins.int
+    GUESTCURRENTLYEQUIPPEDWEARABLES_FIELD_NUMBER: builtins.int
+    guestId: builtins.str
+    memberId: builtins.str
+    requestedAtUnixTime: builtins.int
+    guestName: builtins.str
+    @property
+    def guestCurrentlyEquippedWearables(self) -> global___DBOutfit: ...
+    def __init__(
+        self,
+        *,
+        guestId: builtins.str = ...,
+        memberId: builtins.str = ...,
+        requestedAtUnixTime: builtins.int = ...,
+        guestName: builtins.str = ...,
+        guestCurrentlyEquippedWearables: global___DBOutfit | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["_guestCurrentlyEquippedWearables", b"_guestCurrentlyEquippedWearables", "guestCurrentlyEquippedWearables", b"guestCurrentlyEquippedWearables"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["_guestCurrentlyEquippedWearables", b"_guestCurrentlyEquippedWearables", "guestCurrentlyEquippedWearables", b"guestCurrentlyEquippedWearables", "guestId", b"guestId", "guestName", b"guestName", "memberId", b"memberId", "requestedAtUnixTime", b"requestedAtUnixTime"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing_extensions.Literal["_guestCurrentlyEquippedWearables", b"_guestCurrentlyEquippedWearables"]) -> typing_extensions.Literal["guestCurrentlyEquippedWearables"] | None: ...
+
+global___AccessRequest = AccessRequest
+
+@typing_extensions.final
+class AccessRequestsUpdated(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    REQUESTS_FIELD_NUMBER: builtins.int
+    @property
+    def requests(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___AccessRequest]: ...
+    def __init__(
+        self,
+        *,
+        requests: collections.abc.Iterable[global___AccessRequest] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["requests", b"requests"]) -> None: ...
+
+global___AccessRequestsUpdated = AccessRequestsUpdated
+
+@typing_extensions.final
+class AccessRequestRespondedTo(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    TARGETID_FIELD_NUMBER: builtins.int
+    ACCEPTED_FIELD_NUMBER: builtins.int
+    LOCATION_FIELD_NUMBER: builtins.int
+    targetId: builtins.str
+    accepted: builtins.bool
+    @property
+    def location(self) -> global___MapLocation: ...
+    def __init__(
+        self,
+        *,
+        targetId: builtins.str = ...,
+        accepted: builtins.bool = ...,
+        location: global___MapLocation | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["location", b"location"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["accepted", b"accepted", "location", b"location", "targetId", b"targetId"]) -> None: ...
+
+global___AccessRequestRespondedTo = AccessRequestRespondedTo
+
+@typing_extensions.final
+class PlayerGuestPassStatus(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    USERID_FIELD_NUMBER: builtins.int
+    GUESTPASSSTATUS_FIELD_NUMBER: builtins.int
+    userId: builtins.str
+    guestPassStatus: builtins.str
+    def __init__(
+        self,
+        *,
+        userId: builtins.str = ...,
+        guestPassStatus: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["guestPassStatus", b"guestPassStatus", "userId", b"userId"]) -> None: ...
+
+global___PlayerGuestPassStatus = PlayerGuestPassStatus
+
+@typing_extensions.final
+class SpaceSetsGuestPassStatuses(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    PLAYERGUESTPASSSTATUSES_FIELD_NUMBER: builtins.int
+    @property
+    def playerGuestPassStatuses(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___PlayerGuestPassStatus]: ...
+    def __init__(
+        self,
+        *,
+        playerGuestPassStatuses: collections.abc.Iterable[global___PlayerGuestPassStatus] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["playerGuestPassStatuses", b"playerGuestPassStatuses"]) -> None: ...
+
+global___SpaceSetsGuestPassStatuses = SpaceSetsGuestPassStatuses
+
+@typing_extensions.final
+class SetDeskFromNextAvailableDesk(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    TARGETID_FIELD_NUMBER: builtins.int
+    PREFERREDDESK_FIELD_NUMBER: builtins.int
+    DESKSTOIGNORE_FIELD_NUMBER: builtins.int
+    targetId: builtins.str
+    @property
+    def preferredDesk(self) -> global___MapAndDesk: ...
+    @property
+    def desksToIgnore(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___MapAndDesk]: ...
+    def __init__(
+        self,
+        *,
+        targetId: builtins.str | None = ...,
+        preferredDesk: global___MapAndDesk | None = ...,
+        desksToIgnore: collections.abc.Iterable[global___MapAndDesk] | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["_preferredDesk", b"_preferredDesk", "_targetId", b"_targetId", "preferredDesk", b"preferredDesk", "targetId", b"targetId"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["_preferredDesk", b"_preferredDesk", "_targetId", b"_targetId", "desksToIgnore", b"desksToIgnore", "preferredDesk", b"preferredDesk", "targetId", b"targetId"]) -> None: ...
+    @typing.overload
+    def WhichOneof(self, oneof_group: typing_extensions.Literal["_preferredDesk", b"_preferredDesk"]) -> typing_extensions.Literal["preferredDesk"] | None: ...
+    @typing.overload
+    def WhichOneof(self, oneof_group: typing_extensions.Literal["_targetId", b"_targetId"]) -> typing_extensions.Literal["targetId"] | None: ...
+
+global___SetDeskFromNextAvailableDesk = SetDeskFromNextAvailableDesk
+
+@typing_extensions.final
+class SpaceRolePermissionOverrideUpdated(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    ROLE_FIELD_NUMBER: builtins.int
+    PERMISSION_FIELD_NUMBER: builtins.int
+    ENABLED_FIELD_NUMBER: builtins.int
+    role: builtins.str
+    permission: builtins.str
+    enabled: builtins.bool
+    def __init__(
+        self,
+        *,
+        role: builtins.str = ...,
+        permission: builtins.str = ...,
+        enabled: builtins.bool = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["enabled", b"enabled", "permission", b"permission", "role", b"role"]) -> None: ...
+
+global___SpaceRolePermissionOverrideUpdated = SpaceRolePermissionOverrideUpdated
+
+@typing_extensions.final
+class ChimeSetsUserInfo(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    RESOURCE_FIELD_NUMBER: builtins.int
+    resource: builtins.str
+    def __init__(
+        self,
+        *,
+        resource: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["resource", b"resource"]) -> None: ...
+
+global___ChimeSetsUserInfo = ChimeSetsUserInfo
 
 @typing_extensions.final
 class ClientServerBatch(google.protobuf.message.Message):
@@ -4869,6 +5122,19 @@ class ClientServerAction(google.protobuf.message.Message):
     SETCOUNTRY_FIELD_NUMBER: builtins.int
     SETSTARTDATE_FIELD_NUMBER: builtins.int
     STARTRECORDING_FIELD_NUMBER: builtins.int
+    REQUESTACCESSVIACHECKIN_FIELD_NUMBER: builtins.int
+    RESPONDTOACCESSREQUEST_FIELD_NUMBER: builtins.int
+    SETAVAILABILITY_FIELD_NUMBER: builtins.int
+    RESPAWNATDESK_FIELD_NUMBER: builtins.int
+    SETDESKFROMNEXTAVAILABLEDESK_FIELD_NUMBER: builtins.int
+    SETSPACEROLEPERMISSIONOVERRIDE_FIELD_NUMBER: builtins.int
+    SETCURRENTLYEQUIPPEDWEARABLES_FIELD_NUMBER: builtins.int
+    SETDISPLAYEMAIL_FIELD_NUMBER: builtins.int
+    MAPDELETEOBJECTBYKEY_FIELD_NUMBER: builtins.int
+    MAPUPDATEOBJECTS_FIELD_NUMBER: builtins.int
+    INTERACTWITHOBJECT_FIELD_NUMBER: builtins.int
+    TRIGGEROBJECT_FIELD_NUMBER: builtins.int
+    JOINCHIMEMEETING_FIELD_NUMBER: builtins.int
     txnId: builtins.int
     """future: optional txnID field"""
     @property
@@ -4893,11 +5159,11 @@ class ClientServerAction(google.protobuf.message.Message):
     def kick(self) -> global___Kick: ...
     @property
     def setImpassable(self) -> global___SetImpassable:
-        """deprecating"""
+        """deprecating (NGN-705)"""
     @property
     def chat(self) -> global___Chat: ...
     @property
-    def interact(self) -> global___Interact: ...
+    def interact(self) -> global___Deprecated: ...
     @property
     def enterWhisper(self) -> global___EnterWhisper: ...
     @property
@@ -4917,7 +5183,7 @@ class ClientServerAction(google.protobuf.message.Message):
     @property
     def enter(self) -> global___Enter: ...
     @property
-    def setWorkCondition(self) -> global___SetWorkCondition: ...
+    def setWorkCondition(self) -> global___Deprecated: ...
     @property
     def respawn(self) -> global___Respawn: ...
     @property
@@ -4927,10 +5193,9 @@ class ClientServerAction(google.protobuf.message.Message):
     @property
     def init(self) -> global___Init: ...
     @property
-    def setOutfitString(self) -> global___SetOutfitString: ...
+    def setOutfitString(self) -> global___Deprecated: ...
     @property
-    def shootConfetti(self) -> global___ShootConfetti:
-        """experimental"""
+    def shootConfetti(self) -> global___ShootConfetti: ...
     @property
     def setEventStatus(self) -> global___SetEventStatus:
         """experimental"""
@@ -4938,16 +5203,14 @@ class ClientServerAction(google.protobuf.message.Message):
     def setInConversation(self) -> global___SetInConversation:
         """experimental"""
     @property
-    def setCurrentDesk(self) -> global___SetCurrentDesk:
-        """experimental"""
+    def setCurrentDesk(self) -> global___Deprecated: ...
     @property
     def setCurrentArea(self) -> global___SetCurrentArea:
         """experimental"""
     @property
     def setImagePointer(self) -> global___SetImagePointer: ...
     @property
-    def setGoKartId(self) -> global___SetGoKartId:
-        """deprecated"""
+    def setGoKartId(self) -> global___Deprecated: ...
     @property
     def mapSetDimensions(self) -> global___MapSetDimensions: ...
     @property
@@ -4957,21 +5220,22 @@ class ClientServerAction(google.protobuf.message.Message):
     @property
     def mapSetForegroundImagePath(self) -> global___MapSetForegroundImagePath: ...
     @property
-    def mapSetSprites(self) -> global___MapSetSprites: ...
+    def mapSetSprites(self) -> global___Deprecated:
+        """deprecated (NGN-106)"""
     @property
     def mapSetSpawns(self) -> global___MapSetSpawns: ...
     @property
-    def mapSetSpaces(self) -> global___MapSetSpaces:
-        """deprecating"""
+    def mapSetSpaces(self) -> global___Deprecated: ...
     @property
     def mapSetPortals(self) -> global___MapSetPortals: ...
     @property
     def mapSetAnnouncer(self) -> global___MapSetAnnouncer: ...
     @property
     def mapSetAssets(self) -> global___MapSetAssets:
-        """deprecating (use type 0 objects)"""
+        """deprecating (use type 0 objects) (NGN-123)"""
     @property
-    def mapSetObjects(self) -> global___MapSetObjects: ...
+    def mapSetObjects(self) -> global___Deprecated:
+        """deprecated in favor of mapUpdateObjects"""
     @property
     def mapSetName(self) -> global___MapSetName: ...
     @property
@@ -4988,10 +5252,11 @@ class ClientServerAction(google.protobuf.message.Message):
     @property
     def mapAddObject(self) -> global___MapAddObject: ...
     @property
-    def mapDeleteObject(self) -> global___MapDeleteObject: ...
+    def mapDeleteObject(self) -> global___Deprecated:
+        """deprecated in favor of mapDeleteObjectByKey"""
     @property
     def mapSetSpawn(self) -> global___MapSetSpawn:
-        """deprecating"""
+        """deprecating (NGN-104)"""
     @property
     def setIsAlone(self) -> global___SetIsAlone:
         """experimental"""
@@ -5027,7 +5292,7 @@ class ClientServerAction(google.protobuf.message.Message):
     @property
     def setItemString(self) -> global___SetItemString: ...
     @property
-    def triggerItem(self) -> global___TriggerItem: ...
+    def triggerItem(self) -> global___Deprecated: ...
     @property
     def notify(self) -> global___Notify: ...
     @property
@@ -5041,7 +5306,7 @@ class ClientServerAction(google.protobuf.message.Message):
     @property
     def setSubtitle(self) -> global___SetSubtitle: ...
     @property
-    def playerUpdatesSession(self) -> global___PlayerUpdatesSession: ...
+    def playerUpdatesSession(self) -> global___Deprecated: ...
     @property
     def mapMoveObject(self) -> global___MapMoveObject: ...
     @property
@@ -5115,8 +5380,34 @@ class ClientServerAction(google.protobuf.message.Message):
     @property
     def setStartDate(self) -> global___SetStartDate: ...
     @property
-    def startRecording(self) -> global___StartRecording:
-        """add lots more stuff here!"""
+    def startRecording(self) -> global___StartRecording: ...
+    @property
+    def requestAccessViaCheckIn(self) -> global___RequestAccessViaCheckIn: ...
+    @property
+    def respondToAccessRequest(self) -> global___RespondToAccessRequest: ...
+    @property
+    def setAvailability(self) -> global___SetAvailability: ...
+    @property
+    def respawnAtDesk(self) -> global___RespawnAtDesk: ...
+    @property
+    def setDeskFromNextAvailableDesk(self) -> global___SetDeskFromNextAvailableDesk: ...
+    @property
+    def setSpaceRolePermissionOverride(self) -> global___SetSpaceRolePermissionOverride: ...
+    @property
+    def setCurrentlyEquippedWearables(self) -> global___SetCurrentlyEquippedWearables: ...
+    @property
+    def setDisplayEmail(self) -> global___SetDisplayEmail: ...
+    @property
+    def mapDeleteObjectByKey(self) -> global___MapDeleteObjectByKey: ...
+    @property
+    def mapUpdateObjects(self) -> global___MapUpdateObjects: ...
+    @property
+    def interactWithObject(self) -> global___InteractWithObject: ...
+    @property
+    def triggerObject(self) -> global___TriggerObject: ...
+    @property
+    def joinChimeMeeting(self) -> global___JoinChimeMeeting:
+        """experimental"""
     def __init__(
         self,
         *,
@@ -5133,7 +5424,7 @@ class ClientServerAction(google.protobuf.message.Message):
         kick: global___Kick | None = ...,
         setImpassable: global___SetImpassable | None = ...,
         chat: global___Chat | None = ...,
-        interact: global___Interact | None = ...,
+        interact: global___Deprecated | None = ...,
         enterWhisper: global___EnterWhisper | None = ...,
         leaveWhisper: global___LeaveWhisper | None = ...,
         setEmojiStatus: global___SetEmojiStatus | None = ...,
@@ -5143,30 +5434,30 @@ class ClientServerAction(google.protobuf.message.Message):
         teleport: global___Teleport | None = ...,
         exit: global___Exit | None = ...,
         enter: global___Enter | None = ...,
-        setWorkCondition: global___SetWorkCondition | None = ...,
+        setWorkCondition: global___Deprecated | None = ...,
         respawn: global___Respawn | None = ...,
         spawn: global___Spawn | None = ...,
         ghost: global___Ghost | None = ...,
         init: global___Init | None = ...,
-        setOutfitString: global___SetOutfitString | None = ...,
+        setOutfitString: global___Deprecated | None = ...,
         shootConfetti: global___ShootConfetti | None = ...,
         setEventStatus: global___SetEventStatus | None = ...,
         setInConversation: global___SetInConversation | None = ...,
-        setCurrentDesk: global___SetCurrentDesk | None = ...,
+        setCurrentDesk: global___Deprecated | None = ...,
         setCurrentArea: global___SetCurrentArea | None = ...,
         setImagePointer: global___SetImagePointer | None = ...,
-        setGoKartId: global___SetGoKartId | None = ...,
+        setGoKartId: global___Deprecated | None = ...,
         mapSetDimensions: global___MapSetDimensions | None = ...,
         mapSetCollisions: global___MapSetCollisions | None = ...,
         mapSetBackgroundImagePath: global___MapSetBackgroundImagePath | None = ...,
         mapSetForegroundImagePath: global___MapSetForegroundImagePath | None = ...,
-        mapSetSprites: global___MapSetSprites | None = ...,
+        mapSetSprites: global___Deprecated | None = ...,
         mapSetSpawns: global___MapSetSpawns | None = ...,
-        mapSetSpaces: global___MapSetSpaces | None = ...,
+        mapSetSpaces: global___Deprecated | None = ...,
         mapSetPortals: global___MapSetPortals | None = ...,
         mapSetAnnouncer: global___MapSetAnnouncer | None = ...,
         mapSetAssets: global___MapSetAssets | None = ...,
-        mapSetObjects: global___MapSetObjects | None = ...,
+        mapSetObjects: global___Deprecated | None = ...,
         mapSetName: global___MapSetName | None = ...,
         mapSetMuteOnEntry: global___MapSetMuteOnEntry | None = ...,
         mapSetUseDrawnBG: global___MapSetUseDrawnBG | None = ...,
@@ -5174,7 +5465,7 @@ class ClientServerAction(google.protobuf.message.Message):
         mapSetFloors: global___MapSetFloors | None = ...,
         mapSetAreas: global___MapSetAreas | None = ...,
         mapAddObject: global___MapAddObject | None = ...,
-        mapDeleteObject: global___MapDeleteObject | None = ...,
+        mapDeleteObject: global___Deprecated | None = ...,
         mapSetSpawn: global___MapSetSpawn | None = ...,
         setIsAlone: global___SetIsAlone | None = ...,
         mapSetMiniMapImagePath: global___MapSetMiniMapImagePath | None = ...,
@@ -5192,14 +5483,14 @@ class ClientServerAction(google.protobuf.message.Message):
         customAction: global___CustomAction | None = ...,
         block: global___Block | None = ...,
         setItemString: global___SetItemString | None = ...,
-        triggerItem: global___TriggerItem | None = ...,
+        triggerItem: global___Deprecated | None = ...,
         notify: global___Notify | None = ...,
         setFollowTarget: global___SetFollowTarget | None = ...,
         requestToLead: global___RequestToLead | None = ...,
         enterPortal: global___EnterPortal | None = ...,
         setManualVideoSrc: global___SetManualVideoSrc | None = ...,
         setSubtitle: global___SetSubtitle | None = ...,
-        playerUpdatesSession: global___PlayerUpdatesSession | None = ...,
+        playerUpdatesSession: global___Deprecated | None = ...,
         mapMoveObject: global___MapMoveObject | None = ...,
         chatMessageUpdated: global___ChatMessageUpdated | None = ...,
         fxShakeObject: global___FXShakeObject | None = ...,
@@ -5237,13 +5528,26 @@ class ClientServerAction(google.protobuf.message.Message):
         setCountry: global___SetCountry | None = ...,
         setStartDate: global___SetStartDate | None = ...,
         startRecording: global___StartRecording | None = ...,
+        requestAccessViaCheckIn: global___RequestAccessViaCheckIn | None = ...,
+        respondToAccessRequest: global___RespondToAccessRequest | None = ...,
+        setAvailability: global___SetAvailability | None = ...,
+        respawnAtDesk: global___RespawnAtDesk | None = ...,
+        setDeskFromNextAvailableDesk: global___SetDeskFromNextAvailableDesk | None = ...,
+        setSpaceRolePermissionOverride: global___SetSpaceRolePermissionOverride | None = ...,
+        setCurrentlyEquippedWearables: global___SetCurrentlyEquippedWearables | None = ...,
+        setDisplayEmail: global___SetDisplayEmail | None = ...,
+        mapDeleteObjectByKey: global___MapDeleteObjectByKey | None = ...,
+        mapUpdateObjects: global___MapUpdateObjects | None = ...,
+        interactWithObject: global___InteractWithObject | None = ...,
+        triggerObject: global___TriggerObject | None = ...,
+        joinChimeMeeting: global___JoinChimeMeeting | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["_txnId", b"_txnId", "action", b"action", "activelySpeaking", b"activelySpeaking", "addInventoryItem", b"addInventoryItem", "ban", b"ban", "block", b"block", "chat", b"chat", "chatMessageUpdated", b"chatMessageUpdated", "clientBackupHeartbeat", b"clientBackupHeartbeat", "clientHeartbeat", b"clientHeartbeat", "craft", b"craft", "customAction", b"customAction", "enter", b"enter", "enterPortal", b"enterPortal", "enterWhisper", b"enterWhisper", "exit", b"exit", "fxShakeCamera", b"fxShakeCamera", "fxShakeObject", b"fxShakeObject", "ghost", b"ghost", "highFive", b"highFive", "hipToBeSquare", b"hipToBeSquare", "init", b"init", "interact", b"interact", "kick", b"kick", "leaveWhisper", b"leaveWhisper", "mapAddObject", b"mapAddObject", "mapDeleteObject", b"mapDeleteObject", "mapDeleteObjectById", b"mapDeleteObjectById", "mapMoveObject", b"mapMoveObject", "mapSetAnnouncer", b"mapSetAnnouncer", "mapSetAreas", b"mapSetAreas", "mapSetAssets", b"mapSetAssets", "mapSetBackgroundImagePath", b"mapSetBackgroundImagePath", "mapSetCollisions", b"mapSetCollisions", "mapSetDecoration", b"mapSetDecoration", "mapSetDescription", b"mapSetDescription", "mapSetDimensions", b"mapSetDimensions", "mapSetEnabledChats", b"mapSetEnabledChats", "mapSetFloors", b"mapSetFloors", "mapSetForegroundImagePath", b"mapSetForegroundImagePath", "mapSetMiniMapImagePath", b"mapSetMiniMapImagePath", "mapSetMuteOnEntry", b"mapSetMuteOnEntry", "mapSetName", b"mapSetName", "mapSetNooks", b"mapSetNooks", "mapSetObjects", b"mapSetObjects", "mapSetPortals", b"mapSetPortals", "mapSetScript", b"mapSetScript", "mapSetSpaces", b"mapSetSpaces", "mapSetSpawn", b"mapSetSpawn", "mapSetSpawns", b"mapSetSpawns", "mapSetSprites", b"mapSetSprites", "mapSetTutorialTasks", b"mapSetTutorialTasks", "mapSetUseDrawnBG", b"mapSetUseDrawnBG", "mapSetWalls", b"mapSetWalls", "move", b"move", "notify", b"notify", "playSound", b"playSound", "playerUpdatesSession", b"playerUpdatesSession", "precomputeEnter", b"precomputeEnter", "registerCommand", b"registerCommand", "removeInventoryItem", b"removeInventoryItem", "requestMute", b"requestMute", "requestToJoinNook", b"requestToJoinNook", "requestToLead", b"requestToLead", "respawn", b"respawn", "ring", b"ring", "sendCommand", b"sendCommand", "setAffiliation", b"setAffiliation", "setAllowScreenPointer", b"setAllowScreenPointer", "setAway", b"setAway", "setCity", b"setCity", "setCountry", b"setCountry", "setCurrentArea", b"setCurrentArea", "setCurrentDesk", b"setCurrentDesk", "setDescription", b"setDescription", "setDeskInfo", b"setDeskInfo", "setEmojiStatus", b"setEmojiStatus", "setEmoteV2", b"setEmoteV2", "setEventStatus", b"setEventStatus", "setFocusModeEndTime", b"setFocusModeEndTime", "setFollowTarget", b"setFollowTarget", "setGoKartId", b"setGoKartId", "setImagePointer", b"setImagePointer", "setImpassable", b"setImpassable", "setInConversation", b"setInConversation", "setIsAlone", b"setIsAlone", "setIsMobile", b"setIsMobile", "setItemString", b"setItemString", "setManualVideoSrc", b"setManualVideoSrc", "setName", b"setName", "setOutfitString", b"setOutfitString", "setPersonalImageUrl", b"setPersonalImageUrl", "setPhone", b"setPhone", "setProfileImageUrl", b"setProfileImageUrl", "setPronouns", b"setPronouns", "setScreenPointer", b"setScreenPointer", "setSpeedModifier", b"setSpeedModifier", "setStartDate", b"setStartDate", "setStatus", b"setStatus", "setSubtitle", b"setSubtitle", "setTextStatus", b"setTextStatus", "setTimezone", b"setTimezone", "setTitle", b"setTitle", "setVehicleId", b"setVehicleId", "setWorkCondition", b"setWorkCondition", "shootConfetti", b"shootConfetti", "spawn", b"spawn", "speakerUpdatesSession", b"speakerUpdatesSession", "spotlight", b"spotlight", "startRecording", b"startRecording", "stopSound", b"stopSound", "teleport", b"teleport", "triggerInventoryItem", b"triggerInventoryItem", "triggerItem", b"triggerItem", "txnId", b"txnId", "updateNookPermission", b"updateNookPermission", "updateSpaceItems", b"updateSpaceItems", "updateSubscriptions", b"updateSubscriptions", "wave", b"wave"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["_txnId", b"_txnId", "action", b"action", "activelySpeaking", b"activelySpeaking", "addInventoryItem", b"addInventoryItem", "ban", b"ban", "block", b"block", "chat", b"chat", "chatMessageUpdated", b"chatMessageUpdated", "clientBackupHeartbeat", b"clientBackupHeartbeat", "clientHeartbeat", b"clientHeartbeat", "craft", b"craft", "customAction", b"customAction", "enter", b"enter", "enterPortal", b"enterPortal", "enterWhisper", b"enterWhisper", "exit", b"exit", "fxShakeCamera", b"fxShakeCamera", "fxShakeObject", b"fxShakeObject", "ghost", b"ghost", "highFive", b"highFive", "hipToBeSquare", b"hipToBeSquare", "init", b"init", "interact", b"interact", "kick", b"kick", "leaveWhisper", b"leaveWhisper", "mapAddObject", b"mapAddObject", "mapDeleteObject", b"mapDeleteObject", "mapDeleteObjectById", b"mapDeleteObjectById", "mapMoveObject", b"mapMoveObject", "mapSetAnnouncer", b"mapSetAnnouncer", "mapSetAreas", b"mapSetAreas", "mapSetAssets", b"mapSetAssets", "mapSetBackgroundImagePath", b"mapSetBackgroundImagePath", "mapSetCollisions", b"mapSetCollisions", "mapSetDecoration", b"mapSetDecoration", "mapSetDescription", b"mapSetDescription", "mapSetDimensions", b"mapSetDimensions", "mapSetEnabledChats", b"mapSetEnabledChats", "mapSetFloors", b"mapSetFloors", "mapSetForegroundImagePath", b"mapSetForegroundImagePath", "mapSetMiniMapImagePath", b"mapSetMiniMapImagePath", "mapSetMuteOnEntry", b"mapSetMuteOnEntry", "mapSetName", b"mapSetName", "mapSetNooks", b"mapSetNooks", "mapSetObjects", b"mapSetObjects", "mapSetPortals", b"mapSetPortals", "mapSetScript", b"mapSetScript", "mapSetSpaces", b"mapSetSpaces", "mapSetSpawn", b"mapSetSpawn", "mapSetSpawns", b"mapSetSpawns", "mapSetSprites", b"mapSetSprites", "mapSetTutorialTasks", b"mapSetTutorialTasks", "mapSetUseDrawnBG", b"mapSetUseDrawnBG", "mapSetWalls", b"mapSetWalls", "move", b"move", "notify", b"notify", "playSound", b"playSound", "playerUpdatesSession", b"playerUpdatesSession", "precomputeEnter", b"precomputeEnter", "registerCommand", b"registerCommand", "removeInventoryItem", b"removeInventoryItem", "requestMute", b"requestMute", "requestToJoinNook", b"requestToJoinNook", "requestToLead", b"requestToLead", "respawn", b"respawn", "ring", b"ring", "sendCommand", b"sendCommand", "setAffiliation", b"setAffiliation", "setAllowScreenPointer", b"setAllowScreenPointer", "setAway", b"setAway", "setCity", b"setCity", "setCountry", b"setCountry", "setCurrentArea", b"setCurrentArea", "setCurrentDesk", b"setCurrentDesk", "setDescription", b"setDescription", "setDeskInfo", b"setDeskInfo", "setEmojiStatus", b"setEmojiStatus", "setEmoteV2", b"setEmoteV2", "setEventStatus", b"setEventStatus", "setFocusModeEndTime", b"setFocusModeEndTime", "setFollowTarget", b"setFollowTarget", "setGoKartId", b"setGoKartId", "setImagePointer", b"setImagePointer", "setImpassable", b"setImpassable", "setInConversation", b"setInConversation", "setIsAlone", b"setIsAlone", "setIsMobile", b"setIsMobile", "setItemString", b"setItemString", "setManualVideoSrc", b"setManualVideoSrc", "setName", b"setName", "setOutfitString", b"setOutfitString", "setPersonalImageUrl", b"setPersonalImageUrl", "setPhone", b"setPhone", "setProfileImageUrl", b"setProfileImageUrl", "setPronouns", b"setPronouns", "setScreenPointer", b"setScreenPointer", "setSpeedModifier", b"setSpeedModifier", "setStartDate", b"setStartDate", "setStatus", b"setStatus", "setSubtitle", b"setSubtitle", "setTextStatus", b"setTextStatus", "setTimezone", b"setTimezone", "setTitle", b"setTitle", "setVehicleId", b"setVehicleId", "setWorkCondition", b"setWorkCondition", "shootConfetti", b"shootConfetti", "spawn", b"spawn", "speakerUpdatesSession", b"speakerUpdatesSession", "spotlight", b"spotlight", "startRecording", b"startRecording", "stopSound", b"stopSound", "teleport", b"teleport", "triggerInventoryItem", b"triggerInventoryItem", "triggerItem", b"triggerItem", "txnId", b"txnId", "updateNookPermission", b"updateNookPermission", "updateSpaceItems", b"updateSpaceItems", "updateSubscriptions", b"updateSubscriptions", "wave", b"wave"]) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["_txnId", b"_txnId", "action", b"action", "activelySpeaking", b"activelySpeaking", "addInventoryItem", b"addInventoryItem", "ban", b"ban", "block", b"block", "chat", b"chat", "chatMessageUpdated", b"chatMessageUpdated", "clientBackupHeartbeat", b"clientBackupHeartbeat", "clientHeartbeat", b"clientHeartbeat", "craft", b"craft", "customAction", b"customAction", "enter", b"enter", "enterPortal", b"enterPortal", "enterWhisper", b"enterWhisper", "exit", b"exit", "fxShakeCamera", b"fxShakeCamera", "fxShakeObject", b"fxShakeObject", "ghost", b"ghost", "highFive", b"highFive", "hipToBeSquare", b"hipToBeSquare", "init", b"init", "interact", b"interact", "interactWithObject", b"interactWithObject", "joinChimeMeeting", b"joinChimeMeeting", "kick", b"kick", "leaveWhisper", b"leaveWhisper", "mapAddObject", b"mapAddObject", "mapDeleteObject", b"mapDeleteObject", "mapDeleteObjectById", b"mapDeleteObjectById", "mapDeleteObjectByKey", b"mapDeleteObjectByKey", "mapMoveObject", b"mapMoveObject", "mapSetAnnouncer", b"mapSetAnnouncer", "mapSetAreas", b"mapSetAreas", "mapSetAssets", b"mapSetAssets", "mapSetBackgroundImagePath", b"mapSetBackgroundImagePath", "mapSetCollisions", b"mapSetCollisions", "mapSetDecoration", b"mapSetDecoration", "mapSetDescription", b"mapSetDescription", "mapSetDimensions", b"mapSetDimensions", "mapSetEnabledChats", b"mapSetEnabledChats", "mapSetFloors", b"mapSetFloors", "mapSetForegroundImagePath", b"mapSetForegroundImagePath", "mapSetMiniMapImagePath", b"mapSetMiniMapImagePath", "mapSetMuteOnEntry", b"mapSetMuteOnEntry", "mapSetName", b"mapSetName", "mapSetNooks", b"mapSetNooks", "mapSetObjects", b"mapSetObjects", "mapSetPortals", b"mapSetPortals", "mapSetScript", b"mapSetScript", "mapSetSpaces", b"mapSetSpaces", "mapSetSpawn", b"mapSetSpawn", "mapSetSpawns", b"mapSetSpawns", "mapSetSprites", b"mapSetSprites", "mapSetTutorialTasks", b"mapSetTutorialTasks", "mapSetUseDrawnBG", b"mapSetUseDrawnBG", "mapSetWalls", b"mapSetWalls", "mapUpdateObjects", b"mapUpdateObjects", "move", b"move", "notify", b"notify", "playSound", b"playSound", "playerUpdatesSession", b"playerUpdatesSession", "precomputeEnter", b"precomputeEnter", "registerCommand", b"registerCommand", "removeInventoryItem", b"removeInventoryItem", "requestAccessViaCheckIn", b"requestAccessViaCheckIn", "requestMute", b"requestMute", "requestToJoinNook", b"requestToJoinNook", "requestToLead", b"requestToLead", "respawn", b"respawn", "respawnAtDesk", b"respawnAtDesk", "respondToAccessRequest", b"respondToAccessRequest", "ring", b"ring", "sendCommand", b"sendCommand", "setAffiliation", b"setAffiliation", "setAllowScreenPointer", b"setAllowScreenPointer", "setAvailability", b"setAvailability", "setAway", b"setAway", "setCity", b"setCity", "setCountry", b"setCountry", "setCurrentArea", b"setCurrentArea", "setCurrentDesk", b"setCurrentDesk", "setCurrentlyEquippedWearables", b"setCurrentlyEquippedWearables", "setDescription", b"setDescription", "setDeskFromNextAvailableDesk", b"setDeskFromNextAvailableDesk", "setDeskInfo", b"setDeskInfo", "setDisplayEmail", b"setDisplayEmail", "setEmojiStatus", b"setEmojiStatus", "setEmoteV2", b"setEmoteV2", "setEventStatus", b"setEventStatus", "setFocusModeEndTime", b"setFocusModeEndTime", "setFollowTarget", b"setFollowTarget", "setGoKartId", b"setGoKartId", "setImagePointer", b"setImagePointer", "setImpassable", b"setImpassable", "setInConversation", b"setInConversation", "setIsAlone", b"setIsAlone", "setIsMobile", b"setIsMobile", "setItemString", b"setItemString", "setManualVideoSrc", b"setManualVideoSrc", "setName", b"setName", "setOutfitString", b"setOutfitString", "setPersonalImageUrl", b"setPersonalImageUrl", "setPhone", b"setPhone", "setProfileImageUrl", b"setProfileImageUrl", "setPronouns", b"setPronouns", "setScreenPointer", b"setScreenPointer", "setSpaceRolePermissionOverride", b"setSpaceRolePermissionOverride", "setSpeedModifier", b"setSpeedModifier", "setStartDate", b"setStartDate", "setStatus", b"setStatus", "setSubtitle", b"setSubtitle", "setTextStatus", b"setTextStatus", "setTimezone", b"setTimezone", "setTitle", b"setTitle", "setVehicleId", b"setVehicleId", "setWorkCondition", b"setWorkCondition", "shootConfetti", b"shootConfetti", "spawn", b"spawn", "speakerUpdatesSession", b"speakerUpdatesSession", "spotlight", b"spotlight", "startRecording", b"startRecording", "stopSound", b"stopSound", "teleport", b"teleport", "triggerInventoryItem", b"triggerInventoryItem", "triggerItem", b"triggerItem", "triggerObject", b"triggerObject", "txnId", b"txnId", "updateNookPermission", b"updateNookPermission", "updateSpaceItems", b"updateSpaceItems", "updateSubscriptions", b"updateSubscriptions", "wave", b"wave"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["_txnId", b"_txnId", "action", b"action", "activelySpeaking", b"activelySpeaking", "addInventoryItem", b"addInventoryItem", "ban", b"ban", "block", b"block", "chat", b"chat", "chatMessageUpdated", b"chatMessageUpdated", "clientBackupHeartbeat", b"clientBackupHeartbeat", "clientHeartbeat", b"clientHeartbeat", "craft", b"craft", "customAction", b"customAction", "enter", b"enter", "enterPortal", b"enterPortal", "enterWhisper", b"enterWhisper", "exit", b"exit", "fxShakeCamera", b"fxShakeCamera", "fxShakeObject", b"fxShakeObject", "ghost", b"ghost", "highFive", b"highFive", "hipToBeSquare", b"hipToBeSquare", "init", b"init", "interact", b"interact", "interactWithObject", b"interactWithObject", "joinChimeMeeting", b"joinChimeMeeting", "kick", b"kick", "leaveWhisper", b"leaveWhisper", "mapAddObject", b"mapAddObject", "mapDeleteObject", b"mapDeleteObject", "mapDeleteObjectById", b"mapDeleteObjectById", "mapDeleteObjectByKey", b"mapDeleteObjectByKey", "mapMoveObject", b"mapMoveObject", "mapSetAnnouncer", b"mapSetAnnouncer", "mapSetAreas", b"mapSetAreas", "mapSetAssets", b"mapSetAssets", "mapSetBackgroundImagePath", b"mapSetBackgroundImagePath", "mapSetCollisions", b"mapSetCollisions", "mapSetDecoration", b"mapSetDecoration", "mapSetDescription", b"mapSetDescription", "mapSetDimensions", b"mapSetDimensions", "mapSetEnabledChats", b"mapSetEnabledChats", "mapSetFloors", b"mapSetFloors", "mapSetForegroundImagePath", b"mapSetForegroundImagePath", "mapSetMiniMapImagePath", b"mapSetMiniMapImagePath", "mapSetMuteOnEntry", b"mapSetMuteOnEntry", "mapSetName", b"mapSetName", "mapSetNooks", b"mapSetNooks", "mapSetObjects", b"mapSetObjects", "mapSetPortals", b"mapSetPortals", "mapSetScript", b"mapSetScript", "mapSetSpaces", b"mapSetSpaces", "mapSetSpawn", b"mapSetSpawn", "mapSetSpawns", b"mapSetSpawns", "mapSetSprites", b"mapSetSprites", "mapSetTutorialTasks", b"mapSetTutorialTasks", "mapSetUseDrawnBG", b"mapSetUseDrawnBG", "mapSetWalls", b"mapSetWalls", "mapUpdateObjects", b"mapUpdateObjects", "move", b"move", "notify", b"notify", "playSound", b"playSound", "playerUpdatesSession", b"playerUpdatesSession", "precomputeEnter", b"precomputeEnter", "registerCommand", b"registerCommand", "removeInventoryItem", b"removeInventoryItem", "requestAccessViaCheckIn", b"requestAccessViaCheckIn", "requestMute", b"requestMute", "requestToJoinNook", b"requestToJoinNook", "requestToLead", b"requestToLead", "respawn", b"respawn", "respawnAtDesk", b"respawnAtDesk", "respondToAccessRequest", b"respondToAccessRequest", "ring", b"ring", "sendCommand", b"sendCommand", "setAffiliation", b"setAffiliation", "setAllowScreenPointer", b"setAllowScreenPointer", "setAvailability", b"setAvailability", "setAway", b"setAway", "setCity", b"setCity", "setCountry", b"setCountry", "setCurrentArea", b"setCurrentArea", "setCurrentDesk", b"setCurrentDesk", "setCurrentlyEquippedWearables", b"setCurrentlyEquippedWearables", "setDescription", b"setDescription", "setDeskFromNextAvailableDesk", b"setDeskFromNextAvailableDesk", "setDeskInfo", b"setDeskInfo", "setDisplayEmail", b"setDisplayEmail", "setEmojiStatus", b"setEmojiStatus", "setEmoteV2", b"setEmoteV2", "setEventStatus", b"setEventStatus", "setFocusModeEndTime", b"setFocusModeEndTime", "setFollowTarget", b"setFollowTarget", "setGoKartId", b"setGoKartId", "setImagePointer", b"setImagePointer", "setImpassable", b"setImpassable", "setInConversation", b"setInConversation", "setIsAlone", b"setIsAlone", "setIsMobile", b"setIsMobile", "setItemString", b"setItemString", "setManualVideoSrc", b"setManualVideoSrc", "setName", b"setName", "setOutfitString", b"setOutfitString", "setPersonalImageUrl", b"setPersonalImageUrl", "setPhone", b"setPhone", "setProfileImageUrl", b"setProfileImageUrl", "setPronouns", b"setPronouns", "setScreenPointer", b"setScreenPointer", "setSpaceRolePermissionOverride", b"setSpaceRolePermissionOverride", "setSpeedModifier", b"setSpeedModifier", "setStartDate", b"setStartDate", "setStatus", b"setStatus", "setSubtitle", b"setSubtitle", "setTextStatus", b"setTextStatus", "setTimezone", b"setTimezone", "setTitle", b"setTitle", "setVehicleId", b"setVehicleId", "setWorkCondition", b"setWorkCondition", "shootConfetti", b"shootConfetti", "spawn", b"spawn", "speakerUpdatesSession", b"speakerUpdatesSession", "spotlight", b"spotlight", "startRecording", b"startRecording", "stopSound", b"stopSound", "teleport", b"teleport", "triggerInventoryItem", b"triggerInventoryItem", "triggerItem", b"triggerItem", "triggerObject", b"triggerObject", "txnId", b"txnId", "updateNookPermission", b"updateNookPermission", "updateSpaceItems", b"updateSpaceItems", "updateSubscriptions", b"updateSubscriptions", "wave", b"wave"]) -> None: ...
     @typing.overload
     def WhichOneof(self, oneof_group: typing_extensions.Literal["_txnId", b"_txnId"]) -> typing_extensions.Literal["txnId"] | None: ...
     @typing.overload
-    def WhichOneof(self, oneof_group: typing_extensions.Literal["action", b"action"]) -> typing_extensions.Literal["clientHeartbeat", "clientBackupHeartbeat", "updateSubscriptions", "move", "setAffiliation", "setStatus", "spotlight", "ring", "ban", "kick", "setImpassable", "chat", "interact", "enterWhisper", "leaveWhisper", "setEmojiStatus", "activelySpeaking", "setName", "setTextStatus", "teleport", "exit", "enter", "setWorkCondition", "respawn", "spawn", "ghost", "init", "setOutfitString", "shootConfetti", "setEventStatus", "setInConversation", "setCurrentDesk", "setCurrentArea", "setImagePointer", "setGoKartId", "mapSetDimensions", "mapSetCollisions", "mapSetBackgroundImagePath", "mapSetForegroundImagePath", "mapSetSprites", "mapSetSpawns", "mapSetSpaces", "mapSetPortals", "mapSetAnnouncer", "mapSetAssets", "mapSetObjects", "mapSetName", "mapSetMuteOnEntry", "mapSetUseDrawnBG", "mapSetWalls", "mapSetFloors", "mapSetAreas", "mapAddObject", "mapDeleteObject", "mapSetSpawn", "setIsAlone", "mapSetMiniMapImagePath", "mapSetEnabledChats", "mapSetDescription", "mapSetDecoration", "mapSetTutorialTasks", "playSound", "mapSetScript", "setIsMobile", "setScreenPointer", "setEmoteV2", "setFocusModeEndTime", "mapDeleteObjectById", "customAction", "block", "setItemString", "triggerItem", "notify", "setFollowTarget", "requestToLead", "enterPortal", "setManualVideoSrc", "setSubtitle", "playerUpdatesSession", "mapMoveObject", "chatMessageUpdated", "fxShakeObject", "fxShakeCamera", "registerCommand", "sendCommand", "speakerUpdatesSession", "addInventoryItem", "removeInventoryItem", "setVehicleId", "setSpeedModifier", "highFive", "updateSpaceItems", "stopSound", "hipToBeSquare", "craft", "triggerInventoryItem", "setAllowScreenPointer", "precomputeEnter", "requestMute", "setDeskInfo", "mapSetNooks", "requestToJoinNook", "updateNookPermission", "wave", "setPronouns", "setTitle", "setTimezone", "setPhone", "setDescription", "setProfileImageUrl", "setPersonalImageUrl", "setAway", "setCity", "setCountry", "setStartDate", "startRecording"] | None: ...
+    def WhichOneof(self, oneof_group: typing_extensions.Literal["action", b"action"]) -> typing_extensions.Literal["clientHeartbeat", "clientBackupHeartbeat", "updateSubscriptions", "move", "setAffiliation", "setStatus", "spotlight", "ring", "ban", "kick", "setImpassable", "chat", "interact", "enterWhisper", "leaveWhisper", "setEmojiStatus", "activelySpeaking", "setName", "setTextStatus", "teleport", "exit", "enter", "setWorkCondition", "respawn", "spawn", "ghost", "init", "setOutfitString", "shootConfetti", "setEventStatus", "setInConversation", "setCurrentDesk", "setCurrentArea", "setImagePointer", "setGoKartId", "mapSetDimensions", "mapSetCollisions", "mapSetBackgroundImagePath", "mapSetForegroundImagePath", "mapSetSprites", "mapSetSpawns", "mapSetSpaces", "mapSetPortals", "mapSetAnnouncer", "mapSetAssets", "mapSetObjects", "mapSetName", "mapSetMuteOnEntry", "mapSetUseDrawnBG", "mapSetWalls", "mapSetFloors", "mapSetAreas", "mapAddObject", "mapDeleteObject", "mapSetSpawn", "setIsAlone", "mapSetMiniMapImagePath", "mapSetEnabledChats", "mapSetDescription", "mapSetDecoration", "mapSetTutorialTasks", "playSound", "mapSetScript", "setIsMobile", "setScreenPointer", "setEmoteV2", "setFocusModeEndTime", "mapDeleteObjectById", "customAction", "block", "setItemString", "triggerItem", "notify", "setFollowTarget", "requestToLead", "enterPortal", "setManualVideoSrc", "setSubtitle", "playerUpdatesSession", "mapMoveObject", "chatMessageUpdated", "fxShakeObject", "fxShakeCamera", "registerCommand", "sendCommand", "speakerUpdatesSession", "addInventoryItem", "removeInventoryItem", "setVehicleId", "setSpeedModifier", "highFive", "updateSpaceItems", "stopSound", "hipToBeSquare", "craft", "triggerInventoryItem", "setAllowScreenPointer", "precomputeEnter", "requestMute", "setDeskInfo", "mapSetNooks", "requestToJoinNook", "updateNookPermission", "wave", "setPronouns", "setTitle", "setTimezone", "setPhone", "setDescription", "setProfileImageUrl", "setPersonalImageUrl", "setAway", "setCity", "setCountry", "setStartDate", "startRecording", "requestAccessViaCheckIn", "respondToAccessRequest", "setAvailability", "respawnAtDesk", "setDeskFromNextAvailableDesk", "setSpaceRolePermissionOverride", "setCurrentlyEquippedWearables", "setDisplayEmail", "mapDeleteObjectByKey", "mapUpdateObjects", "interactWithObject", "triggerObject", "joinChimeMeeting"] | None: ...
 
 global___ClientServerAction = ClientServerAction
 
@@ -5411,24 +5715,45 @@ class SetStatus(google.protobuf.message.Message):
 global___SetStatus = SetStatus
 
 @typing_extensions.final
-class SetOutfitString(google.protobuf.message.Message):
+class SetAvailability(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
-    OUTFITSTRING_FIELD_NUMBER: builtins.int
+    AVAILABILITY_FIELD_NUMBER: builtins.int
+    ENDOPTION_FIELD_NUMBER: builtins.int
+    availability: builtins.str
+    endOption: builtins.str
+    def __init__(
+        self,
+        *,
+        availability: builtins.str = ...,
+        endOption: builtins.str | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["_endOption", b"_endOption", "endOption", b"endOption"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["_endOption", b"_endOption", "availability", b"availability", "endOption", b"endOption"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing_extensions.Literal["_endOption", b"_endOption"]) -> typing_extensions.Literal["endOption"] | None: ...
+
+global___SetAvailability = SetAvailability
+
+@typing_extensions.final
+class SetCurrentlyEquippedWearables(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    CURRENTLYEQUIPPEDWEARABLES_FIELD_NUMBER: builtins.int
     TARGETID_FIELD_NUMBER: builtins.int
-    outfitString: builtins.str
+    @property
+    def currentlyEquippedWearables(self) -> global___DBOutfit: ...
     targetId: builtins.str
     def __init__(
         self,
         *,
-        outfitString: builtins.str = ...,
+        currentlyEquippedWearables: global___DBOutfit | None = ...,
         targetId: builtins.str | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["_targetId", b"_targetId", "targetId", b"targetId"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["_targetId", b"_targetId", "outfitString", b"outfitString", "targetId", b"targetId"]) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["_targetId", b"_targetId", "currentlyEquippedWearables", b"currentlyEquippedWearables", "targetId", b"targetId"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["_targetId", b"_targetId", "currentlyEquippedWearables", b"currentlyEquippedWearables", "targetId", b"targetId"]) -> None: ...
     def WhichOneof(self, oneof_group: typing_extensions.Literal["_targetId", b"_targetId"]) -> typing_extensions.Literal["targetId"] | None: ...
 
-global___SetOutfitString = SetOutfitString
+global___SetCurrentlyEquippedWearables = SetCurrentlyEquippedWearables
 
 @typing_extensions.final
 class Spotlight(google.protobuf.message.Message):
@@ -5629,31 +5954,28 @@ class Notify(google.protobuf.message.Message):
 global___Notify = Notify
 
 @typing_extensions.final
-class Interact(google.protobuf.message.Message):
+class InteractWithObject(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
-    OBJID_FIELD_NUMBER: builtins.int
     MAPID_FIELD_NUMBER: builtins.int
+    KEY_FIELD_NUMBER: builtins.int
     DATAJSON_FIELD_NUMBER: builtins.int
-    objId: builtins.str
     mapId: builtins.str
+    key: builtins.str
     dataJson: builtins.str
-    """JSON string"""
+    """JSON string. Really this should be a separate "submit" action"""
     def __init__(
         self,
         *,
-        objId: builtins.str = ...,
-        mapId: builtins.str | None = ...,
+        mapId: builtins.str = ...,
+        key: builtins.str = ...,
         dataJson: builtins.str | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["_dataJson", b"_dataJson", "_mapId", b"_mapId", "dataJson", b"dataJson", "mapId", b"mapId"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["_dataJson", b"_dataJson", "_mapId", b"_mapId", "dataJson", b"dataJson", "mapId", b"mapId", "objId", b"objId"]) -> None: ...
-    @typing.overload
+    def HasField(self, field_name: typing_extensions.Literal["_dataJson", b"_dataJson", "dataJson", b"dataJson"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["_dataJson", b"_dataJson", "dataJson", b"dataJson", "key", b"key", "mapId", b"mapId"]) -> None: ...
     def WhichOneof(self, oneof_group: typing_extensions.Literal["_dataJson", b"_dataJson"]) -> typing_extensions.Literal["dataJson"] | None: ...
-    @typing.overload
-    def WhichOneof(self, oneof_group: typing_extensions.Literal["_mapId", b"_mapId"]) -> typing_extensions.Literal["mapId"] | None: ...
 
-global___Interact = Interact
+global___InteractWithObject = InteractWithObject
 
 @typing_extensions.final
 class ActivelySpeaking(google.protobuf.message.Message):
@@ -5930,6 +6252,26 @@ class SetPhone(google.protobuf.message.Message):
 global___SetPhone = SetPhone
 
 @typing_extensions.final
+class SetDisplayEmail(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    DISPLAYEMAIL_FIELD_NUMBER: builtins.int
+    TARGETID_FIELD_NUMBER: builtins.int
+    displayEmail: builtins.str
+    targetId: builtins.str
+    def __init__(
+        self,
+        *,
+        displayEmail: builtins.str = ...,
+        targetId: builtins.str | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["_targetId", b"_targetId", "targetId", b"targetId"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["_targetId", b"_targetId", "displayEmail", b"displayEmail", "targetId", b"targetId"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing_extensions.Literal["_targetId", b"_targetId"]) -> typing_extensions.Literal["targetId"] | None: ...
+
+global___SetDisplayEmail = SetDisplayEmail
+
+@typing_extensions.final
 class SetDescription(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -6105,26 +6447,6 @@ class Teleport(google.protobuf.message.Message):
 global___Teleport = Teleport
 
 @typing_extensions.final
-class SetWorkCondition(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    WORKCONDITION_FIELD_NUMBER: builtins.int
-    TARGETID_FIELD_NUMBER: builtins.int
-    workCondition: builtins.bool
-    targetId: builtins.str
-    def __init__(
-        self,
-        *,
-        workCondition: builtins.bool = ...,
-        targetId: builtins.str | None = ...,
-    ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["_targetId", b"_targetId", "targetId", b"targetId"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["_targetId", b"_targetId", "targetId", b"targetId", "workCondition", b"workCondition"]) -> None: ...
-    def WhichOneof(self, oneof_group: typing_extensions.Literal["_targetId", b"_targetId"]) -> typing_extensions.Literal["targetId"] | None: ...
-
-global___SetWorkCondition = SetWorkCondition
-
-@typing_extensions.final
 class Spawn(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -6148,6 +6470,16 @@ class Respawn(google.protobuf.message.Message):
     ) -> None: ...
 
 global___Respawn = Respawn
+
+@typing_extensions.final
+class RespawnAtDesk(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    def __init__(
+        self,
+    ) -> None: ...
+
+global___RespawnAtDesk = RespawnAtDesk
 
 @typing_extensions.final
 class RequestToJoinNook(google.protobuf.message.Message):
@@ -6237,6 +6569,48 @@ class MapAddObject(google.protobuf.message.Message):
 global___MapAddObject = MapAddObject
 
 @typing_extensions.final
+class MapUpdateObjects(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    @typing_extensions.final
+    class ObjectsEntry(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        KEY_FIELD_NUMBER: builtins.int
+        VALUE_FIELD_NUMBER: builtins.int
+        key: builtins.str
+        @property
+        def value(self) -> global___WireObject: ...
+        def __init__(
+            self,
+            *,
+            key: builtins.str = ...,
+            value: global___WireObject | None = ...,
+        ) -> None: ...
+        def HasField(self, field_name: typing_extensions.Literal["value", b"value"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing_extensions.Literal["key", b"key", "value", b"value"]) -> None: ...
+
+    MAPID_FIELD_NUMBER: builtins.int
+    OBJECTS_FIELD_NUMBER: builtins.int
+    UPDATESAREOVERWRITES_FIELD_NUMBER: builtins.int
+    mapId: builtins.str
+    @property
+    def objects(self) -> google.protobuf.internal.containers.MessageMap[builtins.str, global___WireObject]: ...
+    updatesAreOverwrites: builtins.bool
+    def __init__(
+        self,
+        *,
+        mapId: builtins.str = ...,
+        objects: collections.abc.Mapping[builtins.str, global___WireObject] | None = ...,
+        updatesAreOverwrites: builtins.bool | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["_updatesAreOverwrites", b"_updatesAreOverwrites", "updatesAreOverwrites", b"updatesAreOverwrites"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["_updatesAreOverwrites", b"_updatesAreOverwrites", "mapId", b"mapId", "objects", b"objects", "updatesAreOverwrites", b"updatesAreOverwrites"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing_extensions.Literal["_updatesAreOverwrites", b"_updatesAreOverwrites"]) -> typing_extensions.Literal["updatesAreOverwrites"] | None: ...
+
+global___MapUpdateObjects = MapUpdateObjects
+
+@typing_extensions.final
 class ShootConfetti(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -6294,26 +6668,6 @@ class SetInConversation(google.protobuf.message.Message):
 global___SetInConversation = SetInConversation
 
 @typing_extensions.final
-class SetCurrentDesk(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    CURRENTDESK_FIELD_NUMBER: builtins.int
-    TARGETID_FIELD_NUMBER: builtins.int
-    currentDesk: builtins.str
-    targetId: builtins.str
-    def __init__(
-        self,
-        *,
-        currentDesk: builtins.str = ...,
-        targetId: builtins.str | None = ...,
-    ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["_targetId", b"_targetId", "targetId", b"targetId"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["_targetId", b"_targetId", "currentDesk", b"currentDesk", "targetId", b"targetId"]) -> None: ...
-    def WhichOneof(self, oneof_group: typing_extensions.Literal["_targetId", b"_targetId"]) -> typing_extensions.Literal["targetId"] | None: ...
-
-global___SetCurrentDesk = SetCurrentDesk
-
-@typing_extensions.final
 class SetCurrentArea(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -6332,26 +6686,6 @@ class SetCurrentArea(google.protobuf.message.Message):
     def WhichOneof(self, oneof_group: typing_extensions.Literal["_targetId", b"_targetId"]) -> typing_extensions.Literal["targetId"] | None: ...
 
 global___SetCurrentArea = SetCurrentArea
-
-@typing_extensions.final
-class SetGoKartId(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    GOKARTID_FIELD_NUMBER: builtins.int
-    TARGETID_FIELD_NUMBER: builtins.int
-    goKartId: builtins.str
-    targetId: builtins.str
-    def __init__(
-        self,
-        *,
-        goKartId: builtins.str = ...,
-        targetId: builtins.str | None = ...,
-    ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["_targetId", b"_targetId", "targetId", b"targetId"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["_targetId", b"_targetId", "goKartId", b"goKartId", "targetId", b"targetId"]) -> None: ...
-    def WhichOneof(self, oneof_group: typing_extensions.Literal["_targetId", b"_targetId"]) -> typing_extensions.Literal["targetId"] | None: ...
-
-global___SetGoKartId = SetGoKartId
 
 @typing_extensions.final
 class SetVehicleId(google.protobuf.message.Message):
@@ -6518,27 +6852,27 @@ class SetItemString(google.protobuf.message.Message):
 global___SetItemString = SetItemString
 
 @typing_extensions.final
-class TriggerItem(google.protobuf.message.Message):
+class TriggerObject(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
-    CLOSESTOBJECT_FIELD_NUMBER: builtins.int
-    CLOSESTOBJECTTEMPLATE_FIELD_NUMBER: builtins.int
-    closestObject: builtins.str
-    closestObjectTemplate: builtins.str
+    MAPID_FIELD_NUMBER: builtins.int
+    KEY_FIELD_NUMBER: builtins.int
+    mapId: builtins.str
+    key: builtins.str
     def __init__(
         self,
         *,
-        closestObject: builtins.str | None = ...,
-        closestObjectTemplate: builtins.str | None = ...,
+        mapId: builtins.str | None = ...,
+        key: builtins.str | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["_closestObject", b"_closestObject", "_closestObjectTemplate", b"_closestObjectTemplate", "closestObject", b"closestObject", "closestObjectTemplate", b"closestObjectTemplate"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["_closestObject", b"_closestObject", "_closestObjectTemplate", b"_closestObjectTemplate", "closestObject", b"closestObject", "closestObjectTemplate", b"closestObjectTemplate"]) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["_key", b"_key", "_mapId", b"_mapId", "key", b"key", "mapId", b"mapId"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["_key", b"_key", "_mapId", b"_mapId", "key", b"key", "mapId", b"mapId"]) -> None: ...
     @typing.overload
-    def WhichOneof(self, oneof_group: typing_extensions.Literal["_closestObject", b"_closestObject"]) -> typing_extensions.Literal["closestObject"] | None: ...
+    def WhichOneof(self, oneof_group: typing_extensions.Literal["_key", b"_key"]) -> typing_extensions.Literal["key"] | None: ...
     @typing.overload
-    def WhichOneof(self, oneof_group: typing_extensions.Literal["_closestObjectTemplate", b"_closestObjectTemplate"]) -> typing_extensions.Literal["closestObjectTemplate"] | None: ...
+    def WhichOneof(self, oneof_group: typing_extensions.Literal["_mapId", b"_mapId"]) -> typing_extensions.Literal["mapId"] | None: ...
 
-global___TriggerItem = TriggerItem
+global___TriggerObject = TriggerObject
 
 @typing_extensions.final
 class CustomAction(google.protobuf.message.Message):
@@ -6690,44 +7024,6 @@ class MapCommitsChanges(google.protobuf.message.Message):
 global___MapCommitsChanges = MapCommitsChanges
 
 @typing_extensions.final
-class PlayerUpdatesSession(google.protobuf.message.Message):
-    """Deprecated, can remove?"""
-
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    ROOMCHECKED_FIELD_NUMBER: builtins.int
-    CHATCHECKED_FIELD_NUMBER: builtins.int
-    QACHECKED_FIELD_NUMBER: builtins.int
-    APPROVEQUESTIONSCHECKED_FIELD_NUMBER: builtins.int
-    ROOMID_FIELD_NUMBER: builtins.int
-    roomChecked: builtins.bool
-    chatChecked: builtins.bool
-    qaChecked: builtins.bool
-    approveQuestionsChecked: builtins.bool
-    roomId: builtins.str
-    def __init__(
-        self,
-        *,
-        roomChecked: builtins.bool | None = ...,
-        chatChecked: builtins.bool | None = ...,
-        qaChecked: builtins.bool | None = ...,
-        approveQuestionsChecked: builtins.bool | None = ...,
-        roomId: builtins.str = ...,
-    ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["_approveQuestionsChecked", b"_approveQuestionsChecked", "_chatChecked", b"_chatChecked", "_qaChecked", b"_qaChecked", "_roomChecked", b"_roomChecked", "approveQuestionsChecked", b"approveQuestionsChecked", "chatChecked", b"chatChecked", "qaChecked", b"qaChecked", "roomChecked", b"roomChecked"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["_approveQuestionsChecked", b"_approveQuestionsChecked", "_chatChecked", b"_chatChecked", "_qaChecked", b"_qaChecked", "_roomChecked", b"_roomChecked", "approveQuestionsChecked", b"approveQuestionsChecked", "chatChecked", b"chatChecked", "qaChecked", b"qaChecked", "roomChecked", b"roomChecked", "roomId", b"roomId"]) -> None: ...
-    @typing.overload
-    def WhichOneof(self, oneof_group: typing_extensions.Literal["_approveQuestionsChecked", b"_approveQuestionsChecked"]) -> typing_extensions.Literal["approveQuestionsChecked"] | None: ...
-    @typing.overload
-    def WhichOneof(self, oneof_group: typing_extensions.Literal["_chatChecked", b"_chatChecked"]) -> typing_extensions.Literal["chatChecked"] | None: ...
-    @typing.overload
-    def WhichOneof(self, oneof_group: typing_extensions.Literal["_qaChecked", b"_qaChecked"]) -> typing_extensions.Literal["qaChecked"] | None: ...
-    @typing.overload
-    def WhichOneof(self, oneof_group: typing_extensions.Literal["_roomChecked", b"_roomChecked"]) -> typing_extensions.Literal["roomChecked"] | None: ...
-
-global___PlayerUpdatesSession = PlayerUpdatesSession
-
-@typing_extensions.final
 class SpeakerUpdatesSession(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -6876,13 +7172,18 @@ class HighFive(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     TARGETID_FIELD_NUMBER: builtins.int
+    EMOTE_FIELD_NUMBER: builtins.int
     targetId: builtins.str
+    emote: builtins.str
     def __init__(
         self,
         *,
         targetId: builtins.str = ...,
+        emote: builtins.str | None = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal["targetId", b"targetId"]) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["_emote", b"_emote", "emote", b"emote"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["_emote", b"_emote", "emote", b"emote", "targetId", b"targetId"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing_extensions.Literal["_emote", b"_emote"]) -> typing_extensions.Literal["emote"] | None: ...
 
 global___HighFive = HighFive
 
@@ -7042,17 +7343,121 @@ class StartRecording(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     NOOKID_FIELD_NUMBER: builtins.int
-    CANCEL_FIELD_NUMBER: builtins.int
+    INITIALIZING_FIELD_NUMBER: builtins.int
     nookId: builtins.str
-    cancel: builtins.bool
+    initializing: builtins.bool
     def __init__(
         self,
         *,
         nookId: builtins.str = ...,
-        cancel: builtins.bool | None = ...,
+        initializing: builtins.bool | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal["_cancel", b"_cancel", "cancel", b"cancel"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal["_cancel", b"_cancel", "cancel", b"cancel", "nookId", b"nookId"]) -> None: ...
-    def WhichOneof(self, oneof_group: typing_extensions.Literal["_cancel", b"_cancel"]) -> typing_extensions.Literal["cancel"] | None: ...
+    def HasField(self, field_name: typing_extensions.Literal["_initializing", b"_initializing", "initializing", b"initializing"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["_initializing", b"_initializing", "initializing", b"initializing", "nookId", b"nookId"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing_extensions.Literal["_initializing", b"_initializing"]) -> typing_extensions.Literal["initializing"] | None: ...
 
 global___StartRecording = StartRecording
+
+@typing_extensions.final
+class RequestAccessViaCheckIn(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    USERID_FIELD_NUMBER: builtins.int
+    CANCELED_FIELD_NUMBER: builtins.int
+    NAME_FIELD_NUMBER: builtins.int
+    CURRENTLYEQUIPPEDWEARABLES_FIELD_NUMBER: builtins.int
+    userId: builtins.str
+    canceled: builtins.bool
+    name: builtins.str
+    @property
+    def currentlyEquippedWearables(self) -> global___DBOutfit: ...
+    def __init__(
+        self,
+        *,
+        userId: builtins.str = ...,
+        canceled: builtins.bool = ...,
+        name: builtins.str | None = ...,
+        currentlyEquippedWearables: global___DBOutfit | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["_currentlyEquippedWearables", b"_currentlyEquippedWearables", "_name", b"_name", "currentlyEquippedWearables", b"currentlyEquippedWearables", "name", b"name"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["_currentlyEquippedWearables", b"_currentlyEquippedWearables", "_name", b"_name", "canceled", b"canceled", "currentlyEquippedWearables", b"currentlyEquippedWearables", "name", b"name", "userId", b"userId"]) -> None: ...
+    @typing.overload
+    def WhichOneof(self, oneof_group: typing_extensions.Literal["_currentlyEquippedWearables", b"_currentlyEquippedWearables"]) -> typing_extensions.Literal["currentlyEquippedWearables"] | None: ...
+    @typing.overload
+    def WhichOneof(self, oneof_group: typing_extensions.Literal["_name", b"_name"]) -> typing_extensions.Literal["name"] | None: ...
+
+global___RequestAccessViaCheckIn = RequestAccessViaCheckIn
+
+@typing_extensions.final
+class RespondToAccessRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    class _LocationTypeEnum:
+        ValueType = typing.NewType("ValueType", builtins.int)
+        V: typing_extensions.TypeAlias = ValueType
+
+    class _LocationTypeEnumEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[RespondToAccessRequest._LocationTypeEnum.ValueType], builtins.type):  # noqa: F821
+        DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+        MyLocation: RespondToAccessRequest._LocationTypeEnum.ValueType  # 0
+        DefaultSpawn: RespondToAccessRequest._LocationTypeEnum.ValueType  # 1
+
+    class LocationTypeEnum(_LocationTypeEnum, metaclass=_LocationTypeEnumEnumTypeWrapper): ...
+    MyLocation: RespondToAccessRequest.LocationTypeEnum.ValueType  # 0
+    DefaultSpawn: RespondToAccessRequest.LocationTypeEnum.ValueType  # 1
+
+    USERID_FIELD_NUMBER: builtins.int
+    ACCEPTED_FIELD_NUMBER: builtins.int
+    LOCATIONTYPE_FIELD_NUMBER: builtins.int
+    userId: builtins.str
+    accepted: builtins.bool
+    locationType: global___RespondToAccessRequest.LocationTypeEnum.ValueType
+    def __init__(
+        self,
+        *,
+        userId: builtins.str = ...,
+        accepted: builtins.bool = ...,
+        locationType: global___RespondToAccessRequest.LocationTypeEnum.ValueType | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["_locationType", b"_locationType", "locationType", b"locationType"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["_locationType", b"_locationType", "accepted", b"accepted", "locationType", b"locationType", "userId", b"userId"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing_extensions.Literal["_locationType", b"_locationType"]) -> typing_extensions.Literal["locationType"] | None: ...
+
+global___RespondToAccessRequest = RespondToAccessRequest
+
+@typing_extensions.final
+class SetSpaceRolePermissionOverride(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    ROLE_FIELD_NUMBER: builtins.int
+    PERMISSION_FIELD_NUMBER: builtins.int
+    ENABLED_FIELD_NUMBER: builtins.int
+    role: builtins.str
+    permission: builtins.str
+    enabled: builtins.bool
+    def __init__(
+        self,
+        *,
+        role: builtins.str = ...,
+        permission: builtins.str = ...,
+        enabled: builtins.bool = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing_extensions.Literal["enabled", b"enabled", "permission", b"permission", "role", b"role"]) -> None: ...
+
+global___SetSpaceRolePermissionOverride = SetSpaceRolePermissionOverride
+
+@typing_extensions.final
+class JoinChimeMeeting(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    MEDIAREGION_FIELD_NUMBER: builtins.int
+    mediaRegion: builtins.str
+    def __init__(
+        self,
+        *,
+        mediaRegion: builtins.str | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing_extensions.Literal["_mediaRegion", b"_mediaRegion", "mediaRegion", b"mediaRegion"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing_extensions.Literal["_mediaRegion", b"_mediaRegion", "mediaRegion", b"mediaRegion"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing_extensions.Literal["_mediaRegion", b"_mediaRegion"]) -> typing_extensions.Literal["mediaRegion"] | None: ...
+
+global___JoinChimeMeeting = JoinChimeMeeting

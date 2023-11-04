@@ -47,6 +47,14 @@ def get_available_actions():
 
 
 def create_action_method(action):
+    """
+    Creates a class method converting the camel case to snake case.
+    The action:
+    def setTextStatus(textStatus, targetId=None)
+    Becomes:
+    def set_text_status(text_status, target_id=None)
+    """
+
     async def method(client, *args, **kwargs):
         params = {}
         for value, arg in zip(args, action["args"]):

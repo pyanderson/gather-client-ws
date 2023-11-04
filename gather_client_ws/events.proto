@@ -7,7 +7,7 @@ syntax = "proto3";
 - static, isolated message types
 - no breaking changes
 - this is the source of truth for the Types of things that cross the wire
-- run `npm run protoc` in gather-game-common to compile
+- run `npm run protoc` in gather-game-common to compile (not `yarn protoc`, it doesn't work 🤷🏼)
 
 
   vvv
@@ -79,6 +79,10 @@ Annoying details:
 //
 // ************************************************************************************* //
 
+message Deprecated {
+  // common type for all deprecated message data, so that the $case is decoded but not the data
+}
+
 message SpriteDirectionEnum {
   enum ENUM {
     Stand = 0;
@@ -133,10 +137,8 @@ message PlayerInitInfo {
   optional string emojiStatus = 9;
   optional DBOutfit currentlyEquippedWearables = 10;
   optional string focusModeEndTime = 11;
-  optional string currentDesk = 13;
   optional string itemString = 14;
   optional bool isNpc = 15;
-  optional bool isRecordingClient = 16;
 }
 
 message DBOutfit {
@@ -195,6 +197,7 @@ message WireObjectSpritesheet {
   WireObjectSpritesheetFraming framing = 2;
   map<string, WireObjectSpriteAnimConfig> animations = 3;
   optional string currentAnim = 4;
+  optional bool pauseAnimationsIfFpsBelowFramerate = 5;
 }
 
 message WireObject {
@@ -212,26 +215,30 @@ message WireObject {
   optional InteractionEnum.ENUM type = 12;
   optional uint32 width = 13; // deprecating hopefully?
   optional uint32 height = 14; // deprecating hopefully?
-  optional string extensionClass = 15; // experimental
+  optional string extensionClass = 15; // useful to tag an object with which extension should pay attention to it
+  // Any custom value of `previewMessage` will be shown as is, not localized
   optional string previewMessage = 16;
   optional uint32 distThreshold = 17;
   optional string propertiesJson = 18;
   optional Sound sound = 19;
-  optional ObjectTime objectStartTime = 20;
-  optional ObjectTime objectExpireTime = 21;
+  optional ObjectTime objectStartTime = 20; // deprecated on the product side
+  optional ObjectTime objectExpireTime = 21; // deprecated on the product side
   optional string id = 22;
   optional string customState = 23;
   optional string objectPlacerId = 24;
-  optional uint32 numGoKarts = 25; // experimental - this should have been in customState
+  optional uint32 numGoKarts = 25; // experimental - this should have been in customState :/
   optional WireObjectSpritesheet spritesheet = 26;
+  optional float zIndex = 27;
 }
 
 message SpaceMemberInfo {
-  map<string, bool> roles = 1;
+  // roles should be { [role in CoreRole]: boolean }, but we can't do string enums in protobuf
+  map<string, bool> roles = 1; // deprecating
   optional string name = 2;
   optional DBOutfit currentlyEquippedWearables = 4;
-  optional DeskInfo deskInfo = 5;
   optional bool allowScreenPointer = 6;
+  // role should be CoreRole, but we can't do string enums in protobuf
+  string role = 7;
 }
 
 //                                             (see top of file for how to safely make changes)
@@ -246,13 +253,6 @@ message DeskObjects {
   map<string, BackedUpDeskObject> objects = 1;
 }
 
-// deprecating
-message DeskInfo {
-  string deskId = 1;
-  optional string description = 2;
-  optional bool locked = 3;
-}
-
 message DeskInfoV2 {
   optional string deskId = 1;
   optional string description = 2;
@@ -262,14 +262,21 @@ message DeskInfoV2 {
   optional string mapId = 5;
 }
 
+message MapAndDesk {
+  string mapId = 1;
+  string deskId = 2;
+}
+
 message Sound {
   string src = 1;
   float volume = 2;
   bool loop = 3;
   uint32 maxDistance = 4;
   optional bool isPositional = 5;
+  optional bool stream = 6;
 }
 
+// Can be deprecated?
 message ObjectTime {
   uint32 _seconds = 1;
   optional string _timezone = 2;
@@ -344,7 +351,7 @@ message Announcer {
   uint32 y = 2;
 }
 
-// deprecating
+// deprecating (NGN-123)
 message Asset {
   float x = 1;
   float y = 2;
@@ -417,18 +424,6 @@ message MapSetForegroundImagePath {
 
 //                                             (see top of file for how to safely make changes)
 
-message MapSetSprites {
-  string mapId = 1;
-  repeated uint32 sprites = 2;
-  optional bool delete = 3;
-}
-
-// deprecating
-message MapSetSpaces {
-  string mapId = 1;
-  repeated Space spaces = 2;
-}
-
 message MapSetNooks {
   string mapId = 1;
   map<string, NookDiff> nooks = 2;
@@ -456,16 +451,16 @@ message MapSetAnnouncer {
   repeated Announcer announcer = 2;
 }
 
-// deprecating
+// deprecating (NGN-123)
 message MapSetAssets {
   string mapId = 1;
   repeated Asset assets = 2;
   optional bool delete = 3;
 }
 
-message MapSetObjects {
+message MapSetObjectsV2 {
   string mapId = 1;
-  map<uint32, WireObject> objects = 2;
+  map<string, WireObject> objects = 2;
   optional bool updatesAreOverwrites = 3;
 }
 
@@ -505,9 +500,9 @@ message MapSetAreas {
   optional bool delete = 3;
 }
 
-message MapDeleteObject {
+message MapDeleteObjectByKey {
   string mapId = 1;
-  uint32 key = 2;
+  string key = 2;
 }
 
 message MapDeleteObjectById {
@@ -593,6 +588,7 @@ message MapLocation {
   uint32 y = 3;
 }
 
+
 // ************************************************************************************* //
 //
 //                             server-->client types                                     //
@@ -625,19 +621,15 @@ message ServerClientEvent {
     PlayerSpotlights playerSpotlights = 6;
     PlayerRings playerRings = 7;
     PlayerChats playerChats = 9;
-    PlayerInteracts playerInteracts = 10;
     PlayerGhosts playerGhosts = 11;
-    PlayerEntersWhisper playerEntersWhisper = 12; // deprecating
+    PlayerEntersWhisper playerEntersWhisper = 12; // deprecating (NGN-114)
     PlayerLeavesWhisper playerLeavesWhisper = 13;
     PlayerActivelySpeaks playerActivelySpeaks = 14;
-    PlayerSetsWorkCondition playerSetsWorkCondition = 16;
     PlayerSetsName playerSetsName = 17;
     PlayerSetsTextStatus playerSetsTextStatus = 18;
     PlayerSetsEmojiStatus playerSetsEmojiStatus = 19;
     PlayerSetsAffiliation playerSetsAffiliation = 20;
     PlayerExits playerExits = 21;
-    RespawnComplete respawnComplete = 39; // deprecated
-    PlayerSetsOutfitString playerSetsOutfitString = 40;
     PlayerSetsIsSignedIn playerSetsIsSignedIn = 41;
     SpaceOverwrites spaceOverwrites = 44;
     SpaceIsClosed spaceIsClosed = 45;
@@ -647,31 +639,25 @@ message ServerClientEvent {
     PlayerShootsConfetti playerShootsConfetti = 49; // experimental
     PlayerSetsEventStatus playerSetsEventStatus = 50; // experimental
     PlayerSetsInConversation playerSetsInConversation = 51; // experimental
-    PlayerSetsCurrentDesk playerSetsCurrentDesk = 52; // experimental
     PlayerSetsCurrentArea playerSetsCurrentArea = 53; // experimental
     PlayerSetsImagePointer playerSetsImagePointer = 54;
     CookieFound cookieFound = 55; // experimental
     PlayerEntersWhisperV2 playerEntersWhisperV2 = 56;
-    PlayerSetsGoKartId playerSetsGoKartId = 57; // deprecated
+    PlayerSetsGoKartId playerSetsGoKartId = 57; // deprecated (NGN-709)
     MapSetDimensions mapSetDimensions = 58;
-    MapSetCollisions mapSetCollisions = 59;
     MapSetBackgroundImagePath mapSetBackgroundImagePath = 60;
     MapSetForegroundImagePath mapSetForegroundImagePath = 61;
-    MapSetSprites mapSetSprites = 62; // deprecating
-    MapSetSpaces mapSetSpaces = 63; // deprecating
     MapSetSpawns mapSetSpawns = 64;
     MapSetPortals mapSetPortals = 65;
     MapSetAnnouncer mapSetAnnouncer = 66;
-    MapSetAssets mapSetAssets = 69; // deprecating
-    MapSetObjects mapSetObjects = 70;
+    MapSetAssets mapSetAssets = 69; // deprecating (NGN-123)
     MapSetName mapSetName = 71;
     MapSetMuteOnEntry mapSetMuteOnEntry = 73;
     MapSetUseDrawnBG mapSetUseDrawnBG = 74;
     MapSetWalls mapSetWalls = 75;
     MapSetFloors mapSetFloors = 76;
     MapSetAreas mapSetAreas = 77; // experimental
-    MapDeleteObject mapDeleteObject = 78;
-    MapSetSpawn mapSetSpawn = 79; // deprecating
+    MapSetSpawn mapSetSpawn = 79; // deprecating (NGN-104)
     PlayerSetsIsAlone playerSetsIsAlone = 80; // experimental
     PlayerJoins playerJoins = 81;
     MapSetEnabledChats mapSetEnabledChats = 82;
@@ -685,20 +671,19 @@ message ServerClientEvent {
     SetScreenPointerServer setScreenPointerServer = 91;
     PlayerSetsEmoteV2 playerSetsEmoteV2 = 92;
     PlayerSetsFocusModeEndTime playerSetsFocusModeEndTime = 93; // experimental
-    SpaceSetsSpaceMembers spaceSetsSpaceMembers = 94;
+    SpaceSetsSpaceMembers spaceSetsSpaceMembers = 94; // deprecating soon (NGN-762)
+    SpaceSetsSpaceUsers spaceSetsSpaceUsers = 167;
     CustomEvent customEvent = 95;
     PlayerBlocks playerBlocks = 97;
     PlayerUpdatesFocusModeStatus playerUpdatesFocusModeStatus = 98;
     PlayerNotifies playerNotifies = 99;
     PlayerSetsItemString playerSetsItemString = 108;
-    PlayerTriggersItem playerTriggersItem = 109;
     PlayerSetsFollowTarget playerSetsFollowTarget = 110;
     PlayerRequestsToLead playerRequestsToLead = 111;
     PlayerSetsManualVideoSrc playerSetsManualVideoSrc = 112;
     PlayerSetsIsNpc playerSetsIsNpc = 113;
     PlayerSetsSubtitle playerSetsSubtitle = 114;
     MapCommitsChanges mapCommitsChanges = 115;
-    PlayerUpdatesSession playerUpdatesSession = 116;
     MapMoveObject mapMoveObject = 117;
     PlayerEditsChatMessage playerEditsChatMessage = 118;
     FXShakeObject fxShakeObject = 119;
@@ -736,8 +721,21 @@ message ServerClientEvent {
     PlayerSetsCity playerSetsCity = 152;
     PlayerSetsCountry playerSetsCountry = 153;
     PlayerSetsStartDate playerSetsStartDate = 154;
-    PlayerSetsIsRecordingClient playerSetsIsRecordingClient = 155;
     PlayerStartsRecording playerStartsRecording = 156;
+    AccessRequestsUpdated accessRequestsUpdated = 157;
+    AccessRequestRespondedTo accessRequestRespondedTo = 158;
+    SpaceSetsGuestPassStatuses spaceSetsGuestPassStatuses = 159;
+    PlayerSetsAvailability playerSetsAvailability = 160;
+    SubscriptionsUpdated subscriptionsUpdated = 161;
+    SpaceRolePermissionOverrideUpdated spaceRolePermissionOverrideUpdated = 164;
+    PlayerSetsLastRaisedHand playerSetsLastRaisedHand = 165;
+    PlayerSetsCurrentlyEquippedWearables playerSetsCurrentlyEquippedWearables = 166;
+    PlayerSetsDisplayEmail playerSetsDisplayEmail = 168;
+    MapDeleteObjectByKey mapDeleteObjectByKey = 169;
+    MapSetObjectsV2 mapSetObjectsV2 = 170;
+    PlayerInteractsWithObject playerInteractsWithObject = 171;
+    PlayerTriggersObject playerTriggersObject = 172;
+    ChimeSetsUserInfo chimeSetsUserInfo = 173; // experimental
     // add lots more stuff here!
   }
 }
@@ -745,8 +743,14 @@ message ServerClientEvent {
 
 //                                             (see top of file for how to safely make changes)
 
+// the events the client is subscribed to has been changed on the server
+message SubscriptionsUpdated {
+  // array of event names the client will be notified about
+  repeated string subscriptions = 1;
+}
+
 message ServerHeartbeat {
-  uint32 lastRTT = 1; // deprecating
+  uint32 lastRTT = 1; // no longer used
 }
 
 message Info {
@@ -809,6 +813,13 @@ message PlayerSetsStatus {
   bool busy = 2;
 }
 
+message PlayerSetsAvailability {
+  uint32 encId = 1;
+  string status = 2;
+  optional string statusUpdatedAt = 3;
+  optional string statusEndOption = 4;
+}
+
 message PlayerSpotlights {
   uint32 encId = 2; // the person who is being spotlit
   uint32 spotlightedBy = 1; // the person who is doing the spotlighting; legacy \holdover
@@ -839,7 +850,7 @@ message PlayerChats {
   string recipient = 2;
   string contents = 3;
   string senderName = 4;
-  optional Timestamp timestamp = 5; // deprecating
+  optional Timestamp timestamp = 5; // deprecating (NGN-710)
   string messageType = 6;
   double unixTime = 7;
   optional string id = 8;
@@ -854,17 +865,17 @@ message PlayerWaves {
   bool isReply = 3;
 }
 
-// deprecating this
+// deprecating this (NGN-710)
 message Timestamp {
   float seconds = 1;
   float nanoseconds = 2;
 }
 
-message PlayerInteracts {
+message PlayerInteractsWithObject {
   uint32 encId = 1;
-  string objId = 2;
-  optional string mapId = 4;
-  optional string dataJson = 3; // JSON string
+  string mapId = 2;
+  string key = 3;
+  optional string dataJson = 4; // JSON string
 }
 
 message PlayerGhosts {
@@ -896,9 +907,9 @@ message PlayerSetsEmoteV2 {
   optional uint32 count = 3;
 }
 
-message PlayerSetsWorkCondition {
+message PlayerSetsLastRaisedHand {
   uint32 encId = 1;
-  uint32 workCondition = 2;
+  string lastRaisedHand = 2;
 }
 
 message PlayerSetsLastActive {
@@ -951,6 +962,11 @@ message PlayerSetsPhone {
   string phone = 2;
 }
 
+message PlayerSetsDisplayEmail {
+  uint32 encId = 1;
+  string displayEmail = 2;
+}
+
 message PlayerSetsDescription {
   uint32 encId = 1;
   string description = 2;
@@ -985,9 +1001,9 @@ message PlayerExits {
   uint32 encId = 1;
 }
 
-message PlayerSetsOutfitString {
+message PlayerSetsCurrentlyEquippedWearables {
   uint32 encId = 1;
-  string outfitString = 2;
+  DBOutfit currentlyEquippedWearables = 2;
 }
 
 message PlayerSetsIsSignedIn {
@@ -996,8 +1012,6 @@ message PlayerSetsIsSignedIn {
 }
 
 //                                             (see top of file for how to safely make changes)
-
-message RespawnComplete {}
 
 // It's pretty wack that we're using JSON to serialize / deserialize space data here.
 // TODO: improve this by splitting this up into several events or using a better message interface
@@ -1009,15 +1023,30 @@ message SpaceOverwrites {
 message DynamicGate {
   float exposure = 1;
   repeated string spaces = 2; // to hardcode a list of spaces that should have it on
+  optional bool refreshOnChange = 3;
+  optional uint64 minimumBuildTimestamp = 4;
 }
 
 message DynamicGates {
   DynamicGate livekitEnabled = 1;
+  optional DynamicGate livekitSelfhostEnabled = 2;
+  optional DynamicGate agoraEnabled = 3;
+  optional DynamicGate chimeEnabled = 4;
+  optional DynamicGate gatherEnabled = 5;
   // BEFORE ADDING MORE OF THESE, DO A PROPER DESIGN AND RFC PLEASE!
 }
 
 message SpaceSetsSpaceMembers {
   map<string, SpaceMemberInfo> members = 1;
+}
+
+message WireSpaceUser {
+  // role should be CoreRole, but we can't do string enums in protobuf
+  string role = 1;
+}
+
+message SpaceSetsSpaceUsers {
+  map<string, WireSpaceUser> spaceUsers = 1;
 }
 
 message SpaceIsClosed {}
@@ -1054,11 +1083,6 @@ message PlayerSetsEventStatus {
 message PlayerSetsInConversation {
   uint32 encId = 1;
   bool inConversation = 2;
-}
-
-message PlayerSetsCurrentDesk {
-  uint32 encId = 1;
-  string currentDesk = 2;
 }
 
 message PlayerSetsCurrentArea {
@@ -1122,10 +1146,11 @@ message PlayerSetsItemString {
   string itemString = 2;
 }
 
-message PlayerTriggersItem {
+message PlayerTriggersObject {
   uint32 encId = 1;
-  optional string closestObject = 2;
-  optional string closestObjectTemplate = 3;
+  // mapId and key are optional because the same action is used (with empty data) to drop the thing you're carrying
+  optional string mapId = 2;
+  optional string key = 3;
 }
 
 message PlayerNotifies {
@@ -1214,6 +1239,7 @@ message FXShakeCamera {
 message PlayerHighFives {
   uint32 encId = 1;
   uint32 encIdTarget = 2;
+  optional string emote = 3;
 }
 
 message PlayerSendsCommand {
@@ -1270,15 +1296,53 @@ message PlayerSetsAway {
   bool away = 2;
 }
 
-message PlayerSetsIsRecordingClient { 
-  uint32 encId = 1;
-  bool isRecordingClient = 2;
-}
-
 message PlayerStartsRecording {
   uint32 encId = 1;
   string nookId = 2;
-  optional bool cancel = 3;
+  optional bool initializing = 3;
+}
+
+message AccessRequest {
+  string guestId = 1;
+  string memberId = 2;
+  uint64 requestedAtUnixTime = 3;
+  string guestName = 4;
+  optional DBOutfit guestCurrentlyEquippedWearables = 6;
+}
+
+message AccessRequestsUpdated {
+  repeated AccessRequest requests = 1;
+}
+
+message AccessRequestRespondedTo {
+  string targetId = 1;
+  bool accepted = 2;
+  MapLocation location = 3;
+}
+
+message PlayerGuestPassStatus {
+  string userId = 1;
+  string guestPassStatus = 2;
+}
+
+message SpaceSetsGuestPassStatuses {
+  repeated PlayerGuestPassStatus playerGuestPassStatuses = 1;
+}
+
+message SetDeskFromNextAvailableDesk {
+  optional string targetId = 1;
+  optional MapAndDesk preferredDesk = 2;
+  repeated MapAndDesk desksToIgnore = 3;
+  }
+
+message SpaceRolePermissionOverrideUpdated {
+  string role = 1;
+  string permission = 2;
+  bool enabled = 3;
+}
+
+message ChimeSetsUserInfo {
+  string resource = 1;
 }
 
 // ************************************************************************************* //
@@ -1311,9 +1375,9 @@ message ClientServerAction {
     Ring ring = 10;
     Ban ban = 12;
     Kick kick = 13;
-    SetImpassable setImpassable = 14; // deprecating
+    SetImpassable setImpassable = 14; // deprecating (NGN-705)
     Chat chat = 15;
-    Interact interact = 18;
+    Deprecated interact = 18;
     EnterWhisper enterWhisper = 19;
     LeaveWhisper leaveWhisper = 20;
     SetEmojiStatus setEmojiStatus = 21;
@@ -1323,30 +1387,30 @@ message ClientServerAction {
     Teleport teleport = 26;
     Exit exit = 27;
     Enter enter = 28;
-    SetWorkCondition setWorkCondition = 29;
+    Deprecated setWorkCondition = 29;
     Respawn respawn = 30;
     Spawn spawn = 31;
     Ghost ghost = 32;
     Init init = 33;
-    SetOutfitString setOutfitString = 34;
-    ShootConfetti shootConfetti = 36; // experimental
+    Deprecated setOutfitString = 34;
+    ShootConfetti shootConfetti = 36;
     SetEventStatus setEventStatus = 37; // experimental
     SetInConversation setInConversation = 38; // experimental
-    SetCurrentDesk setCurrentDesk = 39; // experimental
+    Deprecated setCurrentDesk = 39;
     SetCurrentArea setCurrentArea = 40; // experimental
     SetImagePointer setImagePointer = 41;
-    SetGoKartId setGoKartId = 42; // deprecated
+    Deprecated setGoKartId = 42;
     MapSetDimensions mapSetDimensions = 43;
     MapSetCollisions mapSetCollisions = 44;
     MapSetBackgroundImagePath mapSetBackgroundImagePath = 45;
     MapSetForegroundImagePath mapSetForegroundImagePath = 46;
-    MapSetSprites mapSetSprites = 47;
+    Deprecated mapSetSprites = 47; // deprecated (NGN-106)
     MapSetSpawns mapSetSpawns = 48;
-    MapSetSpaces mapSetSpaces = 49; // deprecating
+    Deprecated mapSetSpaces = 49;
     MapSetPortals mapSetPortals = 50;
     MapSetAnnouncer mapSetAnnouncer = 51;
-    MapSetAssets mapSetAssets = 54; // deprecating (use type 0 objects)
-    MapSetObjects mapSetObjects = 55;
+    MapSetAssets mapSetAssets = 54; // deprecating (use type 0 objects) (NGN-123)
+    Deprecated mapSetObjects = 55; // deprecated in favor of mapUpdateObjects
     MapSetName mapSetName = 56;
     MapSetMuteOnEntry mapSetMuteOnEntry = 58;
     MapSetUseDrawnBG mapSetUseDrawnBG = 59;
@@ -1354,8 +1418,8 @@ message ClientServerAction {
     MapSetFloors mapSetFloors = 61;
     MapSetAreas mapSetAreas = 62; // experimental
     MapAddObject mapAddObject = 63;
-    MapDeleteObject mapDeleteObject = 64;
-    MapSetSpawn mapSetSpawn = 65; // deprecating
+    Deprecated mapDeleteObject = 64; // deprecated in favor of mapDeleteObjectByKey
+    MapSetSpawn mapSetSpawn = 65; // deprecating (NGN-104)
     SetIsAlone setIsAlone = 66; // experimental
     MapSetMiniMapImagePath mapSetMiniMapImagePath = 67;
     MapSetEnabledChats mapSetEnabledChats = 68;
@@ -1372,14 +1436,14 @@ message ClientServerAction {
     CustomAction customAction = 80;
     Block block = 82;
     SetItemString setItemString = 83;
-    TriggerItem triggerItem = 84;
+    Deprecated triggerItem = 84;
     Notify notify = 85;
     SetFollowTarget setFollowTarget = 86;
     RequestToLead requestToLead = 87;
     EnterPortal enterPortal = 88;
     SetManualVideoSrc setManualVideoSrc = 89;
     SetSubtitle setSubtitle = 90;
-    PlayerUpdatesSession playerUpdatesSession = 91;
+    Deprecated playerUpdatesSession = 91;
     MapMoveObject mapMoveObject = 92;
     ChatMessageUpdated chatMessageUpdated = 93;
     FXShakeObject fxShakeObject = 94;
@@ -1417,6 +1481,19 @@ message ClientServerAction {
     SetCountry setCountry = 129;
     SetStartDate setStartDate = 130;
     StartRecording startRecording = 131;
+    RequestAccessViaCheckIn requestAccessViaCheckIn = 132;
+    RespondToAccessRequest respondToAccessRequest = 133;
+    SetAvailability setAvailability = 134;
+    RespawnAtDesk respawnAtDesk = 137;
+    SetDeskFromNextAvailableDesk setDeskFromNextAvailableDesk = 138;
+    SetSpaceRolePermissionOverride setSpaceRolePermissionOverride = 139;
+    SetCurrentlyEquippedWearables setCurrentlyEquippedWearables = 140;
+    SetDisplayEmail setDisplayEmail = 141;
+    MapDeleteObjectByKey mapDeleteObjectByKey = 142;
+    MapUpdateObjects mapUpdateObjects = 143;
+    InteractWithObject interactWithObject = 144;
+    TriggerObject triggerObject = 145;
+    JoinChimeMeeting joinChimeMeeting = 146; // experimental
     // add lots more stuff here!
   }
 }
@@ -1459,8 +1536,13 @@ message SetStatus {
   optional string targetId = 2;
 }
 
-message SetOutfitString {
-  string outfitString = 1;
+message SetAvailability {
+  string availability = 1;
+  optional string endOption = 2;
+}
+
+message SetCurrentlyEquippedWearables {
+  DBOutfit currentlyEquippedWearables = 1;
   optional string targetId = 3;
 }
 
@@ -1518,10 +1600,10 @@ message Notify {
   string notification = 1;
 }
 
-message Interact {
-  string objId = 1;
-  optional string mapId = 3;
-  optional string dataJson = 2; // JSON string
+message InteractWithObject {
+  string mapId = 1;
+  string key = 2;
+  optional string dataJson = 3; // JSON string. Really this should be a separate "submit" action
 }
 
 message ActivelySpeaking {
@@ -1594,6 +1676,11 @@ message SetPhone {
   optional string targetId = 2;
 }
 
+message SetDisplayEmail {
+  string displayEmail = 1;
+  optional string targetId = 2;
+}
+
 message SetDescription {
   string description = 1;
   optional string targetId = 2;
@@ -1635,16 +1722,14 @@ message Teleport {
   optional SpriteDirectionEnum.ENUM direction = 5;
 }
 
-message SetWorkCondition {
-  bool workCondition = 1;
-  optional string targetId = 2;
-}
-
 message Spawn {
   string spawnToken = 1;
 }
 
 message Respawn {}
+
+message RespawnAtDesk {}
+// (or, if no desk, does normal respawn)
 
 message RequestToJoinNook {
   string nookId = 1;
@@ -1669,6 +1754,13 @@ message Init {
 message MapAddObject {
   string mapId = 1;
   WireObject object = 2;
+  reserved 3;
+}
+
+message MapUpdateObjects {
+  string mapId = 1;
+  map<string, WireObject> objects = 2;
+  optional bool updatesAreOverwrites = 3;
 }
 
 message ShootConfetti {
@@ -1685,18 +1777,8 @@ message SetInConversation {
   optional string targetId = 2;
 }
 
-message SetCurrentDesk {
-  string currentDesk = 1;
-  optional string targetId = 2;
-}
-
 message SetCurrentArea {
   string currentArea = 1;
-  optional string targetId = 2;
-}
-
-message SetGoKartId {
-  string goKartId = 1;
   optional string targetId = 2;
 }
 
@@ -1741,9 +1823,9 @@ message SetItemString {
   optional string targetId = 2;
 }
 
-message TriggerItem {
-  optional string closestObject = 1;
-  optional string closestObjectTemplate = 3;
+message TriggerObject {
+  optional string mapId = 1;
+  optional string key = 2;
 }
 
 message CustomAction {
@@ -1784,15 +1866,6 @@ message MapCommitsChanges {
   uint64 updateId = 2;
 }
 
-// Deprecated, can remove?
-message PlayerUpdatesSession {
-  optional bool roomChecked = 1;
-  optional bool chatChecked = 2;
-  optional bool qaChecked = 3;
-  optional bool approveQuestionsChecked = 4;
-  string roomId = 5;
-}
-
 message SpeakerUpdatesSession {
   string sessionId = 1;
   optional bool customizeRoomEnabled = 2;
@@ -1826,6 +1899,7 @@ message Craft {
 
 message HighFive {
   string targetId = 1;
+  optional string emote = 2;
 }
 
 message AddInventoryItem {
@@ -1870,5 +1944,33 @@ message SetAway {
 
 message StartRecording {
   string nookId = 1; 
-  optional bool cancel = 2;
+  optional bool initializing = 2;
+}
+
+message RequestAccessViaCheckIn {
+  string userId = 1;
+  bool canceled = 2;
+  optional string name = 3;
+  optional DBOutfit currentlyEquippedWearables = 5;
+}
+
+message RespondToAccessRequest {
+  enum LocationTypeEnum {
+    MyLocation = 0;
+    DefaultSpawn = 1;
+  }
+
+  string userId = 1;
+  bool accepted = 2;
+  optional LocationTypeEnum locationType = 3;
+}
+
+message SetSpaceRolePermissionOverride {
+  string role = 1;
+  string permission = 2;
+  bool enabled = 3;
+}
+
+message JoinChimeMeeting {
+  optional string mediaRegion = 1;
 }

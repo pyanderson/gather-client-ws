@@ -14,10 +14,11 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1dgather_client_ws/events.proto\"\xb3\x01\n\x13SpriteDirectionEnum\"\x9b\x01\n\x04\x45NUM\x12\t\n\x05Stand\x10\x00\x12\x08\n\x04\x44own\x10\x01\x12\x0b\n\x07\x44ownAlt\x10\x02\x12\x06\n\x02Up\x10\x03\x12\t\n\x05UpAlt\x10\x04\x12\x08\n\x04Left\x10\x05\x12\x0b\n\x07LeftAlt\x10\x06\x12\t\n\x05Right\x10\x07\x12\x0c\n\x08RightAlt\x10\x08\x12\n\n\x06\x44\x61nce1\x10\t\x12\n\n\x06\x44\x61nce2\x10\n\x12\n\n\x06\x44\x61nce3\x10\x0b\x12\n\n\x06\x44\x61nce4\x10\x0c\"M\n\x11MoveDirectionEnum\"8\n\x04\x45NUM\x12\x08\n\x04Left\x10\x00\x12\t\n\x05Right\x10\x01\x12\x06\n\x02Up\x10\x02\x12\x08\n\x04\x44own\x10\x03\x12\t\n\x05\x44\x61nce\x10\x04\"\xbf\x01\n\x0fInteractionEnum\"\xab\x01\n\x04\x45NUM\x12\x08\n\x04NONE\x10\x00\x12\x14\n\x10\x45MBEDDED_WEBSITE\x10\x01\x12\n\n\x06POSTER\x10\x02\x12\t\n\x05VIDEO\x10\x03\x12\x11\n\rEXTERNAL_CALL\x10\x04\x12\r\n\tEXTENSION\x10\x05\x12\x08\n\x04NOTE\x10\x06\x12\x13\n\x0fMODAL_EXTENSION\x10\x07\x12\x13\n\x0f\x43OMPONENT_MODAL\x10\x08\x12\x16\n\x12SIDE_PANEL_TRIGGER\x10\t\"\xb7\x04\n\x0ePlayerInitInfo\x12\x11\n\x04name\x18\x01 \x01(\tH\x00\x88\x01\x01\x12\x0e\n\x01x\x18\x03 \x01(\rH\x01\x88\x01\x01\x12\x0e\n\x01y\x18\x04 \x01(\rH\x02\x88\x01\x01\x12\x10\n\x03map\x18\x05 \x01(\tH\x03\x88\x01\x01\x12\x18\n\x0b\x61\x66\x66iliation\x18\x06 \x01(\tH\x04\x88\x01\x01\x12\x11\n\x04\x62usy\x18\x07 \x01(\x08H\x05\x88\x01\x01\x12\x17\n\ntextStatus\x18\x08 \x01(\tH\x06\x88\x01\x01\x12\x18\n\x0b\x65mojiStatus\x18\t \x01(\tH\x07\x88\x01\x01\x12\x32\n\x1a\x63urrentlyEquippedWearables\x18\n \x01(\x0b\x32\t.DBOutfitH\x08\x88\x01\x01\x12\x1d\n\x10\x66ocusModeEndTime\x18\x0b \x01(\tH\t\x88\x01\x01\x12\x18\n\x0b\x63urrentDesk\x18\r \x01(\tH\n\x88\x01\x01\x12\x17\n\nitemString\x18\x0e \x01(\tH\x0b\x88\x01\x01\x12\x12\n\x05isNpc\x18\x0f \x01(\x08H\x0c\x88\x01\x01\x12\x1e\n\x11isRecordingClient\x18\x10 \x01(\x08H\r\x88\x01\x01\x42\x07\n\x05_nameB\x04\n\x02_xB\x04\n\x02_yB\x06\n\x04_mapB\x0e\n\x0c_affiliationB\x07\n\x05_busyB\r\n\x0b_textStatusB\x0e\n\x0c_emojiStatusB\x1d\n\x1b_currentlyEquippedWearablesB\x13\n\x11_focusModeEndTimeB\x0e\n\x0c_currentDeskB\r\n\x0b_itemStringB\x08\n\x06_isNpcB\x14\n\x12_isRecordingClient\"\xfa\x01\n\x08\x44\x42Outfit\x12\x0c\n\x04skin\x18\x01 \x01(\t\x12\x0c\n\x04hair\x18\x02 \x01(\t\x12\x13\n\x0b\x66\x61\x63ial_hair\x18\x03 \x01(\t\x12\x0b\n\x03top\x18\x04 \x01(\t\x12\x0e\n\x06\x62ottom\x18\x05 \x01(\t\x12\r\n\x05shoes\x18\x06 \x01(\t\x12\x0b\n\x03hat\x18\x07 \x01(\t\x12\x0f\n\x07glasses\x18\x08 \x01(\t\x12\r\n\x05other\x18\t \x01(\t\x12\x14\n\x07\x63ostume\x18\n \x01(\tH\x00\x88\x01\x01\x12\x15\n\x08mobility\x18\x0b \x01(\tH\x01\x88\x01\x01\x12\x13\n\x06jacket\x18\x0c \x01(\tH\x02\x88\x01\x01\x42\n\n\x08_costumeB\x0b\n\t_mobilityB\t\n\x07_jacket\"G\n\x1cWireObjectSpritesheetFraming\x12\x12\n\nframeWidth\x18\x01 \x01(\x05\x12\x13\n\x0b\x66rameHeight\x18\x02 \x01(\x05\"\x95\x01\n\x1aWireObjectSpriteAnimConfig\x12\x1f\n\x12useSequenceAsRange\x18\x01 \x01(\x08H\x00\x88\x01\x01\x12\x10\n\x08sequence\x18\x02 \x03(\r\x12\x11\n\x04loop\x18\x03 \x01(\x08H\x01\x88\x01\x01\x12\x11\n\tframeRate\x18\x04 \x01(\rB\x15\n\x13_useSequenceAsRangeB\x07\n\x05_loop\"\x95\x02\n\x15WireObjectSpritesheet\x12\x16\n\x0espritesheetUrl\x18\x01 \x01(\t\x12.\n\x07\x66raming\x18\x02 \x01(\x0b\x32\x1d.WireObjectSpritesheetFraming\x12:\n\nanimations\x18\x03 \x03(\x0b\x32&.WireObjectSpritesheet.AnimationsEntry\x12\x18\n\x0b\x63urrentAnim\x18\x04 \x01(\tH\x00\x88\x01\x01\x1aN\n\x0f\x41nimationsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12*\n\x05value\x18\x02 \x01(\x0b\x32\x1b.WireObjectSpriteAnimConfig:\x02\x38\x01\x42\x0e\n\x0c_currentAnim\"\x94\x08\n\nWireObject\x12\x17\n\ntemplateId\x18\x01 \x01(\tH\x00\x88\x01\x01\x12\x12\n\x05_name\x18\x02 \x01(\tH\x01\x88\x01\x01\x12\r\n\x05_tags\x18\x03 \x03(\t\x12\x0e\n\x01x\x18\x04 \x01(\rH\x02\x88\x01\x01\x12\x0e\n\x01y\x18\x05 \x01(\rH\x03\x88\x01\x01\x12\x14\n\x07offsetX\x18\x06 \x01(\x02H\x04\x88\x01\x01\x12\x14\n\x07offsetY\x18\x07 \x01(\x02H\x05\x88\x01\x01\x12\x12\n\x05\x63olor\x18\x08 \x01(\tH\x06\x88\x01\x01\x12\x18\n\x0borientation\x18\t \x01(\rH\x07\x88\x01\x01\x12\x13\n\x06normal\x18\n \x01(\tH\x08\x88\x01\x01\x12\x18\n\x0bhighlighted\x18\x0b \x01(\tH\t\x88\x01\x01\x12(\n\x04type\x18\x0c \x01(\x0e\x32\x15.InteractionEnum.ENUMH\n\x88\x01\x01\x12\x12\n\x05width\x18\r \x01(\rH\x0b\x88\x01\x01\x12\x13\n\x06height\x18\x0e \x01(\rH\x0c\x88\x01\x01\x12\x1b\n\x0e\x65xtensionClass\x18\x0f \x01(\tH\r\x88\x01\x01\x12\x1b\n\x0epreviewMessage\x18\x10 \x01(\tH\x0e\x88\x01\x01\x12\x1a\n\rdistThreshold\x18\x11 \x01(\rH\x0f\x88\x01\x01\x12\x1b\n\x0epropertiesJson\x18\x12 \x01(\tH\x10\x88\x01\x01\x12\x1a\n\x05sound\x18\x13 \x01(\x0b\x32\x06.SoundH\x11\x88\x01\x01\x12)\n\x0fobjectStartTime\x18\x14 \x01(\x0b\x32\x0b.ObjectTimeH\x12\x88\x01\x01\x12*\n\x10objectExpireTime\x18\x15 \x01(\x0b\x32\x0b.ObjectTimeH\x13\x88\x01\x01\x12\x0f\n\x02id\x18\x16 \x01(\tH\x14\x88\x01\x01\x12\x18\n\x0b\x63ustomState\x18\x17 \x01(\tH\x15\x88\x01\x01\x12\x1b\n\x0eobjectPlacerId\x18\x18 \x01(\tH\x16\x88\x01\x01\x12\x17\n\nnumGoKarts\x18\x19 \x01(\rH\x17\x88\x01\x01\x12\x30\n\x0bspritesheet\x18\x1a \x01(\x0b\x32\x16.WireObjectSpritesheetH\x18\x88\x01\x01\x42\r\n\x0b_templateIdB\x08\n\x06X_nameB\x04\n\x02_xB\x04\n\x02_yB\n\n\x08_offsetXB\n\n\x08_offsetYB\x08\n\x06_colorB\x0e\n\x0c_orientationB\t\n\x07_normalB\x0e\n\x0c_highlightedB\x07\n\x05_typeB\x08\n\x06_widthB\t\n\x07_heightB\x11\n\x0f_extensionClassB\x11\n\x0f_previewMessageB\x10\n\x0e_distThresholdB\x11\n\x0f_propertiesJsonB\x08\n\x06_soundB\x12\n\x10_objectStartTimeB\x13\n\x11_objectExpireTimeB\x05\n\x03_idB\x0e\n\x0c_customStateB\x11\n\x0f_objectPlacerIdB\r\n\x0b_numGoKartsB\x0e\n\x0c_spritesheet\"\xc1\x02\n\x0fSpaceMemberInfo\x12*\n\x05roles\x18\x01 \x03(\x0b\x32\x1b.SpaceMemberInfo.RolesEntry\x12\x11\n\x04name\x18\x02 \x01(\tH\x00\x88\x01\x01\x12\x32\n\x1a\x63urrentlyEquippedWearables\x18\x04 \x01(\x0b\x32\t.DBOutfitH\x01\x88\x01\x01\x12 \n\x08\x64\x65skInfo\x18\x05 \x01(\x0b\x32\t.DeskInfoH\x02\x88\x01\x01\x12\x1f\n\x12\x61llowScreenPointer\x18\x06 \x01(\x08H\x03\x88\x01\x01\x1a,\n\nRolesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x08:\x02\x38\x01\x42\x07\n\x05_nameB\x1d\n\x1b_currentlyEquippedWearablesB\x0b\n\t_deskInfoB\x15\n\x13_allowScreenPointer\"P\n\x12\x42\x61\x63kedUpDeskObject\x12\x18\n\x03obj\x18\x01 \x01(\x0b\x32\x0b.WireObject\x12\x0f\n\x07offsetX\x18\x02 \x01(\r\x12\x0f\n\x07offsetY\x18\x03 \x01(\r\"~\n\x0b\x44\x65skObjects\x12*\n\x07objects\x18\x01 \x03(\x0b\x32\x19.DeskObjects.ObjectsEntry\x1a\x43\n\x0cObjectsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\"\n\x05value\x18\x02 \x01(\x0b\x32\x13.BackedUpDeskObject:\x02\x38\x01\"d\n\x08\x44\x65skInfo\x12\x0e\n\x06\x64\x65skId\x18\x01 \x01(\t\x12\x18\n\x0b\x64\x65scription\x18\x02 \x01(\tH\x00\x88\x01\x01\x12\x13\n\x06locked\x18\x03 \x01(\x08H\x01\x88\x01\x01\x42\x0e\n\x0c_descriptionB\t\n\x07_locked\"\xd4\x01\n\nDeskInfoV2\x12\x13\n\x06\x64\x65skId\x18\x01 \x01(\tH\x00\x88\x01\x01\x12\x18\n\x0b\x64\x65scription\x18\x02 \x01(\tH\x01\x88\x01\x01\x12\x13\n\x06locked\x18\x03 \x01(\x08H\x02\x88\x01\x01\x12*\n\x0flastDeskObjects\x18\x04 \x01(\x0b\x32\x0c.DeskObjectsH\x03\x88\x01\x01\x12\x12\n\x05mapId\x18\x05 \x01(\tH\x04\x88\x01\x01\x42\t\n\x07_deskIdB\x0e\n\x0c_descriptionB\t\n\x07_lockedB\x12\n\x10_lastDeskObjectsB\x08\n\x06_mapId\"s\n\x05Sound\x12\x0b\n\x03src\x18\x01 \x01(\t\x12\x0e\n\x06volume\x18\x02 \x01(\x02\x12\x0c\n\x04loop\x18\x03 \x01(\x08\x12\x13\n\x0bmaxDistance\x18\x04 \x01(\r\x12\x19\n\x0cisPositional\x18\x05 \x01(\x08H\x00\x88\x01\x01\x42\x0f\n\r_isPositional\"D\n\nObjectTime\x12\x10\n\x08_seconds\x18\x01 \x01(\r\x12\x16\n\t_timezone\x18\x02 \x01(\tH\x00\x88\x01\x01\x42\x0c\n\nX_timezone\"P\n\x05Space\x12\x0f\n\x07spaceId\x18\x01 \x01(\t\x12\t\n\x01x\x18\x02 \x01(\r\x12\t\n\x01y\x18\x03 \x01(\r\x12\x14\n\x07\x63olored\x18\x04 \x01(\x08H\x00\x88\x01\x01\x42\n\n\x08_colored\"(\n\nNookCoords\x12\x1a\n\x06\x63oords\x18\x01 \x03(\x0b\x32\n.WirePoint\"\x1d\n\x0c\x41llowedUsers\x12\r\n\x05users\x18\x01 \x03(\t\")\n\x0bRequestUser\x12\x11\n\x04name\x18\x01 \x01(\tH\x00\x88\x01\x01\x42\x07\n\x05_name\"w\n\x0eRequestedUsers\x12)\n\x05users\x18\x01 \x03(\x0b\x32\x1a.RequestedUsers.UsersEntry\x1a:\n\nUsersEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x1b\n\x05value\x18\x02 \x01(\x0b\x32\x0c.RequestUser:\x02\x38\x01\"w\n\rRecordingInfo\x12\x0e\n\x06\x61\x63tive\x18\x03 \x01(\x08\x12\x1d\n\x10initiatingPlayer\x18\x01 \x01(\tH\x00\x88\x01\x01\x12\x15\n\x08\x65gressId\x18\x04 \x01(\tH\x01\x88\x01\x01\x42\x13\n\x11_initiatingPlayerB\x0b\n\t_egressId\"\xf1\x03\n\x08NookDiff\x12$\n\nnookCoords\x18\x01 \x01(\x0b\x32\x0b.NookCoordsH\x00\x88\x01\x01\x12\x14\n\x07\x63olored\x18\x02 \x01(\x08H\x01\x88\x01\x01\x12\x11\n\x04name\x18\x03 \x01(\tH\x02\x88\x01\x01\x12\x15\n\x08\x62ookable\x18\x04 \x01(\x08H\x03\x88\x01\x01\x12\x15\n\x08\x63\x61pacity\x18\x05 \x01(\rH\x04\x88\x01\x01\x12\x17\n\nrestricted\x18\x06 \x01(\x08H\x05\x88\x01\x01\x12(\n\x0c\x61llowedUsers\x18\x07 \x01(\x0b\x32\r.AllowedUsersH\x06\x88\x01\x01\x12,\n\x0erequestedUsers\x18\x08 \x01(\x0b\x32\x0f.RequestedUsersH\x07\x88\x01\x01\x12\x18\n\x0bisInMeeting\x18\t \x01(\x08H\x08\x88\x01\x01\x12\x13\n\x06isDesk\x18\n \x01(\x08H\t\x88\x01\x01\x12*\n\rrecordingInfo\x18\x0b \x01(\x0b\x32\x0e.RecordingInfoH\n\x88\x01\x01\x42\r\n\x0b_nookCoordsB\n\n\x08_coloredB\x07\n\x05_nameB\x0b\n\t_bookableB\x0b\n\t_capacityB\r\n\x0b_restrictedB\x0f\n\r_allowedUsersB\x11\n\x0f_requestedUsersB\x0e\n\x0c_isInMeetingB\t\n\x07_isDeskB\x10\n\x0e_recordingInfo\"!\n\tWirePoint\x12\t\n\x01x\x18\x01 \x01(\r\x12\t\n\x01y\x18\x02 \x01(\r\"D\n\nSpawnPoint\x12\t\n\x01x\x18\x01 \x01(\r\x12\t\n\x01y\x18\x02 \x01(\r\x12\x14\n\x07spawnId\x18\x03 \x01(\tH\x00\x88\x01\x01\x42\n\n\x08_spawnId\"\xae\x01\n\x06Portal\x12\t\n\x01x\x18\x01 \x01(\r\x12\t\n\x01y\x18\x02 \x01(\r\x12\x16\n\ttargetMap\x18\x03 \x01(\tH\x00\x88\x01\x01\x12\x16\n\ttargetUrl\x18\x04 \x01(\tH\x01\x88\x01\x01\x12\x14\n\x07targetX\x18\x05 \x01(\rH\x02\x88\x01\x01\x12\x14\n\x07targetY\x18\x06 \x01(\rH\x03\x88\x01\x01\x42\x0c\n\n_targetMapB\x0c\n\n_targetUrlB\n\n\x08_targetXB\n\n\x08_targetY\"!\n\tAnnouncer\x12\t\n\x01x\x18\x01 \x01(\r\x12\t\n\x01y\x18\x02 \x01(\r\"\x8a\x01\n\x05\x41sset\x12\t\n\x01x\x18\x01 \x01(\x02\x12\t\n\x01y\x18\x02 \x01(\x02\x12\x0b\n\x03src\x18\x03 \x01(\t\x12\x12\n\x05width\x18\x04 \x01(\rH\x00\x88\x01\x01\x12\x13\n\x06height\x18\x05 \x01(\rH\x01\x88\x01\x01\x12\x14\n\x07inFront\x18\x06 \x01(\x08H\x02\x88\x01\x01\x42\x08\n\x06_widthB\t\n\x07_heightB\n\n\x08_inFront\">\n\x0c\x41reaPosition\x12\n\n\x02x1\x18\x01 \x01(\r\x12\n\n\x02y1\x18\x02 \x01(\r\x12\n\n\x02x2\x18\x03 \x01(\r\x12\n\n\x02y2\x18\x04 \x01(\r\"M\n\x08WireArea\x12\x15\n\x08\x63\x61tegory\x18\x01 \x01(\tH\x00\x88\x01\x01\x12\x1d\n\x06\x63oords\x18\x02 \x03(\x0b\x32\r.AreaPositionB\x0b\n\t_category\"\'\n\x06\x44\x42\x44\x65sk\x12\x1d\n\x06\x63oords\x18\x01 \x03(\x0b\x32\r.AreaPosition\"@\n\x10MapSetDimensions\x12\r\n\x05mapId\x18\x01 \x01(\t\x12\r\n\x05width\x18\x02 \x01(\r\x12\x0e\n\x06height\x18\x03 \x01(\r\"[\n\x10MapSetCollisions\x12\r\n\x05mapId\x18\x01 \x01(\t\x12\t\n\x01x\x18\x02 \x01(\r\x12\t\n\x01y\x18\x03 \x01(\r\x12\t\n\x01w\x18\x04 \x01(\r\x12\t\n\x01h\x18\x05 \x01(\r\x12\x0c\n\x04mask\x18\x06 \x01(\t\"r\n\x14MapSetCollisionsBits\x12\r\n\x05mapId\x18\x01 \x01(\t\x12\x11\n\toverwrite\x18\x02 \x01(\x08\x12\t\n\x01x\x18\x03 \x01(\r\x12\t\n\x01y\x18\x04 \x01(\r\x12\t\n\x01w\x18\x05 \x01(\r\x12\t\n\x01h\x18\x06 \x01(\r\x12\x0c\n\x04mask\x18\x07 \x01(\x0c\"G\n\x19MapSetBackgroundImagePath\x12\r\n\x05mapId\x18\x01 \x01(\t\x12\x1b\n\x13\x62\x61\x63kgroundImagePath\x18\x02 \x01(\t\"g\n\x19MapSetForegroundImagePath\x12\r\n\x05mapId\x18\x01 \x01(\t\x12\x1b\n\x13\x66oregroundImagePath\x18\x02 \x01(\t\x12\x13\n\x06\x64\x65lete\x18\x03 \x01(\x08H\x00\x88\x01\x01\x42\t\n\x07_delete\"O\n\rMapSetSprites\x12\r\n\x05mapId\x18\x01 \x01(\t\x12\x0f\n\x07sprites\x18\x02 \x03(\r\x12\x13\n\x06\x64\x65lete\x18\x03 \x01(\x08H\x00\x88\x01\x01\x42\t\n\x07_delete\"5\n\x0cMapSetSpaces\x12\r\n\x05mapId\x18\x01 \x01(\t\x12\x16\n\x06spaces\x18\x02 \x03(\x0b\x32\x06.Space\"\xa3\x01\n\x0bMapSetNooks\x12\r\n\x05mapId\x18\x01 \x01(\t\x12&\n\x05nooks\x18\x02 \x03(\x0b\x32\x17.MapSetNooks.NooksEntry\x12\x16\n\toverwrite\x18\x03 \x01(\x08H\x00\x88\x01\x01\x1a\x37\n\nNooksEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x18\n\x05value\x18\x02 \x01(\x0b\x32\t.NookDiff:\x02\x38\x01\x42\x0c\n\n_overwrite\"W\n\x0bMapSetSpawn\x12\r\n\x05mapId\x18\x01 \x01(\t\x12\x19\n\x05spawn\x18\x02 \x01(\x0b\x32\n.WirePoint\x12\x13\n\x06\x64\x65lete\x18\x03 \x01(\x08H\x00\x88\x01\x01\x42\t\n\x07_delete\":\n\x0cMapSetSpawns\x12\r\n\x05mapId\x18\x01 \x01(\t\x12\x1b\n\x06spawns\x18\x02 \x03(\x0b\x32\x0b.SpawnPoint\"8\n\rMapSetPortals\x12\r\n\x05mapId\x18\x01 \x01(\t\x12\x18\n\x07portals\x18\x02 \x03(\x0b\x32\x07.Portal\"?\n\x0fMapSetAnnouncer\x12\r\n\x05mapId\x18\x01 \x01(\t\x12\x1d\n\tannouncer\x18\x02 \x03(\x0b\x32\n.Announcer\"U\n\x0cMapSetAssets\x12\r\n\x05mapId\x18\x01 \x01(\t\x12\x16\n\x06\x61ssets\x18\x02 \x03(\x0b\x32\x06.Asset\x12\x13\n\x06\x64\x65lete\x18\x03 \x01(\x08H\x00\x88\x01\x01\x42\t\n\x07_delete\"\xc5\x01\n\rMapSetObjects\x12\r\n\x05mapId\x18\x01 \x01(\t\x12,\n\x07objects\x18\x02 \x03(\x0b\x32\x1b.MapSetObjects.ObjectsEntry\x12!\n\x14updatesAreOverwrites\x18\x03 \x01(\x08H\x00\x88\x01\x01\x1a;\n\x0cObjectsEntry\x12\x0b\n\x03key\x18\x01 \x01(\r\x12\x1a\n\x05value\x18\x02 \x01(\x0b\x32\x0b.WireObject:\x02\x38\x01\x42\x17\n\x15_updatesAreOverwrites\"I\n\nMapSetName\x12\r\n\x05mapId\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x13\n\x06\x64\x65lete\x18\x03 \x01(\x08H\x00\x88\x01\x01\x42\t\n\x07_delete\"W\n\x11MapSetMuteOnEntry\x12\r\n\x05mapId\x18\x01 \x01(\t\x12\x13\n\x0bmuteOnEntry\x18\x02 \x01(\x08\x12\x13\n\x06\x64\x65lete\x18\x03 \x01(\x08H\x00\x88\x01\x01\x42\t\n\x07_delete\"U\n\x10MapSetUseDrawnBG\x12\r\n\x05mapId\x18\x01 \x01(\t\x12\x12\n\nuseDrawnBG\x18\x02 \x01(\x08\x12\x13\n\x06\x64\x65lete\x18\x03 \x01(\x08H\x00\x88\x01\x01\x42\t\n\x07_delete\"\x92\x01\n\x0bMapSetWalls\x12\r\n\x05mapId\x18\x01 \x01(\t\x12&\n\x05walls\x18\x02 \x03(\x0b\x32\x17.MapSetWalls.WallsEntry\x12\x13\n\x06\x64\x65lete\x18\x03 \x01(\x08H\x00\x88\x01\x01\x1a,\n\nWallsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\t\n\x07_delete\"\x97\x01\n\x0cMapSetFloors\x12\r\n\x05mapId\x18\x01 \x01(\t\x12)\n\x06\x66loors\x18\x02 \x03(\x0b\x32\x19.MapSetFloors.FloorsEntry\x12\x13\n\x06\x64\x65lete\x18\x03 \x01(\x08H\x00\x88\x01\x01\x1a-\n\x0b\x46loorsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\t\n\x07_delete\"\x9d\x01\n\x0bMapSetAreas\x12\r\n\x05mapId\x18\x01 \x01(\t\x12&\n\x05\x61reas\x18\x02 \x03(\x0b\x32\x17.MapSetAreas.AreasEntry\x12\x13\n\x06\x64\x65lete\x18\x03 \x01(\x08H\x00\x88\x01\x01\x1a\x37\n\nAreasEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x18\n\x05value\x18\x02 \x01(\x0b\x32\t.WireArea:\x02\x38\x01\x42\t\n\x07_delete\"-\n\x0fMapDeleteObject\x12\r\n\x05mapId\x18\x01 \x01(\t\x12\x0b\n\x03key\x18\x02 \x01(\r\"0\n\x13MapDeleteObjectById\x12\r\n\x05mapId\x18\x01 \x01(\t\x12\n\n\x02id\x18\x02 \x01(\t\"a\n\x16MapSetMiniMapImagePath\x12\r\n\x05mapId\x18\x01 \x01(\t\x12\x18\n\x10miniMapImagePath\x18\x02 \x01(\t\x12\x13\n\x06\x64\x65lete\x18\x03 \x01(\x08H\x00\x88\x01\x01\x42\t\n\x07_delete\"Y\n\x12MapSetEnabledChats\x12\r\n\x05mapId\x18\x01 \x01(\t\x12\x14\n\x0c\x65nabledChats\x18\x02 \x03(\t\x12\x13\n\x06\x64\x65lete\x18\x03 \x01(\x08H\x00\x88\x01\x01\x42\t\n\x07_delete\"W\n\x11MapSetDescription\x12\r\n\x05mapId\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t\x12\x13\n\x06\x64\x65lete\x18\x03 \x01(\x08H\x00\x88\x01\x01\x42\t\n\x07_delete\"U\n\x10MapSetDecoration\x12\r\n\x05mapId\x18\x01 \x01(\t\x12\x12\n\ndecoration\x18\x02 \x01(\t\x12\x13\n\x06\x64\x65lete\x18\x03 \x01(\x08H\x00\x88\x01\x01\x42\t\n\x07_delete\"o\n\x13MapSetTutorialTasks\x12\r\n\x05mapId\x18\x01 \x01(\t\x12)\n\rtutorialTasks\x18\x02 \x01(\x0b\x32\x12.WireTutorialTasks\x12\x13\n\x06\x64\x65lete\x18\x03 \x01(\x08H\x00\x88\x01\x01\x42\t\n\x07_delete\"r\n\x11WireTutorialTasks\x12\x12\n\ngroupSetId\x18\x01 \x01(\t\x12#\n\x05\x61reas\x18\x02 \x03(\x0b\x32\x14.TutorialTaskMapArea\x12\x16\n\tautoStart\x18\x03 \x01(\x08H\x00\x88\x01\x01\x42\x0c\n\n_autoStart\"Z\n\x13TutorialTaskMapArea\x12\x0e\n\x06\x61reaId\x18\x01 \x01(\t\x12\t\n\x01x\x18\x02 \x01(\r\x12\t\n\x01y\x18\x03 \x01(\r\x12\x0e\n\x06height\x18\x04 \x01(\r\x12\r\n\x05width\x18\x05 \x01(\r\"M\n\x0cMapSetScript\x12\r\n\x05mapId\x18\x01 \x01(\t\x12\x0e\n\x06script\x18\x02 \x01(\t\x12\x13\n\x06\x64\x65lete\x18\x03 \x01(\x08H\x00\x88\x01\x01\x42\t\n\x07_delete\"\xc3\x01\n\tInventory\x12$\n\x05items\x18\x01 \x03(\x0b\x32\x15.Inventory.ItemsEntry\x12$\n\x05order\x18\x02 \x03(\x0b\x32\x15.Inventory.OrderEntry\x1a<\n\nItemsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x1d\n\x05value\x18\x02 \x01(\x0b\x32\x0e.InventoryItem:\x02\x38\x01\x1a,\n\nOrderEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x1e\n\rInventoryItem\x12\r\n\x05\x63ount\x18\x01 \x01(\r\"\xba\x02\n\tSpaceItem\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x15\n\x08\x63\x61tegory\x18\x02 \x01(\tH\x00\x88\x01\x01\x12\x18\n\x0b\x64\x65scription\x18\x03 \x01(\tH\x01\x88\x01\x01\x12\x12\n\npreviewUrl\x18\x04 \x01(\t\x12\"\n\x04meta\x18\x05 \x03(\x0b\x32\x14.SpaceItem.MetaEntry\x12,\n\tabilities\x18\x06 \x03(\x0b\x32\x19.SpaceItem.AbilitiesEntry\x1a+\n\tMetaEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a>\n\x0e\x41\x62ilitiesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x1b\n\x05value\x18\x02 \x01(\x0b\x32\x0c.ItemAbility:\x02\x38\x01\x42\x0b\n\t_categoryB\x0e\n\x0c_description\"\x1b\n\x0bItemAbility\x12\x0c\n\x04name\x18\x01 \x01(\t\"0\n\x0bMapLocation\x12\x0b\n\x03map\x18\x01 \x01(\t\x12\t\n\x01x\x18\x02 \x01(\r\x12\t\n\x01y\x18\x03 \x01(\r\"7\n\x11ServerClientBatch\x12\"\n\x06\x65vents\x18\x01 \x03(\x0b\x32\x12.ServerClientEvent\"\xff/\n\x11ServerClientEvent\x12\x15\n\x04info\x18\x64 \x01(\x0b\x32\x05.InfoH\x00\x12\x15\n\x04warn\x18\x65 \x01(\x0b\x32\x05.WarnH\x00\x12\x1c\n\x05\x65rror\x18\x66 \x01(\x0b\x32\x0b.ErrorEventH\x00\x12\x17\n\x05ready\x18g \x01(\x0b\x32\x06.ReadyH\x00\x12+\n\x0fserverHeartbeat\x18i \x01(\x0b\x32\x10.ServerHeartbeatH\x00\x12/\n\x11transactionStatus\x18k \x01(\x0b\x32\x12.TransactionStatusH\x00\x12#\n\x0bplayerMoves\x18\x01 \x01(\x0b\x32\x0c.PlayerMovesH\x00\x12-\n\x10playerSetsStatus\x18\x05 \x01(\x0b\x32\x11.PlayerSetsStatusH\x00\x12-\n\x10playerSpotlights\x18\x06 \x01(\x0b\x32\x11.PlayerSpotlightsH\x00\x12#\n\x0bplayerRings\x18\x07 \x01(\x0b\x32\x0c.PlayerRingsH\x00\x12#\n\x0bplayerChats\x18\t \x01(\x0b\x32\x0c.PlayerChatsH\x00\x12+\n\x0fplayerInteracts\x18\n \x01(\x0b\x32\x10.PlayerInteractsH\x00\x12%\n\x0cplayerGhosts\x18\x0b \x01(\x0b\x32\r.PlayerGhostsH\x00\x12\x33\n\x13playerEntersWhisper\x18\x0c \x01(\x0b\x32\x14.PlayerEntersWhisperH\x00\x12\x33\n\x13playerLeavesWhisper\x18\r \x01(\x0b\x32\x14.PlayerLeavesWhisperH\x00\x12\x35\n\x14playerActivelySpeaks\x18\x0e \x01(\x0b\x32\x15.PlayerActivelySpeaksH\x00\x12;\n\x17playerSetsWorkCondition\x18\x10 \x01(\x0b\x32\x18.PlayerSetsWorkConditionH\x00\x12)\n\x0eplayerSetsName\x18\x11 \x01(\x0b\x32\x0f.PlayerSetsNameH\x00\x12\x35\n\x14playerSetsTextStatus\x18\x12 \x01(\x0b\x32\x15.PlayerSetsTextStatusH\x00\x12\x37\n\x15playerSetsEmojiStatus\x18\x13 \x01(\x0b\x32\x16.PlayerSetsEmojiStatusH\x00\x12\x37\n\x15playerSetsAffiliation\x18\x14 \x01(\x0b\x32\x16.PlayerSetsAffiliationH\x00\x12#\n\x0bplayerExits\x18\x15 \x01(\x0b\x32\x0c.PlayerExitsH\x00\x12+\n\x0frespawnComplete\x18\' \x01(\x0b\x32\x10.RespawnCompleteH\x00\x12\x39\n\x16playerSetsOutfitString\x18( \x01(\x0b\x32\x17.PlayerSetsOutfitStringH\x00\x12\x35\n\x14playerSetsIsSignedIn\x18) \x01(\x0b\x32\x15.PlayerSetsIsSignedInH\x00\x12+\n\x0fspaceOverwrites\x18, \x01(\x0b\x32\x10.SpaceOverwritesH\x00\x12\'\n\rspaceIsClosed\x18- \x01(\x0b\x32\x0e.SpaceIsClosedH\x00\x12\x31\n\x12playerEntersPortal\x18. \x01(\x0b\x32\x13.PlayerEntersPortalH\x00\x12\x31\n\x12spaceSetsIdMapping\x18/ \x01(\x0b\x32\x13.SpaceSetsIdMappingH\x00\x12\x35\n\x14playerSetsLastActive\x18\x30 \x01(\x0b\x32\x15.PlayerSetsLastActiveH\x00\x12\x35\n\x14playerShootsConfetti\x18\x31 \x01(\x0b\x32\x15.PlayerShootsConfettiH\x00\x12\x37\n\x15playerSetsEventStatus\x18\x32 \x01(\x0b\x32\x16.PlayerSetsEventStatusH\x00\x12=\n\x18playerSetsInConversation\x18\x33 \x01(\x0b\x32\x19.PlayerSetsInConversationH\x00\x12\x37\n\x15playerSetsCurrentDesk\x18\x34 \x01(\x0b\x32\x16.PlayerSetsCurrentDeskH\x00\x12\x37\n\x15playerSetsCurrentArea\x18\x35 \x01(\x0b\x32\x16.PlayerSetsCurrentAreaH\x00\x12\x39\n\x16playerSetsImagePointer\x18\x36 \x01(\x0b\x32\x17.PlayerSetsImagePointerH\x00\x12#\n\x0b\x63ookieFound\x18\x37 \x01(\x0b\x32\x0c.CookieFoundH\x00\x12\x37\n\x15playerEntersWhisperV2\x18\x38 \x01(\x0b\x32\x16.PlayerEntersWhisperV2H\x00\x12\x31\n\x12playerSetsGoKartId\x18\x39 \x01(\x0b\x32\x13.PlayerSetsGoKartIdH\x00\x12-\n\x10mapSetDimensions\x18: \x01(\x0b\x32\x11.MapSetDimensionsH\x00\x12-\n\x10mapSetCollisions\x18; \x01(\x0b\x32\x11.MapSetCollisionsH\x00\x12?\n\x19mapSetBackgroundImagePath\x18< \x01(\x0b\x32\x1a.MapSetBackgroundImagePathH\x00\x12?\n\x19mapSetForegroundImagePath\x18= \x01(\x0b\x32\x1a.MapSetForegroundImagePathH\x00\x12\'\n\rmapSetSprites\x18> \x01(\x0b\x32\x0e.MapSetSpritesH\x00\x12%\n\x0cmapSetSpaces\x18? \x01(\x0b\x32\r.MapSetSpacesH\x00\x12%\n\x0cmapSetSpawns\x18@ \x01(\x0b\x32\r.MapSetSpawnsH\x00\x12\'\n\rmapSetPortals\x18\x41 \x01(\x0b\x32\x0e.MapSetPortalsH\x00\x12+\n\x0fmapSetAnnouncer\x18\x42 \x01(\x0b\x32\x10.MapSetAnnouncerH\x00\x12%\n\x0cmapSetAssets\x18\x45 \x01(\x0b\x32\r.MapSetAssetsH\x00\x12\'\n\rmapSetObjects\x18\x46 \x01(\x0b\x32\x0e.MapSetObjectsH\x00\x12!\n\nmapSetName\x18G \x01(\x0b\x32\x0b.MapSetNameH\x00\x12/\n\x11mapSetMuteOnEntry\x18I \x01(\x0b\x32\x12.MapSetMuteOnEntryH\x00\x12-\n\x10mapSetUseDrawnBG\x18J \x01(\x0b\x32\x11.MapSetUseDrawnBGH\x00\x12#\n\x0bmapSetWalls\x18K \x01(\x0b\x32\x0c.MapSetWallsH\x00\x12%\n\x0cmapSetFloors\x18L \x01(\x0b\x32\r.MapSetFloorsH\x00\x12#\n\x0bmapSetAreas\x18M \x01(\x0b\x32\x0c.MapSetAreasH\x00\x12+\n\x0fmapDeleteObject\x18N \x01(\x0b\x32\x10.MapDeleteObjectH\x00\x12#\n\x0bmapSetSpawn\x18O \x01(\x0b\x32\x0c.MapSetSpawnH\x00\x12/\n\x11playerSetsIsAlone\x18P \x01(\x0b\x32\x12.PlayerSetsIsAloneH\x00\x12#\n\x0bplayerJoins\x18Q \x01(\x0b\x32\x0c.PlayerJoinsH\x00\x12\x31\n\x12mapSetEnabledChats\x18R \x01(\x0b\x32\x13.MapSetEnabledChatsH\x00\x12/\n\x11mapSetDescription\x18S \x01(\x0b\x32\x12.MapSetDescriptionH\x00\x12-\n\x10mapSetDecoration\x18T \x01(\x0b\x32\x11.MapSetDecorationH\x00\x12\x33\n\x13mapSetTutorialTasks\x18U \x01(\x0b\x32\x14.MapSetTutorialTasksH\x00\x12\x39\n\x16mapSetMiniMapImagePath\x18V \x01(\x0b\x32\x17.MapSetMiniMapImagePathH\x00\x12+\n\x0fspacePlaysSound\x18W \x01(\x0b\x32\x10.SpacePlaysSoundH\x00\x12%\n\x0cmapSetScript\x18X \x01(\x0b\x32\r.MapSetScriptH\x00\x12\x31\n\x12playerSetsIsMobile\x18Z \x01(\x0b\x32\x13.PlayerSetsIsMobileH\x00\x12\x39\n\x16setScreenPointerServer\x18[ \x01(\x0b\x32\x17.SetScreenPointerServerH\x00\x12/\n\x11playerSetsEmoteV2\x18\\ \x01(\x0b\x32\x12.PlayerSetsEmoteV2H\x00\x12\x41\n\x1aplayerSetsFocusModeEndTime\x18] \x01(\x0b\x32\x1b.PlayerSetsFocusModeEndTimeH\x00\x12\x37\n\x15spaceSetsSpaceMembers\x18^ \x01(\x0b\x32\x16.SpaceSetsSpaceMembersH\x00\x12#\n\x0b\x63ustomEvent\x18_ \x01(\x0b\x32\x0c.CustomEventH\x00\x12%\n\x0cplayerBlocks\x18\x61 \x01(\x0b\x32\r.PlayerBlocksH\x00\x12\x45\n\x1cplayerUpdatesFocusModeStatus\x18\x62 \x01(\x0b\x32\x1d.PlayerUpdatesFocusModeStatusH\x00\x12)\n\x0eplayerNotifies\x18\x63 \x01(\x0b\x32\x0f.PlayerNotifiesH\x00\x12\x35\n\x14playerSetsItemString\x18l \x01(\x0b\x32\x15.PlayerSetsItemStringH\x00\x12\x31\n\x12playerTriggersItem\x18m \x01(\x0b\x32\x13.PlayerTriggersItemH\x00\x12\x39\n\x16playerSetsFollowTarget\x18n \x01(\x0b\x32\x17.PlayerSetsFollowTargetH\x00\x12\x35\n\x14playerRequestsToLead\x18o \x01(\x0b\x32\x15.PlayerRequestsToLeadH\x00\x12=\n\x18playerSetsManualVideoSrc\x18p \x01(\x0b\x32\x19.PlayerSetsManualVideoSrcH\x00\x12+\n\x0fplayerSetsIsNpc\x18q \x01(\x0b\x32\x10.PlayerSetsIsNpcH\x00\x12\x31\n\x12playerSetsSubtitle\x18r \x01(\x0b\x32\x13.PlayerSetsSubtitleH\x00\x12/\n\x11mapCommitsChanges\x18s \x01(\x0b\x32\x12.MapCommitsChangesH\x00\x12\x35\n\x14playerUpdatesSession\x18t \x01(\x0b\x32\x15.PlayerUpdatesSessionH\x00\x12\'\n\rmapMoveObject\x18u \x01(\x0b\x32\x0e.MapMoveObjectH\x00\x12\x39\n\x16playerEditsChatMessage\x18v \x01(\x0b\x32\x17.PlayerEditsChatMessageH\x00\x12\'\n\rfxShakeObject\x18w \x01(\x0b\x32\x0e.FXShakeObjectH\x00\x12\'\n\rfxShakeCamera\x18x \x01(\x0b\x32\x0e.FXShakeCameraH\x00\x12\x31\n\x12playerSendsCommand\x18y \x01(\x0b\x32\x13.PlayerSendsCommandH\x00\x12\x37\n\x15spaceRegistersCommand\x18z \x01(\x0b\x32\x16.SpaceRegistersCommandH\x00\x12\x37\n\x15speakerUpdatesSession\x18{ \x01(\x0b\x32\x16.SpeakerUpdatesSessionH\x00\x12\x39\n\x16playerUpdatesInventory\x18| \x01(\x0b\x32\x17.PlayerUpdatesInventoryH\x00\x12/\n\x11spaceUpdatesItems\x18} \x01(\x0b\x32\x12.SpaceUpdatesItemsH\x00\x12\x33\n\x13playerSetsVehicleId\x18~ \x01(\x0b\x32\x14.PlayerSetsVehicleIdH\x00\x12;\n\x17playerSetsSpeedModifier\x18\x7f \x01(\x0b\x32\x18.PlayerSetsSpeedModifierH\x00\x12,\n\x0fplayerHighFives\x18\x80\x01 \x01(\x0b\x32\x10.PlayerHighFivesH\x00\x12,\n\x0fspaceStopsSound\x18\x82\x01 \x01(\x0b\x32\x10.SpaceStopsSoundH\x00\x12(\n\rhipToBeSquare\x18\x83\x01 \x01(\x0b\x32\x0e.HipToBeSquareH\x00\x12&\n\x0cplayerCrafts\x18\x84\x01 \x01(\x0b\x32\r.PlayerCraftsH\x00\x12\x44\n\x1bplayerTriggersInventoryItem\x18\x85\x01 \x01(\x0b\x32\x1c.PlayerTriggersInventoryItemH\x00\x12\x46\n\x1cplayerSetsAllowScreenPointer\x18\x86\x01 \x01(\x0b\x32\x1d.PlayerSetsAllowScreenPointerH\x00\x12>\n\x18precomputedEnterLocation\x18\x87\x01 \x01(\x0b\x32\x19.PrecomputedEnterLocationH\x00\x12*\n\x0egotRequestMute\x18\x88\x01 \x01(\x0b\x32\x0f.GotRequestMuteH\x00\x12\x32\n\x12playerSetsDeskInfo\x18\x89\x01 \x01(\x0b\x32\x13.PlayerSetsDeskInfoH\x00\x12$\n\x0bmapSetNooks\x18\x8a\x01 \x01(\x0b\x32\x0c.MapSetNooksH\x00\x12&\n\x0c\x64ynamicGates\x18\x8b\x01 \x01(\x0b\x32\r.DynamicGatesH\x00\x12$\n\x0bplayerWaves\x18\x8c\x01 \x01(\x0b\x32\x0c.PlayerWavesH\x00\x12\x32\n\x12playerSetsPronouns\x18\x8d\x01 \x01(\x0b\x32\x13.PlayerSetsPronounsH\x00\x12,\n\x0fplayerSetsTitle\x18\x8e\x01 \x01(\x0b\x32\x10.PlayerSetsTitleH\x00\x12\x32\n\x12playerSetsTimezone\x18\x8f\x01 \x01(\x0b\x32\x13.PlayerSetsTimezoneH\x00\x12\x38\n\x15playerSetsDescription\x18\x90\x01 \x01(\x0b\x32\x16.PlayerSetsDescriptionH\x00\x12,\n\x0fplayerSetsPhone\x18\x91\x01 \x01(\x0b\x32\x10.PlayerSetsPhoneH\x00\x12\x42\n\x1aplayerSetsPersonalImageUrl\x18\x92\x01 \x01(\x0b\x32\x1b.PlayerSetsPersonalImageUrlH\x00\x12@\n\x19playerSetsProfileImageUrl\x18\x93\x01 \x01(\x0b\x32\x1a.PlayerSetsProfileImageUrlH\x00\x12\x30\n\x11spaceSetsCapacity\x18\x94\x01 \x01(\x0b\x32\x12.SpaceSetsCapacityH\x00\x12\x44\n\x1bspaceOverCapacityDeniesUser\x18\x95\x01 \x01(\x0b\x32\x1c.SpaceOverCapacityDeniesUserH\x00\x12*\n\x0eplayerSetsAway\x18\x96\x01 \x01(\x0b\x32\x0f.PlayerSetsAwayH\x00\x12\x36\n\x14mapSetCollisionsBits\x18\x97\x01 \x01(\x0b\x32\x15.MapSetCollisionsBitsH\x00\x12*\n\x0eplayerSetsCity\x18\x98\x01 \x01(\x0b\x32\x0f.PlayerSetsCityH\x00\x12\x30\n\x11playerSetsCountry\x18\x99\x01 \x01(\x0b\x32\x12.PlayerSetsCountryH\x00\x12\x34\n\x13playerSetsStartDate\x18\x9a\x01 \x01(\x0b\x32\x14.PlayerSetsStartDateH\x00\x12\x44\n\x1bplayerSetsIsRecordingClient\x18\x9b\x01 \x01(\x0b\x32\x1c.PlayerSetsIsRecordingClientH\x00\x12\x38\n\x15playerStartsRecording\x18\x9c\x01 \x01(\x0b\x32\x16.PlayerStartsRecordingH\x00\x42\x07\n\x05\x65vent\"\"\n\x0fServerHeartbeat\x12\x0f\n\x07lastRTT\x18\x01 \x01(\r\"\x17\n\x04Info\x12\x0f\n\x07message\x18\x01 \x01(\t\"\x17\n\x04Warn\x12\x0f\n\x07message\x18\x01 \x01(\t\"+\n\nErrorEvent\x12\x0f\n\x07message\x18\x01 \x01(\t\x12\x0c\n\x04\x63ode\x18\x02 \x01(\r\"\x13\n\x05Ready\x12\n\n\x02id\x18\x01 \x01(\t\"U\n\x11TransactionStatus\x12\r\n\x05txnId\x18\x01 \x01(\r\x12\x11\n\tsucceeded\x18\x02 \x01(\x08\x12\x13\n\x06reason\x18\x03 \x01(\tH\x00\x88\x01\x01\x42\t\n\x07_reason\"\x1c\n\x0bPlayerJoins\x12\r\n\x05\x65ncId\x18\x01 \x01(\r\"0\n\x0eGotRequestMute\x12\x0f\n\x07muterId\x18\x01 \x01(\t\x12\r\n\x05video\x18\x02 \x01(\x08\"\xbc\x01\n\x0bPlayerMoves\x12\r\n\x05\x65ncId\x18\x01 \x01(\r\x12\x0e\n\x01x\x18\x02 \x01(\rH\x00\x88\x01\x01\x12\x0e\n\x01y\x18\x03 \x01(\rH\x01\x88\x01\x01\x12\x31\n\tdirection\x18\x04 \x01(\x0e\x32\x19.SpriteDirectionEnum.ENUMH\x02\x88\x01\x01\x12\x12\n\x05mapId\x18\x05 \x01(\tH\x03\x88\x01\x01\x12\x13\n\x0blastInputId\x18\x06 \x01(\rB\x04\n\x02_xB\x04\n\x02_yB\x0c\n\n_directionB\x08\n\x06_mapId\"/\n\x10PlayerSetsStatus\x12\r\n\x05\x65ncId\x18\x01 \x01(\r\x12\x0c\n\x04\x62usy\x18\x02 \x01(\x08\"M\n\x10PlayerSpotlights\x12\r\n\x05\x65ncId\x18\x02 \x01(\r\x12\x15\n\rspotlightedBy\x18\x01 \x01(\r\x12\x13\n\x0bspotlighted\x18\x03 \x01(\r\"\x1c\n\x0bPlayerRings\x12\r\n\x05\x65ncId\x18\x01 \x01(\r\"O\n\x16PlayerSetsImagePointer\x12\r\n\x05\x65ncId\x18\x01 \x01(\r\x12\x10\n\x08objectId\x18\x02 \x01(\t\x12\t\n\x01x\x18\x03 \x01(\x01\x12\t\n\x01y\x18\x04 \x01(\x01\"^\n\x16SetScreenPointerServer\x12\r\n\x05\x65ncId\x18\x01 \x01(\r\x12\x10\n\x08screenId\x18\x02 \x01(\t\x12\t\n\x01x\x18\x03 \x01(\x01\x12\t\n\x01y\x18\x04 \x01(\x01\x12\r\n\x05\x63olor\x18\x05 \x01(\t\"\xad\x02\n\x0bPlayerChats\x12\x10\n\x08senderId\x18\x01 \x01(\t\x12\x11\n\trecipient\x18\x02 \x01(\t\x12\x10\n\x08\x63ontents\x18\x03 \x01(\t\x12\x12\n\nsenderName\x18\x04 \x01(\t\x12\"\n\ttimestamp\x18\x05 \x01(\x0b\x32\n.TimestampH\x00\x88\x01\x01\x12\x13\n\x0bmessageType\x18\x06 \x01(\t\x12\x10\n\x08unixTime\x18\x07 \x01(\x01\x12\x0f\n\x02id\x18\x08 \x01(\tH\x01\x88\x01\x01\x12\x13\n\x06roomId\x18\t \x01(\tH\x02\x88\x01\x01\x12\x15\n\x08\x61pproved\x18\n \x01(\x08H\x03\x88\x01\x01\x12\x13\n\x06nookId\x18\x0b \x01(\tH\x04\x88\x01\x01\x42\x0c\n\n_timestampB\x05\n\x03_idB\t\n\x07_roomIdB\x0b\n\t_approvedB\t\n\x07_nookId\"?\n\x0bPlayerWaves\x12\r\n\x05\x65ncId\x18\x01 \x01(\r\x12\x10\n\x08targetId\x18\x02 \x01(\t\x12\x0f\n\x07isReply\x18\x03 \x01(\x08\"1\n\tTimestamp\x12\x0f\n\x07seconds\x18\x01 \x01(\x02\x12\x13\n\x0bnanoseconds\x18\x02 \x01(\x02\"q\n\x0fPlayerInteracts\x12\r\n\x05\x65ncId\x18\x01 \x01(\r\x12\r\n\x05objId\x18\x02 \x01(\t\x12\x12\n\x05mapId\x18\x04 \x01(\tH\x00\x88\x01\x01\x12\x15\n\x08\x64\x61taJson\x18\x03 \x01(\tH\x01\x88\x01\x01\x42\x08\n\x06_mapIdB\x0b\n\t_dataJson\",\n\x0cPlayerGhosts\x12\r\n\x05\x65ncId\x18\x01 \x01(\r\x12\r\n\x05ghost\x18\x02 \x01(\r\"Q\n\x13PlayerEntersWhisper\x12\r\n\x05\x65ncId\x18\x01 \x01(\r\x12\x18\n\x10whisperRecipient\x18\x02 \x01(\t\x12\x11\n\twhisperId\x18\x03 \x01(\t\"N\n\x15PlayerEntersWhisperV2\x12\r\n\x05\x65ncId\x18\x01 \x01(\r\x12\x13\n\x0b\x65ncIdTarget\x18\x02 \x01(\r\x12\x11\n\twhisperId\x18\x03 \x01(\t\"$\n\x13PlayerLeavesWhisper\x12\r\n\x05\x65ncId\x18\x01 \x01(\r\"?\n\x14PlayerActivelySpeaks\x12\r\n\x05\x65ncId\x18\x01 \x01(\r\x12\x18\n\x10\x61\x63tivelySpeaking\x18\x02 \x01(\r\"^\n\x11PlayerSetsEmoteV2\x12\r\n\x05\x65ncId\x18\x01 \x01(\r\x12\x12\n\x05\x65mote\x18\x02 \x01(\tH\x00\x88\x01\x01\x12\x12\n\x05\x63ount\x18\x03 \x01(\rH\x01\x88\x01\x01\x42\x08\n\x06_emoteB\x08\n\x06_count\"?\n\x17PlayerSetsWorkCondition\x12\r\n\x05\x65ncId\x18\x01 \x01(\r\x12\x15\n\rworkCondition\x18\x02 \x01(\r\"9\n\x14PlayerSetsLastActive\x12\r\n\x05\x65ncId\x18\x01 \x01(\r\x12\x12\n\nlastActive\x18\x02 \x01(\t\"-\n\x0ePlayerSetsName\x12\r\n\x05\x65ncId\x18\x01 \x01(\r\x12\x0c\n\x04name\x18\x02 \x01(\t\"9\n\x14PlayerSetsTextStatus\x12\r\n\x05\x65ncId\x18\x01 \x01(\r\x12\x12\n\ntextStatus\x18\x02 \x01(\t\"5\n\x12PlayerSetsPronouns\x12\r\n\x05\x65ncId\x18\x01 \x01(\r\x12\x10\n\x08pronouns\x18\x02 \x01(\t\"/\n\x0fPlayerSetsTitle\x12\r\n\x05\x65ncId\x18\x01 \x01(\r\x12\r\n\x05title\x18\x02 \x01(\t\"-\n\x0ePlayerSetsCity\x12\r\n\x05\x65ncId\x18\x01 \x01(\r\x12\x0c\n\x04\x63ity\x18\x02 \x01(\t\"3\n\x11PlayerSetsCountry\x12\r\n\x05\x65ncId\x18\x01 \x01(\r\x12\x0f\n\x07\x63ountry\x18\x02 \x01(\t\"7\n\x13PlayerSetsStartDate\x12\r\n\x05\x65ncId\x18\x01 \x01(\r\x12\x11\n\tstartDate\x18\x02 \x01(\t\"5\n\x12PlayerSetsTimezone\x12\r\n\x05\x65ncId\x18\x01 \x01(\r\x12\x10\n\x08timezone\x18\x02 \x01(\t\"/\n\x0fPlayerSetsPhone\x12\r\n\x05\x65ncId\x18\x01 \x01(\r\x12\r\n\x05phone\x18\x02 \x01(\t\";\n\x15PlayerSetsDescription\x12\r\n\x05\x65ncId\x18\x01 \x01(\r\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t\"C\n\x19PlayerSetsProfileImageUrl\x12\r\n\x05\x65ncId\x18\x01 \x01(\r\x12\x17\n\x0fprofileImageUrl\x18\x02 \x01(\t\"E\n\x1aPlayerSetsPersonalImageUrl\x12\r\n\x05\x65ncId\x18\x01 \x01(\r\x12\x18\n\x10personalImageUrl\x18\x02 \x01(\t\"5\n\x12PlayerSetsIsMobile\x12\r\n\x05\x65ncId\x18\x01 \x01(\r\x12\x10\n\x08isMobile\x18\x02 \x01(\x08\";\n\x15PlayerSetsEmojiStatus\x12\r\n\x05\x65ncId\x18\x01 \x01(\r\x12\x13\n\x0b\x65mojiStatus\x18\x02 \x01(\t\";\n\x15PlayerSetsAffiliation\x12\r\n\x05\x65ncId\x18\x01 \x01(\r\x12\x13\n\x0b\x61\x66\x66iliation\x18\x02 \x01(\t\"\x1c\n\x0bPlayerExits\x12\r\n\x05\x65ncId\x18\x01 \x01(\r\"=\n\x16PlayerSetsOutfitString\x12\r\n\x05\x65ncId\x18\x01 \x01(\r\x12\x14\n\x0coutfitString\x18\x02 \x01(\t\"9\n\x14PlayerSetsIsSignedIn\x12\r\n\x05\x65ncId\x18\x01 \x01(\r\x12\x12\n\nisSignedIn\x18\x02 \x01(\x08\"\x11\n\x0fRespawnComplete\"$\n\x0fSpaceOverwrites\x12\x11\n\tspaceData\x18\x01 \x01(\t\"/\n\x0b\x44ynamicGate\x12\x10\n\x08\x65xposure\x18\x01 \x01(\x02\x12\x0e\n\x06spaces\x18\x02 \x03(\t\"4\n\x0c\x44ynamicGates\x12$\n\x0elivekitEnabled\x18\x01 \x01(\x0b\x32\x0c.DynamicGate\"\x8f\x01\n\x15SpaceSetsSpaceMembers\x12\x34\n\x07members\x18\x01 \x03(\x0b\x32#.SpaceSetsSpaceMembers.MembersEntry\x1a@\n\x0cMembersEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x1f\n\x05value\x18\x02 \x01(\x0b\x32\x10.SpaceMemberInfo:\x02\x38\x01\"\x0f\n\rSpaceIsClosed\"S\n\x12PlayerEntersPortal\x12\x11\n\ttargetUrl\x18\x01 \x01(\t\x12\x19\n\x0c\x62ypassPrompt\x18\x02 \x01(\x08H\x00\x88\x01\x01\x42\x0f\n\r_bypassPrompt\"\x1c\n\x0b\x43ookieFound\x12\r\n\x05\x65ncId\x18\x01 \x01(\r\"0\n\x12SpaceSetsIdMapping\x12\x0b\n\x03uid\x18\x01 \x01(\t\x12\r\n\x05\x65ncId\x18\x02 \x01(\r\"%\n\x14PlayerShootsConfetti\x12\r\n\x05\x65ncId\x18\x01 \x01(\r\";\n\x15PlayerSetsEventStatus\x12\r\n\x05\x65ncId\x18\x01 \x01(\r\x12\x13\n\x0b\x65ventStatus\x18\x02 \x01(\t\"A\n\x18PlayerSetsInConversation\x12\r\n\x05\x65ncId\x18\x01 \x01(\r\x12\x16\n\x0einConversation\x18\x02 \x01(\x08\";\n\x15PlayerSetsCurrentDesk\x12\r\n\x05\x65ncId\x18\x01 \x01(\r\x12\x13\n\x0b\x63urrentDesk\x18\x02 \x01(\t\";\n\x15PlayerSetsCurrentArea\x12\r\n\x05\x65ncId\x18\x01 \x01(\r\x12\x13\n\x0b\x63urrentArea\x18\x02 \x01(\t\"5\n\x12PlayerSetsGoKartId\x12\r\n\x05\x65ncId\x18\x01 \x01(\r\x12\x10\n\x08goKartId\x18\x02 \x01(\t\"b\n\x13PlayerSetsVehicleId\x12\r\n\x05\x65ncId\x18\x01 \x01(\r\x12\x11\n\tvehicleId\x18\x02 \x01(\t\x12\x0e\n\x06\x61\x63tion\x18\x03 \x01(\t\x12\x19\n\x11previousVehicleId\x18\x04 \x01(\t\"?\n\x17PlayerSetsSpeedModifier\x12\r\n\x05\x65ncId\x18\x01 \x01(\r\x12\x15\n\rspeedModifier\x18\x02 \x01(\x02\"3\n\x11PlayerSetsIsAlone\x12\r\n\x05\x65ncId\x18\x01 \x01(\r\x12\x0f\n\x07isAlone\x18\x02 \x01(\x08\".\n\x0fSpacePlaysSound\x12\x0b\n\x03src\x18\x02 \x01(\t\x12\x0e\n\x06volume\x18\x03 \x01(\x02\"\x1e\n\x0fSpaceStopsSound\x12\x0b\n\x03src\x18\x02 \x01(\t\"E\n\x1aPlayerSetsFocusModeEndTime\x12\r\n\x05\x65ncId\x18\x01 \x01(\r\x12\x18\n\x10\x66ocusModeEndTime\x18\x02 \x01(\t\"2\n\x0cPlayerBlocks\x12\x11\n\tblockedBy\x18\x01 \x01(\t\x12\x0f\n\x07\x62locked\x18\x02 \x01(\x08\",\n\x0b\x43ustomEvent\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0f\n\x07payload\x18\x02 \x01(\t\"D\n\x1cPlayerUpdatesFocusModeStatus\x12\r\n\x05\x65ncId\x18\x01 \x01(\r\x12\x15\n\risInFocusMode\x18\x02 \x01(\x08\"9\n\x14PlayerSetsItemString\x12\r\n\x05\x65ncId\x18\x01 \x01(\r\x12\x12\n\nitemString\x18\x02 \x01(\t\"\x8f\x01\n\x12PlayerTriggersItem\x12\r\n\x05\x65ncId\x18\x01 \x01(\r\x12\x1a\n\rclosestObject\x18\x02 \x01(\tH\x00\x88\x01\x01\x12\"\n\x15\x63losestObjectTemplate\x18\x03 \x01(\tH\x01\x88\x01\x01\x42\x10\n\x0e_closestObjectB\x18\n\x16_closestObjectTemplate\"5\n\x0ePlayerNotifies\x12\r\n\x05\x65ncId\x18\x01 \x01(\r\x12\x14\n\x0cnotification\x18\x02 \x01(\t\"=\n\x16PlayerSetsFollowTarget\x12\r\n\x05\x65ncId\x18\x01 \x01(\r\x12\x14\n\x0c\x66ollowTarget\x18\x02 \x01(\t\"7\n\x14PlayerRequestsToLead\x12\r\n\x05\x65ncId\x18\x01 \x01(\r\x12\x10\n\x08snapshot\x18\x02 \x01(\t\"A\n\x18PlayerSetsManualVideoSrc\x12\r\n\x05\x65ncId\x18\x01 \x01(\r\x12\x16\n\x0emanualVideoSrc\x18\x02 \x01(\t\"/\n\x0fPlayerSetsIsNpc\x12\r\n\x05\x65ncId\x18\x01 \x01(\r\x12\r\n\x05isNpc\x18\x02 \x01(\x08\"5\n\x12PlayerSetsSubtitle\x12\r\n\x05\x65ncId\x18\x01 \x01(\r\x12\x10\n\x08subtitle\x18\x02 \x01(\t\"w\n\x0cPlayerCrafts\x12\r\n\x05\x65ncId\x18\x01 \x01(\r\x12)\n\x06inputs\x18\x02 \x03(\x0b\x32\x19.PlayerCrafts.InputsEntry\x1a-\n\x0bInputsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\r:\x02\x38\x01\"\xe0\x01\n\rMapMoveObject\x12\r\n\x05mapId\x18\x01 \x01(\t\x12\x10\n\x08objectId\x18\x02 \x01(\t\x12\x0f\n\x07targetX\x18\x03 \x01(\x02\x12\x0f\n\x07targetY\x18\x04 \x01(\x02\x12\x1a\n\rtargetXOffset\x18\x05 \x01(\x02H\x00\x88\x01\x01\x12\x1a\n\rtargetYOffset\x18\x06 \x01(\x02H\x01\x88\x01\x01\x12\x10\n\x08\x64uration\x18\x07 \x01(\x02\x12\x13\n\x06\x65\x61sing\x18\x08 \x01(\tH\x02\x88\x01\x01\x42\x10\n\x0e_targetXOffsetB\x10\n\x0e_targetYOffsetB\t\n\x07_easing\"\xb2\x01\n\x16PlayerEditsChatMessage\x12\n\n\x02id\x18\x01 \x01(\t\x12\x12\n\x05likes\x18\x02 \x01(\rH\x00\x88\x01\x01\x12\x14\n\x07replied\x18\x03 \x01(\x08H\x01\x88\x01\x01\x12\x1e\n\x05reply\x18\x04 \x01(\x0b\x32\n.ChatReplyH\x02\x88\x01\x01\x12\x15\n\x08\x61pproved\x18\x05 \x01(\x08H\x03\x88\x01\x01\x42\x08\n\x06_likesB\n\n\x08_repliedB\x08\n\x06_replyB\x0b\n\t_approved\"\x9a\x01\n\rFXShakeObject\x12\r\n\x05mapId\x18\x01 \x01(\t\x12\x10\n\x08targetId\x18\x02 \x01(\t\x12\x16\n\tintensity\x18\x03 \x01(\x02H\x00\x88\x01\x01\x12\x17\n\ndurationMs\x18\x04 \x01(\x02H\x01\x88\x01\x01\x12\x11\n\x04mode\x18\x05 \x01(\rH\x02\x88\x01\x01\x42\x0c\n\n_intensityB\r\n\x0b_durationMsB\x07\n\x05_mode\"\xa7\x01\n\rFXShakeCamera\x12\x16\n\tintensity\x18\x01 \x01(\x02H\x00\x88\x01\x01\x12\x17\n\ndurationMs\x18\x02 \x01(\x02H\x01\x88\x01\x01\x12\x12\n\x05mapId\x18\x03 \x01(\tH\x02\x88\x01\x01\x12\x19\n\x0ctargetUserId\x18\x04 \x01(\tH\x03\x88\x01\x01\x42\x0c\n\n_intensityB\r\n\x0b_durationMsB\x08\n\x06_mapIdB\x0f\n\r_targetUserId\"5\n\x0fPlayerHighFives\x12\r\n\x05\x65ncId\x18\x01 \x01(\r\x12\x13\n\x0b\x65ncIdTarget\x18\x02 \x01(\r\"4\n\x12PlayerSendsCommand\x12\r\n\x05\x65ncId\x18\x01 \x01(\r\x12\x0f\n\x07\x63ommand\x18\x02 \x01(\t\"(\n\x15SpaceRegistersCommand\x12\x0f\n\x07\x63ommand\x18\x02 \x01(\t\"\xf9\x01\n\x16PlayerUpdatesInventory\x12\r\n\x05\x65ncId\x18\x01 \x01(\r\x12\x31\n\x05items\x18\x02 \x03(\x0b\x32\".PlayerUpdatesInventory.ItemsEntry\x12\x31\n\x05order\x18\x03 \x03(\x0b\x32\".PlayerUpdatesInventory.OrderEntry\x1a<\n\nItemsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x1d\n\x05value\x18\x02 \x01(\x0b\x32\x0e.InventoryItem:\x02\x38\x01\x1a,\n\nOrderEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"{\n\x11SpaceUpdatesItems\x12,\n\x05items\x18\x01 \x03(\x0b\x32\x1d.SpaceUpdatesItems.ItemsEntry\x1a\x38\n\nItemsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x19\n\x05value\x18\x02 \x01(\x0b\x32\n.SpaceItem:\x02\x38\x01\"O\n\x1bPlayerTriggersInventoryItem\x12\r\n\x05\x65ncId\x18\x01 \x01(\r\x12\x0e\n\x06itemId\x18\x02 \x01(\t\x12\x11\n\tabilityId\x18\x03 \x01(\t\"I\n\x1cPlayerSetsAllowScreenPointer\x12\r\n\x05\x65ncId\x18\x01 \x01(\r\x12\x1a\n\x12\x61llowScreenPointer\x18\x02 \x01(\x08\"?\n\x18PrecomputedEnterLocation\x12#\n\renterLocation\x18\x01 \x01(\x0b\x32\x0c.MapLocation\"B\n\x12PlayerSetsDeskInfo\x12\r\n\x05\x65ncId\x18\x01 \x01(\r\x12\x1d\n\x08\x64\x65skInfo\x18\x02 \x01(\x0b\x32\x0b.DeskInfoV2\"%\n\x11SpaceSetsCapacity\x12\x10\n\x08\x63\x61pacity\x18\x01 \x01(\r\"-\n\x1bSpaceOverCapacityDeniesUser\x12\x0e\n\x06userId\x18\x01 \x01(\t\"-\n\x0ePlayerSetsAway\x12\r\n\x05\x65ncId\x18\x01 \x01(\r\x12\x0c\n\x04\x61way\x18\x02 \x01(\x08\"G\n\x1bPlayerSetsIsRecordingClient\x12\r\n\x05\x65ncId\x18\x01 \x01(\r\x12\x19\n\x11isRecordingClient\x18\x02 \x01(\x08\"V\n\x15PlayerStartsRecording\x12\r\n\x05\x65ncId\x18\x01 \x01(\r\x12\x0e\n\x06nookId\x18\x02 \x01(\t\x12\x13\n\x06\x63\x61ncel\x18\x03 \x01(\x08H\x00\x88\x01\x01\x42\t\n\x07_cancel\"9\n\x11\x43lientServerBatch\x12$\n\x07\x61\x63tions\x18\x01 \x03(\x0b\x32\x13.ClientServerAction\"\x91%\n\x12\x43lientServerAction\x12\x12\n\x05txnId\x18\x64 \x01(\rH\x01\x88\x01\x01\x12+\n\x0f\x63lientHeartbeat\x18\x01 \x01(\x0b\x32\x10.ClientHeartbeatH\x00\x12\x37\n\x15\x63lientBackupHeartbeat\x18\x02 \x01(\x0b\x32\x16.ClientBackupHeartbeatH\x00\x12\x33\n\x13updateSubscriptions\x18\x03 \x01(\x0b\x32\x14.UpdateSubscriptionsH\x00\x12\x15\n\x04move\x18\x05 \x01(\x0b\x32\x05.MoveH\x00\x12)\n\x0esetAffiliation\x18\x07 \x01(\x0b\x32\x0f.SetAffiliationH\x00\x12\x1f\n\tsetStatus\x18\x08 \x01(\x0b\x32\n.SetStatusH\x00\x12\x1f\n\tspotlight\x18\t \x01(\x0b\x32\n.SpotlightH\x00\x12\x15\n\x04ring\x18\n \x01(\x0b\x32\x05.RingH\x00\x12\x13\n\x03\x62\x61n\x18\x0c \x01(\x0b\x32\x04.BanH\x00\x12\x15\n\x04kick\x18\r \x01(\x0b\x32\x05.KickH\x00\x12\'\n\rsetImpassable\x18\x0e \x01(\x0b\x32\x0e.SetImpassableH\x00\x12\x15\n\x04\x63hat\x18\x0f \x01(\x0b\x32\x05.ChatH\x00\x12\x1d\n\x08interact\x18\x12 \x01(\x0b\x32\t.InteractH\x00\x12%\n\x0c\x65nterWhisper\x18\x13 \x01(\x0b\x32\r.EnterWhisperH\x00\x12%\n\x0cleaveWhisper\x18\x14 \x01(\x0b\x32\r.LeaveWhisperH\x00\x12)\n\x0esetEmojiStatus\x18\x15 \x01(\x0b\x32\x0f.SetEmojiStatusH\x00\x12-\n\x10\x61\x63tivelySpeaking\x18\x16 \x01(\x0b\x32\x11.ActivelySpeakingH\x00\x12\x1b\n\x07setName\x18\x18 \x01(\x0b\x32\x08.SetNameH\x00\x12\'\n\rsetTextStatus\x18\x19 \x01(\x0b\x32\x0e.SetTextStatusH\x00\x12\x1d\n\x08teleport\x18\x1a \x01(\x0b\x32\t.TeleportH\x00\x12\x15\n\x04\x65xit\x18\x1b \x01(\x0b\x32\x05.ExitH\x00\x12\x17\n\x05\x65nter\x18\x1c \x01(\x0b\x32\x06.EnterH\x00\x12-\n\x10setWorkCondition\x18\x1d \x01(\x0b\x32\x11.SetWorkConditionH\x00\x12\x1b\n\x07respawn\x18\x1e \x01(\x0b\x32\x08.RespawnH\x00\x12\x17\n\x05spawn\x18\x1f \x01(\x0b\x32\x06.SpawnH\x00\x12\x17\n\x05ghost\x18  \x01(\x0b\x32\x06.GhostH\x00\x12\x15\n\x04init\x18! \x01(\x0b\x32\x05.InitH\x00\x12+\n\x0fsetOutfitString\x18\" \x01(\x0b\x32\x10.SetOutfitStringH\x00\x12\'\n\rshootConfetti\x18$ \x01(\x0b\x32\x0e.ShootConfettiH\x00\x12)\n\x0esetEventStatus\x18% \x01(\x0b\x32\x0f.SetEventStatusH\x00\x12/\n\x11setInConversation\x18& \x01(\x0b\x32\x12.SetInConversationH\x00\x12)\n\x0esetCurrentDesk\x18\' \x01(\x0b\x32\x0f.SetCurrentDeskH\x00\x12)\n\x0esetCurrentArea\x18( \x01(\x0b\x32\x0f.SetCurrentAreaH\x00\x12+\n\x0fsetImagePointer\x18) \x01(\x0b\x32\x10.SetImagePointerH\x00\x12#\n\x0bsetGoKartId\x18* \x01(\x0b\x32\x0c.SetGoKartIdH\x00\x12-\n\x10mapSetDimensions\x18+ \x01(\x0b\x32\x11.MapSetDimensionsH\x00\x12-\n\x10mapSetCollisions\x18, \x01(\x0b\x32\x11.MapSetCollisionsH\x00\x12?\n\x19mapSetBackgroundImagePath\x18- \x01(\x0b\x32\x1a.MapSetBackgroundImagePathH\x00\x12?\n\x19mapSetForegroundImagePath\x18. \x01(\x0b\x32\x1a.MapSetForegroundImagePathH\x00\x12\'\n\rmapSetSprites\x18/ \x01(\x0b\x32\x0e.MapSetSpritesH\x00\x12%\n\x0cmapSetSpawns\x18\x30 \x01(\x0b\x32\r.MapSetSpawnsH\x00\x12%\n\x0cmapSetSpaces\x18\x31 \x01(\x0b\x32\r.MapSetSpacesH\x00\x12\'\n\rmapSetPortals\x18\x32 \x01(\x0b\x32\x0e.MapSetPortalsH\x00\x12+\n\x0fmapSetAnnouncer\x18\x33 \x01(\x0b\x32\x10.MapSetAnnouncerH\x00\x12%\n\x0cmapSetAssets\x18\x36 \x01(\x0b\x32\r.MapSetAssetsH\x00\x12\'\n\rmapSetObjects\x18\x37 \x01(\x0b\x32\x0e.MapSetObjectsH\x00\x12!\n\nmapSetName\x18\x38 \x01(\x0b\x32\x0b.MapSetNameH\x00\x12/\n\x11mapSetMuteOnEntry\x18: \x01(\x0b\x32\x12.MapSetMuteOnEntryH\x00\x12-\n\x10mapSetUseDrawnBG\x18; \x01(\x0b\x32\x11.MapSetUseDrawnBGH\x00\x12#\n\x0bmapSetWalls\x18< \x01(\x0b\x32\x0c.MapSetWallsH\x00\x12%\n\x0cmapSetFloors\x18= \x01(\x0b\x32\r.MapSetFloorsH\x00\x12#\n\x0bmapSetAreas\x18> \x01(\x0b\x32\x0c.MapSetAreasH\x00\x12%\n\x0cmapAddObject\x18? \x01(\x0b\x32\r.MapAddObjectH\x00\x12+\n\x0fmapDeleteObject\x18@ \x01(\x0b\x32\x10.MapDeleteObjectH\x00\x12#\n\x0bmapSetSpawn\x18\x41 \x01(\x0b\x32\x0c.MapSetSpawnH\x00\x12!\n\nsetIsAlone\x18\x42 \x01(\x0b\x32\x0b.SetIsAloneH\x00\x12\x39\n\x16mapSetMiniMapImagePath\x18\x43 \x01(\x0b\x32\x17.MapSetMiniMapImagePathH\x00\x12\x31\n\x12mapSetEnabledChats\x18\x44 \x01(\x0b\x32\x13.MapSetEnabledChatsH\x00\x12/\n\x11mapSetDescription\x18\x45 \x01(\x0b\x32\x12.MapSetDescriptionH\x00\x12-\n\x10mapSetDecoration\x18\x46 \x01(\x0b\x32\x11.MapSetDecorationH\x00\x12\x33\n\x13mapSetTutorialTasks\x18G \x01(\x0b\x32\x14.MapSetTutorialTasksH\x00\x12\x1f\n\tplaySound\x18H \x01(\x0b\x32\n.PlaySoundH\x00\x12%\n\x0cmapSetScript\x18I \x01(\x0b\x32\r.MapSetScriptH\x00\x12#\n\x0bsetIsMobile\x18K \x01(\x0b\x32\x0c.SetIsMobileH\x00\x12-\n\x10setScreenPointer\x18L \x01(\x0b\x32\x11.SetScreenPointerH\x00\x12!\n\nsetEmoteV2\x18M \x01(\x0b\x32\x0b.SetEmoteV2H\x00\x12\x33\n\x13setFocusModeEndTime\x18N \x01(\x0b\x32\x14.SetFocusModeEndTimeH\x00\x12\x33\n\x13mapDeleteObjectById\x18O \x01(\x0b\x32\x14.MapDeleteObjectByIdH\x00\x12%\n\x0c\x63ustomAction\x18P \x01(\x0b\x32\r.CustomActionH\x00\x12\x17\n\x05\x62lock\x18R \x01(\x0b\x32\x06.BlockH\x00\x12\'\n\rsetItemString\x18S \x01(\x0b\x32\x0e.SetItemStringH\x00\x12#\n\x0btriggerItem\x18T \x01(\x0b\x32\x0c.TriggerItemH\x00\x12\x19\n\x06notify\x18U \x01(\x0b\x32\x07.NotifyH\x00\x12+\n\x0fsetFollowTarget\x18V \x01(\x0b\x32\x10.SetFollowTargetH\x00\x12\'\n\rrequestToLead\x18W \x01(\x0b\x32\x0e.RequestToLeadH\x00\x12#\n\x0b\x65nterPortal\x18X \x01(\x0b\x32\x0c.EnterPortalH\x00\x12/\n\x11setManualVideoSrc\x18Y \x01(\x0b\x32\x12.SetManualVideoSrcH\x00\x12#\n\x0bsetSubtitle\x18Z \x01(\x0b\x32\x0c.SetSubtitleH\x00\x12\x35\n\x14playerUpdatesSession\x18[ \x01(\x0b\x32\x15.PlayerUpdatesSessionH\x00\x12\'\n\rmapMoveObject\x18\\ \x01(\x0b\x32\x0e.MapMoveObjectH\x00\x12\x31\n\x12\x63hatMessageUpdated\x18] \x01(\x0b\x32\x13.ChatMessageUpdatedH\x00\x12\'\n\rfxShakeObject\x18^ \x01(\x0b\x32\x0e.FXShakeObjectH\x00\x12\'\n\rfxShakeCamera\x18_ \x01(\x0b\x32\x0e.FXShakeCameraH\x00\x12+\n\x0fregisterCommand\x18` \x01(\x0b\x32\x10.RegisterCommandH\x00\x12#\n\x0bsendCommand\x18\x61 \x01(\x0b\x32\x0c.SendCommandH\x00\x12\x37\n\x15speakerUpdatesSession\x18\x62 \x01(\x0b\x32\x16.SpeakerUpdatesSessionH\x00\x12-\n\x10\x61\x64\x64InventoryItem\x18\x65 \x01(\x0b\x32\x11.AddInventoryItemH\x00\x12\x33\n\x13removeInventoryItem\x18\x66 \x01(\x0b\x32\x14.RemoveInventoryItemH\x00\x12%\n\x0csetVehicleId\x18g \x01(\x0b\x32\r.SetVehicleIdH\x00\x12-\n\x10setSpeedModifier\x18h \x01(\x0b\x32\x11.SetSpeedModifierH\x00\x12\x1d\n\x08highFive\x18i \x01(\x0b\x32\t.HighFiveH\x00\x12.\n\x10updateSpaceItems\x18k \x01(\x0b\x32\x12.SpaceUpdatesItemsH\x00\x12\x1f\n\tstopSound\x18l \x01(\x0b\x32\n.StopSoundH\x00\x12\'\n\rhipToBeSquare\x18m \x01(\x0b\x32\x0e.HipToBeSquareH\x00\x12\x17\n\x05\x63raft\x18n \x01(\x0b\x32\x06.CraftH\x00\x12\x35\n\x14triggerInventoryItem\x18o \x01(\x0b\x32\x15.TriggerInventoryItemH\x00\x12\x37\n\x15setAllowScreenPointer\x18p \x01(\x0b\x32\x16.SetAllowScreenPointerH\x00\x12+\n\x0fprecomputeEnter\x18q \x01(\x0b\x32\x10.PrecomputeEnterH\x00\x12#\n\x0brequestMute\x18r \x01(\x0b\x32\x0c.RequestMuteH\x00\x12#\n\x0bsetDeskInfo\x18s \x01(\x0b\x32\x0c.SetDeskInfoH\x00\x12#\n\x0bmapSetNooks\x18t \x01(\x0b\x32\x0c.MapSetNooksH\x00\x12/\n\x11requestToJoinNook\x18u \x01(\x0b\x32\x12.RequestToJoinNookH\x00\x12\x35\n\x14updateNookPermission\x18v \x01(\x0b\x32\x15.UpdateNookPermissionH\x00\x12\x15\n\x04wave\x18w \x01(\x0b\x32\x05.WaveH\x00\x12#\n\x0bsetPronouns\x18x \x01(\x0b\x32\x0c.SetPronounsH\x00\x12\x1d\n\x08setTitle\x18y \x01(\x0b\x32\t.SetTitleH\x00\x12#\n\x0bsetTimezone\x18z \x01(\x0b\x32\x0c.SetTimezoneH\x00\x12\x1d\n\x08setPhone\x18{ \x01(\x0b\x32\t.SetPhoneH\x00\x12)\n\x0esetDescription\x18| \x01(\x0b\x32\x0f.SetDescriptionH\x00\x12\x31\n\x12setProfileImageUrl\x18} \x01(\x0b\x32\x13.SetProfileImageUrlH\x00\x12\x33\n\x13setPersonalImageUrl\x18~ \x01(\x0b\x32\x14.SetPersonalImageUrlH\x00\x12\x1b\n\x07setAway\x18\x7f \x01(\x0b\x32\x08.SetAwayH\x00\x12\x1c\n\x07setCity\x18\x80\x01 \x01(\x0b\x32\x08.SetCityH\x00\x12\"\n\nsetCountry\x18\x81\x01 \x01(\x0b\x32\x0b.SetCountryH\x00\x12&\n\x0csetStartDate\x18\x82\x01 \x01(\x0b\x32\r.SetStartDateH\x00\x12*\n\x0estartRecording\x18\x83\x01 \x01(\x0b\x32\x0f.StartRecordingH\x00\x42\x08\n\x06\x61\x63tionB\x08\n\x06_txnId\"\x11\n\x0f\x43lientHeartbeat\"\x17\n\x15\x43lientBackupHeartbeat\"\xfe\x01\n\x13UpdateSubscriptions\x12>\n\rsubscriptions\x18\x01 \x03(\x0b\x32\'.UpdateSubscriptions.SubscriptionsEntry\x12<\n\x0cmapUpdateIds\x18\x02 \x03(\x0b\x32&.UpdateSubscriptions.MapUpdateIdsEntry\x1a\x34\n\x12SubscriptionsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x08:\x02\x38\x01\x1a\x33\n\x11MapUpdateIdsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x04:\x02\x38\x01\"r\n\x04Move\x12$\n\x03\x64ir\x18\x01 \x01(\x0e\x32\x17.MoveDirectionEnum.ENUM\x12\x0f\n\x07stopped\x18\x02 \x01(\x08\x12\x0f\n\x07inputId\x18\x03 \x01(\r\x12\x15\n\x08targetId\x18\x04 \x01(\tH\x00\x88\x01\x01\x42\x0b\n\t_targetId\",\n\x0bRequestMute\x12\x0e\n\x06target\x18\x01 \x01(\t\x12\r\n\x05video\x18\x02 \x01(\x08\"I\n\x0eSetAffiliation\x12\x13\n\x0b\x61\x66\x66iliation\x18\x01 \x01(\t\x12\x15\n\x08targetId\x18\x02 \x01(\tH\x00\x88\x01\x01\x42\x0b\n\t_targetId\"?\n\tSetStatus\x12\x0e\n\x06status\x18\x01 \x01(\x08\x12\x15\n\x08targetId\x18\x02 \x01(\tH\x00\x88\x01\x01\x42\x0b\n\t_targetId\"K\n\x0fSetOutfitString\x12\x14\n\x0coutfitString\x18\x01 \x01(\t\x12\x15\n\x08targetId\x18\x03 \x01(\tH\x00\x88\x01\x01\x42\x0b\n\t_targetId\";\n\tSpotlight\x12\x17\n\x0fspotlightedUser\x18\x01 \x01(\t\x12\x15\n\risSpotlighted\x18\x02 \x01(\x08\"\x14\n\x04Ring\x12\x0c\n\x04user\x18\x01 \x01(\t\"9\n\x0fSetImagePointer\x12\x10\n\x08objectId\x18\x01 \x01(\t\x12\t\n\x01x\x18\x02 \x01(\x01\x12\t\n\x01y\x18\x03 \x01(\x01\":\n\x10SetScreenPointer\x12\x10\n\x08screenId\x18\x01 \x01(\t\x12\t\n\x01x\x18\x02 \x01(\x01\x12\t\n\x01y\x18\x03 \x01(\x01\"\x13\n\x03\x42\x61n\x12\x0c\n\x04user\x18\x01 \x01(\t\"\x14\n\x04Kick\x12\x0c\n\x04user\x18\x01 \x01(\t\"/\n\x05\x42lock\x12\x15\n\rblockedUserId\x18\x01 \x01(\t\x12\x0f\n\x07\x62locked\x18\x02 \x01(\x08\"H\n\rSetImpassable\x12\r\n\x05mapId\x18\x01 \x01(\t\x12\t\n\x01x\x18\x02 \x01(\r\x12\t\n\x01y\x18\x03 \x01(\r\x12\x12\n\nimpassable\x18\x04 \x01(\x08\"\x8e\x01\n\x04\x43hat\x12\x15\n\rchatRecipient\x18\x01 \x01(\t\x12\x10\n\x08\x63ontents\x18\x02 \x01(\t\x12\x16\n\x0elocalPlayerIds\x18\x03 \x03(\t\x12\r\n\x05mapId\x18\x04 \x01(\t\x12\x0f\n\x02id\x18\x05 \x01(\tH\x00\x88\x01\x01\x12\x13\n\x06nookId\x18\x06 \x01(\tH\x01\x88\x01\x01\x42\x05\n\x03_idB\t\n\x07_nookId\"\x1e\n\x06Notify\x12\x14\n\x0cnotification\x18\x01 \x01(\t\"[\n\x08Interact\x12\r\n\x05objId\x18\x01 \x01(\t\x12\x12\n\x05mapId\x18\x03 \x01(\tH\x00\x88\x01\x01\x12\x15\n\x08\x64\x61taJson\x18\x02 \x01(\tH\x01\x88\x01\x01\x42\x08\n\x06_mapIdB\x0b\n\t_dataJson\",\n\x10\x41\x63tivelySpeaking\x12\x18\n\x10\x61\x63tivelySpeaking\x18\x01 \x01(\x08\"I\n\x0c\x45nterWhisper\x12\x13\n\x0brecipientId\x18\x01 \x01(\t\x12$\n\x03\x64ir\x18\x02 \x01(\x0e\x32\x17.MoveDirectionEnum.ENUM\"\x0e\n\x0cLeaveWhisper\":\n\x05Ghost\x12\r\n\x05ghost\x18\x01 \x01(\r\x12\x15\n\x08targetId\x18\x02 \x01(\tH\x00\x88\x01\x01\x42\x0b\n\t_targetId\"l\n\nSetEmoteV2\x12\x12\n\x05\x65mote\x18\x01 \x01(\tH\x00\x88\x01\x01\x12\x15\n\x08targetId\x18\x02 \x01(\tH\x01\x88\x01\x01\x12\x12\n\x05\x63ount\x18\x03 \x01(\rH\x02\x88\x01\x01\x42\x08\n\x06_emoteB\x0b\n\t_targetIdB\x08\n\x06_count\";\n\x07SetName\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x15\n\x08targetId\x18\x02 \x01(\tH\x00\x88\x01\x01\x42\x0b\n\t_targetId\"G\n\rSetTextStatus\x12\x12\n\ntextStatus\x18\x01 \x01(\t\x12\x15\n\x08targetId\x18\x02 \x01(\tH\x00\x88\x01\x01\x42\x0b\n\t_targetId\"C\n\x0bSetPronouns\x12\x10\n\x08pronouns\x18\x01 \x01(\t\x12\x15\n\x08targetId\x18\x02 \x01(\tH\x00\x88\x01\x01\x42\x0b\n\t_targetId\"=\n\x08SetTitle\x12\r\n\x05title\x18\x01 \x01(\t\x12\x15\n\x08targetId\x18\x02 \x01(\tH\x00\x88\x01\x01\x42\x0b\n\t_targetId\";\n\x07SetCity\x12\x0c\n\x04\x63ity\x18\x01 \x01(\t\x12\x15\n\x08targetId\x18\x02 \x01(\tH\x00\x88\x01\x01\x42\x0b\n\t_targetId\"A\n\nSetCountry\x12\x0f\n\x07\x63ountry\x18\x01 \x01(\t\x12\x15\n\x08targetId\x18\x02 \x01(\tH\x00\x88\x01\x01\x42\x0b\n\t_targetId\"E\n\x0cSetStartDate\x12\x11\n\tstartDate\x18\x01 \x01(\t\x12\x15\n\x08targetId\x18\x02 \x01(\tH\x00\x88\x01\x01\x42\x0b\n\t_targetId\"C\n\x0bSetTimezone\x12\x10\n\x08timezone\x18\x01 \x01(\t\x12\x15\n\x08targetId\x18\x02 \x01(\tH\x00\x88\x01\x01\x42\x0b\n\t_targetId\"=\n\x08SetPhone\x12\r\n\x05phone\x18\x01 \x01(\t\x12\x15\n\x08targetId\x18\x02 \x01(\tH\x00\x88\x01\x01\x42\x0b\n\t_targetId\"I\n\x0eSetDescription\x12\x13\n\x0b\x64\x65scription\x18\x01 \x01(\t\x12\x15\n\x08targetId\x18\x02 \x01(\tH\x00\x88\x01\x01\x42\x0b\n\t_targetId\"Q\n\x12SetProfileImageUrl\x12\x17\n\x0fprofileImageUrl\x18\x01 \x01(\t\x12\x15\n\x08targetId\x18\x02 \x01(\tH\x00\x88\x01\x01\x42\x0b\n\t_targetId\"S\n\x13SetPersonalImageUrl\x12\x18\n\x10personalImageUrl\x18\x01 \x01(\t\x12\x15\n\x08targetId\x18\x02 \x01(\tH\x00\x88\x01\x01\x42\x0b\n\t_targetId\"\x06\n\x04\x45xit\"\x80\x01\n\x05\x45nter\x12\"\n\x04info\x18\x01 \x01(\x0b\x32\x0f.PlayerInitInfoH\x00\x88\x01\x01\x12\x17\n\nspawnToken\x18\x02 \x01(\tH\x01\x88\x01\x01\x12\x15\n\x08targetId\x18\x03 \x01(\tH\x02\x88\x01\x01\x42\x07\n\x05_infoB\r\n\x0b_spawnTokenB\x0b\n\t_targetId\"u\n\x0fPrecomputeEnter\x12(\n\renterLocation\x18\x01 \x01(\x0b\x32\x0c.MapLocationH\x00\x88\x01\x01\x12\x17\n\nspawnToken\x18\x02 \x01(\tH\x01\x88\x01\x01\x42\x10\n\x0e_enterLocationB\r\n\x0b_spawnToken\"I\n\x0eSetEmojiStatus\x12\x13\n\x0b\x65mojiStatus\x18\x01 \x01(\t\x12\x15\n\x08targetId\x18\x02 \x01(\tH\x00\x88\x01\x01\x42\x0b\n\t_targetId\"\x94\x01\n\x08Teleport\x12\r\n\x05mapId\x18\x01 \x01(\t\x12\t\n\x01x\x18\x02 \x01(\r\x12\t\n\x01y\x18\x03 \x01(\r\x12\x15\n\x08targetId\x18\x04 \x01(\tH\x00\x88\x01\x01\x12\x31\n\tdirection\x18\x05 \x01(\x0e\x32\x19.SpriteDirectionEnum.ENUMH\x01\x88\x01\x01\x42\x0b\n\t_targetIdB\x0c\n\n_direction\"M\n\x10SetWorkCondition\x12\x15\n\rworkCondition\x18\x01 \x01(\x08\x12\x15\n\x08targetId\x18\x02 \x01(\tH\x00\x88\x01\x01\x42\x0b\n\t_targetId\"\x1b\n\x05Spawn\x12\x12\n\nspawnToken\x18\x01 \x01(\t\"\t\n\x07Respawn\"N\n\x11RequestToJoinNook\x12\x0e\n\x06nookId\x18\x01 \x01(\t\x12\r\n\x05mapId\x18\x02 \x01(\t\x12\x11\n\x04name\x18\x03 \x01(\tH\x00\x88\x01\x01\x42\x07\n\x05_name\"I\n\x14UpdateNookPermission\x12\x10\n\x08playerId\x18\x01 \x01(\t\x12\x0e\n\x06nookId\x18\x02 \x01(\t\x12\x0f\n\x07granted\x18\x03 \x01(\x08\"B\n\x04Init\x12\x0f\n\x07spaceId\x18\x01 \x01(\t\x12\x0f\n\x05token\x18\x02 \x01(\tH\x00\x12\x10\n\x06\x61piKey\x18\x03 \x01(\tH\x00\x42\x06\n\x04\x61uth\":\n\x0cMapAddObject\x12\r\n\x05mapId\x18\x01 \x01(\t\x12\x1b\n\x06object\x18\x02 \x01(\x0b\x32\x0b.WireObject\"3\n\rShootConfetti\x12\x15\n\x08targetId\x18\x01 \x01(\tH\x00\x88\x01\x01\x42\x0b\n\t_targetId\"I\n\x0eSetEventStatus\x12\x13\n\x0b\x65ventStatus\x18\x01 \x01(\t\x12\x15\n\x08targetId\x18\x02 \x01(\tH\x00\x88\x01\x01\x42\x0b\n\t_targetId\"O\n\x11SetInConversation\x12\x16\n\x0einConversation\x18\x01 \x01(\x08\x12\x15\n\x08targetId\x18\x02 \x01(\tH\x00\x88\x01\x01\x42\x0b\n\t_targetId\"I\n\x0eSetCurrentDesk\x12\x13\n\x0b\x63urrentDesk\x18\x01 \x01(\t\x12\x15\n\x08targetId\x18\x02 \x01(\tH\x00\x88\x01\x01\x42\x0b\n\t_targetId\"I\n\x0eSetCurrentArea\x12\x13\n\x0b\x63urrentArea\x18\x01 \x01(\t\x12\x15\n\x08targetId\x18\x02 \x01(\tH\x00\x88\x01\x01\x42\x0b\n\t_targetId\"C\n\x0bSetGoKartId\x12\x10\n\x08goKartId\x18\x01 \x01(\t\x12\x15\n\x08targetId\x18\x02 \x01(\tH\x00\x88\x01\x01\x42\x0b\n\t_targetId\"e\n\x0cSetVehicleId\x12\x11\n\tvehicleId\x18\x01 \x01(\t\x12\x15\n\x08targetId\x18\x02 \x01(\tH\x00\x88\x01\x01\x12\x13\n\x06\x61\x63tion\x18\x03 \x01(\tH\x01\x88\x01\x01\x42\x0b\n\t_targetIdB\t\n\x07_action\"M\n\x10SetSpeedModifier\x12\x15\n\rspeedModifier\x18\x01 \x01(\x02\x12\x15\n\x08targetId\x18\x02 \x01(\tH\x00\x88\x01\x01\x42\x0b\n\t_targetId\"A\n\nSetIsAlone\x12\x0f\n\x07isAlone\x18\x01 \x01(\x08\x12\x15\n\x08targetId\x18\x02 \x01(\tH\x00\x88\x01\x01\x42\x0b\n\t_targetId\"\x1f\n\x0bSetIsMobile\x12\x10\n\x08isMobile\x18\x01 \x01(\x08\"L\n\tPlaySound\x12\x0b\n\x03src\x18\x01 \x01(\t\x12\x0e\n\x06volume\x18\x02 \x01(\x02\x12\x15\n\x08targetId\x18\x03 \x01(\tH\x00\x88\x01\x01\x42\x0b\n\t_targetId\"<\n\tStopSound\x12\x0b\n\x03src\x18\x01 \x01(\t\x12\x15\n\x08targetId\x18\x03 \x01(\tH\x00\x88\x01\x01\x42\x0b\n\t_targetId\"S\n\x13SetFocusModeEndTime\x12\x18\n\x10\x66ocusModeEndTime\x18\x01 \x01(\t\x12\x15\n\x08targetId\x18\x02 \x01(\tH\x00\x88\x01\x01\x42\x0b\n\t_targetId\"G\n\rSetItemString\x12\x12\n\nitemString\x18\x01 \x01(\t\x12\x15\n\x08targetId\x18\x02 \x01(\tH\x00\x88\x01\x01\x42\x0b\n\t_targetId\"y\n\x0bTriggerItem\x12\x1a\n\rclosestObject\x18\x01 \x01(\tH\x00\x88\x01\x01\x12\"\n\x15\x63losestObjectTemplate\x18\x03 \x01(\tH\x01\x88\x01\x01\x42\x10\n\x0e_closestObjectB\x18\n\x16_closestObjectTemplate\"g\n\x0c\x43ustomAction\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0f\n\x07payload\x18\x02 \x01(\t\x12\x12\n\nrecipients\x18\x03 \x03(\t\x12\x16\n\tsendToAll\x18\x04 \x01(\x08H\x00\x88\x01\x01\x42\x0c\n\n_sendToAll\"K\n\x0fSetFollowTarget\x12\x14\n\x0c\x66ollowTarget\x18\x01 \x01(\t\x12\x15\n\x08targetId\x18\x02 \x01(\tH\x00\x88\x01\x01\x42\x0b\n\t_targetId\"1\n\rRequestToLead\x12\x0e\n\x06target\x18\x01 \x01(\t\x12\x10\n\x08snapshot\x18\x02 \x01(\t\"p\n\x0b\x45nterPortal\x12\x11\n\ttargetUrl\x18\x01 \x01(\t\x12\x19\n\x0c\x62ypassPrompt\x18\x02 \x01(\x08H\x00\x88\x01\x01\x12\x15\n\x08targetId\x18\x03 \x01(\tH\x01\x88\x01\x01\x42\x0f\n\r_bypassPromptB\x0b\n\t_targetId\"O\n\x11SetManualVideoSrc\x12\x16\n\x0emanualVideoSrc\x18\x01 \x01(\t\x12\x15\n\x08targetId\x18\x02 \x01(\tH\x00\x88\x01\x01\x42\x0b\n\t_targetId\"C\n\x0bSetSubtitle\x12\x10\n\x08subtitle\x18\x01 \x01(\t\x12\x15\n\x08targetId\x18\x02 \x01(\tH\x00\x88\x01\x01\x42\x0b\n\t_targetId\"4\n\x11MapCommitsChanges\x12\r\n\x05mapId\x18\x01 \x01(\t\x12\x10\n\x08updateId\x18\x02 \x01(\x04\"\xe2\x01\n\x14PlayerUpdatesSession\x12\x18\n\x0broomChecked\x18\x01 \x01(\x08H\x00\x88\x01\x01\x12\x18\n\x0b\x63hatChecked\x18\x02 \x01(\x08H\x01\x88\x01\x01\x12\x16\n\tqaChecked\x18\x03 \x01(\x08H\x02\x88\x01\x01\x12$\n\x17\x61pproveQuestionsChecked\x18\x04 \x01(\x08H\x03\x88\x01\x01\x12\x0e\n\x06roomId\x18\x05 \x01(\tB\x0e\n\x0c_roomCheckedB\x0e\n\x0c_chatCheckedB\x0c\n\n_qaCheckedB\x1a\n\x18_approveQuestionsChecked\"\xaa\x02\n\x15SpeakerUpdatesSession\x12\x11\n\tsessionId\x18\x01 \x01(\t\x12!\n\x14\x63ustomizeRoomEnabled\x18\x02 \x01(\x08H\x00\x88\x01\x01\x12\x18\n\x0b\x63hatEnabled\x18\x03 \x01(\x08H\x01\x88\x01\x01\x12\x16\n\tqaEnabled\x18\x04 \x01(\x08H\x02\x88\x01\x01\x12$\n\x17\x61pproveQuestionsEnabled\x18\x05 \x01(\x08H\x03\x88\x01\x01\x12\x1c\n\x0fmassMuteEnabled\x18\x06 \x01(\x08H\x04\x88\x01\x01\x42\x17\n\x15_customizeRoomEnabledB\x0e\n\x0c_chatEnabledB\x0c\n\n_qaEnabledB\x1a\n\x18_approveQuestionsEnabledB\x12\n\x10_massMuteEnabled\"C\n\tChatReply\x12\x10\n\x08senderId\x18\x01 \x01(\t\x12\x12\n\nsenderName\x18\x02 \x01(\t\x12\x10\n\x08\x63ontents\x18\x03 \x01(\t\" \n\x12\x43hatMessageUpdated\x12\n\n\x02id\x18\x01 \x01(\t\"B\n\x0bSendCommand\x12\x0f\n\x07\x63ommand\x18\x01 \x01(\t\x12\x15\n\x08targetId\x18\x02 \x01(\tH\x00\x88\x01\x01\x42\x0b\n\t_targetId\"\"\n\x0fRegisterCommand\x12\x0f\n\x07\x63ommand\x18\x01 \x01(\t\"Z\n\x05\x43raft\x12\"\n\x06inputs\x18\x01 \x03(\x0b\x32\x12.Craft.InputsEntry\x1a-\n\x0bInputsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x05:\x02\x38\x01\"\x1c\n\x08HighFive\x12\x10\n\x08targetId\x18\x01 \x01(\t\"C\n\x10\x41\x64\x64InventoryItem\x12\x0e\n\x06itemId\x18\x01 \x01(\t\x12\r\n\x05\x64\x65lta\x18\x02 \x01(\x04\x12\x10\n\x08targetId\x18\x03 \x01(\t\"X\n\x13RemoveInventoryItem\x12\x0e\n\x06itemId\x18\x01 \x01(\t\x12\r\n\x05\x64\x65lta\x18\x02 \x01(\x04\x12\x15\n\x08targetId\x18\x03 \x01(\tH\x00\x88\x01\x01\x42\x0b\n\t_targetId\"\x1d\n\rHipToBeSquare\x12\x0c\n\x04\x64\x61ta\x18\x01 \x01(\t\"9\n\x14TriggerInventoryItem\x12\x0e\n\x06itemId\x18\x01 \x01(\t\x12\x11\n\tabilityId\x18\x02 \x01(\t\"3\n\x15SetAllowScreenPointer\x12\x1a\n\x12\x61llowScreenPointer\x18\x01 \x01(\x08\"P\n\x0bSetDeskInfo\x12\x1d\n\x08\x64\x65skInfo\x18\x01 \x01(\x0b\x32\x0b.DeskInfoV2\x12\x15\n\x08targetId\x18\x02 \x01(\tH\x00\x88\x01\x01\x42\x0b\n\t_targetId\"%\n\x04Wave\x12\x0c\n\x04user\x18\x01 \x01(\t\x12\x0f\n\x07isReply\x18\x02 \x01(\x08\";\n\x07SetAway\x12\x0c\n\x04\x61way\x18\x01 \x01(\x08\x12\x15\n\x08targetId\x18\x02 \x01(\tH\x00\x88\x01\x01\x42\x0b\n\t_targetId\"@\n\x0eStartRecording\x12\x0e\n\x06nookId\x18\x01 \x01(\t\x12\x13\n\x06\x63\x61ncel\x18\x02 \x01(\x08H\x00\x88\x01\x01\x42\t\n\x07_cancelb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1dgather_client_ws/events.proto\"\x0c\n\nDeprecated\"\xb3\x01\n\x13SpriteDirectionEnum\"\x9b\x01\n\x04\x45NUM\x12\t\n\x05Stand\x10\x00\x12\x08\n\x04\x44own\x10\x01\x12\x0b\n\x07\x44ownAlt\x10\x02\x12\x06\n\x02Up\x10\x03\x12\t\n\x05UpAlt\x10\x04\x12\x08\n\x04Left\x10\x05\x12\x0b\n\x07LeftAlt\x10\x06\x12\t\n\x05Right\x10\x07\x12\x0c\n\x08RightAlt\x10\x08\x12\n\n\x06\x44\x61nce1\x10\t\x12\n\n\x06\x44\x61nce2\x10\n\x12\n\n\x06\x44\x61nce3\x10\x0b\x12\n\n\x06\x44\x61nce4\x10\x0c\"M\n\x11MoveDirectionEnum\"8\n\x04\x45NUM\x12\x08\n\x04Left\x10\x00\x12\t\n\x05Right\x10\x01\x12\x06\n\x02Up\x10\x02\x12\x08\n\x04\x44own\x10\x03\x12\t\n\x05\x44\x61nce\x10\x04\"\xbf\x01\n\x0fInteractionEnum\"\xab\x01\n\x04\x45NUM\x12\x08\n\x04NONE\x10\x00\x12\x14\n\x10\x45MBEDDED_WEBSITE\x10\x01\x12\n\n\x06POSTER\x10\x02\x12\t\n\x05VIDEO\x10\x03\x12\x11\n\rEXTERNAL_CALL\x10\x04\x12\r\n\tEXTENSION\x10\x05\x12\x08\n\x04NOTE\x10\x06\x12\x13\n\x0fMODAL_EXTENSION\x10\x07\x12\x13\n\x0f\x43OMPONENT_MODAL\x10\x08\x12\x16\n\x12SIDE_PANEL_TRIGGER\x10\t\"\xd7\x03\n\x0ePlayerInitInfo\x12\x11\n\x04name\x18\x01 \x01(\tH\x00\x88\x01\x01\x12\x0e\n\x01x\x18\x03 \x01(\rH\x01\x88\x01\x01\x12\x0e\n\x01y\x18\x04 \x01(\rH\x02\x88\x01\x01\x12\x10\n\x03map\x18\x05 \x01(\tH\x03\x88\x01\x01\x12\x18\n\x0b\x61\x66\x66iliation\x18\x06 \x01(\tH\x04\x88\x01\x01\x12\x11\n\x04\x62usy\x18\x07 \x01(\x08H\x05\x88\x01\x01\x12\x17\n\ntextStatus\x18\x08 \x01(\tH\x06\x88\x01\x01\x12\x18\n\x0b\x65mojiStatus\x18\t \x01(\tH\x07\x88\x01\x01\x12\x32\n\x1a\x63urrentlyEquippedWearables\x18\n \x01(\x0b\x32\t.DBOutfitH\x08\x88\x01\x01\x12\x1d\n\x10\x66ocusModeEndTime\x18\x0b \x01(\tH\t\x88\x01\x01\x12\x17\n\nitemString\x18\x0e \x01(\tH\n\x88\x01\x01\x12\x12\n\x05isNpc\x18\x0f \x01(\x08H\x0b\x88\x01\x01\x42\x07\n\x05_nameB\x04\n\x02_xB\x04\n\x02_yB\x06\n\x04_mapB\x0e\n\x0c_affiliationB\x07\n\x05_busyB\r\n\x0b_textStatusB\x0e\n\x0c_emojiStatusB\x1d\n\x1b_currentlyEquippedWearablesB\x13\n\x11_focusModeEndTimeB\r\n\x0b_itemStringB\x08\n\x06_isNpc\"\xfa\x01\n\x08\x44\x42Outfit\x12\x0c\n\x04skin\x18\x01 \x01(\t\x12\x0c\n\x04hair\x18\x02 \x01(\t\x12\x13\n\x0b\x66\x61\x63ial_hair\x18\x03 \x01(\t\x12\x0b\n\x03top\x18\x04 \x01(\t\x12\x0e\n\x06\x62ottom\x18\x05 \x01(\t\x12\r\n\x05shoes\x18\x06 \x01(\t\x12\x0b\n\x03hat\x18\x07 \x01(\t\x12\x0f\n\x07glasses\x18\x08 \x01(\t\x12\r\n\x05other\x18\t \x01(\t\x12\x14\n\x07\x63ostume\x18\n \x01(\tH\x00\x88\x01\x01\x12\x15\n\x08mobility\x18\x0b \x01(\tH\x01\x88\x01\x01\x12\x13\n\x06jacket\x18\x0c \x01(\tH\x02\x88\x01\x01\x42\n\n\x08_costumeB\x0b\n\t_mobilityB\t\n\x07_jacket\"G\n\x1cWireObjectSpritesheetFraming\x12\x12\n\nframeWidth\x18\x01 \x01(\x05\x12\x13\n\x0b\x66rameHeight\x18\x02 \x01(\x05\"\x95\x01\n\x1aWireObjectSpriteAnimConfig\x12\x1f\n\x12useSequenceAsRange\x18\x01 \x01(\x08H\x00\x88\x01\x01\x12\x10\n\x08sequence\x18\x02 \x03(\r\x12\x11\n\x04loop\x18\x03 \x01(\x08H\x01\x88\x01\x01\x12\x11\n\tframeRate\x18\x04 \x01(\rB\x15\n\x13_useSequenceAsRangeB\x07\n\x05_loop\"\xed\x02\n\x15WireObjectSpritesheet\x12\x16\n\x0espritesheetUrl\x18\x01 \x01(\t\x12.\n\x07\x66raming\x18\x02 \x01(\x0b\x32\x1d.WireObjectSpritesheetFraming\x12:\n\nanimations\x18\x03 \x03(\x0b\x32&.WireObjectSpritesheet.AnimationsEntry\x12\x18\n\x0b\x63urrentAnim\x18\x04 \x01(\tH\x00\x88\x01\x01\x12/\n\"pauseAnimationsIfFpsBelowFramerate\x18\x05 \x01(\x08H\x01\x88\x01\x01\x1aN\n\x0f\x41nimationsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12*\n\x05value\x18\x02 \x01(\x0b\x32\x1b.WireObjectSpriteAnimConfig:\x02\x38\x01\x42\x0e\n\x0c_currentAnimB%\n#_pauseAnimationsIfFpsBelowFramerate\"\xb4\x08\n\nWireObject\x12\x17\n\ntemplateId\x18\x01 \x01(\tH\x00\x88\x01\x01\x12\x12\n\x05_name\x18\x02 \x01(\tH\x01\x88\x01\x01\x12\r\n\x05_tags\x18\x03 \x03(\t\x12\x0e\n\x01x\x18\x04 \x01(\rH\x02\x88\x01\x01\x12\x0e\n\x01y\x18\x05 \x01(\rH\x03\x88\x01\x01\x12\x14\n\x07offsetX\x18\x06 \x01(\x02H\x04\x88\x01\x01\x12\x14\n\x07offsetY\x18\x07 \x01(\x02H\x05\x88\x01\x01\x12\x12\n\x05\x63olor\x18\x08 \x01(\tH\x06\x88\x01\x01\x12\x18\n\x0borientation\x18\t \x01(\rH\x07\x88\x01\x01\x12\x13\n\x06normal\x18\n \x01(\tH\x08\x88\x01\x01\x12\x18\n\x0bhighlighted\x18\x0b \x01(\tH\t\x88\x01\x01\x12(\n\x04type\x18\x0c \x01(\x0e\x32\x15.InteractionEnum.ENUMH\n\x88\x01\x01\x12\x12\n\x05width\x18\r \x01(\rH\x0b\x88\x01\x01\x12\x13\n\x06height\x18\x0e \x01(\rH\x0c\x88\x01\x01\x12\x1b\n\x0e\x65xtensionClass\x18\x0f \x01(\tH\r\x88\x01\x01\x12\x1b\n\x0epreviewMessage\x18\x10 \x01(\tH\x0e\x88\x01\x01\x12\x1a\n\rdistThreshold\x18\x11 \x01(\rH\x0f\x88\x01\x01\x12\x1b\n\x0epropertiesJson\x18\x12 \x01(\tH\x10\x88\x01\x01\x12\x1a\n\x05sound\x18\x13 \x01(\x0b\x32\x06.SoundH\x11\x88\x01\x01\x12)\n\x0fobjectStartTime\x18\x14 \x01(\x0b\x32\x0b.ObjectTimeH\x12\x88\x01\x01\x12*\n\x10objectExpireTime\x18\x15 \x01(\x0b\x32\x0b.ObjectTimeH\x13\x88\x01\x01\x12\x0f\n\x02id\x18\x16 \x01(\tH\x14\x88\x01\x01\x12\x18\n\x0b\x63ustomState\x18\x17 \x01(\tH\x15\x88\x01\x01\x12\x1b\n\x0eobjectPlacerId\x18\x18 \x01(\tH\x16\x88\x01\x01\x12\x17\n\nnumGoKarts\x18\x19 \x01(\rH\x17\x88\x01\x01\x12\x30\n\x0bspritesheet\x18\x1a \x01(\x0b\x32\x16.WireObjectSpritesheetH\x18\x88\x01\x01\x12\x13\n\x06zIndex\x18\x1b \x01(\x02H\x19\x88\x01\x01\x42\r\n\x0b_templateIdB\x08\n\x06X_nameB\x04\n\x02_xB\x04\n\x02_yB\n\n\x08_offsetXB\n\n\x08_offsetYB\x08\n\x06_colorB\x0e\n\x0c_orientationB\t\n\x07_normalB\x0e\n\x0c_highlightedB\x07\n\x05_typeB\x08\n\x06_widthB\t\n\x07_heightB\x11\n\x0f_extensionClassB\x11\n\x0f_previewMessageB\x10\n\x0e_distThresholdB\x11\n\x0f_propertiesJsonB\x08\n\x06_soundB\x12\n\x10_objectStartTimeB\x13\n\x11_objectExpireTimeB\x05\n\x03_idB\x0e\n\x0c_customStateB\x11\n\x0f_objectPlacerIdB\r\n\x0b_numGoKartsB\x0e\n\x0c_spritesheetB\t\n\x07_zIndex\"\xa0\x02\n\x0fSpaceMemberInfo\x12*\n\x05roles\x18\x01 \x03(\x0b\x32\x1b.SpaceMemberInfo.RolesEntry\x12\x11\n\x04name\x18\x02 \x01(\tH\x00\x88\x01\x01\x12\x32\n\x1a\x63urrentlyEquippedWearables\x18\x04 \x01(\x0b\x32\t.DBOutfitH\x01\x88\x01\x01\x12\x1f\n\x12\x61llowScreenPointer\x18\x06 \x01(\x08H\x02\x88\x01\x01\x12\x0c\n\x04role\x18\x07 \x01(\t\x1a,\n\nRolesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x08:\x02\x38\x01\x42\x07\n\x05_nameB\x1d\n\x1b_currentlyEquippedWearablesB\x15\n\x13_allowScreenPointer\"P\n\x12\x42\x61\x63kedUpDeskObject\x12\x18\n\x03obj\x18\x01 \x01(\x0b\x32\x0b.WireObject\x12\x0f\n\x07offsetX\x18\x02 \x01(\r\x12\x0f\n\x07offsetY\x18\x03 \x01(\r\"~\n\x0b\x44\x65skObjects\x12*\n\x07objects\x18\x01 \x03(\x0b\x32\x19.DeskObjects.ObjectsEntry\x1a\x43\n\x0cObjectsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\"\n\x05value\x18\x02 \x01(\x0b\x32\x13.BackedUpDeskObject:\x02\x38\x01\"\xd4\x01\n\nDeskInfoV2\x12\x13\n\x06\x64\x65skId\x18\x01 \x01(\tH\x00\x88\x01\x01\x12\x18\n\x0b\x64\x65scription\x18\x02 \x01(\tH\x01\x88\x01\x01\x12\x13\n\x06locked\x18\x03 \x01(\x08H\x02\x88\x01\x01\x12*\n\x0flastDeskObjects\x18\x04 \x01(\x0b\x32\x0c.DeskObjectsH\x03\x88\x01\x01\x12\x12\n\x05mapId\x18\x05 \x01(\tH\x04\x88\x01\x01\x42\t\n\x07_deskIdB\x0e\n\x0c_descriptionB\t\n\x07_lockedB\x12\n\x10_lastDeskObjectsB\x08\n\x06_mapId\"+\n\nMapAndDesk\x12\r\n\x05mapId\x18\x01 \x01(\t\x12\x0e\n\x06\x64\x65skId\x18\x02 \x01(\t\"\x93\x01\n\x05Sound\x12\x0b\n\x03src\x18\x01 \x01(\t\x12\x0e\n\x06volume\x18\x02 \x01(\x02\x12\x0c\n\x04loop\x18\x03 \x01(\x08\x12\x13\n\x0bmaxDistance\x18\x04 \x01(\r\x12\x19\n\x0cisPositional\x18\x05 \x01(\x08H\x00\x88\x01\x01\x12\x13\n\x06stream\x18\x06 \x01(\x08H\x01\x88\x01\x01\x42\x0f\n\r_isPositionalB\t\n\x07_stream\"D\n\nObjectTime\x12\x10\n\x08_seconds\x18\x01 \x01(\r\x12\x16\n\t_timezone\x18\x02 \x01(\tH\x00\x88\x01\x01\x42\x0c\n\nX_timezone\"P\n\x05Space\x12\x0f\n\x07spaceId\x18\x01 \x01(\t\x12\t\n\x01x\x18\x02 \x01(\r\x12\t\n\x01y\x18\x03 \x01(\r\x12\x14\n\x07\x63olored\x18\x04 \x01(\x08H\x00\x88\x01\x01\x42\n\n\x08_colored\"(\n\nNookCoords\x12\x1a\n\x06\x63oords\x18\x01 \x03(\x0b\x32\n.WirePoint\"\x1d\n\x0c\x41llowedUsers\x12\r\n\x05users\x18\x01 \x03(\t\")\n\x0bRequestUser\x12\x11\n\x04name\x18\x01 \x01(\tH\x00\x88\x01\x01\x42\x07\n\x05_name\"w\n\x0eRequestedUsers\x12)\n\x05users\x18\x01 \x03(\x0b\x32\x1a.RequestedUsers.UsersEntry\x1a:\n\nUsersEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x1b\n\x05value\x18\x02 \x01(\x0b\x32\x0c.RequestUser:\x02\x38\x01\"w\n\rRecordingInfo\x12\x0e\n\x06\x61\x63tive\x18\x03 \x01(\x08\x12\x1d\n\x10initiatingPlayer\x18\x01 \x01(\tH\x00\x88\x01\x01\x12\x15\n\x08\x65gressId\x18\x04 \x01(\tH\x01\x88\x01\x01\x42\x13\n\x11_initiatingPlayerB\x0b\n\t_egressId\"\xf1\x03\n\x08NookDiff\x12$\n\nnookCoords\x18\x01 \x01(\x0b\x32\x0b.NookCoordsH\x00\x88\x01\x01\x12\x14\n\x07\x63olored\x18\x02 \x01(\x08H\x01\x88\x01\x01\x12\x11\n\x04name\x18\x03 \x01(\tH\x02\x88\x01\x01\x12\x15\n\x08\x62ookable\x18\x04 \x01(\x08H\x03\x88\x01\x01\x12\x15\n\x08\x63\x61pacity\x18\x05 \x01(\rH\x04\x88\x01\x01\x12\x17\n\nrestricted\x18\x06 \x01(\x08H\x05\x88\x01\x01\x12(\n\x0c\x61llowedUsers\x18\x07 \x01(\x0b\x32\r.AllowedUsersH\x06\x88\x01\x01\x12,\n\x0erequestedUsers\x18\x08 \x01(\x0b\x32\x0f.RequestedUsersH\x07\x88\x01\x01\x12\x18\n\x0bisInMeeting\x18\t \x01(\x08H\x08\x88\x01\x01\x12\x13\n\x06isDesk\x18\n \x01(\x08H\t\x88\x01\x01\x12*\n\rrecordingInfo\x18\x0b \x01(\x0b\x32\x0e.RecordingInfoH\n\x88\x01\x01\x42\r\n\x0b_nookCoordsB\n\n\x08_coloredB\x07\n\x05_nameB\x0b\n\t_bookableB\x0b\n\t_capacityB\r\n\x0b_restrictedB\x0f\n\r_allowedUsersB\x11\n\x0f_requestedUsersB\x0e\n\x0c_isInMeetingB\t\n\x07_isDeskB\x10\n\x0e_recordingInfo\"!\n\tWirePoint\x12\t\n\x01x\x18\x01 \x01(\r\x12\t\n\x01y\x18\x02 \x01(\r\"D\n\nSpawnPoint\x12\t\n\x01x\x18\x01 \x01(\r\x12\t\n\x01y\x18\x02 \x01(\r\x12\x14\n\x07spawnId\x18\x03 \x01(\tH\x00\x88\x01\x01\x42\n\n\x08_spawnId\"\xae\x01\n\x06Portal\x12\t\n\x01x\x18\x01 \x01(\r\x12\t\n\x01y\x18\x02 \x01(\r\x12\x16\n\ttargetMap\x18\x03 \x01(\tH\x00\x88\x01\x01\x12\x16\n\ttargetUrl\x18\x04 \x01(\tH\x01\x88\x01\x01\x12\x14\n\x07targetX\x18\x05 \x01(\rH\x02\x88\x01\x01\x12\x14\n\x07targetY\x18\x06 \x01(\rH\x03\x88\x01\x01\x42\x0c\n\n_targetMapB\x0c\n\n_targetUrlB\n\n\x08_targetXB\n\n\x08_targetY\"!\n\tAnnouncer\x12\t\n\x01x\x18\x01 \x01(\r\x12\t\n\x01y\x18\x02 \x01(\r\"\x8a\x01\n\x05\x41sset\x12\t\n\x01x\x18\x01 \x01(\x02\x12\t\n\x01y\x18\x02 \x01(\x02\x12\x0b\n\x03src\x18\x03 \x01(\t\x12\x12\n\x05width\x18\x04 \x01(\rH\x00\x88\x01\x01\x12\x13\n\x06height\x18\x05 \x01(\rH\x01\x88\x01\x01\x12\x14\n\x07inFront\x18\x06 \x01(\x08H\x02\x88\x01\x01\x42\x08\n\x06_widthB\t\n\x07_heightB\n\n\x08_inFront\">\n\x0c\x41reaPosition\x12\n\n\x02x1\x18\x01 \x01(\r\x12\n\n\x02y1\x18\x02 \x01(\r\x12\n\n\x02x2\x18\x03 \x01(\r\x12\n\n\x02y2\x18\x04 \x01(\r\"M\n\x08WireArea\x12\x15\n\x08\x63\x61tegory\x18\x01 \x01(\tH\x00\x88\x01\x01\x12\x1d\n\x06\x63oords\x18\x02 \x03(\x0b\x32\r.AreaPositionB\x0b\n\t_category\"\'\n\x06\x44\x42\x44\x65sk\x12\x1d\n\x06\x63oords\x18\x01 \x03(\x0b\x32\r.AreaPosition\"@\n\x10MapSetDimensions\x12\r\n\x05mapId\x18\x01 \x01(\t\x12\r\n\x05width\x18\x02 \x01(\r\x12\x0e\n\x06height\x18\x03 \x01(\r\"[\n\x10MapSetCollisions\x12\r\n\x05mapId\x18\x01 \x01(\t\x12\t\n\x01x\x18\x02 \x01(\r\x12\t\n\x01y\x18\x03 \x01(\r\x12\t\n\x01w\x18\x04 \x01(\r\x12\t\n\x01h\x18\x05 \x01(\r\x12\x0c\n\x04mask\x18\x06 \x01(\t\"r\n\x14MapSetCollisionsBits\x12\r\n\x05mapId\x18\x01 \x01(\t\x12\x11\n\toverwrite\x18\x02 \x01(\x08\x12\t\n\x01x\x18\x03 \x01(\r\x12\t\n\x01y\x18\x04 \x01(\r\x12\t\n\x01w\x18\x05 \x01(\r\x12\t\n\x01h\x18\x06 \x01(\r\x12\x0c\n\x04mask\x18\x07 \x01(\x0c\"G\n\x19MapSetBackgroundImagePath\x12\r\n\x05mapId\x18\x01 \x01(\t\x12\x1b\n\x13\x62\x61\x63kgroundImagePath\x18\x02 \x01(\t\"g\n\x19MapSetForegroundImagePath\x12\r\n\x05mapId\x18\x01 \x01(\t\x12\x1b\n\x13\x66oregroundImagePath\x18\x02 \x01(\t\x12\x13\n\x06\x64\x65lete\x18\x03 \x01(\x08H\x00\x88\x01\x01\x42\t\n\x07_delete\"\xa3\x01\n\x0bMapSetNooks\x12\r\n\x05mapId\x18\x01 \x01(\t\x12&\n\x05nooks\x18\x02 \x03(\x0b\x32\x17.MapSetNooks.NooksEntry\x12\x16\n\toverwrite\x18\x03 \x01(\x08H\x00\x88\x01\x01\x1a\x37\n\nNooksEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x18\n\x05value\x18\x02 \x01(\x0b\x32\t.NookDiff:\x02\x38\x01\x42\x0c\n\n_overwrite\"W\n\x0bMapSetSpawn\x12\r\n\x05mapId\x18\x01 \x01(\t\x12\x19\n\x05spawn\x18\x02 \x01(\x0b\x32\n.WirePoint\x12\x13\n\x06\x64\x65lete\x18\x03 \x01(\x08H\x00\x88\x01\x01\x42\t\n\x07_delete\":\n\x0cMapSetSpawns\x12\r\n\x05mapId\x18\x01 \x01(\t\x12\x1b\n\x06spawns\x18\x02 \x03(\x0b\x32\x0b.SpawnPoint\"8\n\rMapSetPortals\x12\r\n\x05mapId\x18\x01 \x01(\t\x12\x18\n\x07portals\x18\x02 \x03(\x0b\x32\x07.Portal\"?\n\x0fMapSetAnnouncer\x12\r\n\x05mapId\x18\x01 \x01(\t\x12\x1d\n\tannouncer\x18\x02 \x03(\x0b\x32\n.Announcer\"U\n\x0cMapSetAssets\x12\r\n\x05mapId\x18\x01 \x01(\t\x12\x16\n\x06\x61ssets\x18\x02 \x03(\x0b\x32\x06.Asset\x12\x13\n\x06\x64\x65lete\x18\x03 \x01(\x08H\x00\x88\x01\x01\x42\t\n\x07_delete\"\xc9\x01\n\x0fMapSetObjectsV2\x12\r\n\x05mapId\x18\x01 \x01(\t\x12.\n\x07objects\x18\x02 \x03(\x0b\x32\x1d.MapSetObjectsV2.ObjectsEntry\x12!\n\x14updatesAreOverwrites\x18\x03 \x01(\x08H\x00\x88\x01\x01\x1a;\n\x0cObjectsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x1a\n\x05value\x18\x02 \x01(\x0b\x32\x0b.WireObject:\x02\x38\x01\x42\x17\n\x15_updatesAreOverwrites\"I\n\nMapSetName\x12\r\n\x05mapId\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x13\n\x06\x64\x65lete\x18\x03 \x01(\x08H\x00\x88\x01\x01\x42\t\n\x07_delete\"W\n\x11MapSetMuteOnEntry\x12\r\n\x05mapId\x18\x01 \x01(\t\x12\x13\n\x0bmuteOnEntry\x18\x02 \x01(\x08\x12\x13\n\x06\x64\x65lete\x18\x03 \x01(\x08H\x00\x88\x01\x01\x42\t\n\x07_delete\"U\n\x10MapSetUseDrawnBG\x12\r\n\x05mapId\x18\x01 \x01(\t\x12\x12\n\nuseDrawnBG\x18\x02 \x01(\x08\x12\x13\n\x06\x64\x65lete\x18\x03 \x01(\x08H\x00\x88\x01\x01\x42\t\n\x07_delete\"\x92\x01\n\x0bMapSetWalls\x12\r\n\x05mapId\x18\x01 \x01(\t\x12&\n\x05walls\x18\x02 \x03(\x0b\x32\x17.MapSetWalls.WallsEntry\x12\x13\n\x06\x64\x65lete\x18\x03 \x01(\x08H\x00\x88\x01\x01\x1a,\n\nWallsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\t\n\x07_delete\"\x97\x01\n\x0cMapSetFloors\x12\r\n\x05mapId\x18\x01 \x01(\t\x12)\n\x06\x66loors\x18\x02 \x03(\x0b\x32\x19.MapSetFloors.FloorsEntry\x12\x13\n\x06\x64\x65lete\x18\x03 \x01(\x08H\x00\x88\x01\x01\x1a-\n\x0b\x46loorsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\t\n\x07_delete\"\x9d\x01\n\x0bMapSetAreas\x12\r\n\x05mapId\x18\x01 \x01(\t\x12&\n\x05\x61reas\x18\x02 \x03(\x0b\x32\x17.MapSetAreas.AreasEntry\x12\x13\n\x06\x64\x65lete\x18\x03 \x01(\x08H\x00\x88\x01\x01\x1a\x37\n\nAreasEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x18\n\x05value\x18\x02 \x01(\x0b\x32\t.WireArea:\x02\x38\x01\x42\t\n\x07_delete\"2\n\x14MapDeleteObjectByKey\x12\r\n\x05mapId\x18\x01 \x01(\t\x12\x0b\n\x03key\x18\x02 \x01(\t\"0\n\x13MapDeleteObjectById\x12\r\n\x05mapId\x18\x01 \x01(\t\x12\n\n\x02id\x18\x02 \x01(\t\"a\n\x16MapSetMiniMapImagePath\x12\r\n\x05mapId\x18\x01 \x01(\t\x12\x18\n\x10miniMapImagePath\x18\x02 \x01(\t\x12\x13\n\x06\x64\x65lete\x18\x03 \x01(\x08H\x00\x88\x01\x01\x42\t\n\x07_delete\"Y\n\x12MapSetEnabledChats\x12\r\n\x05mapId\x18\x01 \x01(\t\x12\x14\n\x0c\x65nabledChats\x18\x02 \x03(\t\x12\x13\n\x06\x64\x65lete\x18\x03 \x01(\x08H\x00\x88\x01\x01\x42\t\n\x07_delete\"W\n\x11MapSetDescription\x12\r\n\x05mapId\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t\x12\x13\n\x06\x64\x65lete\x18\x03 \x01(\x08H\x00\x88\x01\x01\x42\t\n\x07_delete\"U\n\x10MapSetDecoration\x12\r\n\x05mapId\x18\x01 \x01(\t\x12\x12\n\ndecoration\x18\x02 \x01(\t\x12\x13\n\x06\x64\x65lete\x18\x03 \x01(\x08H\x00\x88\x01\x01\x42\t\n\x07_delete\"o\n\x13MapSetTutorialTasks\x12\r\n\x05mapId\x18\x01 \x01(\t\x12)\n\rtutorialTasks\x18\x02 \x01(\x0b\x32\x12.WireTutorialTasks\x12\x13\n\x06\x64\x65lete\x18\x03 \x01(\x08H\x00\x88\x01\x01\x42\t\n\x07_delete\"r\n\x11WireTutorialTasks\x12\x12\n\ngroupSetId\x18\x01 \x01(\t\x12#\n\x05\x61reas\x18\x02 \x03(\x0b\x32\x14.TutorialTaskMapArea\x12\x16\n\tautoStart\x18\x03 \x01(\x08H\x00\x88\x01\x01\x42\x0c\n\n_autoStart\"Z\n\x13TutorialTaskMapArea\x12\x0e\n\x06\x61reaId\x18\x01 \x01(\t\x12\t\n\x01x\x18\x02 \x01(\r\x12\t\n\x01y\x18\x03 \x01(\r\x12\x0e\n\x06height\x18\x04 \x01(\r\x12\r\n\x05width\x18\x05 \x01(\r\"M\n\x0cMapSetScript\x12\r\n\x05mapId\x18\x01 \x01(\t\x12\x0e\n\x06script\x18\x02 \x01(\t\x12\x13\n\x06\x64\x65lete\x18\x03 \x01(\x08H\x00\x88\x01\x01\x42\t\n\x07_delete\"\xc3\x01\n\tInventory\x12$\n\x05items\x18\x01 \x03(\x0b\x32\x15.Inventory.ItemsEntry\x12$\n\x05order\x18\x02 \x03(\x0b\x32\x15.Inventory.OrderEntry\x1a<\n\nItemsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x1d\n\x05value\x18\x02 \x01(\x0b\x32\x0e.InventoryItem:\x02\x38\x01\x1a,\n\nOrderEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x1e\n\rInventoryItem\x12\r\n\x05\x63ount\x18\x01 \x01(\r\"\xba\x02\n\tSpaceItem\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x15\n\x08\x63\x61tegory\x18\x02 \x01(\tH\x00\x88\x01\x01\x12\x18\n\x0b\x64\x65scription\x18\x03 \x01(\tH\x01\x88\x01\x01\x12\x12\n\npreviewUrl\x18\x04 \x01(\t\x12\"\n\x04meta\x18\x05 \x03(\x0b\x32\x14.SpaceItem.MetaEntry\x12,\n\tabilities\x18\x06 \x03(\x0b\x32\x19.SpaceItem.AbilitiesEntry\x1a+\n\tMetaEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a>\n\x0e\x41\x62ilitiesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x1b\n\x05value\x18\x02 \x01(\x0b\x32\x0c.ItemAbility:\x02\x38\x01\x42\x0b\n\t_categoryB\x0e\n\x0c_description\"\x1b\n\x0bItemAbility\x12\x0c\n\x04name\x18\x01 \x01(\t\"0\n\x0bMapLocation\x12\x0b\n\x03map\x18\x01 \x01(\t\x12\t\n\x01x\x18\x02 \x01(\r\x12\t\n\x01y\x18\x03 \x01(\r\"7\n\x11ServerClientBatch\x12\"\n\x06\x65vents\x18\x01 \x03(\x0b\x32\x12.ServerClientEvent\"\x91\x32\n\x11ServerClientEvent\x12\x15\n\x04info\x18\x64 \x01(\x0b\x32\x05.InfoH\x00\x12\x15\n\x04warn\x18\x65 \x01(\x0b\x32\x05.WarnH\x00\x12\x1c\n\x05\x65rror\x18\x66 \x01(\x0b\x32\x0b.ErrorEventH\x00\x12\x17\n\x05ready\x18g \x01(\x0b\x32\x06.ReadyH\x00\x12+\n\x0fserverHeartbeat\x18i \x01(\x0b\x32\x10.ServerHeartbeatH\x00\x12/\n\x11transactionStatus\x18k \x01(\x0b\x32\x12.TransactionStatusH\x00\x12#\n\x0bplayerMoves\x18\x01 \x01(\x0b\x32\x0c.PlayerMovesH\x00\x12-\n\x10playerSetsStatus\x18\x05 \x01(\x0b\x32\x11.PlayerSetsStatusH\x00\x12-\n\x10playerSpotlights\x18\x06 \x01(\x0b\x32\x11.PlayerSpotlightsH\x00\x12#\n\x0bplayerRings\x18\x07 \x01(\x0b\x32\x0c.PlayerRingsH\x00\x12#\n\x0bplayerChats\x18\t \x01(\x0b\x32\x0c.PlayerChatsH\x00\x12%\n\x0cplayerGhosts\x18\x0b \x01(\x0b\x32\r.PlayerGhostsH\x00\x12\x33\n\x13playerEntersWhisper\x18\x0c \x01(\x0b\x32\x14.PlayerEntersWhisperH\x00\x12\x33\n\x13playerLeavesWhisper\x18\r \x01(\x0b\x32\x14.PlayerLeavesWhisperH\x00\x12\x35\n\x14playerActivelySpeaks\x18\x0e \x01(\x0b\x32\x15.PlayerActivelySpeaksH\x00\x12)\n\x0eplayerSetsName\x18\x11 \x01(\x0b\x32\x0f.PlayerSetsNameH\x00\x12\x35\n\x14playerSetsTextStatus\x18\x12 \x01(\x0b\x32\x15.PlayerSetsTextStatusH\x00\x12\x37\n\x15playerSetsEmojiStatus\x18\x13 \x01(\x0b\x32\x16.PlayerSetsEmojiStatusH\x00\x12\x37\n\x15playerSetsAffiliation\x18\x14 \x01(\x0b\x32\x16.PlayerSetsAffiliationH\x00\x12#\n\x0bplayerExits\x18\x15 \x01(\x0b\x32\x0c.PlayerExitsH\x00\x12\x35\n\x14playerSetsIsSignedIn\x18) \x01(\x0b\x32\x15.PlayerSetsIsSignedInH\x00\x12+\n\x0fspaceOverwrites\x18, \x01(\x0b\x32\x10.SpaceOverwritesH\x00\x12\'\n\rspaceIsClosed\x18- \x01(\x0b\x32\x0e.SpaceIsClosedH\x00\x12\x31\n\x12playerEntersPortal\x18. \x01(\x0b\x32\x13.PlayerEntersPortalH\x00\x12\x31\n\x12spaceSetsIdMapping\x18/ \x01(\x0b\x32\x13.SpaceSetsIdMappingH\x00\x12\x35\n\x14playerSetsLastActive\x18\x30 \x01(\x0b\x32\x15.PlayerSetsLastActiveH\x00\x12\x35\n\x14playerShootsConfetti\x18\x31 \x01(\x0b\x32\x15.PlayerShootsConfettiH\x00\x12\x37\n\x15playerSetsEventStatus\x18\x32 \x01(\x0b\x32\x16.PlayerSetsEventStatusH\x00\x12=\n\x18playerSetsInConversation\x18\x33 \x01(\x0b\x32\x19.PlayerSetsInConversationH\x00\x12\x37\n\x15playerSetsCurrentArea\x18\x35 \x01(\x0b\x32\x16.PlayerSetsCurrentAreaH\x00\x12\x39\n\x16playerSetsImagePointer\x18\x36 \x01(\x0b\x32\x17.PlayerSetsImagePointerH\x00\x12#\n\x0b\x63ookieFound\x18\x37 \x01(\x0b\x32\x0c.CookieFoundH\x00\x12\x37\n\x15playerEntersWhisperV2\x18\x38 \x01(\x0b\x32\x16.PlayerEntersWhisperV2H\x00\x12\x31\n\x12playerSetsGoKartId\x18\x39 \x01(\x0b\x32\x13.PlayerSetsGoKartIdH\x00\x12-\n\x10mapSetDimensions\x18: \x01(\x0b\x32\x11.MapSetDimensionsH\x00\x12?\n\x19mapSetBackgroundImagePath\x18< \x01(\x0b\x32\x1a.MapSetBackgroundImagePathH\x00\x12?\n\x19mapSetForegroundImagePath\x18= \x01(\x0b\x32\x1a.MapSetForegroundImagePathH\x00\x12%\n\x0cmapSetSpawns\x18@ \x01(\x0b\x32\r.MapSetSpawnsH\x00\x12\'\n\rmapSetPortals\x18\x41 \x01(\x0b\x32\x0e.MapSetPortalsH\x00\x12+\n\x0fmapSetAnnouncer\x18\x42 \x01(\x0b\x32\x10.MapSetAnnouncerH\x00\x12%\n\x0cmapSetAssets\x18\x45 \x01(\x0b\x32\r.MapSetAssetsH\x00\x12!\n\nmapSetName\x18G \x01(\x0b\x32\x0b.MapSetNameH\x00\x12/\n\x11mapSetMuteOnEntry\x18I \x01(\x0b\x32\x12.MapSetMuteOnEntryH\x00\x12-\n\x10mapSetUseDrawnBG\x18J \x01(\x0b\x32\x11.MapSetUseDrawnBGH\x00\x12#\n\x0bmapSetWalls\x18K \x01(\x0b\x32\x0c.MapSetWallsH\x00\x12%\n\x0cmapSetFloors\x18L \x01(\x0b\x32\r.MapSetFloorsH\x00\x12#\n\x0bmapSetAreas\x18M \x01(\x0b\x32\x0c.MapSetAreasH\x00\x12#\n\x0bmapSetSpawn\x18O \x01(\x0b\x32\x0c.MapSetSpawnH\x00\x12/\n\x11playerSetsIsAlone\x18P \x01(\x0b\x32\x12.PlayerSetsIsAloneH\x00\x12#\n\x0bplayerJoins\x18Q \x01(\x0b\x32\x0c.PlayerJoinsH\x00\x12\x31\n\x12mapSetEnabledChats\x18R \x01(\x0b\x32\x13.MapSetEnabledChatsH\x00\x12/\n\x11mapSetDescription\x18S \x01(\x0b\x32\x12.MapSetDescriptionH\x00\x12-\n\x10mapSetDecoration\x18T \x01(\x0b\x32\x11.MapSetDecorationH\x00\x12\x33\n\x13mapSetTutorialTasks\x18U \x01(\x0b\x32\x14.MapSetTutorialTasksH\x00\x12\x39\n\x16mapSetMiniMapImagePath\x18V \x01(\x0b\x32\x17.MapSetMiniMapImagePathH\x00\x12+\n\x0fspacePlaysSound\x18W \x01(\x0b\x32\x10.SpacePlaysSoundH\x00\x12%\n\x0cmapSetScript\x18X \x01(\x0b\x32\r.MapSetScriptH\x00\x12\x31\n\x12playerSetsIsMobile\x18Z \x01(\x0b\x32\x13.PlayerSetsIsMobileH\x00\x12\x39\n\x16setScreenPointerServer\x18[ \x01(\x0b\x32\x17.SetScreenPointerServerH\x00\x12/\n\x11playerSetsEmoteV2\x18\\ \x01(\x0b\x32\x12.PlayerSetsEmoteV2H\x00\x12\x41\n\x1aplayerSetsFocusModeEndTime\x18] \x01(\x0b\x32\x1b.PlayerSetsFocusModeEndTimeH\x00\x12\x37\n\x15spaceSetsSpaceMembers\x18^ \x01(\x0b\x32\x16.SpaceSetsSpaceMembersH\x00\x12\x34\n\x13spaceSetsSpaceUsers\x18\xa7\x01 \x01(\x0b\x32\x14.SpaceSetsSpaceUsersH\x00\x12#\n\x0b\x63ustomEvent\x18_ \x01(\x0b\x32\x0c.CustomEventH\x00\x12%\n\x0cplayerBlocks\x18\x61 \x01(\x0b\x32\r.PlayerBlocksH\x00\x12\x45\n\x1cplayerUpdatesFocusModeStatus\x18\x62 \x01(\x0b\x32\x1d.PlayerUpdatesFocusModeStatusH\x00\x12)\n\x0eplayerNotifies\x18\x63 \x01(\x0b\x32\x0f.PlayerNotifiesH\x00\x12\x35\n\x14playerSetsItemString\x18l \x01(\x0b\x32\x15.PlayerSetsItemStringH\x00\x12\x39\n\x16playerSetsFollowTarget\x18n \x01(\x0b\x32\x17.PlayerSetsFollowTargetH\x00\x12\x35\n\x14playerRequestsToLead\x18o \x01(\x0b\x32\x15.PlayerRequestsToLeadH\x00\x12=\n\x18playerSetsManualVideoSrc\x18p \x01(\x0b\x32\x19.PlayerSetsManualVideoSrcH\x00\x12+\n\x0fplayerSetsIsNpc\x18q \x01(\x0b\x32\x10.PlayerSetsIsNpcH\x00\x12\x31\n\x12playerSetsSubtitle\x18r \x01(\x0b\x32\x13.PlayerSetsSubtitleH\x00\x12/\n\x11mapCommitsChanges\x18s \x01(\x0b\x32\x12.MapCommitsChangesH\x00\x12\'\n\rmapMoveObject\x18u \x01(\x0b\x32\x0e.MapMoveObjectH\x00\x12\x39\n\x16playerEditsChatMessage\x18v \x01(\x0b\x32\x17.PlayerEditsChatMessageH\x00\x12\'\n\rfxShakeObject\x18w \x01(\x0b\x32\x0e.FXShakeObjectH\x00\x12\'\n\rfxShakeCamera\x18x \x01(\x0b\x32\x0e.FXShakeCameraH\x00\x12\x31\n\x12playerSendsCommand\x18y \x01(\x0b\x32\x13.PlayerSendsCommandH\x00\x12\x37\n\x15spaceRegistersCommand\x18z \x01(\x0b\x32\x16.SpaceRegistersCommandH\x00\x12\x37\n\x15speakerUpdatesSession\x18{ \x01(\x0b\x32\x16.SpeakerUpdatesSessionH\x00\x12\x39\n\x16playerUpdatesInventory\x18| \x01(\x0b\x32\x17.PlayerUpdatesInventoryH\x00\x12/\n\x11spaceUpdatesItems\x18} \x01(\x0b\x32\x12.SpaceUpdatesItemsH\x00\x12\x33\n\x13playerSetsVehicleId\x18~ \x01(\x0b\x32\x14.PlayerSetsVehicleIdH\x00\x12;\n\x17playerSetsSpeedModifier\x18\x7f \x01(\x0b\x32\x18.PlayerSetsSpeedModifierH\x00\x12,\n\x0fplayerHighFives\x18\x80\x01 \x01(\x0b\x32\x10.PlayerHighFivesH\x00\x12,\n\x0fspaceStopsSound\x18\x82\x01 \x01(\x0b\x32\x10.SpaceStopsSoundH\x00\x12(\n\rhipToBeSquare\x18\x83\x01 \x01(\x0b\x32\x0e.HipToBeSquareH\x00\x12&\n\x0cplayerCrafts\x18\x84\x01 \x01(\x0b\x32\r.PlayerCraftsH\x00\x12\x44\n\x1bplayerTriggersInventoryItem\x18\x85\x01 \x01(\x0b\x32\x1c.PlayerTriggersInventoryItemH\x00\x12\x46\n\x1cplayerSetsAllowScreenPointer\x18\x86\x01 \x01(\x0b\x32\x1d.PlayerSetsAllowScreenPointerH\x00\x12>\n\x18precomputedEnterLocation\x18\x87\x01 \x01(\x0b\x32\x19.PrecomputedEnterLocationH\x00\x12*\n\x0egotRequestMute\x18\x88\x01 \x01(\x0b\x32\x0f.GotRequestMuteH\x00\x12\x32\n\x12playerSetsDeskInfo\x18\x89\x01 \x01(\x0b\x32\x13.PlayerSetsDeskInfoH\x00\x12$\n\x0bmapSetNooks\x18\x8a\x01 \x01(\x0b\x32\x0c.MapSetNooksH\x00\x12&\n\x0c\x64ynamicGates\x18\x8b\x01 \x01(\x0b\x32\r.DynamicGatesH\x00\x12$\n\x0bplayerWaves\x18\x8c\x01 \x01(\x0b\x32\x0c.PlayerWavesH\x00\x12\x32\n\x12playerSetsPronouns\x18\x8d\x01 \x01(\x0b\x32\x13.PlayerSetsPronounsH\x00\x12,\n\x0fplayerSetsTitle\x18\x8e\x01 \x01(\x0b\x32\x10.PlayerSetsTitleH\x00\x12\x32\n\x12playerSetsTimezone\x18\x8f\x01 \x01(\x0b\x32\x13.PlayerSetsTimezoneH\x00\x12\x38\n\x15playerSetsDescription\x18\x90\x01 \x01(\x0b\x32\x16.PlayerSetsDescriptionH\x00\x12,\n\x0fplayerSetsPhone\x18\x91\x01 \x01(\x0b\x32\x10.PlayerSetsPhoneH\x00\x12\x42\n\x1aplayerSetsPersonalImageUrl\x18\x92\x01 \x01(\x0b\x32\x1b.PlayerSetsPersonalImageUrlH\x00\x12@\n\x19playerSetsProfileImageUrl\x18\x93\x01 \x01(\x0b\x32\x1a.PlayerSetsProfileImageUrlH\x00\x12\x30\n\x11spaceSetsCapacity\x18\x94\x01 \x01(\x0b\x32\x12.SpaceSetsCapacityH\x00\x12\x44\n\x1bspaceOverCapacityDeniesUser\x18\x95\x01 \x01(\x0b\x32\x1c.SpaceOverCapacityDeniesUserH\x00\x12*\n\x0eplayerSetsAway\x18\x96\x01 \x01(\x0b\x32\x0f.PlayerSetsAwayH\x00\x12\x36\n\x14mapSetCollisionsBits\x18\x97\x01 \x01(\x0b\x32\x15.MapSetCollisionsBitsH\x00\x12*\n\x0eplayerSetsCity\x18\x98\x01 \x01(\x0b\x32\x0f.PlayerSetsCityH\x00\x12\x30\n\x11playerSetsCountry\x18\x99\x01 \x01(\x0b\x32\x12.PlayerSetsCountryH\x00\x12\x34\n\x13playerSetsStartDate\x18\x9a\x01 \x01(\x0b\x32\x14.PlayerSetsStartDateH\x00\x12\x38\n\x15playerStartsRecording\x18\x9c\x01 \x01(\x0b\x32\x16.PlayerStartsRecordingH\x00\x12\x38\n\x15\x61\x63\x63\x65ssRequestsUpdated\x18\x9d\x01 \x01(\x0b\x32\x16.AccessRequestsUpdatedH\x00\x12>\n\x18\x61\x63\x63\x65ssRequestRespondedTo\x18\x9e\x01 \x01(\x0b\x32\x19.AccessRequestRespondedToH\x00\x12\x42\n\x1aspaceSetsGuestPassStatuses\x18\x9f\x01 \x01(\x0b\x32\x1b.SpaceSetsGuestPassStatusesH\x00\x12:\n\x16playerSetsAvailability\x18\xa0\x01 \x01(\x0b\x32\x17.PlayerSetsAvailabilityH\x00\x12\x36\n\x14subscriptionsUpdated\x18\xa1\x01 \x01(\x0b\x32\x15.SubscriptionsUpdatedH\x00\x12R\n\"spaceRolePermissionOverrideUpdated\x18\xa4\x01 \x01(\x0b\x32#.SpaceRolePermissionOverrideUpdatedH\x00\x12>\n\x18playerSetsLastRaisedHand\x18\xa5\x01 \x01(\x0b\x32\x19.PlayerSetsLastRaisedHandH\x00\x12V\n$playerSetsCurrentlyEquippedWearables\x18\xa6\x01 \x01(\x0b\x32%.PlayerSetsCurrentlyEquippedWearablesH\x00\x12:\n\x16playerSetsDisplayEmail\x18\xa8\x01 \x01(\x0b\x32\x17.PlayerSetsDisplayEmailH\x00\x12\x36\n\x14mapDeleteObjectByKey\x18\xa9\x01 \x01(\x0b\x32\x15.MapDeleteObjectByKeyH\x00\x12,\n\x0fmapSetObjectsV2\x18\xaa\x01 \x01(\x0b\x32\x10.MapSetObjectsV2H\x00\x12@\n\x19playerInteractsWithObject\x18\xab\x01 \x01(\x0b\x32\x1a.PlayerInteractsWithObjectH\x00\x12\x36\n\x14playerTriggersObject\x18\xac\x01 \x01(\x0b\x32\x15.PlayerTriggersObjectH\x00\x12\x30\n\x11\x63himeSetsUserInfo\x18\xad\x01 \x01(\x0b\x32\x12.ChimeSetsUserInfoH\x00\x42\x07\n\x05\x65vent\"-\n\x14SubscriptionsUpdated\x12\x15\n\rsubscriptions\x18\x01 \x03(\t\"\"\n\x0fServerHeartbeat\x12\x0f\n\x07lastRTT\x18\x01 \x01(\r\"\x17\n\x04Info\x12\x0f\n\x07message\x18\x01 \x01(\t\"\x17\n\x04Warn\x12\x0f\n\x07message\x18\x01 \x01(\t\"+\n\nErrorEvent\x12\x0f\n\x07message\x18\x01 \x01(\t\x12\x0c\n\x04\x63ode\x18\x02 \x01(\r\"\x13\n\x05Ready\x12\n\n\x02id\x18\x01 \x01(\t\"U\n\x11TransactionStatus\x12\r\n\x05txnId\x18\x01 \x01(\r\x12\x11\n\tsucceeded\x18\x02 \x01(\x08\x12\x13\n\x06reason\x18\x03 \x01(\tH\x00\x88\x01\x01\x42\t\n\x07_reason\"\x1c\n\x0bPlayerJoins\x12\r\n\x05\x65ncId\x18\x01 \x01(\r\"0\n\x0eGotRequestMute\x12\x0f\n\x07muterId\x18\x01 \x01(\t\x12\r\n\x05video\x18\x02 \x01(\x08\"\xbc\x01\n\x0bPlayerMoves\x12\r\n\x05\x65ncId\x18\x01 \x01(\r\x12\x0e\n\x01x\x18\x02 \x01(\rH\x00\x88\x01\x01\x12\x0e\n\x01y\x18\x03 \x01(\rH\x01\x88\x01\x01\x12\x31\n\tdirection\x18\x04 \x01(\x0e\x32\x19.SpriteDirectionEnum.ENUMH\x02\x88\x01\x01\x12\x12\n\x05mapId\x18\x05 \x01(\tH\x03\x88\x01\x01\x12\x13\n\x0blastInputId\x18\x06 \x01(\rB\x04\n\x02_xB\x04\n\x02_yB\x0c\n\n_directionB\x08\n\x06_mapId\"/\n\x10PlayerSetsStatus\x12\r\n\x05\x65ncId\x18\x01 \x01(\r\x12\x0c\n\x04\x62usy\x18\x02 \x01(\x08\"\x9b\x01\n\x16PlayerSetsAvailability\x12\r\n\x05\x65ncId\x18\x01 \x01(\r\x12\x0e\n\x06status\x18\x02 \x01(\t\x12\x1c\n\x0fstatusUpdatedAt\x18\x03 \x01(\tH\x00\x88\x01\x01\x12\x1c\n\x0fstatusEndOption\x18\x04 \x01(\tH\x01\x88\x01\x01\x42\x12\n\x10_statusUpdatedAtB\x12\n\x10_statusEndOption\"M\n\x10PlayerSpotlights\x12\r\n\x05\x65ncId\x18\x02 \x01(\r\x12\x15\n\rspotlightedBy\x18\x01 \x01(\r\x12\x13\n\x0bspotlighted\x18\x03 \x01(\r\"\x1c\n\x0bPlayerRings\x12\r\n\x05\x65ncId\x18\x01 \x01(\r\"O\n\x16PlayerSetsImagePointer\x12\r\n\x05\x65ncId\x18\x01 \x01(\r\x12\x10\n\x08objectId\x18\x02 \x01(\t\x12\t\n\x01x\x18\x03 \x01(\x01\x12\t\n\x01y\x18\x04 \x01(\x01\"^\n\x16SetScreenPointerServer\x12\r\n\x05\x65ncId\x18\x01 \x01(\r\x12\x10\n\x08screenId\x18\x02 \x01(\t\x12\t\n\x01x\x18\x03 \x01(\x01\x12\t\n\x01y\x18\x04 \x01(\x01\x12\r\n\x05\x63olor\x18\x05 \x01(\t\"\xad\x02\n\x0bPlayerChats\x12\x10\n\x08senderId\x18\x01 \x01(\t\x12\x11\n\trecipient\x18\x02 \x01(\t\x12\x10\n\x08\x63ontents\x18\x03 \x01(\t\x12\x12\n\nsenderName\x18\x04 \x01(\t\x12\"\n\ttimestamp\x18\x05 \x01(\x0b\x32\n.TimestampH\x00\x88\x01\x01\x12\x13\n\x0bmessageType\x18\x06 \x01(\t\x12\x10\n\x08unixTime\x18\x07 \x01(\x01\x12\x0f\n\x02id\x18\x08 \x01(\tH\x01\x88\x01\x01\x12\x13\n\x06roomId\x18\t \x01(\tH\x02\x88\x01\x01\x12\x15\n\x08\x61pproved\x18\n \x01(\x08H\x03\x88\x01\x01\x12\x13\n\x06nookId\x18\x0b \x01(\tH\x04\x88\x01\x01\x42\x0c\n\n_timestampB\x05\n\x03_idB\t\n\x07_roomIdB\x0b\n\t_approvedB\t\n\x07_nookId\"?\n\x0bPlayerWaves\x12\r\n\x05\x65ncId\x18\x01 \x01(\r\x12\x10\n\x08targetId\x18\x02 \x01(\t\x12\x0f\n\x07isReply\x18\x03 \x01(\x08\"1\n\tTimestamp\x12\x0f\n\x07seconds\x18\x01 \x01(\x02\x12\x13\n\x0bnanoseconds\x18\x02 \x01(\x02\"j\n\x19PlayerInteractsWithObject\x12\r\n\x05\x65ncId\x18\x01 \x01(\r\x12\r\n\x05mapId\x18\x02 \x01(\t\x12\x0b\n\x03key\x18\x03 \x01(\t\x12\x15\n\x08\x64\x61taJson\x18\x04 \x01(\tH\x00\x88\x01\x01\x42\x0b\n\t_dataJson\",\n\x0cPlayerGhosts\x12\r\n\x05\x65ncId\x18\x01 \x01(\r\x12\r\n\x05ghost\x18\x02 \x01(\r\"Q\n\x13PlayerEntersWhisper\x12\r\n\x05\x65ncId\x18\x01 \x01(\r\x12\x18\n\x10whisperRecipient\x18\x02 \x01(\t\x12\x11\n\twhisperId\x18\x03 \x01(\t\"N\n\x15PlayerEntersWhisperV2\x12\r\n\x05\x65ncId\x18\x01 \x01(\r\x12\x13\n\x0b\x65ncIdTarget\x18\x02 \x01(\r\x12\x11\n\twhisperId\x18\x03 \x01(\t\"$\n\x13PlayerLeavesWhisper\x12\r\n\x05\x65ncId\x18\x01 \x01(\r\"?\n\x14PlayerActivelySpeaks\x12\r\n\x05\x65ncId\x18\x01 \x01(\r\x12\x18\n\x10\x61\x63tivelySpeaking\x18\x02 \x01(\r\"^\n\x11PlayerSetsEmoteV2\x12\r\n\x05\x65ncId\x18\x01 \x01(\r\x12\x12\n\x05\x65mote\x18\x02 \x01(\tH\x00\x88\x01\x01\x12\x12\n\x05\x63ount\x18\x03 \x01(\rH\x01\x88\x01\x01\x42\x08\n\x06_emoteB\x08\n\x06_count\"A\n\x18PlayerSetsLastRaisedHand\x12\r\n\x05\x65ncId\x18\x01 \x01(\r\x12\x16\n\x0elastRaisedHand\x18\x02 \x01(\t\"9\n\x14PlayerSetsLastActive\x12\r\n\x05\x65ncId\x18\x01 \x01(\r\x12\x12\n\nlastActive\x18\x02 \x01(\t\"-\n\x0ePlayerSetsName\x12\r\n\x05\x65ncId\x18\x01 \x01(\r\x12\x0c\n\x04name\x18\x02 \x01(\t\"9\n\x14PlayerSetsTextStatus\x12\r\n\x05\x65ncId\x18\x01 \x01(\r\x12\x12\n\ntextStatus\x18\x02 \x01(\t\"5\n\x12PlayerSetsPronouns\x12\r\n\x05\x65ncId\x18\x01 \x01(\r\x12\x10\n\x08pronouns\x18\x02 \x01(\t\"/\n\x0fPlayerSetsTitle\x12\r\n\x05\x65ncId\x18\x01 \x01(\r\x12\r\n\x05title\x18\x02 \x01(\t\"-\n\x0ePlayerSetsCity\x12\r\n\x05\x65ncId\x18\x01 \x01(\r\x12\x0c\n\x04\x63ity\x18\x02 \x01(\t\"3\n\x11PlayerSetsCountry\x12\r\n\x05\x65ncId\x18\x01 \x01(\r\x12\x0f\n\x07\x63ountry\x18\x02 \x01(\t\"7\n\x13PlayerSetsStartDate\x12\r\n\x05\x65ncId\x18\x01 \x01(\r\x12\x11\n\tstartDate\x18\x02 \x01(\t\"5\n\x12PlayerSetsTimezone\x12\r\n\x05\x65ncId\x18\x01 \x01(\r\x12\x10\n\x08timezone\x18\x02 \x01(\t\"/\n\x0fPlayerSetsPhone\x12\r\n\x05\x65ncId\x18\x01 \x01(\r\x12\r\n\x05phone\x18\x02 \x01(\t\"=\n\x16PlayerSetsDisplayEmail\x12\r\n\x05\x65ncId\x18\x01 \x01(\r\x12\x14\n\x0c\x64isplayEmail\x18\x02 \x01(\t\";\n\x15PlayerSetsDescription\x12\r\n\x05\x65ncId\x18\x01 \x01(\r\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t\"C\n\x19PlayerSetsProfileImageUrl\x12\r\n\x05\x65ncId\x18\x01 \x01(\r\x12\x17\n\x0fprofileImageUrl\x18\x02 \x01(\t\"E\n\x1aPlayerSetsPersonalImageUrl\x12\r\n\x05\x65ncId\x18\x01 \x01(\r\x12\x18\n\x10personalImageUrl\x18\x02 \x01(\t\"5\n\x12PlayerSetsIsMobile\x12\r\n\x05\x65ncId\x18\x01 \x01(\r\x12\x10\n\x08isMobile\x18\x02 \x01(\x08\";\n\x15PlayerSetsEmojiStatus\x12\r\n\x05\x65ncId\x18\x01 \x01(\r\x12\x13\n\x0b\x65mojiStatus\x18\x02 \x01(\t\";\n\x15PlayerSetsAffiliation\x12\r\n\x05\x65ncId\x18\x01 \x01(\r\x12\x13\n\x0b\x61\x66\x66iliation\x18\x02 \x01(\t\"\x1c\n\x0bPlayerExits\x12\r\n\x05\x65ncId\x18\x01 \x01(\r\"d\n$PlayerSetsCurrentlyEquippedWearables\x12\r\n\x05\x65ncId\x18\x01 \x01(\r\x12-\n\x1a\x63urrentlyEquippedWearables\x18\x02 \x01(\x0b\x32\t.DBOutfit\"9\n\x14PlayerSetsIsSignedIn\x12\r\n\x05\x65ncId\x18\x01 \x01(\r\x12\x12\n\nisSignedIn\x18\x02 \x01(\x08\"$\n\x0fSpaceOverwrites\x12\x11\n\tspaceData\x18\x01 \x01(\t\"\x9f\x01\n\x0b\x44ynamicGate\x12\x10\n\x08\x65xposure\x18\x01 \x01(\x02\x12\x0e\n\x06spaces\x18\x02 \x03(\t\x12\x1c\n\x0frefreshOnChange\x18\x03 \x01(\x08H\x00\x88\x01\x01\x12\"\n\x15minimumBuildTimestamp\x18\x04 \x01(\x04H\x01\x88\x01\x01\x42\x12\n\x10_refreshOnChangeB\x18\n\x16_minimumBuildTimestamp\"\xb2\x02\n\x0c\x44ynamicGates\x12$\n\x0elivekitEnabled\x18\x01 \x01(\x0b\x32\x0c.DynamicGate\x12\x31\n\x16livekitSelfhostEnabled\x18\x02 \x01(\x0b\x32\x0c.DynamicGateH\x00\x88\x01\x01\x12\'\n\x0c\x61goraEnabled\x18\x03 \x01(\x0b\x32\x0c.DynamicGateH\x01\x88\x01\x01\x12\'\n\x0c\x63himeEnabled\x18\x04 \x01(\x0b\x32\x0c.DynamicGateH\x02\x88\x01\x01\x12(\n\rgatherEnabled\x18\x05 \x01(\x0b\x32\x0c.DynamicGateH\x03\x88\x01\x01\x42\x19\n\x17_livekitSelfhostEnabledB\x0f\n\r_agoraEnabledB\x0f\n\r_chimeEnabledB\x10\n\x0e_gatherEnabled\"\x8f\x01\n\x15SpaceSetsSpaceMembers\x12\x34\n\x07members\x18\x01 \x03(\x0b\x32#.SpaceSetsSpaceMembers.MembersEntry\x1a@\n\x0cMembersEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x1f\n\x05value\x18\x02 \x01(\x0b\x32\x10.SpaceMemberInfo:\x02\x38\x01\"\x1d\n\rWireSpaceUser\x12\x0c\n\x04role\x18\x01 \x01(\t\"\x92\x01\n\x13SpaceSetsSpaceUsers\x12\x38\n\nspaceUsers\x18\x01 \x03(\x0b\x32$.SpaceSetsSpaceUsers.SpaceUsersEntry\x1a\x41\n\x0fSpaceUsersEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x1d\n\x05value\x18\x02 \x01(\x0b\x32\x0e.WireSpaceUser:\x02\x38\x01\"\x0f\n\rSpaceIsClosed\"S\n\x12PlayerEntersPortal\x12\x11\n\ttargetUrl\x18\x01 \x01(\t\x12\x19\n\x0c\x62ypassPrompt\x18\x02 \x01(\x08H\x00\x88\x01\x01\x42\x0f\n\r_bypassPrompt\"\x1c\n\x0b\x43ookieFound\x12\r\n\x05\x65ncId\x18\x01 \x01(\r\"0\n\x12SpaceSetsIdMapping\x12\x0b\n\x03uid\x18\x01 \x01(\t\x12\r\n\x05\x65ncId\x18\x02 \x01(\r\"%\n\x14PlayerShootsConfetti\x12\r\n\x05\x65ncId\x18\x01 \x01(\r\";\n\x15PlayerSetsEventStatus\x12\r\n\x05\x65ncId\x18\x01 \x01(\r\x12\x13\n\x0b\x65ventStatus\x18\x02 \x01(\t\"A\n\x18PlayerSetsInConversation\x12\r\n\x05\x65ncId\x18\x01 \x01(\r\x12\x16\n\x0einConversation\x18\x02 \x01(\x08\";\n\x15PlayerSetsCurrentArea\x12\r\n\x05\x65ncId\x18\x01 \x01(\r\x12\x13\n\x0b\x63urrentArea\x18\x02 \x01(\t\"5\n\x12PlayerSetsGoKartId\x12\r\n\x05\x65ncId\x18\x01 \x01(\r\x12\x10\n\x08goKartId\x18\x02 \x01(\t\"b\n\x13PlayerSetsVehicleId\x12\r\n\x05\x65ncId\x18\x01 \x01(\r\x12\x11\n\tvehicleId\x18\x02 \x01(\t\x12\x0e\n\x06\x61\x63tion\x18\x03 \x01(\t\x12\x19\n\x11previousVehicleId\x18\x04 \x01(\t\"?\n\x17PlayerSetsSpeedModifier\x12\r\n\x05\x65ncId\x18\x01 \x01(\r\x12\x15\n\rspeedModifier\x18\x02 \x01(\x02\"3\n\x11PlayerSetsIsAlone\x12\r\n\x05\x65ncId\x18\x01 \x01(\r\x12\x0f\n\x07isAlone\x18\x02 \x01(\x08\".\n\x0fSpacePlaysSound\x12\x0b\n\x03src\x18\x02 \x01(\t\x12\x0e\n\x06volume\x18\x03 \x01(\x02\"\x1e\n\x0fSpaceStopsSound\x12\x0b\n\x03src\x18\x02 \x01(\t\"E\n\x1aPlayerSetsFocusModeEndTime\x12\r\n\x05\x65ncId\x18\x01 \x01(\r\x12\x18\n\x10\x66ocusModeEndTime\x18\x02 \x01(\t\"2\n\x0cPlayerBlocks\x12\x11\n\tblockedBy\x18\x01 \x01(\t\x12\x0f\n\x07\x62locked\x18\x02 \x01(\x08\",\n\x0b\x43ustomEvent\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0f\n\x07payload\x18\x02 \x01(\t\"D\n\x1cPlayerUpdatesFocusModeStatus\x12\r\n\x05\x65ncId\x18\x01 \x01(\r\x12\x15\n\risInFocusMode\x18\x02 \x01(\x08\"9\n\x14PlayerSetsItemString\x12\r\n\x05\x65ncId\x18\x01 \x01(\r\x12\x12\n\nitemString\x18\x02 \x01(\t\"]\n\x14PlayerTriggersObject\x12\r\n\x05\x65ncId\x18\x01 \x01(\r\x12\x12\n\x05mapId\x18\x02 \x01(\tH\x00\x88\x01\x01\x12\x10\n\x03key\x18\x03 \x01(\tH\x01\x88\x01\x01\x42\x08\n\x06_mapIdB\x06\n\x04_key\"5\n\x0ePlayerNotifies\x12\r\n\x05\x65ncId\x18\x01 \x01(\r\x12\x14\n\x0cnotification\x18\x02 \x01(\t\"=\n\x16PlayerSetsFollowTarget\x12\r\n\x05\x65ncId\x18\x01 \x01(\r\x12\x14\n\x0c\x66ollowTarget\x18\x02 \x01(\t\"7\n\x14PlayerRequestsToLead\x12\r\n\x05\x65ncId\x18\x01 \x01(\r\x12\x10\n\x08snapshot\x18\x02 \x01(\t\"A\n\x18PlayerSetsManualVideoSrc\x12\r\n\x05\x65ncId\x18\x01 \x01(\r\x12\x16\n\x0emanualVideoSrc\x18\x02 \x01(\t\"/\n\x0fPlayerSetsIsNpc\x12\r\n\x05\x65ncId\x18\x01 \x01(\r\x12\r\n\x05isNpc\x18\x02 \x01(\x08\"5\n\x12PlayerSetsSubtitle\x12\r\n\x05\x65ncId\x18\x01 \x01(\r\x12\x10\n\x08subtitle\x18\x02 \x01(\t\"w\n\x0cPlayerCrafts\x12\r\n\x05\x65ncId\x18\x01 \x01(\r\x12)\n\x06inputs\x18\x02 \x03(\x0b\x32\x19.PlayerCrafts.InputsEntry\x1a-\n\x0bInputsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\r:\x02\x38\x01\"\xe0\x01\n\rMapMoveObject\x12\r\n\x05mapId\x18\x01 \x01(\t\x12\x10\n\x08objectId\x18\x02 \x01(\t\x12\x0f\n\x07targetX\x18\x03 \x01(\x02\x12\x0f\n\x07targetY\x18\x04 \x01(\x02\x12\x1a\n\rtargetXOffset\x18\x05 \x01(\x02H\x00\x88\x01\x01\x12\x1a\n\rtargetYOffset\x18\x06 \x01(\x02H\x01\x88\x01\x01\x12\x10\n\x08\x64uration\x18\x07 \x01(\x02\x12\x13\n\x06\x65\x61sing\x18\x08 \x01(\tH\x02\x88\x01\x01\x42\x10\n\x0e_targetXOffsetB\x10\n\x0e_targetYOffsetB\t\n\x07_easing\"\xb2\x01\n\x16PlayerEditsChatMessage\x12\n\n\x02id\x18\x01 \x01(\t\x12\x12\n\x05likes\x18\x02 \x01(\rH\x00\x88\x01\x01\x12\x14\n\x07replied\x18\x03 \x01(\x08H\x01\x88\x01\x01\x12\x1e\n\x05reply\x18\x04 \x01(\x0b\x32\n.ChatReplyH\x02\x88\x01\x01\x12\x15\n\x08\x61pproved\x18\x05 \x01(\x08H\x03\x88\x01\x01\x42\x08\n\x06_likesB\n\n\x08_repliedB\x08\n\x06_replyB\x0b\n\t_approved\"\x9a\x01\n\rFXShakeObject\x12\r\n\x05mapId\x18\x01 \x01(\t\x12\x10\n\x08targetId\x18\x02 \x01(\t\x12\x16\n\tintensity\x18\x03 \x01(\x02H\x00\x88\x01\x01\x12\x17\n\ndurationMs\x18\x04 \x01(\x02H\x01\x88\x01\x01\x12\x11\n\x04mode\x18\x05 \x01(\rH\x02\x88\x01\x01\x42\x0c\n\n_intensityB\r\n\x0b_durationMsB\x07\n\x05_mode\"\xa7\x01\n\rFXShakeCamera\x12\x16\n\tintensity\x18\x01 \x01(\x02H\x00\x88\x01\x01\x12\x17\n\ndurationMs\x18\x02 \x01(\x02H\x01\x88\x01\x01\x12\x12\n\x05mapId\x18\x03 \x01(\tH\x02\x88\x01\x01\x12\x19\n\x0ctargetUserId\x18\x04 \x01(\tH\x03\x88\x01\x01\x42\x0c\n\n_intensityB\r\n\x0b_durationMsB\x08\n\x06_mapIdB\x0f\n\r_targetUserId\"S\n\x0fPlayerHighFives\x12\r\n\x05\x65ncId\x18\x01 \x01(\r\x12\x13\n\x0b\x65ncIdTarget\x18\x02 \x01(\r\x12\x12\n\x05\x65mote\x18\x03 \x01(\tH\x00\x88\x01\x01\x42\x08\n\x06_emote\"4\n\x12PlayerSendsCommand\x12\r\n\x05\x65ncId\x18\x01 \x01(\r\x12\x0f\n\x07\x63ommand\x18\x02 \x01(\t\"(\n\x15SpaceRegistersCommand\x12\x0f\n\x07\x63ommand\x18\x02 \x01(\t\"\xf9\x01\n\x16PlayerUpdatesInventory\x12\r\n\x05\x65ncId\x18\x01 \x01(\r\x12\x31\n\x05items\x18\x02 \x03(\x0b\x32\".PlayerUpdatesInventory.ItemsEntry\x12\x31\n\x05order\x18\x03 \x03(\x0b\x32\".PlayerUpdatesInventory.OrderEntry\x1a<\n\nItemsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x1d\n\x05value\x18\x02 \x01(\x0b\x32\x0e.InventoryItem:\x02\x38\x01\x1a,\n\nOrderEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"{\n\x11SpaceUpdatesItems\x12,\n\x05items\x18\x01 \x03(\x0b\x32\x1d.SpaceUpdatesItems.ItemsEntry\x1a\x38\n\nItemsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x19\n\x05value\x18\x02 \x01(\x0b\x32\n.SpaceItem:\x02\x38\x01\"O\n\x1bPlayerTriggersInventoryItem\x12\r\n\x05\x65ncId\x18\x01 \x01(\r\x12\x0e\n\x06itemId\x18\x02 \x01(\t\x12\x11\n\tabilityId\x18\x03 \x01(\t\"I\n\x1cPlayerSetsAllowScreenPointer\x12\r\n\x05\x65ncId\x18\x01 \x01(\r\x12\x1a\n\x12\x61llowScreenPointer\x18\x02 \x01(\x08\"?\n\x18PrecomputedEnterLocation\x12#\n\renterLocation\x18\x01 \x01(\x0b\x32\x0c.MapLocation\"B\n\x12PlayerSetsDeskInfo\x12\r\n\x05\x65ncId\x18\x01 \x01(\r\x12\x1d\n\x08\x64\x65skInfo\x18\x02 \x01(\x0b\x32\x0b.DeskInfoV2\"%\n\x11SpaceSetsCapacity\x12\x10\n\x08\x63\x61pacity\x18\x01 \x01(\r\"-\n\x1bSpaceOverCapacityDeniesUser\x12\x0e\n\x06userId\x18\x01 \x01(\t\"-\n\x0ePlayerSetsAway\x12\r\n\x05\x65ncId\x18\x01 \x01(\r\x12\x0c\n\x04\x61way\x18\x02 \x01(\x08\"b\n\x15PlayerStartsRecording\x12\r\n\x05\x65ncId\x18\x01 \x01(\r\x12\x0e\n\x06nookId\x18\x02 \x01(\t\x12\x19\n\x0cinitializing\x18\x03 \x01(\x08H\x00\x88\x01\x01\x42\x0f\n\r_initializing\"\xbf\x01\n\rAccessRequest\x12\x0f\n\x07guestId\x18\x01 \x01(\t\x12\x10\n\x08memberId\x18\x02 \x01(\t\x12\x1b\n\x13requestedAtUnixTime\x18\x03 \x01(\x04\x12\x11\n\tguestName\x18\x04 \x01(\t\x12\x37\n\x1fguestCurrentlyEquippedWearables\x18\x06 \x01(\x0b\x32\t.DBOutfitH\x00\x88\x01\x01\x42\"\n _guestCurrentlyEquippedWearables\"9\n\x15\x41\x63\x63\x65ssRequestsUpdated\x12 \n\x08requests\x18\x01 \x03(\x0b\x32\x0e.AccessRequest\"^\n\x18\x41\x63\x63\x65ssRequestRespondedTo\x12\x10\n\x08targetId\x18\x01 \x01(\t\x12\x10\n\x08\x61\x63\x63\x65pted\x18\x02 \x01(\x08\x12\x1e\n\x08location\x18\x03 \x01(\x0b\x32\x0c.MapLocation\"@\n\x15PlayerGuestPassStatus\x12\x0e\n\x06userId\x18\x01 \x01(\t\x12\x17\n\x0fguestPassStatus\x18\x02 \x01(\t\"U\n\x1aSpaceSetsGuestPassStatuses\x12\x37\n\x17playerGuestPassStatuses\x18\x01 \x03(\x0b\x32\x16.PlayerGuestPassStatus\"\xa1\x01\n\x1cSetDeskFromNextAvailableDesk\x12\x15\n\x08targetId\x18\x01 \x01(\tH\x00\x88\x01\x01\x12\'\n\rpreferredDesk\x18\x02 \x01(\x0b\x32\x0b.MapAndDeskH\x01\x88\x01\x01\x12\"\n\rdesksToIgnore\x18\x03 \x03(\x0b\x32\x0b.MapAndDeskB\x0b\n\t_targetIdB\x10\n\x0e_preferredDesk\"W\n\"SpaceRolePermissionOverrideUpdated\x12\x0c\n\x04role\x18\x01 \x01(\t\x12\x12\n\npermission\x18\x02 \x01(\t\x12\x0f\n\x07\x65nabled\x18\x03 \x01(\x08\"%\n\x11\x43himeSetsUserInfo\x12\x10\n\x08resource\x18\x01 \x01(\t\"9\n\x11\x43lientServerBatch\x12$\n\x07\x61\x63tions\x18\x01 \x03(\x0b\x32\x13.ClientServerAction\"\xbf*\n\x12\x43lientServerAction\x12\x12\n\x05txnId\x18\x64 \x01(\rH\x01\x88\x01\x01\x12+\n\x0f\x63lientHeartbeat\x18\x01 \x01(\x0b\x32\x10.ClientHeartbeatH\x00\x12\x37\n\x15\x63lientBackupHeartbeat\x18\x02 \x01(\x0b\x32\x16.ClientBackupHeartbeatH\x00\x12\x33\n\x13updateSubscriptions\x18\x03 \x01(\x0b\x32\x14.UpdateSubscriptionsH\x00\x12\x15\n\x04move\x18\x05 \x01(\x0b\x32\x05.MoveH\x00\x12)\n\x0esetAffiliation\x18\x07 \x01(\x0b\x32\x0f.SetAffiliationH\x00\x12\x1f\n\tsetStatus\x18\x08 \x01(\x0b\x32\n.SetStatusH\x00\x12\x1f\n\tspotlight\x18\t \x01(\x0b\x32\n.SpotlightH\x00\x12\x15\n\x04ring\x18\n \x01(\x0b\x32\x05.RingH\x00\x12\x13\n\x03\x62\x61n\x18\x0c \x01(\x0b\x32\x04.BanH\x00\x12\x15\n\x04kick\x18\r \x01(\x0b\x32\x05.KickH\x00\x12\'\n\rsetImpassable\x18\x0e \x01(\x0b\x32\x0e.SetImpassableH\x00\x12\x15\n\x04\x63hat\x18\x0f \x01(\x0b\x32\x05.ChatH\x00\x12\x1f\n\x08interact\x18\x12 \x01(\x0b\x32\x0b.DeprecatedH\x00\x12%\n\x0c\x65nterWhisper\x18\x13 \x01(\x0b\x32\r.EnterWhisperH\x00\x12%\n\x0cleaveWhisper\x18\x14 \x01(\x0b\x32\r.LeaveWhisperH\x00\x12)\n\x0esetEmojiStatus\x18\x15 \x01(\x0b\x32\x0f.SetEmojiStatusH\x00\x12-\n\x10\x61\x63tivelySpeaking\x18\x16 \x01(\x0b\x32\x11.ActivelySpeakingH\x00\x12\x1b\n\x07setName\x18\x18 \x01(\x0b\x32\x08.SetNameH\x00\x12\'\n\rsetTextStatus\x18\x19 \x01(\x0b\x32\x0e.SetTextStatusH\x00\x12\x1d\n\x08teleport\x18\x1a \x01(\x0b\x32\t.TeleportH\x00\x12\x15\n\x04\x65xit\x18\x1b \x01(\x0b\x32\x05.ExitH\x00\x12\x17\n\x05\x65nter\x18\x1c \x01(\x0b\x32\x06.EnterH\x00\x12\'\n\x10setWorkCondition\x18\x1d \x01(\x0b\x32\x0b.DeprecatedH\x00\x12\x1b\n\x07respawn\x18\x1e \x01(\x0b\x32\x08.RespawnH\x00\x12\x17\n\x05spawn\x18\x1f \x01(\x0b\x32\x06.SpawnH\x00\x12\x17\n\x05ghost\x18  \x01(\x0b\x32\x06.GhostH\x00\x12\x15\n\x04init\x18! \x01(\x0b\x32\x05.InitH\x00\x12&\n\x0fsetOutfitString\x18\" \x01(\x0b\x32\x0b.DeprecatedH\x00\x12\'\n\rshootConfetti\x18$ \x01(\x0b\x32\x0e.ShootConfettiH\x00\x12)\n\x0esetEventStatus\x18% \x01(\x0b\x32\x0f.SetEventStatusH\x00\x12/\n\x11setInConversation\x18& \x01(\x0b\x32\x12.SetInConversationH\x00\x12%\n\x0esetCurrentDesk\x18\' \x01(\x0b\x32\x0b.DeprecatedH\x00\x12)\n\x0esetCurrentArea\x18( \x01(\x0b\x32\x0f.SetCurrentAreaH\x00\x12+\n\x0fsetImagePointer\x18) \x01(\x0b\x32\x10.SetImagePointerH\x00\x12\"\n\x0bsetGoKartId\x18* \x01(\x0b\x32\x0b.DeprecatedH\x00\x12-\n\x10mapSetDimensions\x18+ \x01(\x0b\x32\x11.MapSetDimensionsH\x00\x12-\n\x10mapSetCollisions\x18, \x01(\x0b\x32\x11.MapSetCollisionsH\x00\x12?\n\x19mapSetBackgroundImagePath\x18- \x01(\x0b\x32\x1a.MapSetBackgroundImagePathH\x00\x12?\n\x19mapSetForegroundImagePath\x18. \x01(\x0b\x32\x1a.MapSetForegroundImagePathH\x00\x12$\n\rmapSetSprites\x18/ \x01(\x0b\x32\x0b.DeprecatedH\x00\x12%\n\x0cmapSetSpawns\x18\x30 \x01(\x0b\x32\r.MapSetSpawnsH\x00\x12#\n\x0cmapSetSpaces\x18\x31 \x01(\x0b\x32\x0b.DeprecatedH\x00\x12\'\n\rmapSetPortals\x18\x32 \x01(\x0b\x32\x0e.MapSetPortalsH\x00\x12+\n\x0fmapSetAnnouncer\x18\x33 \x01(\x0b\x32\x10.MapSetAnnouncerH\x00\x12%\n\x0cmapSetAssets\x18\x36 \x01(\x0b\x32\r.MapSetAssetsH\x00\x12$\n\rmapSetObjects\x18\x37 \x01(\x0b\x32\x0b.DeprecatedH\x00\x12!\n\nmapSetName\x18\x38 \x01(\x0b\x32\x0b.MapSetNameH\x00\x12/\n\x11mapSetMuteOnEntry\x18: \x01(\x0b\x32\x12.MapSetMuteOnEntryH\x00\x12-\n\x10mapSetUseDrawnBG\x18; \x01(\x0b\x32\x11.MapSetUseDrawnBGH\x00\x12#\n\x0bmapSetWalls\x18< \x01(\x0b\x32\x0c.MapSetWallsH\x00\x12%\n\x0cmapSetFloors\x18= \x01(\x0b\x32\r.MapSetFloorsH\x00\x12#\n\x0bmapSetAreas\x18> \x01(\x0b\x32\x0c.MapSetAreasH\x00\x12%\n\x0cmapAddObject\x18? \x01(\x0b\x32\r.MapAddObjectH\x00\x12&\n\x0fmapDeleteObject\x18@ \x01(\x0b\x32\x0b.DeprecatedH\x00\x12#\n\x0bmapSetSpawn\x18\x41 \x01(\x0b\x32\x0c.MapSetSpawnH\x00\x12!\n\nsetIsAlone\x18\x42 \x01(\x0b\x32\x0b.SetIsAloneH\x00\x12\x39\n\x16mapSetMiniMapImagePath\x18\x43 \x01(\x0b\x32\x17.MapSetMiniMapImagePathH\x00\x12\x31\n\x12mapSetEnabledChats\x18\x44 \x01(\x0b\x32\x13.MapSetEnabledChatsH\x00\x12/\n\x11mapSetDescription\x18\x45 \x01(\x0b\x32\x12.MapSetDescriptionH\x00\x12-\n\x10mapSetDecoration\x18\x46 \x01(\x0b\x32\x11.MapSetDecorationH\x00\x12\x33\n\x13mapSetTutorialTasks\x18G \x01(\x0b\x32\x14.MapSetTutorialTasksH\x00\x12\x1f\n\tplaySound\x18H \x01(\x0b\x32\n.PlaySoundH\x00\x12%\n\x0cmapSetScript\x18I \x01(\x0b\x32\r.MapSetScriptH\x00\x12#\n\x0bsetIsMobile\x18K \x01(\x0b\x32\x0c.SetIsMobileH\x00\x12-\n\x10setScreenPointer\x18L \x01(\x0b\x32\x11.SetScreenPointerH\x00\x12!\n\nsetEmoteV2\x18M \x01(\x0b\x32\x0b.SetEmoteV2H\x00\x12\x33\n\x13setFocusModeEndTime\x18N \x01(\x0b\x32\x14.SetFocusModeEndTimeH\x00\x12\x33\n\x13mapDeleteObjectById\x18O \x01(\x0b\x32\x14.MapDeleteObjectByIdH\x00\x12%\n\x0c\x63ustomAction\x18P \x01(\x0b\x32\r.CustomActionH\x00\x12\x17\n\x05\x62lock\x18R \x01(\x0b\x32\x06.BlockH\x00\x12\'\n\rsetItemString\x18S \x01(\x0b\x32\x0e.SetItemStringH\x00\x12\"\n\x0btriggerItem\x18T \x01(\x0b\x32\x0b.DeprecatedH\x00\x12\x19\n\x06notify\x18U \x01(\x0b\x32\x07.NotifyH\x00\x12+\n\x0fsetFollowTarget\x18V \x01(\x0b\x32\x10.SetFollowTargetH\x00\x12\'\n\rrequestToLead\x18W \x01(\x0b\x32\x0e.RequestToLeadH\x00\x12#\n\x0b\x65nterPortal\x18X \x01(\x0b\x32\x0c.EnterPortalH\x00\x12/\n\x11setManualVideoSrc\x18Y \x01(\x0b\x32\x12.SetManualVideoSrcH\x00\x12#\n\x0bsetSubtitle\x18Z \x01(\x0b\x32\x0c.SetSubtitleH\x00\x12+\n\x14playerUpdatesSession\x18[ \x01(\x0b\x32\x0b.DeprecatedH\x00\x12\'\n\rmapMoveObject\x18\\ \x01(\x0b\x32\x0e.MapMoveObjectH\x00\x12\x31\n\x12\x63hatMessageUpdated\x18] \x01(\x0b\x32\x13.ChatMessageUpdatedH\x00\x12\'\n\rfxShakeObject\x18^ \x01(\x0b\x32\x0e.FXShakeObjectH\x00\x12\'\n\rfxShakeCamera\x18_ \x01(\x0b\x32\x0e.FXShakeCameraH\x00\x12+\n\x0fregisterCommand\x18` \x01(\x0b\x32\x10.RegisterCommandH\x00\x12#\n\x0bsendCommand\x18\x61 \x01(\x0b\x32\x0c.SendCommandH\x00\x12\x37\n\x15speakerUpdatesSession\x18\x62 \x01(\x0b\x32\x16.SpeakerUpdatesSessionH\x00\x12-\n\x10\x61\x64\x64InventoryItem\x18\x65 \x01(\x0b\x32\x11.AddInventoryItemH\x00\x12\x33\n\x13removeInventoryItem\x18\x66 \x01(\x0b\x32\x14.RemoveInventoryItemH\x00\x12%\n\x0csetVehicleId\x18g \x01(\x0b\x32\r.SetVehicleIdH\x00\x12-\n\x10setSpeedModifier\x18h \x01(\x0b\x32\x11.SetSpeedModifierH\x00\x12\x1d\n\x08highFive\x18i \x01(\x0b\x32\t.HighFiveH\x00\x12.\n\x10updateSpaceItems\x18k \x01(\x0b\x32\x12.SpaceUpdatesItemsH\x00\x12\x1f\n\tstopSound\x18l \x01(\x0b\x32\n.StopSoundH\x00\x12\'\n\rhipToBeSquare\x18m \x01(\x0b\x32\x0e.HipToBeSquareH\x00\x12\x17\n\x05\x63raft\x18n \x01(\x0b\x32\x06.CraftH\x00\x12\x35\n\x14triggerInventoryItem\x18o \x01(\x0b\x32\x15.TriggerInventoryItemH\x00\x12\x37\n\x15setAllowScreenPointer\x18p \x01(\x0b\x32\x16.SetAllowScreenPointerH\x00\x12+\n\x0fprecomputeEnter\x18q \x01(\x0b\x32\x10.PrecomputeEnterH\x00\x12#\n\x0brequestMute\x18r \x01(\x0b\x32\x0c.RequestMuteH\x00\x12#\n\x0bsetDeskInfo\x18s \x01(\x0b\x32\x0c.SetDeskInfoH\x00\x12#\n\x0bmapSetNooks\x18t \x01(\x0b\x32\x0c.MapSetNooksH\x00\x12/\n\x11requestToJoinNook\x18u \x01(\x0b\x32\x12.RequestToJoinNookH\x00\x12\x35\n\x14updateNookPermission\x18v \x01(\x0b\x32\x15.UpdateNookPermissionH\x00\x12\x15\n\x04wave\x18w \x01(\x0b\x32\x05.WaveH\x00\x12#\n\x0bsetPronouns\x18x \x01(\x0b\x32\x0c.SetPronounsH\x00\x12\x1d\n\x08setTitle\x18y \x01(\x0b\x32\t.SetTitleH\x00\x12#\n\x0bsetTimezone\x18z \x01(\x0b\x32\x0c.SetTimezoneH\x00\x12\x1d\n\x08setPhone\x18{ \x01(\x0b\x32\t.SetPhoneH\x00\x12)\n\x0esetDescription\x18| \x01(\x0b\x32\x0f.SetDescriptionH\x00\x12\x31\n\x12setProfileImageUrl\x18} \x01(\x0b\x32\x13.SetProfileImageUrlH\x00\x12\x33\n\x13setPersonalImageUrl\x18~ \x01(\x0b\x32\x14.SetPersonalImageUrlH\x00\x12\x1b\n\x07setAway\x18\x7f \x01(\x0b\x32\x08.SetAwayH\x00\x12\x1c\n\x07setCity\x18\x80\x01 \x01(\x0b\x32\x08.SetCityH\x00\x12\"\n\nsetCountry\x18\x81\x01 \x01(\x0b\x32\x0b.SetCountryH\x00\x12&\n\x0csetStartDate\x18\x82\x01 \x01(\x0b\x32\r.SetStartDateH\x00\x12*\n\x0estartRecording\x18\x83\x01 \x01(\x0b\x32\x0f.StartRecordingH\x00\x12<\n\x17requestAccessViaCheckIn\x18\x84\x01 \x01(\x0b\x32\x18.RequestAccessViaCheckInH\x00\x12:\n\x16respondToAccessRequest\x18\x85\x01 \x01(\x0b\x32\x17.RespondToAccessRequestH\x00\x12,\n\x0fsetAvailability\x18\x86\x01 \x01(\x0b\x32\x10.SetAvailabilityH\x00\x12(\n\rrespawnAtDesk\x18\x89\x01 \x01(\x0b\x32\x0e.RespawnAtDeskH\x00\x12\x46\n\x1csetDeskFromNextAvailableDesk\x18\x8a\x01 \x01(\x0b\x32\x1d.SetDeskFromNextAvailableDeskH\x00\x12J\n\x1esetSpaceRolePermissionOverride\x18\x8b\x01 \x01(\x0b\x32\x1f.SetSpaceRolePermissionOverrideH\x00\x12H\n\x1dsetCurrentlyEquippedWearables\x18\x8c\x01 \x01(\x0b\x32\x1e.SetCurrentlyEquippedWearablesH\x00\x12,\n\x0fsetDisplayEmail\x18\x8d\x01 \x01(\x0b\x32\x10.SetDisplayEmailH\x00\x12\x36\n\x14mapDeleteObjectByKey\x18\x8e\x01 \x01(\x0b\x32\x15.MapDeleteObjectByKeyH\x00\x12.\n\x10mapUpdateObjects\x18\x8f\x01 \x01(\x0b\x32\x11.MapUpdateObjectsH\x00\x12\x32\n\x12interactWithObject\x18\x90\x01 \x01(\x0b\x32\x13.InteractWithObjectH\x00\x12(\n\rtriggerObject\x18\x91\x01 \x01(\x0b\x32\x0e.TriggerObjectH\x00\x12.\n\x10joinChimeMeeting\x18\x92\x01 \x01(\x0b\x32\x11.JoinChimeMeetingH\x00\x42\x08\n\x06\x61\x63tionB\x08\n\x06_txnId\"\x11\n\x0f\x43lientHeartbeat\"\x17\n\x15\x43lientBackupHeartbeat\"\xfe\x01\n\x13UpdateSubscriptions\x12>\n\rsubscriptions\x18\x01 \x03(\x0b\x32\'.UpdateSubscriptions.SubscriptionsEntry\x12<\n\x0cmapUpdateIds\x18\x02 \x03(\x0b\x32&.UpdateSubscriptions.MapUpdateIdsEntry\x1a\x34\n\x12SubscriptionsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x08:\x02\x38\x01\x1a\x33\n\x11MapUpdateIdsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x04:\x02\x38\x01\"r\n\x04Move\x12$\n\x03\x64ir\x18\x01 \x01(\x0e\x32\x17.MoveDirectionEnum.ENUM\x12\x0f\n\x07stopped\x18\x02 \x01(\x08\x12\x0f\n\x07inputId\x18\x03 \x01(\r\x12\x15\n\x08targetId\x18\x04 \x01(\tH\x00\x88\x01\x01\x42\x0b\n\t_targetId\",\n\x0bRequestMute\x12\x0e\n\x06target\x18\x01 \x01(\t\x12\r\n\x05video\x18\x02 \x01(\x08\"I\n\x0eSetAffiliation\x12\x13\n\x0b\x61\x66\x66iliation\x18\x01 \x01(\t\x12\x15\n\x08targetId\x18\x02 \x01(\tH\x00\x88\x01\x01\x42\x0b\n\t_targetId\"?\n\tSetStatus\x12\x0e\n\x06status\x18\x01 \x01(\x08\x12\x15\n\x08targetId\x18\x02 \x01(\tH\x00\x88\x01\x01\x42\x0b\n\t_targetId\"M\n\x0fSetAvailability\x12\x14\n\x0c\x61vailability\x18\x01 \x01(\t\x12\x16\n\tendOption\x18\x02 \x01(\tH\x00\x88\x01\x01\x42\x0c\n\n_endOption\"r\n\x1dSetCurrentlyEquippedWearables\x12-\n\x1a\x63urrentlyEquippedWearables\x18\x01 \x01(\x0b\x32\t.DBOutfit\x12\x15\n\x08targetId\x18\x03 \x01(\tH\x00\x88\x01\x01\x42\x0b\n\t_targetId\";\n\tSpotlight\x12\x17\n\x0fspotlightedUser\x18\x01 \x01(\t\x12\x15\n\risSpotlighted\x18\x02 \x01(\x08\"\x14\n\x04Ring\x12\x0c\n\x04user\x18\x01 \x01(\t\"9\n\x0fSetImagePointer\x12\x10\n\x08objectId\x18\x01 \x01(\t\x12\t\n\x01x\x18\x02 \x01(\x01\x12\t\n\x01y\x18\x03 \x01(\x01\":\n\x10SetScreenPointer\x12\x10\n\x08screenId\x18\x01 \x01(\t\x12\t\n\x01x\x18\x02 \x01(\x01\x12\t\n\x01y\x18\x03 \x01(\x01\"\x13\n\x03\x42\x61n\x12\x0c\n\x04user\x18\x01 \x01(\t\"\x14\n\x04Kick\x12\x0c\n\x04user\x18\x01 \x01(\t\"/\n\x05\x42lock\x12\x15\n\rblockedUserId\x18\x01 \x01(\t\x12\x0f\n\x07\x62locked\x18\x02 \x01(\x08\"H\n\rSetImpassable\x12\r\n\x05mapId\x18\x01 \x01(\t\x12\t\n\x01x\x18\x02 \x01(\r\x12\t\n\x01y\x18\x03 \x01(\r\x12\x12\n\nimpassable\x18\x04 \x01(\x08\"\x8e\x01\n\x04\x43hat\x12\x15\n\rchatRecipient\x18\x01 \x01(\t\x12\x10\n\x08\x63ontents\x18\x02 \x01(\t\x12\x16\n\x0elocalPlayerIds\x18\x03 \x03(\t\x12\r\n\x05mapId\x18\x04 \x01(\t\x12\x0f\n\x02id\x18\x05 \x01(\tH\x00\x88\x01\x01\x12\x13\n\x06nookId\x18\x06 \x01(\tH\x01\x88\x01\x01\x42\x05\n\x03_idB\t\n\x07_nookId\"\x1e\n\x06Notify\x12\x14\n\x0cnotification\x18\x01 \x01(\t\"T\n\x12InteractWithObject\x12\r\n\x05mapId\x18\x01 \x01(\t\x12\x0b\n\x03key\x18\x02 \x01(\t\x12\x15\n\x08\x64\x61taJson\x18\x03 \x01(\tH\x00\x88\x01\x01\x42\x0b\n\t_dataJson\",\n\x10\x41\x63tivelySpeaking\x12\x18\n\x10\x61\x63tivelySpeaking\x18\x01 \x01(\x08\"I\n\x0c\x45nterWhisper\x12\x13\n\x0brecipientId\x18\x01 \x01(\t\x12$\n\x03\x64ir\x18\x02 \x01(\x0e\x32\x17.MoveDirectionEnum.ENUM\"\x0e\n\x0cLeaveWhisper\":\n\x05Ghost\x12\r\n\x05ghost\x18\x01 \x01(\r\x12\x15\n\x08targetId\x18\x02 \x01(\tH\x00\x88\x01\x01\x42\x0b\n\t_targetId\"l\n\nSetEmoteV2\x12\x12\n\x05\x65mote\x18\x01 \x01(\tH\x00\x88\x01\x01\x12\x15\n\x08targetId\x18\x02 \x01(\tH\x01\x88\x01\x01\x12\x12\n\x05\x63ount\x18\x03 \x01(\rH\x02\x88\x01\x01\x42\x08\n\x06_emoteB\x0b\n\t_targetIdB\x08\n\x06_count\";\n\x07SetName\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x15\n\x08targetId\x18\x02 \x01(\tH\x00\x88\x01\x01\x42\x0b\n\t_targetId\"G\n\rSetTextStatus\x12\x12\n\ntextStatus\x18\x01 \x01(\t\x12\x15\n\x08targetId\x18\x02 \x01(\tH\x00\x88\x01\x01\x42\x0b\n\t_targetId\"C\n\x0bSetPronouns\x12\x10\n\x08pronouns\x18\x01 \x01(\t\x12\x15\n\x08targetId\x18\x02 \x01(\tH\x00\x88\x01\x01\x42\x0b\n\t_targetId\"=\n\x08SetTitle\x12\r\n\x05title\x18\x01 \x01(\t\x12\x15\n\x08targetId\x18\x02 \x01(\tH\x00\x88\x01\x01\x42\x0b\n\t_targetId\";\n\x07SetCity\x12\x0c\n\x04\x63ity\x18\x01 \x01(\t\x12\x15\n\x08targetId\x18\x02 \x01(\tH\x00\x88\x01\x01\x42\x0b\n\t_targetId\"A\n\nSetCountry\x12\x0f\n\x07\x63ountry\x18\x01 \x01(\t\x12\x15\n\x08targetId\x18\x02 \x01(\tH\x00\x88\x01\x01\x42\x0b\n\t_targetId\"E\n\x0cSetStartDate\x12\x11\n\tstartDate\x18\x01 \x01(\t\x12\x15\n\x08targetId\x18\x02 \x01(\tH\x00\x88\x01\x01\x42\x0b\n\t_targetId\"C\n\x0bSetTimezone\x12\x10\n\x08timezone\x18\x01 \x01(\t\x12\x15\n\x08targetId\x18\x02 \x01(\tH\x00\x88\x01\x01\x42\x0b\n\t_targetId\"=\n\x08SetPhone\x12\r\n\x05phone\x18\x01 \x01(\t\x12\x15\n\x08targetId\x18\x02 \x01(\tH\x00\x88\x01\x01\x42\x0b\n\t_targetId\"K\n\x0fSetDisplayEmail\x12\x14\n\x0c\x64isplayEmail\x18\x01 \x01(\t\x12\x15\n\x08targetId\x18\x02 \x01(\tH\x00\x88\x01\x01\x42\x0b\n\t_targetId\"I\n\x0eSetDescription\x12\x13\n\x0b\x64\x65scription\x18\x01 \x01(\t\x12\x15\n\x08targetId\x18\x02 \x01(\tH\x00\x88\x01\x01\x42\x0b\n\t_targetId\"Q\n\x12SetProfileImageUrl\x12\x17\n\x0fprofileImageUrl\x18\x01 \x01(\t\x12\x15\n\x08targetId\x18\x02 \x01(\tH\x00\x88\x01\x01\x42\x0b\n\t_targetId\"S\n\x13SetPersonalImageUrl\x12\x18\n\x10personalImageUrl\x18\x01 \x01(\t\x12\x15\n\x08targetId\x18\x02 \x01(\tH\x00\x88\x01\x01\x42\x0b\n\t_targetId\"\x06\n\x04\x45xit\"\x80\x01\n\x05\x45nter\x12\"\n\x04info\x18\x01 \x01(\x0b\x32\x0f.PlayerInitInfoH\x00\x88\x01\x01\x12\x17\n\nspawnToken\x18\x02 \x01(\tH\x01\x88\x01\x01\x12\x15\n\x08targetId\x18\x03 \x01(\tH\x02\x88\x01\x01\x42\x07\n\x05_infoB\r\n\x0b_spawnTokenB\x0b\n\t_targetId\"u\n\x0fPrecomputeEnter\x12(\n\renterLocation\x18\x01 \x01(\x0b\x32\x0c.MapLocationH\x00\x88\x01\x01\x12\x17\n\nspawnToken\x18\x02 \x01(\tH\x01\x88\x01\x01\x42\x10\n\x0e_enterLocationB\r\n\x0b_spawnToken\"I\n\x0eSetEmojiStatus\x12\x13\n\x0b\x65mojiStatus\x18\x01 \x01(\t\x12\x15\n\x08targetId\x18\x02 \x01(\tH\x00\x88\x01\x01\x42\x0b\n\t_targetId\"\x94\x01\n\x08Teleport\x12\r\n\x05mapId\x18\x01 \x01(\t\x12\t\n\x01x\x18\x02 \x01(\r\x12\t\n\x01y\x18\x03 \x01(\r\x12\x15\n\x08targetId\x18\x04 \x01(\tH\x00\x88\x01\x01\x12\x31\n\tdirection\x18\x05 \x01(\x0e\x32\x19.SpriteDirectionEnum.ENUMH\x01\x88\x01\x01\x42\x0b\n\t_targetIdB\x0c\n\n_direction\"\x1b\n\x05Spawn\x12\x12\n\nspawnToken\x18\x01 \x01(\t\"\t\n\x07Respawn\"\x0f\n\rRespawnAtDesk\"N\n\x11RequestToJoinNook\x12\x0e\n\x06nookId\x18\x01 \x01(\t\x12\r\n\x05mapId\x18\x02 \x01(\t\x12\x11\n\x04name\x18\x03 \x01(\tH\x00\x88\x01\x01\x42\x07\n\x05_name\"I\n\x14UpdateNookPermission\x12\x10\n\x08playerId\x18\x01 \x01(\t\x12\x0e\n\x06nookId\x18\x02 \x01(\t\x12\x0f\n\x07granted\x18\x03 \x01(\x08\"B\n\x04Init\x12\x0f\n\x07spaceId\x18\x01 \x01(\t\x12\x0f\n\x05token\x18\x02 \x01(\tH\x00\x12\x10\n\x06\x61piKey\x18\x03 \x01(\tH\x00\x42\x06\n\x04\x61uth\"@\n\x0cMapAddObject\x12\r\n\x05mapId\x18\x01 \x01(\t\x12\x1b\n\x06object\x18\x02 \x01(\x0b\x32\x0b.WireObjectJ\x04\x08\x03\x10\x04\"\xcb\x01\n\x10MapUpdateObjects\x12\r\n\x05mapId\x18\x01 \x01(\t\x12/\n\x07objects\x18\x02 \x03(\x0b\x32\x1e.MapUpdateObjects.ObjectsEntry\x12!\n\x14updatesAreOverwrites\x18\x03 \x01(\x08H\x00\x88\x01\x01\x1a;\n\x0cObjectsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x1a\n\x05value\x18\x02 \x01(\x0b\x32\x0b.WireObject:\x02\x38\x01\x42\x17\n\x15_updatesAreOverwrites\"3\n\rShootConfetti\x12\x15\n\x08targetId\x18\x01 \x01(\tH\x00\x88\x01\x01\x42\x0b\n\t_targetId\"I\n\x0eSetEventStatus\x12\x13\n\x0b\x65ventStatus\x18\x01 \x01(\t\x12\x15\n\x08targetId\x18\x02 \x01(\tH\x00\x88\x01\x01\x42\x0b\n\t_targetId\"O\n\x11SetInConversation\x12\x16\n\x0einConversation\x18\x01 \x01(\x08\x12\x15\n\x08targetId\x18\x02 \x01(\tH\x00\x88\x01\x01\x42\x0b\n\t_targetId\"I\n\x0eSetCurrentArea\x12\x13\n\x0b\x63urrentArea\x18\x01 \x01(\t\x12\x15\n\x08targetId\x18\x02 \x01(\tH\x00\x88\x01\x01\x42\x0b\n\t_targetId\"e\n\x0cSetVehicleId\x12\x11\n\tvehicleId\x18\x01 \x01(\t\x12\x15\n\x08targetId\x18\x02 \x01(\tH\x00\x88\x01\x01\x12\x13\n\x06\x61\x63tion\x18\x03 \x01(\tH\x01\x88\x01\x01\x42\x0b\n\t_targetIdB\t\n\x07_action\"M\n\x10SetSpeedModifier\x12\x15\n\rspeedModifier\x18\x01 \x01(\x02\x12\x15\n\x08targetId\x18\x02 \x01(\tH\x00\x88\x01\x01\x42\x0b\n\t_targetId\"A\n\nSetIsAlone\x12\x0f\n\x07isAlone\x18\x01 \x01(\x08\x12\x15\n\x08targetId\x18\x02 \x01(\tH\x00\x88\x01\x01\x42\x0b\n\t_targetId\"\x1f\n\x0bSetIsMobile\x12\x10\n\x08isMobile\x18\x01 \x01(\x08\"L\n\tPlaySound\x12\x0b\n\x03src\x18\x01 \x01(\t\x12\x0e\n\x06volume\x18\x02 \x01(\x02\x12\x15\n\x08targetId\x18\x03 \x01(\tH\x00\x88\x01\x01\x42\x0b\n\t_targetId\"<\n\tStopSound\x12\x0b\n\x03src\x18\x01 \x01(\t\x12\x15\n\x08targetId\x18\x03 \x01(\tH\x00\x88\x01\x01\x42\x0b\n\t_targetId\"S\n\x13SetFocusModeEndTime\x12\x18\n\x10\x66ocusModeEndTime\x18\x01 \x01(\t\x12\x15\n\x08targetId\x18\x02 \x01(\tH\x00\x88\x01\x01\x42\x0b\n\t_targetId\"G\n\rSetItemString\x12\x12\n\nitemString\x18\x01 \x01(\t\x12\x15\n\x08targetId\x18\x02 \x01(\tH\x00\x88\x01\x01\x42\x0b\n\t_targetId\"G\n\rTriggerObject\x12\x12\n\x05mapId\x18\x01 \x01(\tH\x00\x88\x01\x01\x12\x10\n\x03key\x18\x02 \x01(\tH\x01\x88\x01\x01\x42\x08\n\x06_mapIdB\x06\n\x04_key\"g\n\x0c\x43ustomAction\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0f\n\x07payload\x18\x02 \x01(\t\x12\x12\n\nrecipients\x18\x03 \x03(\t\x12\x16\n\tsendToAll\x18\x04 \x01(\x08H\x00\x88\x01\x01\x42\x0c\n\n_sendToAll\"K\n\x0fSetFollowTarget\x12\x14\n\x0c\x66ollowTarget\x18\x01 \x01(\t\x12\x15\n\x08targetId\x18\x02 \x01(\tH\x00\x88\x01\x01\x42\x0b\n\t_targetId\"1\n\rRequestToLead\x12\x0e\n\x06target\x18\x01 \x01(\t\x12\x10\n\x08snapshot\x18\x02 \x01(\t\"p\n\x0b\x45nterPortal\x12\x11\n\ttargetUrl\x18\x01 \x01(\t\x12\x19\n\x0c\x62ypassPrompt\x18\x02 \x01(\x08H\x00\x88\x01\x01\x12\x15\n\x08targetId\x18\x03 \x01(\tH\x01\x88\x01\x01\x42\x0f\n\r_bypassPromptB\x0b\n\t_targetId\"O\n\x11SetManualVideoSrc\x12\x16\n\x0emanualVideoSrc\x18\x01 \x01(\t\x12\x15\n\x08targetId\x18\x02 \x01(\tH\x00\x88\x01\x01\x42\x0b\n\t_targetId\"C\n\x0bSetSubtitle\x12\x10\n\x08subtitle\x18\x01 \x01(\t\x12\x15\n\x08targetId\x18\x02 \x01(\tH\x00\x88\x01\x01\x42\x0b\n\t_targetId\"4\n\x11MapCommitsChanges\x12\r\n\x05mapId\x18\x01 \x01(\t\x12\x10\n\x08updateId\x18\x02 \x01(\x04\"\xaa\x02\n\x15SpeakerUpdatesSession\x12\x11\n\tsessionId\x18\x01 \x01(\t\x12!\n\x14\x63ustomizeRoomEnabled\x18\x02 \x01(\x08H\x00\x88\x01\x01\x12\x18\n\x0b\x63hatEnabled\x18\x03 \x01(\x08H\x01\x88\x01\x01\x12\x16\n\tqaEnabled\x18\x04 \x01(\x08H\x02\x88\x01\x01\x12$\n\x17\x61pproveQuestionsEnabled\x18\x05 \x01(\x08H\x03\x88\x01\x01\x12\x1c\n\x0fmassMuteEnabled\x18\x06 \x01(\x08H\x04\x88\x01\x01\x42\x17\n\x15_customizeRoomEnabledB\x0e\n\x0c_chatEnabledB\x0c\n\n_qaEnabledB\x1a\n\x18_approveQuestionsEnabledB\x12\n\x10_massMuteEnabled\"C\n\tChatReply\x12\x10\n\x08senderId\x18\x01 \x01(\t\x12\x12\n\nsenderName\x18\x02 \x01(\t\x12\x10\n\x08\x63ontents\x18\x03 \x01(\t\" \n\x12\x43hatMessageUpdated\x12\n\n\x02id\x18\x01 \x01(\t\"B\n\x0bSendCommand\x12\x0f\n\x07\x63ommand\x18\x01 \x01(\t\x12\x15\n\x08targetId\x18\x02 \x01(\tH\x00\x88\x01\x01\x42\x0b\n\t_targetId\"\"\n\x0fRegisterCommand\x12\x0f\n\x07\x63ommand\x18\x01 \x01(\t\"Z\n\x05\x43raft\x12\"\n\x06inputs\x18\x01 \x03(\x0b\x32\x12.Craft.InputsEntry\x1a-\n\x0bInputsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x05:\x02\x38\x01\":\n\x08HighFive\x12\x10\n\x08targetId\x18\x01 \x01(\t\x12\x12\n\x05\x65mote\x18\x02 \x01(\tH\x00\x88\x01\x01\x42\x08\n\x06_emote\"C\n\x10\x41\x64\x64InventoryItem\x12\x0e\n\x06itemId\x18\x01 \x01(\t\x12\r\n\x05\x64\x65lta\x18\x02 \x01(\x04\x12\x10\n\x08targetId\x18\x03 \x01(\t\"X\n\x13RemoveInventoryItem\x12\x0e\n\x06itemId\x18\x01 \x01(\t\x12\r\n\x05\x64\x65lta\x18\x02 \x01(\x04\x12\x15\n\x08targetId\x18\x03 \x01(\tH\x00\x88\x01\x01\x42\x0b\n\t_targetId\"\x1d\n\rHipToBeSquare\x12\x0c\n\x04\x64\x61ta\x18\x01 \x01(\t\"9\n\x14TriggerInventoryItem\x12\x0e\n\x06itemId\x18\x01 \x01(\t\x12\x11\n\tabilityId\x18\x02 \x01(\t\"3\n\x15SetAllowScreenPointer\x12\x1a\n\x12\x61llowScreenPointer\x18\x01 \x01(\x08\"P\n\x0bSetDeskInfo\x12\x1d\n\x08\x64\x65skInfo\x18\x01 \x01(\x0b\x32\x0b.DeskInfoV2\x12\x15\n\x08targetId\x18\x02 \x01(\tH\x00\x88\x01\x01\x42\x0b\n\t_targetId\"%\n\x04Wave\x12\x0c\n\x04user\x18\x01 \x01(\t\x12\x0f\n\x07isReply\x18\x02 \x01(\x08\";\n\x07SetAway\x12\x0c\n\x04\x61way\x18\x01 \x01(\x08\x12\x15\n\x08targetId\x18\x02 \x01(\tH\x00\x88\x01\x01\x42\x0b\n\t_targetId\"L\n\x0eStartRecording\x12\x0e\n\x06nookId\x18\x01 \x01(\t\x12\x19\n\x0cinitializing\x18\x02 \x01(\x08H\x00\x88\x01\x01\x42\x0f\n\r_initializing\"\xaa\x01\n\x17RequestAccessViaCheckIn\x12\x0e\n\x06userId\x18\x01 \x01(\t\x12\x10\n\x08\x63\x61nceled\x18\x02 \x01(\x08\x12\x11\n\x04name\x18\x03 \x01(\tH\x00\x88\x01\x01\x12\x32\n\x1a\x63urrentlyEquippedWearables\x18\x05 \x01(\x0b\x32\t.DBOutfitH\x01\x88\x01\x01\x42\x07\n\x05_nameB\x1d\n\x1b_currentlyEquippedWearables\"\xc6\x01\n\x16RespondToAccessRequest\x12\x0e\n\x06userId\x18\x01 \x01(\t\x12\x10\n\x08\x61\x63\x63\x65pted\x18\x02 \x01(\x08\x12\x43\n\x0clocationType\x18\x03 \x01(\x0e\x32(.RespondToAccessRequest.LocationTypeEnumH\x00\x88\x01\x01\"4\n\x10LocationTypeEnum\x12\x0e\n\nMyLocation\x10\x00\x12\x10\n\x0c\x44\x65\x66\x61ultSpawn\x10\x01\x42\x0f\n\r_locationType\"S\n\x1eSetSpaceRolePermissionOverride\x12\x0c\n\x04role\x18\x01 \x01(\t\x12\x12\n\npermission\x18\x02 \x01(\t\x12\x0f\n\x07\x65nabled\x18\x03 \x01(\x08\"<\n\x10JoinChimeMeeting\x12\x18\n\x0bmediaRegion\x18\x01 \x01(\tH\x00\x88\x01\x01\x42\x0e\n\x0c_mediaRegionb\x06proto3')
 
 
 
+_DEPRECATED = DESCRIPTOR.message_types_by_name['Deprecated']
 _SPRITEDIRECTIONENUM = DESCRIPTOR.message_types_by_name['SpriteDirectionEnum']
 _MOVEDIRECTIONENUM = DESCRIPTOR.message_types_by_name['MoveDirectionEnum']
 _INTERACTIONENUM = DESCRIPTOR.message_types_by_name['InteractionEnum']
@@ -33,8 +34,8 @@ _SPACEMEMBERINFO_ROLESENTRY = _SPACEMEMBERINFO.nested_types_by_name['RolesEntry'
 _BACKEDUPDESKOBJECT = DESCRIPTOR.message_types_by_name['BackedUpDeskObject']
 _DESKOBJECTS = DESCRIPTOR.message_types_by_name['DeskObjects']
 _DESKOBJECTS_OBJECTSENTRY = _DESKOBJECTS.nested_types_by_name['ObjectsEntry']
-_DESKINFO = DESCRIPTOR.message_types_by_name['DeskInfo']
 _DESKINFOV2 = DESCRIPTOR.message_types_by_name['DeskInfoV2']
+_MAPANDDESK = DESCRIPTOR.message_types_by_name['MapAndDesk']
 _SOUND = DESCRIPTOR.message_types_by_name['Sound']
 _OBJECTTIME = DESCRIPTOR.message_types_by_name['ObjectTime']
 _SPACE = DESCRIPTOR.message_types_by_name['Space']
@@ -58,8 +59,6 @@ _MAPSETCOLLISIONS = DESCRIPTOR.message_types_by_name['MapSetCollisions']
 _MAPSETCOLLISIONSBITS = DESCRIPTOR.message_types_by_name['MapSetCollisionsBits']
 _MAPSETBACKGROUNDIMAGEPATH = DESCRIPTOR.message_types_by_name['MapSetBackgroundImagePath']
 _MAPSETFOREGROUNDIMAGEPATH = DESCRIPTOR.message_types_by_name['MapSetForegroundImagePath']
-_MAPSETSPRITES = DESCRIPTOR.message_types_by_name['MapSetSprites']
-_MAPSETSPACES = DESCRIPTOR.message_types_by_name['MapSetSpaces']
 _MAPSETNOOKS = DESCRIPTOR.message_types_by_name['MapSetNooks']
 _MAPSETNOOKS_NOOKSENTRY = _MAPSETNOOKS.nested_types_by_name['NooksEntry']
 _MAPSETSPAWN = DESCRIPTOR.message_types_by_name['MapSetSpawn']
@@ -67,8 +66,8 @@ _MAPSETSPAWNS = DESCRIPTOR.message_types_by_name['MapSetSpawns']
 _MAPSETPORTALS = DESCRIPTOR.message_types_by_name['MapSetPortals']
 _MAPSETANNOUNCER = DESCRIPTOR.message_types_by_name['MapSetAnnouncer']
 _MAPSETASSETS = DESCRIPTOR.message_types_by_name['MapSetAssets']
-_MAPSETOBJECTS = DESCRIPTOR.message_types_by_name['MapSetObjects']
-_MAPSETOBJECTS_OBJECTSENTRY = _MAPSETOBJECTS.nested_types_by_name['ObjectsEntry']
+_MAPSETOBJECTSV2 = DESCRIPTOR.message_types_by_name['MapSetObjectsV2']
+_MAPSETOBJECTSV2_OBJECTSENTRY = _MAPSETOBJECTSV2.nested_types_by_name['ObjectsEntry']
 _MAPSETNAME = DESCRIPTOR.message_types_by_name['MapSetName']
 _MAPSETMUTEONENTRY = DESCRIPTOR.message_types_by_name['MapSetMuteOnEntry']
 _MAPSETUSEDRAWNBG = DESCRIPTOR.message_types_by_name['MapSetUseDrawnBG']
@@ -78,7 +77,7 @@ _MAPSETFLOORS = DESCRIPTOR.message_types_by_name['MapSetFloors']
 _MAPSETFLOORS_FLOORSENTRY = _MAPSETFLOORS.nested_types_by_name['FloorsEntry']
 _MAPSETAREAS = DESCRIPTOR.message_types_by_name['MapSetAreas']
 _MAPSETAREAS_AREASENTRY = _MAPSETAREAS.nested_types_by_name['AreasEntry']
-_MAPDELETEOBJECT = DESCRIPTOR.message_types_by_name['MapDeleteObject']
+_MAPDELETEOBJECTBYKEY = DESCRIPTOR.message_types_by_name['MapDeleteObjectByKey']
 _MAPDELETEOBJECTBYID = DESCRIPTOR.message_types_by_name['MapDeleteObjectById']
 _MAPSETMINIMAPIMAGEPATH = DESCRIPTOR.message_types_by_name['MapSetMiniMapImagePath']
 _MAPSETENABLEDCHATS = DESCRIPTOR.message_types_by_name['MapSetEnabledChats']
@@ -99,6 +98,7 @@ _ITEMABILITY = DESCRIPTOR.message_types_by_name['ItemAbility']
 _MAPLOCATION = DESCRIPTOR.message_types_by_name['MapLocation']
 _SERVERCLIENTBATCH = DESCRIPTOR.message_types_by_name['ServerClientBatch']
 _SERVERCLIENTEVENT = DESCRIPTOR.message_types_by_name['ServerClientEvent']
+_SUBSCRIPTIONSUPDATED = DESCRIPTOR.message_types_by_name['SubscriptionsUpdated']
 _SERVERHEARTBEAT = DESCRIPTOR.message_types_by_name['ServerHeartbeat']
 _INFO = DESCRIPTOR.message_types_by_name['Info']
 _WARN = DESCRIPTOR.message_types_by_name['Warn']
@@ -109,6 +109,7 @@ _PLAYERJOINS = DESCRIPTOR.message_types_by_name['PlayerJoins']
 _GOTREQUESTMUTE = DESCRIPTOR.message_types_by_name['GotRequestMute']
 _PLAYERMOVES = DESCRIPTOR.message_types_by_name['PlayerMoves']
 _PLAYERSETSSTATUS = DESCRIPTOR.message_types_by_name['PlayerSetsStatus']
+_PLAYERSETSAVAILABILITY = DESCRIPTOR.message_types_by_name['PlayerSetsAvailability']
 _PLAYERSPOTLIGHTS = DESCRIPTOR.message_types_by_name['PlayerSpotlights']
 _PLAYERRINGS = DESCRIPTOR.message_types_by_name['PlayerRings']
 _PLAYERSETSIMAGEPOINTER = DESCRIPTOR.message_types_by_name['PlayerSetsImagePointer']
@@ -116,14 +117,14 @@ _SETSCREENPOINTERSERVER = DESCRIPTOR.message_types_by_name['SetScreenPointerServ
 _PLAYERCHATS = DESCRIPTOR.message_types_by_name['PlayerChats']
 _PLAYERWAVES = DESCRIPTOR.message_types_by_name['PlayerWaves']
 _TIMESTAMP = DESCRIPTOR.message_types_by_name['Timestamp']
-_PLAYERINTERACTS = DESCRIPTOR.message_types_by_name['PlayerInteracts']
+_PLAYERINTERACTSWITHOBJECT = DESCRIPTOR.message_types_by_name['PlayerInteractsWithObject']
 _PLAYERGHOSTS = DESCRIPTOR.message_types_by_name['PlayerGhosts']
 _PLAYERENTERSWHISPER = DESCRIPTOR.message_types_by_name['PlayerEntersWhisper']
 _PLAYERENTERSWHISPERV2 = DESCRIPTOR.message_types_by_name['PlayerEntersWhisperV2']
 _PLAYERLEAVESWHISPER = DESCRIPTOR.message_types_by_name['PlayerLeavesWhisper']
 _PLAYERACTIVELYSPEAKS = DESCRIPTOR.message_types_by_name['PlayerActivelySpeaks']
 _PLAYERSETSEMOTEV2 = DESCRIPTOR.message_types_by_name['PlayerSetsEmoteV2']
-_PLAYERSETSWORKCONDITION = DESCRIPTOR.message_types_by_name['PlayerSetsWorkCondition']
+_PLAYERSETSLASTRAISEDHAND = DESCRIPTOR.message_types_by_name['PlayerSetsLastRaisedHand']
 _PLAYERSETSLASTACTIVE = DESCRIPTOR.message_types_by_name['PlayerSetsLastActive']
 _PLAYERSETSNAME = DESCRIPTOR.message_types_by_name['PlayerSetsName']
 _PLAYERSETSTEXTSTATUS = DESCRIPTOR.message_types_by_name['PlayerSetsTextStatus']
@@ -134,6 +135,7 @@ _PLAYERSETSCOUNTRY = DESCRIPTOR.message_types_by_name['PlayerSetsCountry']
 _PLAYERSETSSTARTDATE = DESCRIPTOR.message_types_by_name['PlayerSetsStartDate']
 _PLAYERSETSTIMEZONE = DESCRIPTOR.message_types_by_name['PlayerSetsTimezone']
 _PLAYERSETSPHONE = DESCRIPTOR.message_types_by_name['PlayerSetsPhone']
+_PLAYERSETSDISPLAYEMAIL = DESCRIPTOR.message_types_by_name['PlayerSetsDisplayEmail']
 _PLAYERSETSDESCRIPTION = DESCRIPTOR.message_types_by_name['PlayerSetsDescription']
 _PLAYERSETSPROFILEIMAGEURL = DESCRIPTOR.message_types_by_name['PlayerSetsProfileImageUrl']
 _PLAYERSETSPERSONALIMAGEURL = DESCRIPTOR.message_types_by_name['PlayerSetsPersonalImageUrl']
@@ -141,14 +143,16 @@ _PLAYERSETSISMOBILE = DESCRIPTOR.message_types_by_name['PlayerSetsIsMobile']
 _PLAYERSETSEMOJISTATUS = DESCRIPTOR.message_types_by_name['PlayerSetsEmojiStatus']
 _PLAYERSETSAFFILIATION = DESCRIPTOR.message_types_by_name['PlayerSetsAffiliation']
 _PLAYEREXITS = DESCRIPTOR.message_types_by_name['PlayerExits']
-_PLAYERSETSOUTFITSTRING = DESCRIPTOR.message_types_by_name['PlayerSetsOutfitString']
+_PLAYERSETSCURRENTLYEQUIPPEDWEARABLES = DESCRIPTOR.message_types_by_name['PlayerSetsCurrentlyEquippedWearables']
 _PLAYERSETSISSIGNEDIN = DESCRIPTOR.message_types_by_name['PlayerSetsIsSignedIn']
-_RESPAWNCOMPLETE = DESCRIPTOR.message_types_by_name['RespawnComplete']
 _SPACEOVERWRITES = DESCRIPTOR.message_types_by_name['SpaceOverwrites']
 _DYNAMICGATE = DESCRIPTOR.message_types_by_name['DynamicGate']
 _DYNAMICGATES = DESCRIPTOR.message_types_by_name['DynamicGates']
 _SPACESETSSPACEMEMBERS = DESCRIPTOR.message_types_by_name['SpaceSetsSpaceMembers']
 _SPACESETSSPACEMEMBERS_MEMBERSENTRY = _SPACESETSSPACEMEMBERS.nested_types_by_name['MembersEntry']
+_WIRESPACEUSER = DESCRIPTOR.message_types_by_name['WireSpaceUser']
+_SPACESETSSPACEUSERS = DESCRIPTOR.message_types_by_name['SpaceSetsSpaceUsers']
+_SPACESETSSPACEUSERS_SPACEUSERSENTRY = _SPACESETSSPACEUSERS.nested_types_by_name['SpaceUsersEntry']
 _SPACEISCLOSED = DESCRIPTOR.message_types_by_name['SpaceIsClosed']
 _PLAYERENTERSPORTAL = DESCRIPTOR.message_types_by_name['PlayerEntersPortal']
 _COOKIEFOUND = DESCRIPTOR.message_types_by_name['CookieFound']
@@ -156,7 +160,6 @@ _SPACESETSIDMAPPING = DESCRIPTOR.message_types_by_name['SpaceSetsIdMapping']
 _PLAYERSHOOTSCONFETTI = DESCRIPTOR.message_types_by_name['PlayerShootsConfetti']
 _PLAYERSETSEVENTSTATUS = DESCRIPTOR.message_types_by_name['PlayerSetsEventStatus']
 _PLAYERSETSINCONVERSATION = DESCRIPTOR.message_types_by_name['PlayerSetsInConversation']
-_PLAYERSETSCURRENTDESK = DESCRIPTOR.message_types_by_name['PlayerSetsCurrentDesk']
 _PLAYERSETSCURRENTAREA = DESCRIPTOR.message_types_by_name['PlayerSetsCurrentArea']
 _PLAYERSETSGOKARTID = DESCRIPTOR.message_types_by_name['PlayerSetsGoKartId']
 _PLAYERSETSVEHICLEID = DESCRIPTOR.message_types_by_name['PlayerSetsVehicleId']
@@ -169,7 +172,7 @@ _PLAYERBLOCKS = DESCRIPTOR.message_types_by_name['PlayerBlocks']
 _CUSTOMEVENT = DESCRIPTOR.message_types_by_name['CustomEvent']
 _PLAYERUPDATESFOCUSMODESTATUS = DESCRIPTOR.message_types_by_name['PlayerUpdatesFocusModeStatus']
 _PLAYERSETSITEMSTRING = DESCRIPTOR.message_types_by_name['PlayerSetsItemString']
-_PLAYERTRIGGERSITEM = DESCRIPTOR.message_types_by_name['PlayerTriggersItem']
+_PLAYERTRIGGERSOBJECT = DESCRIPTOR.message_types_by_name['PlayerTriggersObject']
 _PLAYERNOTIFIES = DESCRIPTOR.message_types_by_name['PlayerNotifies']
 _PLAYERSETSFOLLOWTARGET = DESCRIPTOR.message_types_by_name['PlayerSetsFollowTarget']
 _PLAYERREQUESTSTOLEAD = DESCRIPTOR.message_types_by_name['PlayerRequestsToLead']
@@ -197,8 +200,15 @@ _PLAYERSETSDESKINFO = DESCRIPTOR.message_types_by_name['PlayerSetsDeskInfo']
 _SPACESETSCAPACITY = DESCRIPTOR.message_types_by_name['SpaceSetsCapacity']
 _SPACEOVERCAPACITYDENIESUSER = DESCRIPTOR.message_types_by_name['SpaceOverCapacityDeniesUser']
 _PLAYERSETSAWAY = DESCRIPTOR.message_types_by_name['PlayerSetsAway']
-_PLAYERSETSISRECORDINGCLIENT = DESCRIPTOR.message_types_by_name['PlayerSetsIsRecordingClient']
 _PLAYERSTARTSRECORDING = DESCRIPTOR.message_types_by_name['PlayerStartsRecording']
+_ACCESSREQUEST = DESCRIPTOR.message_types_by_name['AccessRequest']
+_ACCESSREQUESTSUPDATED = DESCRIPTOR.message_types_by_name['AccessRequestsUpdated']
+_ACCESSREQUESTRESPONDEDTO = DESCRIPTOR.message_types_by_name['AccessRequestRespondedTo']
+_PLAYERGUESTPASSSTATUS = DESCRIPTOR.message_types_by_name['PlayerGuestPassStatus']
+_SPACESETSGUESTPASSSTATUSES = DESCRIPTOR.message_types_by_name['SpaceSetsGuestPassStatuses']
+_SETDESKFROMNEXTAVAILABLEDESK = DESCRIPTOR.message_types_by_name['SetDeskFromNextAvailableDesk']
+_SPACEROLEPERMISSIONOVERRIDEUPDATED = DESCRIPTOR.message_types_by_name['SpaceRolePermissionOverrideUpdated']
+_CHIMESETSUSERINFO = DESCRIPTOR.message_types_by_name['ChimeSetsUserInfo']
 _CLIENTSERVERBATCH = DESCRIPTOR.message_types_by_name['ClientServerBatch']
 _CLIENTSERVERACTION = DESCRIPTOR.message_types_by_name['ClientServerAction']
 _CLIENTHEARTBEAT = DESCRIPTOR.message_types_by_name['ClientHeartbeat']
@@ -210,7 +220,8 @@ _MOVE = DESCRIPTOR.message_types_by_name['Move']
 _REQUESTMUTE = DESCRIPTOR.message_types_by_name['RequestMute']
 _SETAFFILIATION = DESCRIPTOR.message_types_by_name['SetAffiliation']
 _SETSTATUS = DESCRIPTOR.message_types_by_name['SetStatus']
-_SETOUTFITSTRING = DESCRIPTOR.message_types_by_name['SetOutfitString']
+_SETAVAILABILITY = DESCRIPTOR.message_types_by_name['SetAvailability']
+_SETCURRENTLYEQUIPPEDWEARABLES = DESCRIPTOR.message_types_by_name['SetCurrentlyEquippedWearables']
 _SPOTLIGHT = DESCRIPTOR.message_types_by_name['Spotlight']
 _RING = DESCRIPTOR.message_types_by_name['Ring']
 _SETIMAGEPOINTER = DESCRIPTOR.message_types_by_name['SetImagePointer']
@@ -221,7 +232,7 @@ _BLOCK = DESCRIPTOR.message_types_by_name['Block']
 _SETIMPASSABLE = DESCRIPTOR.message_types_by_name['SetImpassable']
 _CHAT = DESCRIPTOR.message_types_by_name['Chat']
 _NOTIFY = DESCRIPTOR.message_types_by_name['Notify']
-_INTERACT = DESCRIPTOR.message_types_by_name['Interact']
+_INTERACTWITHOBJECT = DESCRIPTOR.message_types_by_name['InteractWithObject']
 _ACTIVELYSPEAKING = DESCRIPTOR.message_types_by_name['ActivelySpeaking']
 _ENTERWHISPER = DESCRIPTOR.message_types_by_name['EnterWhisper']
 _LEAVEWHISPER = DESCRIPTOR.message_types_by_name['LeaveWhisper']
@@ -236,6 +247,7 @@ _SETCOUNTRY = DESCRIPTOR.message_types_by_name['SetCountry']
 _SETSTARTDATE = DESCRIPTOR.message_types_by_name['SetStartDate']
 _SETTIMEZONE = DESCRIPTOR.message_types_by_name['SetTimezone']
 _SETPHONE = DESCRIPTOR.message_types_by_name['SetPhone']
+_SETDISPLAYEMAIL = DESCRIPTOR.message_types_by_name['SetDisplayEmail']
 _SETDESCRIPTION = DESCRIPTOR.message_types_by_name['SetDescription']
 _SETPROFILEIMAGEURL = DESCRIPTOR.message_types_by_name['SetProfileImageUrl']
 _SETPERSONALIMAGEURL = DESCRIPTOR.message_types_by_name['SetPersonalImageUrl']
@@ -244,19 +256,19 @@ _ENTER = DESCRIPTOR.message_types_by_name['Enter']
 _PRECOMPUTEENTER = DESCRIPTOR.message_types_by_name['PrecomputeEnter']
 _SETEMOJISTATUS = DESCRIPTOR.message_types_by_name['SetEmojiStatus']
 _TELEPORT = DESCRIPTOR.message_types_by_name['Teleport']
-_SETWORKCONDITION = DESCRIPTOR.message_types_by_name['SetWorkCondition']
 _SPAWN = DESCRIPTOR.message_types_by_name['Spawn']
 _RESPAWN = DESCRIPTOR.message_types_by_name['Respawn']
+_RESPAWNATDESK = DESCRIPTOR.message_types_by_name['RespawnAtDesk']
 _REQUESTTOJOINNOOK = DESCRIPTOR.message_types_by_name['RequestToJoinNook']
 _UPDATENOOKPERMISSION = DESCRIPTOR.message_types_by_name['UpdateNookPermission']
 _INIT = DESCRIPTOR.message_types_by_name['Init']
 _MAPADDOBJECT = DESCRIPTOR.message_types_by_name['MapAddObject']
+_MAPUPDATEOBJECTS = DESCRIPTOR.message_types_by_name['MapUpdateObjects']
+_MAPUPDATEOBJECTS_OBJECTSENTRY = _MAPUPDATEOBJECTS.nested_types_by_name['ObjectsEntry']
 _SHOOTCONFETTI = DESCRIPTOR.message_types_by_name['ShootConfetti']
 _SETEVENTSTATUS = DESCRIPTOR.message_types_by_name['SetEventStatus']
 _SETINCONVERSATION = DESCRIPTOR.message_types_by_name['SetInConversation']
-_SETCURRENTDESK = DESCRIPTOR.message_types_by_name['SetCurrentDesk']
 _SETCURRENTAREA = DESCRIPTOR.message_types_by_name['SetCurrentArea']
-_SETGOKARTID = DESCRIPTOR.message_types_by_name['SetGoKartId']
 _SETVEHICLEID = DESCRIPTOR.message_types_by_name['SetVehicleId']
 _SETSPEEDMODIFIER = DESCRIPTOR.message_types_by_name['SetSpeedModifier']
 _SETISALONE = DESCRIPTOR.message_types_by_name['SetIsAlone']
@@ -265,7 +277,7 @@ _PLAYSOUND = DESCRIPTOR.message_types_by_name['PlaySound']
 _STOPSOUND = DESCRIPTOR.message_types_by_name['StopSound']
 _SETFOCUSMODEENDTIME = DESCRIPTOR.message_types_by_name['SetFocusModeEndTime']
 _SETITEMSTRING = DESCRIPTOR.message_types_by_name['SetItemString']
-_TRIGGERITEM = DESCRIPTOR.message_types_by_name['TriggerItem']
+_TRIGGEROBJECT = DESCRIPTOR.message_types_by_name['TriggerObject']
 _CUSTOMACTION = DESCRIPTOR.message_types_by_name['CustomAction']
 _SETFOLLOWTARGET = DESCRIPTOR.message_types_by_name['SetFollowTarget']
 _REQUESTTOLEAD = DESCRIPTOR.message_types_by_name['RequestToLead']
@@ -273,7 +285,6 @@ _ENTERPORTAL = DESCRIPTOR.message_types_by_name['EnterPortal']
 _SETMANUALVIDEOSRC = DESCRIPTOR.message_types_by_name['SetManualVideoSrc']
 _SETSUBTITLE = DESCRIPTOR.message_types_by_name['SetSubtitle']
 _MAPCOMMITSCHANGES = DESCRIPTOR.message_types_by_name['MapCommitsChanges']
-_PLAYERUPDATESSESSION = DESCRIPTOR.message_types_by_name['PlayerUpdatesSession']
 _SPEAKERUPDATESSESSION = DESCRIPTOR.message_types_by_name['SpeakerUpdatesSession']
 _CHATREPLY = DESCRIPTOR.message_types_by_name['ChatReply']
 _CHATMESSAGEUPDATED = DESCRIPTOR.message_types_by_name['ChatMessageUpdated']
@@ -291,9 +302,21 @@ _SETDESKINFO = DESCRIPTOR.message_types_by_name['SetDeskInfo']
 _WAVE = DESCRIPTOR.message_types_by_name['Wave']
 _SETAWAY = DESCRIPTOR.message_types_by_name['SetAway']
 _STARTRECORDING = DESCRIPTOR.message_types_by_name['StartRecording']
+_REQUESTACCESSVIACHECKIN = DESCRIPTOR.message_types_by_name['RequestAccessViaCheckIn']
+_RESPONDTOACCESSREQUEST = DESCRIPTOR.message_types_by_name['RespondToAccessRequest']
+_SETSPACEROLEPERMISSIONOVERRIDE = DESCRIPTOR.message_types_by_name['SetSpaceRolePermissionOverride']
+_JOINCHIMEMEETING = DESCRIPTOR.message_types_by_name['JoinChimeMeeting']
 _SPRITEDIRECTIONENUM_ENUM = _SPRITEDIRECTIONENUM.enum_types_by_name['ENUM']
 _MOVEDIRECTIONENUM_ENUM = _MOVEDIRECTIONENUM.enum_types_by_name['ENUM']
 _INTERACTIONENUM_ENUM = _INTERACTIONENUM.enum_types_by_name['ENUM']
+_RESPONDTOACCESSREQUEST_LOCATIONTYPEENUM = _RESPONDTOACCESSREQUEST.enum_types_by_name['LocationTypeEnum']
+Deprecated = _reflection.GeneratedProtocolMessageType('Deprecated', (_message.Message,), {
+  'DESCRIPTOR' : _DEPRECATED,
+  '__module__' : 'gather_client_ws.events_pb2'
+  # @@protoc_insertion_point(class_scope:Deprecated)
+  })
+_sym_db.RegisterMessage(Deprecated)
+
 SpriteDirectionEnum = _reflection.GeneratedProtocolMessageType('SpriteDirectionEnum', (_message.Message,), {
   'DESCRIPTOR' : _SPRITEDIRECTIONENUM,
   '__module__' : 'gather_client_ws.events_pb2'
@@ -402,19 +425,19 @@ DeskObjects = _reflection.GeneratedProtocolMessageType('DeskObjects', (_message.
 _sym_db.RegisterMessage(DeskObjects)
 _sym_db.RegisterMessage(DeskObjects.ObjectsEntry)
 
-DeskInfo = _reflection.GeneratedProtocolMessageType('DeskInfo', (_message.Message,), {
-  'DESCRIPTOR' : _DESKINFO,
-  '__module__' : 'gather_client_ws.events_pb2'
-  # @@protoc_insertion_point(class_scope:DeskInfo)
-  })
-_sym_db.RegisterMessage(DeskInfo)
-
 DeskInfoV2 = _reflection.GeneratedProtocolMessageType('DeskInfoV2', (_message.Message,), {
   'DESCRIPTOR' : _DESKINFOV2,
   '__module__' : 'gather_client_ws.events_pb2'
   # @@protoc_insertion_point(class_scope:DeskInfoV2)
   })
 _sym_db.RegisterMessage(DeskInfoV2)
+
+MapAndDesk = _reflection.GeneratedProtocolMessageType('MapAndDesk', (_message.Message,), {
+  'DESCRIPTOR' : _MAPANDDESK,
+  '__module__' : 'gather_client_ws.events_pb2'
+  # @@protoc_insertion_point(class_scope:MapAndDesk)
+  })
+_sym_db.RegisterMessage(MapAndDesk)
 
 Sound = _reflection.GeneratedProtocolMessageType('Sound', (_message.Message,), {
   'DESCRIPTOR' : _SOUND,
@@ -578,20 +601,6 @@ MapSetForegroundImagePath = _reflection.GeneratedProtocolMessageType('MapSetFore
   })
 _sym_db.RegisterMessage(MapSetForegroundImagePath)
 
-MapSetSprites = _reflection.GeneratedProtocolMessageType('MapSetSprites', (_message.Message,), {
-  'DESCRIPTOR' : _MAPSETSPRITES,
-  '__module__' : 'gather_client_ws.events_pb2'
-  # @@protoc_insertion_point(class_scope:MapSetSprites)
-  })
-_sym_db.RegisterMessage(MapSetSprites)
-
-MapSetSpaces = _reflection.GeneratedProtocolMessageType('MapSetSpaces', (_message.Message,), {
-  'DESCRIPTOR' : _MAPSETSPACES,
-  '__module__' : 'gather_client_ws.events_pb2'
-  # @@protoc_insertion_point(class_scope:MapSetSpaces)
-  })
-_sym_db.RegisterMessage(MapSetSpaces)
-
 MapSetNooks = _reflection.GeneratedProtocolMessageType('MapSetNooks', (_message.Message,), {
 
   'NooksEntry' : _reflection.GeneratedProtocolMessageType('NooksEntry', (_message.Message,), {
@@ -642,20 +651,20 @@ MapSetAssets = _reflection.GeneratedProtocolMessageType('MapSetAssets', (_messag
   })
 _sym_db.RegisterMessage(MapSetAssets)
 
-MapSetObjects = _reflection.GeneratedProtocolMessageType('MapSetObjects', (_message.Message,), {
+MapSetObjectsV2 = _reflection.GeneratedProtocolMessageType('MapSetObjectsV2', (_message.Message,), {
 
   'ObjectsEntry' : _reflection.GeneratedProtocolMessageType('ObjectsEntry', (_message.Message,), {
-    'DESCRIPTOR' : _MAPSETOBJECTS_OBJECTSENTRY,
+    'DESCRIPTOR' : _MAPSETOBJECTSV2_OBJECTSENTRY,
     '__module__' : 'gather_client_ws.events_pb2'
-    # @@protoc_insertion_point(class_scope:MapSetObjects.ObjectsEntry)
+    # @@protoc_insertion_point(class_scope:MapSetObjectsV2.ObjectsEntry)
     })
   ,
-  'DESCRIPTOR' : _MAPSETOBJECTS,
+  'DESCRIPTOR' : _MAPSETOBJECTSV2,
   '__module__' : 'gather_client_ws.events_pb2'
-  # @@protoc_insertion_point(class_scope:MapSetObjects)
+  # @@protoc_insertion_point(class_scope:MapSetObjectsV2)
   })
-_sym_db.RegisterMessage(MapSetObjects)
-_sym_db.RegisterMessage(MapSetObjects.ObjectsEntry)
+_sym_db.RegisterMessage(MapSetObjectsV2)
+_sym_db.RegisterMessage(MapSetObjectsV2.ObjectsEntry)
 
 MapSetName = _reflection.GeneratedProtocolMessageType('MapSetName', (_message.Message,), {
   'DESCRIPTOR' : _MAPSETNAME,
@@ -723,12 +732,12 @@ MapSetAreas = _reflection.GeneratedProtocolMessageType('MapSetAreas', (_message.
 _sym_db.RegisterMessage(MapSetAreas)
 _sym_db.RegisterMessage(MapSetAreas.AreasEntry)
 
-MapDeleteObject = _reflection.GeneratedProtocolMessageType('MapDeleteObject', (_message.Message,), {
-  'DESCRIPTOR' : _MAPDELETEOBJECT,
+MapDeleteObjectByKey = _reflection.GeneratedProtocolMessageType('MapDeleteObjectByKey', (_message.Message,), {
+  'DESCRIPTOR' : _MAPDELETEOBJECTBYKEY,
   '__module__' : 'gather_client_ws.events_pb2'
-  # @@protoc_insertion_point(class_scope:MapDeleteObject)
+  # @@protoc_insertion_point(class_scope:MapDeleteObjectByKey)
   })
-_sym_db.RegisterMessage(MapDeleteObject)
+_sym_db.RegisterMessage(MapDeleteObjectByKey)
 
 MapDeleteObjectById = _reflection.GeneratedProtocolMessageType('MapDeleteObjectById', (_message.Message,), {
   'DESCRIPTOR' : _MAPDELETEOBJECTBYID,
@@ -874,6 +883,13 @@ ServerClientEvent = _reflection.GeneratedProtocolMessageType('ServerClientEvent'
   })
 _sym_db.RegisterMessage(ServerClientEvent)
 
+SubscriptionsUpdated = _reflection.GeneratedProtocolMessageType('SubscriptionsUpdated', (_message.Message,), {
+  'DESCRIPTOR' : _SUBSCRIPTIONSUPDATED,
+  '__module__' : 'gather_client_ws.events_pb2'
+  # @@protoc_insertion_point(class_scope:SubscriptionsUpdated)
+  })
+_sym_db.RegisterMessage(SubscriptionsUpdated)
+
 ServerHeartbeat = _reflection.GeneratedProtocolMessageType('ServerHeartbeat', (_message.Message,), {
   'DESCRIPTOR' : _SERVERHEARTBEAT,
   '__module__' : 'gather_client_ws.events_pb2'
@@ -944,6 +960,13 @@ PlayerSetsStatus = _reflection.GeneratedProtocolMessageType('PlayerSetsStatus', 
   })
 _sym_db.RegisterMessage(PlayerSetsStatus)
 
+PlayerSetsAvailability = _reflection.GeneratedProtocolMessageType('PlayerSetsAvailability', (_message.Message,), {
+  'DESCRIPTOR' : _PLAYERSETSAVAILABILITY,
+  '__module__' : 'gather_client_ws.events_pb2'
+  # @@protoc_insertion_point(class_scope:PlayerSetsAvailability)
+  })
+_sym_db.RegisterMessage(PlayerSetsAvailability)
+
 PlayerSpotlights = _reflection.GeneratedProtocolMessageType('PlayerSpotlights', (_message.Message,), {
   'DESCRIPTOR' : _PLAYERSPOTLIGHTS,
   '__module__' : 'gather_client_ws.events_pb2'
@@ -993,12 +1016,12 @@ Timestamp = _reflection.GeneratedProtocolMessageType('Timestamp', (_message.Mess
   })
 _sym_db.RegisterMessage(Timestamp)
 
-PlayerInteracts = _reflection.GeneratedProtocolMessageType('PlayerInteracts', (_message.Message,), {
-  'DESCRIPTOR' : _PLAYERINTERACTS,
+PlayerInteractsWithObject = _reflection.GeneratedProtocolMessageType('PlayerInteractsWithObject', (_message.Message,), {
+  'DESCRIPTOR' : _PLAYERINTERACTSWITHOBJECT,
   '__module__' : 'gather_client_ws.events_pb2'
-  # @@protoc_insertion_point(class_scope:PlayerInteracts)
+  # @@protoc_insertion_point(class_scope:PlayerInteractsWithObject)
   })
-_sym_db.RegisterMessage(PlayerInteracts)
+_sym_db.RegisterMessage(PlayerInteractsWithObject)
 
 PlayerGhosts = _reflection.GeneratedProtocolMessageType('PlayerGhosts', (_message.Message,), {
   'DESCRIPTOR' : _PLAYERGHOSTS,
@@ -1042,12 +1065,12 @@ PlayerSetsEmoteV2 = _reflection.GeneratedProtocolMessageType('PlayerSetsEmoteV2'
   })
 _sym_db.RegisterMessage(PlayerSetsEmoteV2)
 
-PlayerSetsWorkCondition = _reflection.GeneratedProtocolMessageType('PlayerSetsWorkCondition', (_message.Message,), {
-  'DESCRIPTOR' : _PLAYERSETSWORKCONDITION,
+PlayerSetsLastRaisedHand = _reflection.GeneratedProtocolMessageType('PlayerSetsLastRaisedHand', (_message.Message,), {
+  'DESCRIPTOR' : _PLAYERSETSLASTRAISEDHAND,
   '__module__' : 'gather_client_ws.events_pb2'
-  # @@protoc_insertion_point(class_scope:PlayerSetsWorkCondition)
+  # @@protoc_insertion_point(class_scope:PlayerSetsLastRaisedHand)
   })
-_sym_db.RegisterMessage(PlayerSetsWorkCondition)
+_sym_db.RegisterMessage(PlayerSetsLastRaisedHand)
 
 PlayerSetsLastActive = _reflection.GeneratedProtocolMessageType('PlayerSetsLastActive', (_message.Message,), {
   'DESCRIPTOR' : _PLAYERSETSLASTACTIVE,
@@ -1119,6 +1142,13 @@ PlayerSetsPhone = _reflection.GeneratedProtocolMessageType('PlayerSetsPhone', (_
   })
 _sym_db.RegisterMessage(PlayerSetsPhone)
 
+PlayerSetsDisplayEmail = _reflection.GeneratedProtocolMessageType('PlayerSetsDisplayEmail', (_message.Message,), {
+  'DESCRIPTOR' : _PLAYERSETSDISPLAYEMAIL,
+  '__module__' : 'gather_client_ws.events_pb2'
+  # @@protoc_insertion_point(class_scope:PlayerSetsDisplayEmail)
+  })
+_sym_db.RegisterMessage(PlayerSetsDisplayEmail)
+
 PlayerSetsDescription = _reflection.GeneratedProtocolMessageType('PlayerSetsDescription', (_message.Message,), {
   'DESCRIPTOR' : _PLAYERSETSDESCRIPTION,
   '__module__' : 'gather_client_ws.events_pb2'
@@ -1168,12 +1198,12 @@ PlayerExits = _reflection.GeneratedProtocolMessageType('PlayerExits', (_message.
   })
 _sym_db.RegisterMessage(PlayerExits)
 
-PlayerSetsOutfitString = _reflection.GeneratedProtocolMessageType('PlayerSetsOutfitString', (_message.Message,), {
-  'DESCRIPTOR' : _PLAYERSETSOUTFITSTRING,
+PlayerSetsCurrentlyEquippedWearables = _reflection.GeneratedProtocolMessageType('PlayerSetsCurrentlyEquippedWearables', (_message.Message,), {
+  'DESCRIPTOR' : _PLAYERSETSCURRENTLYEQUIPPEDWEARABLES,
   '__module__' : 'gather_client_ws.events_pb2'
-  # @@protoc_insertion_point(class_scope:PlayerSetsOutfitString)
+  # @@protoc_insertion_point(class_scope:PlayerSetsCurrentlyEquippedWearables)
   })
-_sym_db.RegisterMessage(PlayerSetsOutfitString)
+_sym_db.RegisterMessage(PlayerSetsCurrentlyEquippedWearables)
 
 PlayerSetsIsSignedIn = _reflection.GeneratedProtocolMessageType('PlayerSetsIsSignedIn', (_message.Message,), {
   'DESCRIPTOR' : _PLAYERSETSISSIGNEDIN,
@@ -1181,13 +1211,6 @@ PlayerSetsIsSignedIn = _reflection.GeneratedProtocolMessageType('PlayerSetsIsSig
   # @@protoc_insertion_point(class_scope:PlayerSetsIsSignedIn)
   })
 _sym_db.RegisterMessage(PlayerSetsIsSignedIn)
-
-RespawnComplete = _reflection.GeneratedProtocolMessageType('RespawnComplete', (_message.Message,), {
-  'DESCRIPTOR' : _RESPAWNCOMPLETE,
-  '__module__' : 'gather_client_ws.events_pb2'
-  # @@protoc_insertion_point(class_scope:RespawnComplete)
-  })
-_sym_db.RegisterMessage(RespawnComplete)
 
 SpaceOverwrites = _reflection.GeneratedProtocolMessageType('SpaceOverwrites', (_message.Message,), {
   'DESCRIPTOR' : _SPACEOVERWRITES,
@@ -1224,6 +1247,28 @@ SpaceSetsSpaceMembers = _reflection.GeneratedProtocolMessageType('SpaceSetsSpace
   })
 _sym_db.RegisterMessage(SpaceSetsSpaceMembers)
 _sym_db.RegisterMessage(SpaceSetsSpaceMembers.MembersEntry)
+
+WireSpaceUser = _reflection.GeneratedProtocolMessageType('WireSpaceUser', (_message.Message,), {
+  'DESCRIPTOR' : _WIRESPACEUSER,
+  '__module__' : 'gather_client_ws.events_pb2'
+  # @@protoc_insertion_point(class_scope:WireSpaceUser)
+  })
+_sym_db.RegisterMessage(WireSpaceUser)
+
+SpaceSetsSpaceUsers = _reflection.GeneratedProtocolMessageType('SpaceSetsSpaceUsers', (_message.Message,), {
+
+  'SpaceUsersEntry' : _reflection.GeneratedProtocolMessageType('SpaceUsersEntry', (_message.Message,), {
+    'DESCRIPTOR' : _SPACESETSSPACEUSERS_SPACEUSERSENTRY,
+    '__module__' : 'gather_client_ws.events_pb2'
+    # @@protoc_insertion_point(class_scope:SpaceSetsSpaceUsers.SpaceUsersEntry)
+    })
+  ,
+  'DESCRIPTOR' : _SPACESETSSPACEUSERS,
+  '__module__' : 'gather_client_ws.events_pb2'
+  # @@protoc_insertion_point(class_scope:SpaceSetsSpaceUsers)
+  })
+_sym_db.RegisterMessage(SpaceSetsSpaceUsers)
+_sym_db.RegisterMessage(SpaceSetsSpaceUsers.SpaceUsersEntry)
 
 SpaceIsClosed = _reflection.GeneratedProtocolMessageType('SpaceIsClosed', (_message.Message,), {
   'DESCRIPTOR' : _SPACEISCLOSED,
@@ -1273,13 +1318,6 @@ PlayerSetsInConversation = _reflection.GeneratedProtocolMessageType('PlayerSetsI
   # @@protoc_insertion_point(class_scope:PlayerSetsInConversation)
   })
 _sym_db.RegisterMessage(PlayerSetsInConversation)
-
-PlayerSetsCurrentDesk = _reflection.GeneratedProtocolMessageType('PlayerSetsCurrentDesk', (_message.Message,), {
-  'DESCRIPTOR' : _PLAYERSETSCURRENTDESK,
-  '__module__' : 'gather_client_ws.events_pb2'
-  # @@protoc_insertion_point(class_scope:PlayerSetsCurrentDesk)
-  })
-_sym_db.RegisterMessage(PlayerSetsCurrentDesk)
 
 PlayerSetsCurrentArea = _reflection.GeneratedProtocolMessageType('PlayerSetsCurrentArea', (_message.Message,), {
   'DESCRIPTOR' : _PLAYERSETSCURRENTAREA,
@@ -1365,12 +1403,12 @@ PlayerSetsItemString = _reflection.GeneratedProtocolMessageType('PlayerSetsItemS
   })
 _sym_db.RegisterMessage(PlayerSetsItemString)
 
-PlayerTriggersItem = _reflection.GeneratedProtocolMessageType('PlayerTriggersItem', (_message.Message,), {
-  'DESCRIPTOR' : _PLAYERTRIGGERSITEM,
+PlayerTriggersObject = _reflection.GeneratedProtocolMessageType('PlayerTriggersObject', (_message.Message,), {
+  'DESCRIPTOR' : _PLAYERTRIGGERSOBJECT,
   '__module__' : 'gather_client_ws.events_pb2'
-  # @@protoc_insertion_point(class_scope:PlayerTriggersItem)
+  # @@protoc_insertion_point(class_scope:PlayerTriggersObject)
   })
-_sym_db.RegisterMessage(PlayerTriggersItem)
+_sym_db.RegisterMessage(PlayerTriggersObject)
 
 PlayerNotifies = _reflection.GeneratedProtocolMessageType('PlayerNotifies', (_message.Message,), {
   'DESCRIPTOR' : _PLAYERNOTIFIES,
@@ -1565,19 +1603,68 @@ PlayerSetsAway = _reflection.GeneratedProtocolMessageType('PlayerSetsAway', (_me
   })
 _sym_db.RegisterMessage(PlayerSetsAway)
 
-PlayerSetsIsRecordingClient = _reflection.GeneratedProtocolMessageType('PlayerSetsIsRecordingClient', (_message.Message,), {
-  'DESCRIPTOR' : _PLAYERSETSISRECORDINGCLIENT,
-  '__module__' : 'gather_client_ws.events_pb2'
-  # @@protoc_insertion_point(class_scope:PlayerSetsIsRecordingClient)
-  })
-_sym_db.RegisterMessage(PlayerSetsIsRecordingClient)
-
 PlayerStartsRecording = _reflection.GeneratedProtocolMessageType('PlayerStartsRecording', (_message.Message,), {
   'DESCRIPTOR' : _PLAYERSTARTSRECORDING,
   '__module__' : 'gather_client_ws.events_pb2'
   # @@protoc_insertion_point(class_scope:PlayerStartsRecording)
   })
 _sym_db.RegisterMessage(PlayerStartsRecording)
+
+AccessRequest = _reflection.GeneratedProtocolMessageType('AccessRequest', (_message.Message,), {
+  'DESCRIPTOR' : _ACCESSREQUEST,
+  '__module__' : 'gather_client_ws.events_pb2'
+  # @@protoc_insertion_point(class_scope:AccessRequest)
+  })
+_sym_db.RegisterMessage(AccessRequest)
+
+AccessRequestsUpdated = _reflection.GeneratedProtocolMessageType('AccessRequestsUpdated', (_message.Message,), {
+  'DESCRIPTOR' : _ACCESSREQUESTSUPDATED,
+  '__module__' : 'gather_client_ws.events_pb2'
+  # @@protoc_insertion_point(class_scope:AccessRequestsUpdated)
+  })
+_sym_db.RegisterMessage(AccessRequestsUpdated)
+
+AccessRequestRespondedTo = _reflection.GeneratedProtocolMessageType('AccessRequestRespondedTo', (_message.Message,), {
+  'DESCRIPTOR' : _ACCESSREQUESTRESPONDEDTO,
+  '__module__' : 'gather_client_ws.events_pb2'
+  # @@protoc_insertion_point(class_scope:AccessRequestRespondedTo)
+  })
+_sym_db.RegisterMessage(AccessRequestRespondedTo)
+
+PlayerGuestPassStatus = _reflection.GeneratedProtocolMessageType('PlayerGuestPassStatus', (_message.Message,), {
+  'DESCRIPTOR' : _PLAYERGUESTPASSSTATUS,
+  '__module__' : 'gather_client_ws.events_pb2'
+  # @@protoc_insertion_point(class_scope:PlayerGuestPassStatus)
+  })
+_sym_db.RegisterMessage(PlayerGuestPassStatus)
+
+SpaceSetsGuestPassStatuses = _reflection.GeneratedProtocolMessageType('SpaceSetsGuestPassStatuses', (_message.Message,), {
+  'DESCRIPTOR' : _SPACESETSGUESTPASSSTATUSES,
+  '__module__' : 'gather_client_ws.events_pb2'
+  # @@protoc_insertion_point(class_scope:SpaceSetsGuestPassStatuses)
+  })
+_sym_db.RegisterMessage(SpaceSetsGuestPassStatuses)
+
+SetDeskFromNextAvailableDesk = _reflection.GeneratedProtocolMessageType('SetDeskFromNextAvailableDesk', (_message.Message,), {
+  'DESCRIPTOR' : _SETDESKFROMNEXTAVAILABLEDESK,
+  '__module__' : 'gather_client_ws.events_pb2'
+  # @@protoc_insertion_point(class_scope:SetDeskFromNextAvailableDesk)
+  })
+_sym_db.RegisterMessage(SetDeskFromNextAvailableDesk)
+
+SpaceRolePermissionOverrideUpdated = _reflection.GeneratedProtocolMessageType('SpaceRolePermissionOverrideUpdated', (_message.Message,), {
+  'DESCRIPTOR' : _SPACEROLEPERMISSIONOVERRIDEUPDATED,
+  '__module__' : 'gather_client_ws.events_pb2'
+  # @@protoc_insertion_point(class_scope:SpaceRolePermissionOverrideUpdated)
+  })
+_sym_db.RegisterMessage(SpaceRolePermissionOverrideUpdated)
+
+ChimeSetsUserInfo = _reflection.GeneratedProtocolMessageType('ChimeSetsUserInfo', (_message.Message,), {
+  'DESCRIPTOR' : _CHIMESETSUSERINFO,
+  '__module__' : 'gather_client_ws.events_pb2'
+  # @@protoc_insertion_point(class_scope:ChimeSetsUserInfo)
+  })
+_sym_db.RegisterMessage(ChimeSetsUserInfo)
 
 ClientServerBatch = _reflection.GeneratedProtocolMessageType('ClientServerBatch', (_message.Message,), {
   'DESCRIPTOR' : _CLIENTSERVERBATCH,
@@ -1658,12 +1745,19 @@ SetStatus = _reflection.GeneratedProtocolMessageType('SetStatus', (_message.Mess
   })
 _sym_db.RegisterMessage(SetStatus)
 
-SetOutfitString = _reflection.GeneratedProtocolMessageType('SetOutfitString', (_message.Message,), {
-  'DESCRIPTOR' : _SETOUTFITSTRING,
+SetAvailability = _reflection.GeneratedProtocolMessageType('SetAvailability', (_message.Message,), {
+  'DESCRIPTOR' : _SETAVAILABILITY,
   '__module__' : 'gather_client_ws.events_pb2'
-  # @@protoc_insertion_point(class_scope:SetOutfitString)
+  # @@protoc_insertion_point(class_scope:SetAvailability)
   })
-_sym_db.RegisterMessage(SetOutfitString)
+_sym_db.RegisterMessage(SetAvailability)
+
+SetCurrentlyEquippedWearables = _reflection.GeneratedProtocolMessageType('SetCurrentlyEquippedWearables', (_message.Message,), {
+  'DESCRIPTOR' : _SETCURRENTLYEQUIPPEDWEARABLES,
+  '__module__' : 'gather_client_ws.events_pb2'
+  # @@protoc_insertion_point(class_scope:SetCurrentlyEquippedWearables)
+  })
+_sym_db.RegisterMessage(SetCurrentlyEquippedWearables)
 
 Spotlight = _reflection.GeneratedProtocolMessageType('Spotlight', (_message.Message,), {
   'DESCRIPTOR' : _SPOTLIGHT,
@@ -1735,12 +1829,12 @@ Notify = _reflection.GeneratedProtocolMessageType('Notify', (_message.Message,),
   })
 _sym_db.RegisterMessage(Notify)
 
-Interact = _reflection.GeneratedProtocolMessageType('Interact', (_message.Message,), {
-  'DESCRIPTOR' : _INTERACT,
+InteractWithObject = _reflection.GeneratedProtocolMessageType('InteractWithObject', (_message.Message,), {
+  'DESCRIPTOR' : _INTERACTWITHOBJECT,
   '__module__' : 'gather_client_ws.events_pb2'
-  # @@protoc_insertion_point(class_scope:Interact)
+  # @@protoc_insertion_point(class_scope:InteractWithObject)
   })
-_sym_db.RegisterMessage(Interact)
+_sym_db.RegisterMessage(InteractWithObject)
 
 ActivelySpeaking = _reflection.GeneratedProtocolMessageType('ActivelySpeaking', (_message.Message,), {
   'DESCRIPTOR' : _ACTIVELYSPEAKING,
@@ -1840,6 +1934,13 @@ SetPhone = _reflection.GeneratedProtocolMessageType('SetPhone', (_message.Messag
   })
 _sym_db.RegisterMessage(SetPhone)
 
+SetDisplayEmail = _reflection.GeneratedProtocolMessageType('SetDisplayEmail', (_message.Message,), {
+  'DESCRIPTOR' : _SETDISPLAYEMAIL,
+  '__module__' : 'gather_client_ws.events_pb2'
+  # @@protoc_insertion_point(class_scope:SetDisplayEmail)
+  })
+_sym_db.RegisterMessage(SetDisplayEmail)
+
 SetDescription = _reflection.GeneratedProtocolMessageType('SetDescription', (_message.Message,), {
   'DESCRIPTOR' : _SETDESCRIPTION,
   '__module__' : 'gather_client_ws.events_pb2'
@@ -1896,13 +1997,6 @@ Teleport = _reflection.GeneratedProtocolMessageType('Teleport', (_message.Messag
   })
 _sym_db.RegisterMessage(Teleport)
 
-SetWorkCondition = _reflection.GeneratedProtocolMessageType('SetWorkCondition', (_message.Message,), {
-  'DESCRIPTOR' : _SETWORKCONDITION,
-  '__module__' : 'gather_client_ws.events_pb2'
-  # @@protoc_insertion_point(class_scope:SetWorkCondition)
-  })
-_sym_db.RegisterMessage(SetWorkCondition)
-
 Spawn = _reflection.GeneratedProtocolMessageType('Spawn', (_message.Message,), {
   'DESCRIPTOR' : _SPAWN,
   '__module__' : 'gather_client_ws.events_pb2'
@@ -1916,6 +2010,13 @@ Respawn = _reflection.GeneratedProtocolMessageType('Respawn', (_message.Message,
   # @@protoc_insertion_point(class_scope:Respawn)
   })
 _sym_db.RegisterMessage(Respawn)
+
+RespawnAtDesk = _reflection.GeneratedProtocolMessageType('RespawnAtDesk', (_message.Message,), {
+  'DESCRIPTOR' : _RESPAWNATDESK,
+  '__module__' : 'gather_client_ws.events_pb2'
+  # @@protoc_insertion_point(class_scope:RespawnAtDesk)
+  })
+_sym_db.RegisterMessage(RespawnAtDesk)
 
 RequestToJoinNook = _reflection.GeneratedProtocolMessageType('RequestToJoinNook', (_message.Message,), {
   'DESCRIPTOR' : _REQUESTTOJOINNOOK,
@@ -1945,6 +2046,21 @@ MapAddObject = _reflection.GeneratedProtocolMessageType('MapAddObject', (_messag
   })
 _sym_db.RegisterMessage(MapAddObject)
 
+MapUpdateObjects = _reflection.GeneratedProtocolMessageType('MapUpdateObjects', (_message.Message,), {
+
+  'ObjectsEntry' : _reflection.GeneratedProtocolMessageType('ObjectsEntry', (_message.Message,), {
+    'DESCRIPTOR' : _MAPUPDATEOBJECTS_OBJECTSENTRY,
+    '__module__' : 'gather_client_ws.events_pb2'
+    # @@protoc_insertion_point(class_scope:MapUpdateObjects.ObjectsEntry)
+    })
+  ,
+  'DESCRIPTOR' : _MAPUPDATEOBJECTS,
+  '__module__' : 'gather_client_ws.events_pb2'
+  # @@protoc_insertion_point(class_scope:MapUpdateObjects)
+  })
+_sym_db.RegisterMessage(MapUpdateObjects)
+_sym_db.RegisterMessage(MapUpdateObjects.ObjectsEntry)
+
 ShootConfetti = _reflection.GeneratedProtocolMessageType('ShootConfetti', (_message.Message,), {
   'DESCRIPTOR' : _SHOOTCONFETTI,
   '__module__' : 'gather_client_ws.events_pb2'
@@ -1966,26 +2082,12 @@ SetInConversation = _reflection.GeneratedProtocolMessageType('SetInConversation'
   })
 _sym_db.RegisterMessage(SetInConversation)
 
-SetCurrentDesk = _reflection.GeneratedProtocolMessageType('SetCurrentDesk', (_message.Message,), {
-  'DESCRIPTOR' : _SETCURRENTDESK,
-  '__module__' : 'gather_client_ws.events_pb2'
-  # @@protoc_insertion_point(class_scope:SetCurrentDesk)
-  })
-_sym_db.RegisterMessage(SetCurrentDesk)
-
 SetCurrentArea = _reflection.GeneratedProtocolMessageType('SetCurrentArea', (_message.Message,), {
   'DESCRIPTOR' : _SETCURRENTAREA,
   '__module__' : 'gather_client_ws.events_pb2'
   # @@protoc_insertion_point(class_scope:SetCurrentArea)
   })
 _sym_db.RegisterMessage(SetCurrentArea)
-
-SetGoKartId = _reflection.GeneratedProtocolMessageType('SetGoKartId', (_message.Message,), {
-  'DESCRIPTOR' : _SETGOKARTID,
-  '__module__' : 'gather_client_ws.events_pb2'
-  # @@protoc_insertion_point(class_scope:SetGoKartId)
-  })
-_sym_db.RegisterMessage(SetGoKartId)
 
 SetVehicleId = _reflection.GeneratedProtocolMessageType('SetVehicleId', (_message.Message,), {
   'DESCRIPTOR' : _SETVEHICLEID,
@@ -2043,12 +2145,12 @@ SetItemString = _reflection.GeneratedProtocolMessageType('SetItemString', (_mess
   })
 _sym_db.RegisterMessage(SetItemString)
 
-TriggerItem = _reflection.GeneratedProtocolMessageType('TriggerItem', (_message.Message,), {
-  'DESCRIPTOR' : _TRIGGERITEM,
+TriggerObject = _reflection.GeneratedProtocolMessageType('TriggerObject', (_message.Message,), {
+  'DESCRIPTOR' : _TRIGGEROBJECT,
   '__module__' : 'gather_client_ws.events_pb2'
-  # @@protoc_insertion_point(class_scope:TriggerItem)
+  # @@protoc_insertion_point(class_scope:TriggerObject)
   })
-_sym_db.RegisterMessage(TriggerItem)
+_sym_db.RegisterMessage(TriggerObject)
 
 CustomAction = _reflection.GeneratedProtocolMessageType('CustomAction', (_message.Message,), {
   'DESCRIPTOR' : _CUSTOMACTION,
@@ -2098,13 +2200,6 @@ MapCommitsChanges = _reflection.GeneratedProtocolMessageType('MapCommitsChanges'
   # @@protoc_insertion_point(class_scope:MapCommitsChanges)
   })
 _sym_db.RegisterMessage(MapCommitsChanges)
-
-PlayerUpdatesSession = _reflection.GeneratedProtocolMessageType('PlayerUpdatesSession', (_message.Message,), {
-  'DESCRIPTOR' : _PLAYERUPDATESSESSION,
-  '__module__' : 'gather_client_ws.events_pb2'
-  # @@protoc_insertion_point(class_scope:PlayerUpdatesSession)
-  })
-_sym_db.RegisterMessage(PlayerUpdatesSession)
 
 SpeakerUpdatesSession = _reflection.GeneratedProtocolMessageType('SpeakerUpdatesSession', (_message.Message,), {
   'DESCRIPTOR' : _SPEAKERUPDATESSESSION,
@@ -2226,6 +2321,34 @@ StartRecording = _reflection.GeneratedProtocolMessageType('StartRecording', (_me
   })
 _sym_db.RegisterMessage(StartRecording)
 
+RequestAccessViaCheckIn = _reflection.GeneratedProtocolMessageType('RequestAccessViaCheckIn', (_message.Message,), {
+  'DESCRIPTOR' : _REQUESTACCESSVIACHECKIN,
+  '__module__' : 'gather_client_ws.events_pb2'
+  # @@protoc_insertion_point(class_scope:RequestAccessViaCheckIn)
+  })
+_sym_db.RegisterMessage(RequestAccessViaCheckIn)
+
+RespondToAccessRequest = _reflection.GeneratedProtocolMessageType('RespondToAccessRequest', (_message.Message,), {
+  'DESCRIPTOR' : _RESPONDTOACCESSREQUEST,
+  '__module__' : 'gather_client_ws.events_pb2'
+  # @@protoc_insertion_point(class_scope:RespondToAccessRequest)
+  })
+_sym_db.RegisterMessage(RespondToAccessRequest)
+
+SetSpaceRolePermissionOverride = _reflection.GeneratedProtocolMessageType('SetSpaceRolePermissionOverride', (_message.Message,), {
+  'DESCRIPTOR' : _SETSPACEROLEPERMISSIONOVERRIDE,
+  '__module__' : 'gather_client_ws.events_pb2'
+  # @@protoc_insertion_point(class_scope:SetSpaceRolePermissionOverride)
+  })
+_sym_db.RegisterMessage(SetSpaceRolePermissionOverride)
+
+JoinChimeMeeting = _reflection.GeneratedProtocolMessageType('JoinChimeMeeting', (_message.Message,), {
+  'DESCRIPTOR' : _JOINCHIMEMEETING,
+  '__module__' : 'gather_client_ws.events_pb2'
+  # @@protoc_insertion_point(class_scope:JoinChimeMeeting)
+  })
+_sym_db.RegisterMessage(JoinChimeMeeting)
+
 if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
@@ -2239,8 +2362,8 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _REQUESTEDUSERS_USERSENTRY._serialized_options = b'8\001'
   _MAPSETNOOKS_NOOKSENTRY._options = None
   _MAPSETNOOKS_NOOKSENTRY._serialized_options = b'8\001'
-  _MAPSETOBJECTS_OBJECTSENTRY._options = None
-  _MAPSETOBJECTS_OBJECTSENTRY._serialized_options = b'8\001'
+  _MAPSETOBJECTSV2_OBJECTSENTRY._options = None
+  _MAPSETOBJECTSV2_OBJECTSENTRY._serialized_options = b'8\001'
   _MAPSETWALLS_WALLSENTRY._options = None
   _MAPSETWALLS_WALLSENTRY._serialized_options = b'8\001'
   _MAPSETFLOORS_FLOORSENTRY._options = None
@@ -2257,6 +2380,8 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _SPACEITEM_ABILITIESENTRY._serialized_options = b'8\001'
   _SPACESETSSPACEMEMBERS_MEMBERSENTRY._options = None
   _SPACESETSSPACEMEMBERS_MEMBERSENTRY._serialized_options = b'8\001'
+  _SPACESETSSPACEUSERS_SPACEUSERSENTRY._options = None
+  _SPACESETSSPACEUSERS_SPACEUSERSENTRY._serialized_options = b'8\001'
   _PLAYERCRAFTS_INPUTSENTRY._options = None
   _PLAYERCRAFTS_INPUTSENTRY._serialized_options = b'8\001'
   _PLAYERUPDATESINVENTORY_ITEMSENTRY._options = None
@@ -2269,558 +2394,592 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _UPDATESUBSCRIPTIONS_SUBSCRIPTIONSENTRY._serialized_options = b'8\001'
   _UPDATESUBSCRIPTIONS_MAPUPDATEIDSENTRY._options = None
   _UPDATESUBSCRIPTIONS_MAPUPDATEIDSENTRY._serialized_options = b'8\001'
+  _MAPUPDATEOBJECTS_OBJECTSENTRY._options = None
+  _MAPUPDATEOBJECTS_OBJECTSENTRY._serialized_options = b'8\001'
   _CRAFT_INPUTSENTRY._options = None
   _CRAFT_INPUTSENTRY._serialized_options = b'8\001'
-  _SPRITEDIRECTIONENUM._serialized_start=34
-  _SPRITEDIRECTIONENUM._serialized_end=213
-  _SPRITEDIRECTIONENUM_ENUM._serialized_start=58
-  _SPRITEDIRECTIONENUM_ENUM._serialized_end=213
-  _MOVEDIRECTIONENUM._serialized_start=215
-  _MOVEDIRECTIONENUM._serialized_end=292
-  _MOVEDIRECTIONENUM_ENUM._serialized_start=236
-  _MOVEDIRECTIONENUM_ENUM._serialized_end=292
-  _INTERACTIONENUM._serialized_start=295
-  _INTERACTIONENUM._serialized_end=486
-  _INTERACTIONENUM_ENUM._serialized_start=315
-  _INTERACTIONENUM_ENUM._serialized_end=486
-  _PLAYERINITINFO._serialized_start=489
-  _PLAYERINITINFO._serialized_end=1056
-  _DBOUTFIT._serialized_start=1059
-  _DBOUTFIT._serialized_end=1309
-  _WIREOBJECTSPRITESHEETFRAMING._serialized_start=1311
-  _WIREOBJECTSPRITESHEETFRAMING._serialized_end=1382
-  _WIREOBJECTSPRITEANIMCONFIG._serialized_start=1385
-  _WIREOBJECTSPRITEANIMCONFIG._serialized_end=1534
-  _WIREOBJECTSPRITESHEET._serialized_start=1537
-  _WIREOBJECTSPRITESHEET._serialized_end=1814
-  _WIREOBJECTSPRITESHEET_ANIMATIONSENTRY._serialized_start=1720
-  _WIREOBJECTSPRITESHEET_ANIMATIONSENTRY._serialized_end=1798
-  _WIREOBJECT._serialized_start=1817
-  _WIREOBJECT._serialized_end=2861
-  _SPACEMEMBERINFO._serialized_start=2864
-  _SPACEMEMBERINFO._serialized_end=3185
-  _SPACEMEMBERINFO_ROLESENTRY._serialized_start=3065
-  _SPACEMEMBERINFO_ROLESENTRY._serialized_end=3109
-  _BACKEDUPDESKOBJECT._serialized_start=3187
-  _BACKEDUPDESKOBJECT._serialized_end=3267
-  _DESKOBJECTS._serialized_start=3269
-  _DESKOBJECTS._serialized_end=3395
-  _DESKOBJECTS_OBJECTSENTRY._serialized_start=3328
-  _DESKOBJECTS_OBJECTSENTRY._serialized_end=3395
-  _DESKINFO._serialized_start=3397
-  _DESKINFO._serialized_end=3497
-  _DESKINFOV2._serialized_start=3500
-  _DESKINFOV2._serialized_end=3712
-  _SOUND._serialized_start=3714
-  _SOUND._serialized_end=3829
-  _OBJECTTIME._serialized_start=3831
-  _OBJECTTIME._serialized_end=3899
-  _SPACE._serialized_start=3901
-  _SPACE._serialized_end=3981
-  _NOOKCOORDS._serialized_start=3983
-  _NOOKCOORDS._serialized_end=4023
-  _ALLOWEDUSERS._serialized_start=4025
-  _ALLOWEDUSERS._serialized_end=4054
-  _REQUESTUSER._serialized_start=4056
-  _REQUESTUSER._serialized_end=4097
-  _REQUESTEDUSERS._serialized_start=4099
-  _REQUESTEDUSERS._serialized_end=4218
-  _REQUESTEDUSERS_USERSENTRY._serialized_start=4160
-  _REQUESTEDUSERS_USERSENTRY._serialized_end=4218
-  _RECORDINGINFO._serialized_start=4220
-  _RECORDINGINFO._serialized_end=4339
-  _NOOKDIFF._serialized_start=4342
-  _NOOKDIFF._serialized_end=4839
-  _WIREPOINT._serialized_start=4841
-  _WIREPOINT._serialized_end=4874
-  _SPAWNPOINT._serialized_start=4876
-  _SPAWNPOINT._serialized_end=4944
-  _PORTAL._serialized_start=4947
-  _PORTAL._serialized_end=5121
-  _ANNOUNCER._serialized_start=5123
-  _ANNOUNCER._serialized_end=5156
-  _ASSET._serialized_start=5159
-  _ASSET._serialized_end=5297
-  _AREAPOSITION._serialized_start=5299
-  _AREAPOSITION._serialized_end=5361
-  _WIREAREA._serialized_start=5363
-  _WIREAREA._serialized_end=5440
-  _DBDESK._serialized_start=5442
-  _DBDESK._serialized_end=5481
-  _MAPSETDIMENSIONS._serialized_start=5483
-  _MAPSETDIMENSIONS._serialized_end=5547
-  _MAPSETCOLLISIONS._serialized_start=5549
-  _MAPSETCOLLISIONS._serialized_end=5640
-  _MAPSETCOLLISIONSBITS._serialized_start=5642
-  _MAPSETCOLLISIONSBITS._serialized_end=5756
-  _MAPSETBACKGROUNDIMAGEPATH._serialized_start=5758
-  _MAPSETBACKGROUNDIMAGEPATH._serialized_end=5829
-  _MAPSETFOREGROUNDIMAGEPATH._serialized_start=5831
-  _MAPSETFOREGROUNDIMAGEPATH._serialized_end=5934
-  _MAPSETSPRITES._serialized_start=5936
-  _MAPSETSPRITES._serialized_end=6015
-  _MAPSETSPACES._serialized_start=6017
-  _MAPSETSPACES._serialized_end=6070
-  _MAPSETNOOKS._serialized_start=6073
-  _MAPSETNOOKS._serialized_end=6236
-  _MAPSETNOOKS_NOOKSENTRY._serialized_start=6167
-  _MAPSETNOOKS_NOOKSENTRY._serialized_end=6222
-  _MAPSETSPAWN._serialized_start=6238
-  _MAPSETSPAWN._serialized_end=6325
-  _MAPSETSPAWNS._serialized_start=6327
-  _MAPSETSPAWNS._serialized_end=6385
-  _MAPSETPORTALS._serialized_start=6387
-  _MAPSETPORTALS._serialized_end=6443
-  _MAPSETANNOUNCER._serialized_start=6445
-  _MAPSETANNOUNCER._serialized_end=6508
-  _MAPSETASSETS._serialized_start=6510
-  _MAPSETASSETS._serialized_end=6595
-  _MAPSETOBJECTS._serialized_start=6598
-  _MAPSETOBJECTS._serialized_end=6795
-  _MAPSETOBJECTS_OBJECTSENTRY._serialized_start=6711
-  _MAPSETOBJECTS_OBJECTSENTRY._serialized_end=6770
-  _MAPSETNAME._serialized_start=6797
-  _MAPSETNAME._serialized_end=6870
-  _MAPSETMUTEONENTRY._serialized_start=6872
-  _MAPSETMUTEONENTRY._serialized_end=6959
-  _MAPSETUSEDRAWNBG._serialized_start=6961
-  _MAPSETUSEDRAWNBG._serialized_end=7046
-  _MAPSETWALLS._serialized_start=7049
-  _MAPSETWALLS._serialized_end=7195
-  _MAPSETWALLS_WALLSENTRY._serialized_start=7140
-  _MAPSETWALLS_WALLSENTRY._serialized_end=7184
-  _MAPSETFLOORS._serialized_start=7198
-  _MAPSETFLOORS._serialized_end=7349
-  _MAPSETFLOORS_FLOORSENTRY._serialized_start=7293
-  _MAPSETFLOORS_FLOORSENTRY._serialized_end=7338
-  _MAPSETAREAS._serialized_start=7352
-  _MAPSETAREAS._serialized_end=7509
-  _MAPSETAREAS_AREASENTRY._serialized_start=7443
-  _MAPSETAREAS_AREASENTRY._serialized_end=7498
-  _MAPDELETEOBJECT._serialized_start=7511
-  _MAPDELETEOBJECT._serialized_end=7556
-  _MAPDELETEOBJECTBYID._serialized_start=7558
-  _MAPDELETEOBJECTBYID._serialized_end=7606
-  _MAPSETMINIMAPIMAGEPATH._serialized_start=7608
-  _MAPSETMINIMAPIMAGEPATH._serialized_end=7705
-  _MAPSETENABLEDCHATS._serialized_start=7707
-  _MAPSETENABLEDCHATS._serialized_end=7796
-  _MAPSETDESCRIPTION._serialized_start=7798
-  _MAPSETDESCRIPTION._serialized_end=7885
-  _MAPSETDECORATION._serialized_start=7887
-  _MAPSETDECORATION._serialized_end=7972
-  _MAPSETTUTORIALTASKS._serialized_start=7974
-  _MAPSETTUTORIALTASKS._serialized_end=8085
-  _WIRETUTORIALTASKS._serialized_start=8087
-  _WIRETUTORIALTASKS._serialized_end=8201
-  _TUTORIALTASKMAPAREA._serialized_start=8203
-  _TUTORIALTASKMAPAREA._serialized_end=8293
-  _MAPSETSCRIPT._serialized_start=8295
-  _MAPSETSCRIPT._serialized_end=8372
-  _INVENTORY._serialized_start=8375
-  _INVENTORY._serialized_end=8570
-  _INVENTORY_ITEMSENTRY._serialized_start=8464
-  _INVENTORY_ITEMSENTRY._serialized_end=8524
-  _INVENTORY_ORDERENTRY._serialized_start=8526
-  _INVENTORY_ORDERENTRY._serialized_end=8570
-  _INVENTORYITEM._serialized_start=8572
-  _INVENTORYITEM._serialized_end=8602
-  _SPACEITEM._serialized_start=8605
-  _SPACEITEM._serialized_end=8919
-  _SPACEITEM_METAENTRY._serialized_start=8783
-  _SPACEITEM_METAENTRY._serialized_end=8826
-  _SPACEITEM_ABILITIESENTRY._serialized_start=8828
-  _SPACEITEM_ABILITIESENTRY._serialized_end=8890
-  _ITEMABILITY._serialized_start=8921
-  _ITEMABILITY._serialized_end=8948
-  _MAPLOCATION._serialized_start=8950
-  _MAPLOCATION._serialized_end=8998
-  _SERVERCLIENTBATCH._serialized_start=9000
-  _SERVERCLIENTBATCH._serialized_end=9055
-  _SERVERCLIENTEVENT._serialized_start=9058
-  _SERVERCLIENTEVENT._serialized_end=15201
-  _SERVERHEARTBEAT._serialized_start=15203
-  _SERVERHEARTBEAT._serialized_end=15237
-  _INFO._serialized_start=15239
-  _INFO._serialized_end=15262
-  _WARN._serialized_start=15264
-  _WARN._serialized_end=15287
-  _ERROREVENT._serialized_start=15289
-  _ERROREVENT._serialized_end=15332
-  _READY._serialized_start=15334
-  _READY._serialized_end=15353
-  _TRANSACTIONSTATUS._serialized_start=15355
-  _TRANSACTIONSTATUS._serialized_end=15440
-  _PLAYERJOINS._serialized_start=15442
-  _PLAYERJOINS._serialized_end=15470
-  _GOTREQUESTMUTE._serialized_start=15472
-  _GOTREQUESTMUTE._serialized_end=15520
-  _PLAYERMOVES._serialized_start=15523
-  _PLAYERMOVES._serialized_end=15711
-  _PLAYERSETSSTATUS._serialized_start=15713
-  _PLAYERSETSSTATUS._serialized_end=15760
-  _PLAYERSPOTLIGHTS._serialized_start=15762
-  _PLAYERSPOTLIGHTS._serialized_end=15839
-  _PLAYERRINGS._serialized_start=15841
-  _PLAYERRINGS._serialized_end=15869
-  _PLAYERSETSIMAGEPOINTER._serialized_start=15871
-  _PLAYERSETSIMAGEPOINTER._serialized_end=15950
-  _SETSCREENPOINTERSERVER._serialized_start=15952
-  _SETSCREENPOINTERSERVER._serialized_end=16046
-  _PLAYERCHATS._serialized_start=16049
-  _PLAYERCHATS._serialized_end=16350
-  _PLAYERWAVES._serialized_start=16352
-  _PLAYERWAVES._serialized_end=16415
-  _TIMESTAMP._serialized_start=16417
-  _TIMESTAMP._serialized_end=16466
-  _PLAYERINTERACTS._serialized_start=16468
-  _PLAYERINTERACTS._serialized_end=16581
-  _PLAYERGHOSTS._serialized_start=16583
-  _PLAYERGHOSTS._serialized_end=16627
-  _PLAYERENTERSWHISPER._serialized_start=16629
-  _PLAYERENTERSWHISPER._serialized_end=16710
-  _PLAYERENTERSWHISPERV2._serialized_start=16712
-  _PLAYERENTERSWHISPERV2._serialized_end=16790
-  _PLAYERLEAVESWHISPER._serialized_start=16792
-  _PLAYERLEAVESWHISPER._serialized_end=16828
-  _PLAYERACTIVELYSPEAKS._serialized_start=16830
-  _PLAYERACTIVELYSPEAKS._serialized_end=16893
-  _PLAYERSETSEMOTEV2._serialized_start=16895
-  _PLAYERSETSEMOTEV2._serialized_end=16989
-  _PLAYERSETSWORKCONDITION._serialized_start=16991
-  _PLAYERSETSWORKCONDITION._serialized_end=17054
-  _PLAYERSETSLASTACTIVE._serialized_start=17056
-  _PLAYERSETSLASTACTIVE._serialized_end=17113
-  _PLAYERSETSNAME._serialized_start=17115
-  _PLAYERSETSNAME._serialized_end=17160
-  _PLAYERSETSTEXTSTATUS._serialized_start=17162
-  _PLAYERSETSTEXTSTATUS._serialized_end=17219
-  _PLAYERSETSPRONOUNS._serialized_start=17221
-  _PLAYERSETSPRONOUNS._serialized_end=17274
-  _PLAYERSETSTITLE._serialized_start=17276
-  _PLAYERSETSTITLE._serialized_end=17323
-  _PLAYERSETSCITY._serialized_start=17325
-  _PLAYERSETSCITY._serialized_end=17370
-  _PLAYERSETSCOUNTRY._serialized_start=17372
-  _PLAYERSETSCOUNTRY._serialized_end=17423
-  _PLAYERSETSSTARTDATE._serialized_start=17425
-  _PLAYERSETSSTARTDATE._serialized_end=17480
-  _PLAYERSETSTIMEZONE._serialized_start=17482
-  _PLAYERSETSTIMEZONE._serialized_end=17535
-  _PLAYERSETSPHONE._serialized_start=17537
-  _PLAYERSETSPHONE._serialized_end=17584
-  _PLAYERSETSDESCRIPTION._serialized_start=17586
-  _PLAYERSETSDESCRIPTION._serialized_end=17645
-  _PLAYERSETSPROFILEIMAGEURL._serialized_start=17647
-  _PLAYERSETSPROFILEIMAGEURL._serialized_end=17714
-  _PLAYERSETSPERSONALIMAGEURL._serialized_start=17716
-  _PLAYERSETSPERSONALIMAGEURL._serialized_end=17785
-  _PLAYERSETSISMOBILE._serialized_start=17787
-  _PLAYERSETSISMOBILE._serialized_end=17840
-  _PLAYERSETSEMOJISTATUS._serialized_start=17842
-  _PLAYERSETSEMOJISTATUS._serialized_end=17901
-  _PLAYERSETSAFFILIATION._serialized_start=17903
-  _PLAYERSETSAFFILIATION._serialized_end=17962
-  _PLAYEREXITS._serialized_start=17964
-  _PLAYEREXITS._serialized_end=17992
-  _PLAYERSETSOUTFITSTRING._serialized_start=17994
-  _PLAYERSETSOUTFITSTRING._serialized_end=18055
-  _PLAYERSETSISSIGNEDIN._serialized_start=18057
-  _PLAYERSETSISSIGNEDIN._serialized_end=18114
-  _RESPAWNCOMPLETE._serialized_start=18116
-  _RESPAWNCOMPLETE._serialized_end=18133
-  _SPACEOVERWRITES._serialized_start=18135
-  _SPACEOVERWRITES._serialized_end=18171
-  _DYNAMICGATE._serialized_start=18173
-  _DYNAMICGATE._serialized_end=18220
-  _DYNAMICGATES._serialized_start=18222
-  _DYNAMICGATES._serialized_end=18274
-  _SPACESETSSPACEMEMBERS._serialized_start=18277
-  _SPACESETSSPACEMEMBERS._serialized_end=18420
-  _SPACESETSSPACEMEMBERS_MEMBERSENTRY._serialized_start=18356
-  _SPACESETSSPACEMEMBERS_MEMBERSENTRY._serialized_end=18420
-  _SPACEISCLOSED._serialized_start=18422
-  _SPACEISCLOSED._serialized_end=18437
-  _PLAYERENTERSPORTAL._serialized_start=18439
-  _PLAYERENTERSPORTAL._serialized_end=18522
-  _COOKIEFOUND._serialized_start=18524
-  _COOKIEFOUND._serialized_end=18552
-  _SPACESETSIDMAPPING._serialized_start=18554
-  _SPACESETSIDMAPPING._serialized_end=18602
-  _PLAYERSHOOTSCONFETTI._serialized_start=18604
-  _PLAYERSHOOTSCONFETTI._serialized_end=18641
-  _PLAYERSETSEVENTSTATUS._serialized_start=18643
-  _PLAYERSETSEVENTSTATUS._serialized_end=18702
-  _PLAYERSETSINCONVERSATION._serialized_start=18704
-  _PLAYERSETSINCONVERSATION._serialized_end=18769
-  _PLAYERSETSCURRENTDESK._serialized_start=18771
-  _PLAYERSETSCURRENTDESK._serialized_end=18830
-  _PLAYERSETSCURRENTAREA._serialized_start=18832
-  _PLAYERSETSCURRENTAREA._serialized_end=18891
-  _PLAYERSETSGOKARTID._serialized_start=18893
-  _PLAYERSETSGOKARTID._serialized_end=18946
-  _PLAYERSETSVEHICLEID._serialized_start=18948
-  _PLAYERSETSVEHICLEID._serialized_end=19046
-  _PLAYERSETSSPEEDMODIFIER._serialized_start=19048
-  _PLAYERSETSSPEEDMODIFIER._serialized_end=19111
-  _PLAYERSETSISALONE._serialized_start=19113
-  _PLAYERSETSISALONE._serialized_end=19164
-  _SPACEPLAYSSOUND._serialized_start=19166
-  _SPACEPLAYSSOUND._serialized_end=19212
-  _SPACESTOPSSOUND._serialized_start=19214
-  _SPACESTOPSSOUND._serialized_end=19244
-  _PLAYERSETSFOCUSMODEENDTIME._serialized_start=19246
-  _PLAYERSETSFOCUSMODEENDTIME._serialized_end=19315
-  _PLAYERBLOCKS._serialized_start=19317
-  _PLAYERBLOCKS._serialized_end=19367
-  _CUSTOMEVENT._serialized_start=19369
-  _CUSTOMEVENT._serialized_end=19413
-  _PLAYERUPDATESFOCUSMODESTATUS._serialized_start=19415
-  _PLAYERUPDATESFOCUSMODESTATUS._serialized_end=19483
-  _PLAYERSETSITEMSTRING._serialized_start=19485
-  _PLAYERSETSITEMSTRING._serialized_end=19542
-  _PLAYERTRIGGERSITEM._serialized_start=19545
-  _PLAYERTRIGGERSITEM._serialized_end=19688
-  _PLAYERNOTIFIES._serialized_start=19690
-  _PLAYERNOTIFIES._serialized_end=19743
-  _PLAYERSETSFOLLOWTARGET._serialized_start=19745
-  _PLAYERSETSFOLLOWTARGET._serialized_end=19806
-  _PLAYERREQUESTSTOLEAD._serialized_start=19808
-  _PLAYERREQUESTSTOLEAD._serialized_end=19863
-  _PLAYERSETSMANUALVIDEOSRC._serialized_start=19865
-  _PLAYERSETSMANUALVIDEOSRC._serialized_end=19930
-  _PLAYERSETSISNPC._serialized_start=19932
-  _PLAYERSETSISNPC._serialized_end=19979
-  _PLAYERSETSSUBTITLE._serialized_start=19981
-  _PLAYERSETSSUBTITLE._serialized_end=20034
-  _PLAYERCRAFTS._serialized_start=20036
-  _PLAYERCRAFTS._serialized_end=20155
-  _PLAYERCRAFTS_INPUTSENTRY._serialized_start=20110
-  _PLAYERCRAFTS_INPUTSENTRY._serialized_end=20155
-  _MAPMOVEOBJECT._serialized_start=20158
-  _MAPMOVEOBJECT._serialized_end=20382
-  _PLAYEREDITSCHATMESSAGE._serialized_start=20385
-  _PLAYEREDITSCHATMESSAGE._serialized_end=20563
-  _FXSHAKEOBJECT._serialized_start=20566
-  _FXSHAKEOBJECT._serialized_end=20720
-  _FXSHAKECAMERA._serialized_start=20723
-  _FXSHAKECAMERA._serialized_end=20890
-  _PLAYERHIGHFIVES._serialized_start=20892
-  _PLAYERHIGHFIVES._serialized_end=20945
-  _PLAYERSENDSCOMMAND._serialized_start=20947
-  _PLAYERSENDSCOMMAND._serialized_end=20999
-  _SPACEREGISTERSCOMMAND._serialized_start=21001
-  _SPACEREGISTERSCOMMAND._serialized_end=21041
-  _PLAYERUPDATESINVENTORY._serialized_start=21044
-  _PLAYERUPDATESINVENTORY._serialized_end=21293
-  _PLAYERUPDATESINVENTORY_ITEMSENTRY._serialized_start=8464
-  _PLAYERUPDATESINVENTORY_ITEMSENTRY._serialized_end=8524
-  _PLAYERUPDATESINVENTORY_ORDERENTRY._serialized_start=8526
-  _PLAYERUPDATESINVENTORY_ORDERENTRY._serialized_end=8570
-  _SPACEUPDATESITEMS._serialized_start=21295
-  _SPACEUPDATESITEMS._serialized_end=21418
-  _SPACEUPDATESITEMS_ITEMSENTRY._serialized_start=21362
-  _SPACEUPDATESITEMS_ITEMSENTRY._serialized_end=21418
-  _PLAYERTRIGGERSINVENTORYITEM._serialized_start=21420
-  _PLAYERTRIGGERSINVENTORYITEM._serialized_end=21499
-  _PLAYERSETSALLOWSCREENPOINTER._serialized_start=21501
-  _PLAYERSETSALLOWSCREENPOINTER._serialized_end=21574
-  _PRECOMPUTEDENTERLOCATION._serialized_start=21576
-  _PRECOMPUTEDENTERLOCATION._serialized_end=21639
-  _PLAYERSETSDESKINFO._serialized_start=21641
-  _PLAYERSETSDESKINFO._serialized_end=21707
-  _SPACESETSCAPACITY._serialized_start=21709
-  _SPACESETSCAPACITY._serialized_end=21746
-  _SPACEOVERCAPACITYDENIESUSER._serialized_start=21748
-  _SPACEOVERCAPACITYDENIESUSER._serialized_end=21793
-  _PLAYERSETSAWAY._serialized_start=21795
-  _PLAYERSETSAWAY._serialized_end=21840
-  _PLAYERSETSISRECORDINGCLIENT._serialized_start=21842
-  _PLAYERSETSISRECORDINGCLIENT._serialized_end=21913
-  _PLAYERSTARTSRECORDING._serialized_start=21915
-  _PLAYERSTARTSRECORDING._serialized_end=22001
-  _CLIENTSERVERBATCH._serialized_start=22003
-  _CLIENTSERVERBATCH._serialized_end=22060
-  _CLIENTSERVERACTION._serialized_start=22063
-  _CLIENTSERVERACTION._serialized_end=26816
-  _CLIENTHEARTBEAT._serialized_start=26818
-  _CLIENTHEARTBEAT._serialized_end=26835
-  _CLIENTBACKUPHEARTBEAT._serialized_start=26837
-  _CLIENTBACKUPHEARTBEAT._serialized_end=26860
-  _UPDATESUBSCRIPTIONS._serialized_start=26863
-  _UPDATESUBSCRIPTIONS._serialized_end=27117
-  _UPDATESUBSCRIPTIONS_SUBSCRIPTIONSENTRY._serialized_start=27012
-  _UPDATESUBSCRIPTIONS_SUBSCRIPTIONSENTRY._serialized_end=27064
-  _UPDATESUBSCRIPTIONS_MAPUPDATEIDSENTRY._serialized_start=27066
-  _UPDATESUBSCRIPTIONS_MAPUPDATEIDSENTRY._serialized_end=27117
-  _MOVE._serialized_start=27119
-  _MOVE._serialized_end=27233
-  _REQUESTMUTE._serialized_start=27235
-  _REQUESTMUTE._serialized_end=27279
-  _SETAFFILIATION._serialized_start=27281
-  _SETAFFILIATION._serialized_end=27354
-  _SETSTATUS._serialized_start=27356
-  _SETSTATUS._serialized_end=27419
-  _SETOUTFITSTRING._serialized_start=27421
-  _SETOUTFITSTRING._serialized_end=27496
-  _SPOTLIGHT._serialized_start=27498
-  _SPOTLIGHT._serialized_end=27557
-  _RING._serialized_start=27559
-  _RING._serialized_end=27579
-  _SETIMAGEPOINTER._serialized_start=27581
-  _SETIMAGEPOINTER._serialized_end=27638
-  _SETSCREENPOINTER._serialized_start=27640
-  _SETSCREENPOINTER._serialized_end=27698
-  _BAN._serialized_start=27700
-  _BAN._serialized_end=27719
-  _KICK._serialized_start=27721
-  _KICK._serialized_end=27741
-  _BLOCK._serialized_start=27743
-  _BLOCK._serialized_end=27790
-  _SETIMPASSABLE._serialized_start=27792
-  _SETIMPASSABLE._serialized_end=27864
-  _CHAT._serialized_start=27867
-  _CHAT._serialized_end=28009
-  _NOTIFY._serialized_start=28011
-  _NOTIFY._serialized_end=28041
-  _INTERACT._serialized_start=28043
-  _INTERACT._serialized_end=28134
-  _ACTIVELYSPEAKING._serialized_start=28136
-  _ACTIVELYSPEAKING._serialized_end=28180
-  _ENTERWHISPER._serialized_start=28182
-  _ENTERWHISPER._serialized_end=28255
-  _LEAVEWHISPER._serialized_start=28257
-  _LEAVEWHISPER._serialized_end=28271
-  _GHOST._serialized_start=28273
-  _GHOST._serialized_end=28331
-  _SETEMOTEV2._serialized_start=28333
-  _SETEMOTEV2._serialized_end=28441
-  _SETNAME._serialized_start=28443
-  _SETNAME._serialized_end=28502
-  _SETTEXTSTATUS._serialized_start=28504
-  _SETTEXTSTATUS._serialized_end=28575
-  _SETPRONOUNS._serialized_start=28577
-  _SETPRONOUNS._serialized_end=28644
-  _SETTITLE._serialized_start=28646
-  _SETTITLE._serialized_end=28707
-  _SETCITY._serialized_start=28709
-  _SETCITY._serialized_end=28768
-  _SETCOUNTRY._serialized_start=28770
-  _SETCOUNTRY._serialized_end=28835
-  _SETSTARTDATE._serialized_start=28837
-  _SETSTARTDATE._serialized_end=28906
-  _SETTIMEZONE._serialized_start=28908
-  _SETTIMEZONE._serialized_end=28975
-  _SETPHONE._serialized_start=28977
-  _SETPHONE._serialized_end=29038
-  _SETDESCRIPTION._serialized_start=29040
-  _SETDESCRIPTION._serialized_end=29113
-  _SETPROFILEIMAGEURL._serialized_start=29115
-  _SETPROFILEIMAGEURL._serialized_end=29196
-  _SETPERSONALIMAGEURL._serialized_start=29198
-  _SETPERSONALIMAGEURL._serialized_end=29281
-  _EXIT._serialized_start=29283
-  _EXIT._serialized_end=29289
-  _ENTER._serialized_start=29292
-  _ENTER._serialized_end=29420
-  _PRECOMPUTEENTER._serialized_start=29422
-  _PRECOMPUTEENTER._serialized_end=29539
-  _SETEMOJISTATUS._serialized_start=29541
-  _SETEMOJISTATUS._serialized_end=29614
-  _TELEPORT._serialized_start=29617
-  _TELEPORT._serialized_end=29765
-  _SETWORKCONDITION._serialized_start=29767
-  _SETWORKCONDITION._serialized_end=29844
-  _SPAWN._serialized_start=29846
-  _SPAWN._serialized_end=29873
-  _RESPAWN._serialized_start=29875
-  _RESPAWN._serialized_end=29884
-  _REQUESTTOJOINNOOK._serialized_start=29886
-  _REQUESTTOJOINNOOK._serialized_end=29964
-  _UPDATENOOKPERMISSION._serialized_start=29966
-  _UPDATENOOKPERMISSION._serialized_end=30039
-  _INIT._serialized_start=30041
-  _INIT._serialized_end=30107
-  _MAPADDOBJECT._serialized_start=30109
-  _MAPADDOBJECT._serialized_end=30167
-  _SHOOTCONFETTI._serialized_start=30169
-  _SHOOTCONFETTI._serialized_end=30220
-  _SETEVENTSTATUS._serialized_start=30222
-  _SETEVENTSTATUS._serialized_end=30295
-  _SETINCONVERSATION._serialized_start=30297
-  _SETINCONVERSATION._serialized_end=30376
-  _SETCURRENTDESK._serialized_start=30378
-  _SETCURRENTDESK._serialized_end=30451
-  _SETCURRENTAREA._serialized_start=30453
-  _SETCURRENTAREA._serialized_end=30526
-  _SETGOKARTID._serialized_start=30528
-  _SETGOKARTID._serialized_end=30595
-  _SETVEHICLEID._serialized_start=30597
-  _SETVEHICLEID._serialized_end=30698
-  _SETSPEEDMODIFIER._serialized_start=30700
-  _SETSPEEDMODIFIER._serialized_end=30777
-  _SETISALONE._serialized_start=30779
-  _SETISALONE._serialized_end=30844
-  _SETISMOBILE._serialized_start=30846
-  _SETISMOBILE._serialized_end=30877
-  _PLAYSOUND._serialized_start=30879
-  _PLAYSOUND._serialized_end=30955
-  _STOPSOUND._serialized_start=30957
-  _STOPSOUND._serialized_end=31017
-  _SETFOCUSMODEENDTIME._serialized_start=31019
-  _SETFOCUSMODEENDTIME._serialized_end=31102
-  _SETITEMSTRING._serialized_start=31104
-  _SETITEMSTRING._serialized_end=31175
-  _TRIGGERITEM._serialized_start=31177
-  _TRIGGERITEM._serialized_end=31298
-  _CUSTOMACTION._serialized_start=31300
-  _CUSTOMACTION._serialized_end=31403
-  _SETFOLLOWTARGET._serialized_start=31405
-  _SETFOLLOWTARGET._serialized_end=31480
-  _REQUESTTOLEAD._serialized_start=31482
-  _REQUESTTOLEAD._serialized_end=31531
-  _ENTERPORTAL._serialized_start=31533
-  _ENTERPORTAL._serialized_end=31645
-  _SETMANUALVIDEOSRC._serialized_start=31647
-  _SETMANUALVIDEOSRC._serialized_end=31726
-  _SETSUBTITLE._serialized_start=31728
-  _SETSUBTITLE._serialized_end=31795
-  _MAPCOMMITSCHANGES._serialized_start=31797
-  _MAPCOMMITSCHANGES._serialized_end=31849
-  _PLAYERUPDATESSESSION._serialized_start=31852
-  _PLAYERUPDATESSESSION._serialized_end=32078
-  _SPEAKERUPDATESSESSION._serialized_start=32081
-  _SPEAKERUPDATESSESSION._serialized_end=32379
-  _CHATREPLY._serialized_start=32381
-  _CHATREPLY._serialized_end=32448
-  _CHATMESSAGEUPDATED._serialized_start=32450
-  _CHATMESSAGEUPDATED._serialized_end=32482
-  _SENDCOMMAND._serialized_start=32484
-  _SENDCOMMAND._serialized_end=32550
-  _REGISTERCOMMAND._serialized_start=32552
-  _REGISTERCOMMAND._serialized_end=32586
-  _CRAFT._serialized_start=32588
-  _CRAFT._serialized_end=32678
-  _CRAFT_INPUTSENTRY._serialized_start=32633
-  _CRAFT_INPUTSENTRY._serialized_end=32678
-  _HIGHFIVE._serialized_start=32680
-  _HIGHFIVE._serialized_end=32708
-  _ADDINVENTORYITEM._serialized_start=32710
-  _ADDINVENTORYITEM._serialized_end=32777
-  _REMOVEINVENTORYITEM._serialized_start=32779
-  _REMOVEINVENTORYITEM._serialized_end=32867
-  _HIPTOBESQUARE._serialized_start=32869
-  _HIPTOBESQUARE._serialized_end=32898
-  _TRIGGERINVENTORYITEM._serialized_start=32900
-  _TRIGGERINVENTORYITEM._serialized_end=32957
-  _SETALLOWSCREENPOINTER._serialized_start=32959
-  _SETALLOWSCREENPOINTER._serialized_end=33010
-  _SETDESKINFO._serialized_start=33012
-  _SETDESKINFO._serialized_end=33092
-  _WAVE._serialized_start=33094
-  _WAVE._serialized_end=33131
-  _SETAWAY._serialized_start=33133
-  _SETAWAY._serialized_end=33192
-  _STARTRECORDING._serialized_start=33194
-  _STARTRECORDING._serialized_end=33258
+  _DEPRECATED._serialized_start=33
+  _DEPRECATED._serialized_end=45
+  _SPRITEDIRECTIONENUM._serialized_start=48
+  _SPRITEDIRECTIONENUM._serialized_end=227
+  _SPRITEDIRECTIONENUM_ENUM._serialized_start=72
+  _SPRITEDIRECTIONENUM_ENUM._serialized_end=227
+  _MOVEDIRECTIONENUM._serialized_start=229
+  _MOVEDIRECTIONENUM._serialized_end=306
+  _MOVEDIRECTIONENUM_ENUM._serialized_start=250
+  _MOVEDIRECTIONENUM_ENUM._serialized_end=306
+  _INTERACTIONENUM._serialized_start=309
+  _INTERACTIONENUM._serialized_end=500
+  _INTERACTIONENUM_ENUM._serialized_start=329
+  _INTERACTIONENUM_ENUM._serialized_end=500
+  _PLAYERINITINFO._serialized_start=503
+  _PLAYERINITINFO._serialized_end=974
+  _DBOUTFIT._serialized_start=977
+  _DBOUTFIT._serialized_end=1227
+  _WIREOBJECTSPRITESHEETFRAMING._serialized_start=1229
+  _WIREOBJECTSPRITESHEETFRAMING._serialized_end=1300
+  _WIREOBJECTSPRITEANIMCONFIG._serialized_start=1303
+  _WIREOBJECTSPRITEANIMCONFIG._serialized_end=1452
+  _WIREOBJECTSPRITESHEET._serialized_start=1455
+  _WIREOBJECTSPRITESHEET._serialized_end=1820
+  _WIREOBJECTSPRITESHEET_ANIMATIONSENTRY._serialized_start=1687
+  _WIREOBJECTSPRITESHEET_ANIMATIONSENTRY._serialized_end=1765
+  _WIREOBJECT._serialized_start=1823
+  _WIREOBJECT._serialized_end=2899
+  _SPACEMEMBERINFO._serialized_start=2902
+  _SPACEMEMBERINFO._serialized_end=3190
+  _SPACEMEMBERINFO_ROLESENTRY._serialized_start=3083
+  _SPACEMEMBERINFO_ROLESENTRY._serialized_end=3127
+  _BACKEDUPDESKOBJECT._serialized_start=3192
+  _BACKEDUPDESKOBJECT._serialized_end=3272
+  _DESKOBJECTS._serialized_start=3274
+  _DESKOBJECTS._serialized_end=3400
+  _DESKOBJECTS_OBJECTSENTRY._serialized_start=3333
+  _DESKOBJECTS_OBJECTSENTRY._serialized_end=3400
+  _DESKINFOV2._serialized_start=3403
+  _DESKINFOV2._serialized_end=3615
+  _MAPANDDESK._serialized_start=3617
+  _MAPANDDESK._serialized_end=3660
+  _SOUND._serialized_start=3663
+  _SOUND._serialized_end=3810
+  _OBJECTTIME._serialized_start=3812
+  _OBJECTTIME._serialized_end=3880
+  _SPACE._serialized_start=3882
+  _SPACE._serialized_end=3962
+  _NOOKCOORDS._serialized_start=3964
+  _NOOKCOORDS._serialized_end=4004
+  _ALLOWEDUSERS._serialized_start=4006
+  _ALLOWEDUSERS._serialized_end=4035
+  _REQUESTUSER._serialized_start=4037
+  _REQUESTUSER._serialized_end=4078
+  _REQUESTEDUSERS._serialized_start=4080
+  _REQUESTEDUSERS._serialized_end=4199
+  _REQUESTEDUSERS_USERSENTRY._serialized_start=4141
+  _REQUESTEDUSERS_USERSENTRY._serialized_end=4199
+  _RECORDINGINFO._serialized_start=4201
+  _RECORDINGINFO._serialized_end=4320
+  _NOOKDIFF._serialized_start=4323
+  _NOOKDIFF._serialized_end=4820
+  _WIREPOINT._serialized_start=4822
+  _WIREPOINT._serialized_end=4855
+  _SPAWNPOINT._serialized_start=4857
+  _SPAWNPOINT._serialized_end=4925
+  _PORTAL._serialized_start=4928
+  _PORTAL._serialized_end=5102
+  _ANNOUNCER._serialized_start=5104
+  _ANNOUNCER._serialized_end=5137
+  _ASSET._serialized_start=5140
+  _ASSET._serialized_end=5278
+  _AREAPOSITION._serialized_start=5280
+  _AREAPOSITION._serialized_end=5342
+  _WIREAREA._serialized_start=5344
+  _WIREAREA._serialized_end=5421
+  _DBDESK._serialized_start=5423
+  _DBDESK._serialized_end=5462
+  _MAPSETDIMENSIONS._serialized_start=5464
+  _MAPSETDIMENSIONS._serialized_end=5528
+  _MAPSETCOLLISIONS._serialized_start=5530
+  _MAPSETCOLLISIONS._serialized_end=5621
+  _MAPSETCOLLISIONSBITS._serialized_start=5623
+  _MAPSETCOLLISIONSBITS._serialized_end=5737
+  _MAPSETBACKGROUNDIMAGEPATH._serialized_start=5739
+  _MAPSETBACKGROUNDIMAGEPATH._serialized_end=5810
+  _MAPSETFOREGROUNDIMAGEPATH._serialized_start=5812
+  _MAPSETFOREGROUNDIMAGEPATH._serialized_end=5915
+  _MAPSETNOOKS._serialized_start=5918
+  _MAPSETNOOKS._serialized_end=6081
+  _MAPSETNOOKS_NOOKSENTRY._serialized_start=6012
+  _MAPSETNOOKS_NOOKSENTRY._serialized_end=6067
+  _MAPSETSPAWN._serialized_start=6083
+  _MAPSETSPAWN._serialized_end=6170
+  _MAPSETSPAWNS._serialized_start=6172
+  _MAPSETSPAWNS._serialized_end=6230
+  _MAPSETPORTALS._serialized_start=6232
+  _MAPSETPORTALS._serialized_end=6288
+  _MAPSETANNOUNCER._serialized_start=6290
+  _MAPSETANNOUNCER._serialized_end=6353
+  _MAPSETASSETS._serialized_start=6355
+  _MAPSETASSETS._serialized_end=6440
+  _MAPSETOBJECTSV2._serialized_start=6443
+  _MAPSETOBJECTSV2._serialized_end=6644
+  _MAPSETOBJECTSV2_OBJECTSENTRY._serialized_start=6560
+  _MAPSETOBJECTSV2_OBJECTSENTRY._serialized_end=6619
+  _MAPSETNAME._serialized_start=6646
+  _MAPSETNAME._serialized_end=6719
+  _MAPSETMUTEONENTRY._serialized_start=6721
+  _MAPSETMUTEONENTRY._serialized_end=6808
+  _MAPSETUSEDRAWNBG._serialized_start=6810
+  _MAPSETUSEDRAWNBG._serialized_end=6895
+  _MAPSETWALLS._serialized_start=6898
+  _MAPSETWALLS._serialized_end=7044
+  _MAPSETWALLS_WALLSENTRY._serialized_start=6989
+  _MAPSETWALLS_WALLSENTRY._serialized_end=7033
+  _MAPSETFLOORS._serialized_start=7047
+  _MAPSETFLOORS._serialized_end=7198
+  _MAPSETFLOORS_FLOORSENTRY._serialized_start=7142
+  _MAPSETFLOORS_FLOORSENTRY._serialized_end=7187
+  _MAPSETAREAS._serialized_start=7201
+  _MAPSETAREAS._serialized_end=7358
+  _MAPSETAREAS_AREASENTRY._serialized_start=7292
+  _MAPSETAREAS_AREASENTRY._serialized_end=7347
+  _MAPDELETEOBJECTBYKEY._serialized_start=7360
+  _MAPDELETEOBJECTBYKEY._serialized_end=7410
+  _MAPDELETEOBJECTBYID._serialized_start=7412
+  _MAPDELETEOBJECTBYID._serialized_end=7460
+  _MAPSETMINIMAPIMAGEPATH._serialized_start=7462
+  _MAPSETMINIMAPIMAGEPATH._serialized_end=7559
+  _MAPSETENABLEDCHATS._serialized_start=7561
+  _MAPSETENABLEDCHATS._serialized_end=7650
+  _MAPSETDESCRIPTION._serialized_start=7652
+  _MAPSETDESCRIPTION._serialized_end=7739
+  _MAPSETDECORATION._serialized_start=7741
+  _MAPSETDECORATION._serialized_end=7826
+  _MAPSETTUTORIALTASKS._serialized_start=7828
+  _MAPSETTUTORIALTASKS._serialized_end=7939
+  _WIRETUTORIALTASKS._serialized_start=7941
+  _WIRETUTORIALTASKS._serialized_end=8055
+  _TUTORIALTASKMAPAREA._serialized_start=8057
+  _TUTORIALTASKMAPAREA._serialized_end=8147
+  _MAPSETSCRIPT._serialized_start=8149
+  _MAPSETSCRIPT._serialized_end=8226
+  _INVENTORY._serialized_start=8229
+  _INVENTORY._serialized_end=8424
+  _INVENTORY_ITEMSENTRY._serialized_start=8318
+  _INVENTORY_ITEMSENTRY._serialized_end=8378
+  _INVENTORY_ORDERENTRY._serialized_start=8380
+  _INVENTORY_ORDERENTRY._serialized_end=8424
+  _INVENTORYITEM._serialized_start=8426
+  _INVENTORYITEM._serialized_end=8456
+  _SPACEITEM._serialized_start=8459
+  _SPACEITEM._serialized_end=8773
+  _SPACEITEM_METAENTRY._serialized_start=8637
+  _SPACEITEM_METAENTRY._serialized_end=8680
+  _SPACEITEM_ABILITIESENTRY._serialized_start=8682
+  _SPACEITEM_ABILITIESENTRY._serialized_end=8744
+  _ITEMABILITY._serialized_start=8775
+  _ITEMABILITY._serialized_end=8802
+  _MAPLOCATION._serialized_start=8804
+  _MAPLOCATION._serialized_end=8852
+  _SERVERCLIENTBATCH._serialized_start=8854
+  _SERVERCLIENTBATCH._serialized_end=8909
+  _SERVERCLIENTEVENT._serialized_start=8912
+  _SERVERCLIENTEVENT._serialized_end=15329
+  _SUBSCRIPTIONSUPDATED._serialized_start=15331
+  _SUBSCRIPTIONSUPDATED._serialized_end=15376
+  _SERVERHEARTBEAT._serialized_start=15378
+  _SERVERHEARTBEAT._serialized_end=15412
+  _INFO._serialized_start=15414
+  _INFO._serialized_end=15437
+  _WARN._serialized_start=15439
+  _WARN._serialized_end=15462
+  _ERROREVENT._serialized_start=15464
+  _ERROREVENT._serialized_end=15507
+  _READY._serialized_start=15509
+  _READY._serialized_end=15528
+  _TRANSACTIONSTATUS._serialized_start=15530
+  _TRANSACTIONSTATUS._serialized_end=15615
+  _PLAYERJOINS._serialized_start=15617
+  _PLAYERJOINS._serialized_end=15645
+  _GOTREQUESTMUTE._serialized_start=15647
+  _GOTREQUESTMUTE._serialized_end=15695
+  _PLAYERMOVES._serialized_start=15698
+  _PLAYERMOVES._serialized_end=15886
+  _PLAYERSETSSTATUS._serialized_start=15888
+  _PLAYERSETSSTATUS._serialized_end=15935
+  _PLAYERSETSAVAILABILITY._serialized_start=15938
+  _PLAYERSETSAVAILABILITY._serialized_end=16093
+  _PLAYERSPOTLIGHTS._serialized_start=16095
+  _PLAYERSPOTLIGHTS._serialized_end=16172
+  _PLAYERRINGS._serialized_start=16174
+  _PLAYERRINGS._serialized_end=16202
+  _PLAYERSETSIMAGEPOINTER._serialized_start=16204
+  _PLAYERSETSIMAGEPOINTER._serialized_end=16283
+  _SETSCREENPOINTERSERVER._serialized_start=16285
+  _SETSCREENPOINTERSERVER._serialized_end=16379
+  _PLAYERCHATS._serialized_start=16382
+  _PLAYERCHATS._serialized_end=16683
+  _PLAYERWAVES._serialized_start=16685
+  _PLAYERWAVES._serialized_end=16748
+  _TIMESTAMP._serialized_start=16750
+  _TIMESTAMP._serialized_end=16799
+  _PLAYERINTERACTSWITHOBJECT._serialized_start=16801
+  _PLAYERINTERACTSWITHOBJECT._serialized_end=16907
+  _PLAYERGHOSTS._serialized_start=16909
+  _PLAYERGHOSTS._serialized_end=16953
+  _PLAYERENTERSWHISPER._serialized_start=16955
+  _PLAYERENTERSWHISPER._serialized_end=17036
+  _PLAYERENTERSWHISPERV2._serialized_start=17038
+  _PLAYERENTERSWHISPERV2._serialized_end=17116
+  _PLAYERLEAVESWHISPER._serialized_start=17118
+  _PLAYERLEAVESWHISPER._serialized_end=17154
+  _PLAYERACTIVELYSPEAKS._serialized_start=17156
+  _PLAYERACTIVELYSPEAKS._serialized_end=17219
+  _PLAYERSETSEMOTEV2._serialized_start=17221
+  _PLAYERSETSEMOTEV2._serialized_end=17315
+  _PLAYERSETSLASTRAISEDHAND._serialized_start=17317
+  _PLAYERSETSLASTRAISEDHAND._serialized_end=17382
+  _PLAYERSETSLASTACTIVE._serialized_start=17384
+  _PLAYERSETSLASTACTIVE._serialized_end=17441
+  _PLAYERSETSNAME._serialized_start=17443
+  _PLAYERSETSNAME._serialized_end=17488
+  _PLAYERSETSTEXTSTATUS._serialized_start=17490
+  _PLAYERSETSTEXTSTATUS._serialized_end=17547
+  _PLAYERSETSPRONOUNS._serialized_start=17549
+  _PLAYERSETSPRONOUNS._serialized_end=17602
+  _PLAYERSETSTITLE._serialized_start=17604
+  _PLAYERSETSTITLE._serialized_end=17651
+  _PLAYERSETSCITY._serialized_start=17653
+  _PLAYERSETSCITY._serialized_end=17698
+  _PLAYERSETSCOUNTRY._serialized_start=17700
+  _PLAYERSETSCOUNTRY._serialized_end=17751
+  _PLAYERSETSSTARTDATE._serialized_start=17753
+  _PLAYERSETSSTARTDATE._serialized_end=17808
+  _PLAYERSETSTIMEZONE._serialized_start=17810
+  _PLAYERSETSTIMEZONE._serialized_end=17863
+  _PLAYERSETSPHONE._serialized_start=17865
+  _PLAYERSETSPHONE._serialized_end=17912
+  _PLAYERSETSDISPLAYEMAIL._serialized_start=17914
+  _PLAYERSETSDISPLAYEMAIL._serialized_end=17975
+  _PLAYERSETSDESCRIPTION._serialized_start=17977
+  _PLAYERSETSDESCRIPTION._serialized_end=18036
+  _PLAYERSETSPROFILEIMAGEURL._serialized_start=18038
+  _PLAYERSETSPROFILEIMAGEURL._serialized_end=18105
+  _PLAYERSETSPERSONALIMAGEURL._serialized_start=18107
+  _PLAYERSETSPERSONALIMAGEURL._serialized_end=18176
+  _PLAYERSETSISMOBILE._serialized_start=18178
+  _PLAYERSETSISMOBILE._serialized_end=18231
+  _PLAYERSETSEMOJISTATUS._serialized_start=18233
+  _PLAYERSETSEMOJISTATUS._serialized_end=18292
+  _PLAYERSETSAFFILIATION._serialized_start=18294
+  _PLAYERSETSAFFILIATION._serialized_end=18353
+  _PLAYEREXITS._serialized_start=18355
+  _PLAYEREXITS._serialized_end=18383
+  _PLAYERSETSCURRENTLYEQUIPPEDWEARABLES._serialized_start=18385
+  _PLAYERSETSCURRENTLYEQUIPPEDWEARABLES._serialized_end=18485
+  _PLAYERSETSISSIGNEDIN._serialized_start=18487
+  _PLAYERSETSISSIGNEDIN._serialized_end=18544
+  _SPACEOVERWRITES._serialized_start=18546
+  _SPACEOVERWRITES._serialized_end=18582
+  _DYNAMICGATE._serialized_start=18585
+  _DYNAMICGATE._serialized_end=18744
+  _DYNAMICGATES._serialized_start=18747
+  _DYNAMICGATES._serialized_end=19053
+  _SPACESETSSPACEMEMBERS._serialized_start=19056
+  _SPACESETSSPACEMEMBERS._serialized_end=19199
+  _SPACESETSSPACEMEMBERS_MEMBERSENTRY._serialized_start=19135
+  _SPACESETSSPACEMEMBERS_MEMBERSENTRY._serialized_end=19199
+  _WIRESPACEUSER._serialized_start=19201
+  _WIRESPACEUSER._serialized_end=19230
+  _SPACESETSSPACEUSERS._serialized_start=19233
+  _SPACESETSSPACEUSERS._serialized_end=19379
+  _SPACESETSSPACEUSERS_SPACEUSERSENTRY._serialized_start=19314
+  _SPACESETSSPACEUSERS_SPACEUSERSENTRY._serialized_end=19379
+  _SPACEISCLOSED._serialized_start=19381
+  _SPACEISCLOSED._serialized_end=19396
+  _PLAYERENTERSPORTAL._serialized_start=19398
+  _PLAYERENTERSPORTAL._serialized_end=19481
+  _COOKIEFOUND._serialized_start=19483
+  _COOKIEFOUND._serialized_end=19511
+  _SPACESETSIDMAPPING._serialized_start=19513
+  _SPACESETSIDMAPPING._serialized_end=19561
+  _PLAYERSHOOTSCONFETTI._serialized_start=19563
+  _PLAYERSHOOTSCONFETTI._serialized_end=19600
+  _PLAYERSETSEVENTSTATUS._serialized_start=19602
+  _PLAYERSETSEVENTSTATUS._serialized_end=19661
+  _PLAYERSETSINCONVERSATION._serialized_start=19663
+  _PLAYERSETSINCONVERSATION._serialized_end=19728
+  _PLAYERSETSCURRENTAREA._serialized_start=19730
+  _PLAYERSETSCURRENTAREA._serialized_end=19789
+  _PLAYERSETSGOKARTID._serialized_start=19791
+  _PLAYERSETSGOKARTID._serialized_end=19844
+  _PLAYERSETSVEHICLEID._serialized_start=19846
+  _PLAYERSETSVEHICLEID._serialized_end=19944
+  _PLAYERSETSSPEEDMODIFIER._serialized_start=19946
+  _PLAYERSETSSPEEDMODIFIER._serialized_end=20009
+  _PLAYERSETSISALONE._serialized_start=20011
+  _PLAYERSETSISALONE._serialized_end=20062
+  _SPACEPLAYSSOUND._serialized_start=20064
+  _SPACEPLAYSSOUND._serialized_end=20110
+  _SPACESTOPSSOUND._serialized_start=20112
+  _SPACESTOPSSOUND._serialized_end=20142
+  _PLAYERSETSFOCUSMODEENDTIME._serialized_start=20144
+  _PLAYERSETSFOCUSMODEENDTIME._serialized_end=20213
+  _PLAYERBLOCKS._serialized_start=20215
+  _PLAYERBLOCKS._serialized_end=20265
+  _CUSTOMEVENT._serialized_start=20267
+  _CUSTOMEVENT._serialized_end=20311
+  _PLAYERUPDATESFOCUSMODESTATUS._serialized_start=20313
+  _PLAYERUPDATESFOCUSMODESTATUS._serialized_end=20381
+  _PLAYERSETSITEMSTRING._serialized_start=20383
+  _PLAYERSETSITEMSTRING._serialized_end=20440
+  _PLAYERTRIGGERSOBJECT._serialized_start=20442
+  _PLAYERTRIGGERSOBJECT._serialized_end=20535
+  _PLAYERNOTIFIES._serialized_start=20537
+  _PLAYERNOTIFIES._serialized_end=20590
+  _PLAYERSETSFOLLOWTARGET._serialized_start=20592
+  _PLAYERSETSFOLLOWTARGET._serialized_end=20653
+  _PLAYERREQUESTSTOLEAD._serialized_start=20655
+  _PLAYERREQUESTSTOLEAD._serialized_end=20710
+  _PLAYERSETSMANUALVIDEOSRC._serialized_start=20712
+  _PLAYERSETSMANUALVIDEOSRC._serialized_end=20777
+  _PLAYERSETSISNPC._serialized_start=20779
+  _PLAYERSETSISNPC._serialized_end=20826
+  _PLAYERSETSSUBTITLE._serialized_start=20828
+  _PLAYERSETSSUBTITLE._serialized_end=20881
+  _PLAYERCRAFTS._serialized_start=20883
+  _PLAYERCRAFTS._serialized_end=21002
+  _PLAYERCRAFTS_INPUTSENTRY._serialized_start=20957
+  _PLAYERCRAFTS_INPUTSENTRY._serialized_end=21002
+  _MAPMOVEOBJECT._serialized_start=21005
+  _MAPMOVEOBJECT._serialized_end=21229
+  _PLAYEREDITSCHATMESSAGE._serialized_start=21232
+  _PLAYEREDITSCHATMESSAGE._serialized_end=21410
+  _FXSHAKEOBJECT._serialized_start=21413
+  _FXSHAKEOBJECT._serialized_end=21567
+  _FXSHAKECAMERA._serialized_start=21570
+  _FXSHAKECAMERA._serialized_end=21737
+  _PLAYERHIGHFIVES._serialized_start=21739
+  _PLAYERHIGHFIVES._serialized_end=21822
+  _PLAYERSENDSCOMMAND._serialized_start=21824
+  _PLAYERSENDSCOMMAND._serialized_end=21876
+  _SPACEREGISTERSCOMMAND._serialized_start=21878
+  _SPACEREGISTERSCOMMAND._serialized_end=21918
+  _PLAYERUPDATESINVENTORY._serialized_start=21921
+  _PLAYERUPDATESINVENTORY._serialized_end=22170
+  _PLAYERUPDATESINVENTORY_ITEMSENTRY._serialized_start=8318
+  _PLAYERUPDATESINVENTORY_ITEMSENTRY._serialized_end=8378
+  _PLAYERUPDATESINVENTORY_ORDERENTRY._serialized_start=8380
+  _PLAYERUPDATESINVENTORY_ORDERENTRY._serialized_end=8424
+  _SPACEUPDATESITEMS._serialized_start=22172
+  _SPACEUPDATESITEMS._serialized_end=22295
+  _SPACEUPDATESITEMS_ITEMSENTRY._serialized_start=22239
+  _SPACEUPDATESITEMS_ITEMSENTRY._serialized_end=22295
+  _PLAYERTRIGGERSINVENTORYITEM._serialized_start=22297
+  _PLAYERTRIGGERSINVENTORYITEM._serialized_end=22376
+  _PLAYERSETSALLOWSCREENPOINTER._serialized_start=22378
+  _PLAYERSETSALLOWSCREENPOINTER._serialized_end=22451
+  _PRECOMPUTEDENTERLOCATION._serialized_start=22453
+  _PRECOMPUTEDENTERLOCATION._serialized_end=22516
+  _PLAYERSETSDESKINFO._serialized_start=22518
+  _PLAYERSETSDESKINFO._serialized_end=22584
+  _SPACESETSCAPACITY._serialized_start=22586
+  _SPACESETSCAPACITY._serialized_end=22623
+  _SPACEOVERCAPACITYDENIESUSER._serialized_start=22625
+  _SPACEOVERCAPACITYDENIESUSER._serialized_end=22670
+  _PLAYERSETSAWAY._serialized_start=22672
+  _PLAYERSETSAWAY._serialized_end=22717
+  _PLAYERSTARTSRECORDING._serialized_start=22719
+  _PLAYERSTARTSRECORDING._serialized_end=22817
+  _ACCESSREQUEST._serialized_start=22820
+  _ACCESSREQUEST._serialized_end=23011
+  _ACCESSREQUESTSUPDATED._serialized_start=23013
+  _ACCESSREQUESTSUPDATED._serialized_end=23070
+  _ACCESSREQUESTRESPONDEDTO._serialized_start=23072
+  _ACCESSREQUESTRESPONDEDTO._serialized_end=23166
+  _PLAYERGUESTPASSSTATUS._serialized_start=23168
+  _PLAYERGUESTPASSSTATUS._serialized_end=23232
+  _SPACESETSGUESTPASSSTATUSES._serialized_start=23234
+  _SPACESETSGUESTPASSSTATUSES._serialized_end=23319
+  _SETDESKFROMNEXTAVAILABLEDESK._serialized_start=23322
+  _SETDESKFROMNEXTAVAILABLEDESK._serialized_end=23483
+  _SPACEROLEPERMISSIONOVERRIDEUPDATED._serialized_start=23485
+  _SPACEROLEPERMISSIONOVERRIDEUPDATED._serialized_end=23572
+  _CHIMESETSUSERINFO._serialized_start=23574
+  _CHIMESETSUSERINFO._serialized_end=23611
+  _CLIENTSERVERBATCH._serialized_start=23613
+  _CLIENTSERVERBATCH._serialized_end=23670
+  _CLIENTSERVERACTION._serialized_start=23673
+  _CLIENTSERVERACTION._serialized_end=29112
+  _CLIENTHEARTBEAT._serialized_start=29114
+  _CLIENTHEARTBEAT._serialized_end=29131
+  _CLIENTBACKUPHEARTBEAT._serialized_start=29133
+  _CLIENTBACKUPHEARTBEAT._serialized_end=29156
+  _UPDATESUBSCRIPTIONS._serialized_start=29159
+  _UPDATESUBSCRIPTIONS._serialized_end=29413
+  _UPDATESUBSCRIPTIONS_SUBSCRIPTIONSENTRY._serialized_start=29308
+  _UPDATESUBSCRIPTIONS_SUBSCRIPTIONSENTRY._serialized_end=29360
+  _UPDATESUBSCRIPTIONS_MAPUPDATEIDSENTRY._serialized_start=29362
+  _UPDATESUBSCRIPTIONS_MAPUPDATEIDSENTRY._serialized_end=29413
+  _MOVE._serialized_start=29415
+  _MOVE._serialized_end=29529
+  _REQUESTMUTE._serialized_start=29531
+  _REQUESTMUTE._serialized_end=29575
+  _SETAFFILIATION._serialized_start=29577
+  _SETAFFILIATION._serialized_end=29650
+  _SETSTATUS._serialized_start=29652
+  _SETSTATUS._serialized_end=29715
+  _SETAVAILABILITY._serialized_start=29717
+  _SETAVAILABILITY._serialized_end=29794
+  _SETCURRENTLYEQUIPPEDWEARABLES._serialized_start=29796
+  _SETCURRENTLYEQUIPPEDWEARABLES._serialized_end=29910
+  _SPOTLIGHT._serialized_start=29912
+  _SPOTLIGHT._serialized_end=29971
+  _RING._serialized_start=29973
+  _RING._serialized_end=29993
+  _SETIMAGEPOINTER._serialized_start=29995
+  _SETIMAGEPOINTER._serialized_end=30052
+  _SETSCREENPOINTER._serialized_start=30054
+  _SETSCREENPOINTER._serialized_end=30112
+  _BAN._serialized_start=30114
+  _BAN._serialized_end=30133
+  _KICK._serialized_start=30135
+  _KICK._serialized_end=30155
+  _BLOCK._serialized_start=30157
+  _BLOCK._serialized_end=30204
+  _SETIMPASSABLE._serialized_start=30206
+  _SETIMPASSABLE._serialized_end=30278
+  _CHAT._serialized_start=30281
+  _CHAT._serialized_end=30423
+  _NOTIFY._serialized_start=30425
+  _NOTIFY._serialized_end=30455
+  _INTERACTWITHOBJECT._serialized_start=30457
+  _INTERACTWITHOBJECT._serialized_end=30541
+  _ACTIVELYSPEAKING._serialized_start=30543
+  _ACTIVELYSPEAKING._serialized_end=30587
+  _ENTERWHISPER._serialized_start=30589
+  _ENTERWHISPER._serialized_end=30662
+  _LEAVEWHISPER._serialized_start=30664
+  _LEAVEWHISPER._serialized_end=30678
+  _GHOST._serialized_start=30680
+  _GHOST._serialized_end=30738
+  _SETEMOTEV2._serialized_start=30740
+  _SETEMOTEV2._serialized_end=30848
+  _SETNAME._serialized_start=30850
+  _SETNAME._serialized_end=30909
+  _SETTEXTSTATUS._serialized_start=30911
+  _SETTEXTSTATUS._serialized_end=30982
+  _SETPRONOUNS._serialized_start=30984
+  _SETPRONOUNS._serialized_end=31051
+  _SETTITLE._serialized_start=31053
+  _SETTITLE._serialized_end=31114
+  _SETCITY._serialized_start=31116
+  _SETCITY._serialized_end=31175
+  _SETCOUNTRY._serialized_start=31177
+  _SETCOUNTRY._serialized_end=31242
+  _SETSTARTDATE._serialized_start=31244
+  _SETSTARTDATE._serialized_end=31313
+  _SETTIMEZONE._serialized_start=31315
+  _SETTIMEZONE._serialized_end=31382
+  _SETPHONE._serialized_start=31384
+  _SETPHONE._serialized_end=31445
+  _SETDISPLAYEMAIL._serialized_start=31447
+  _SETDISPLAYEMAIL._serialized_end=31522
+  _SETDESCRIPTION._serialized_start=31524
+  _SETDESCRIPTION._serialized_end=31597
+  _SETPROFILEIMAGEURL._serialized_start=31599
+  _SETPROFILEIMAGEURL._serialized_end=31680
+  _SETPERSONALIMAGEURL._serialized_start=31682
+  _SETPERSONALIMAGEURL._serialized_end=31765
+  _EXIT._serialized_start=31767
+  _EXIT._serialized_end=31773
+  _ENTER._serialized_start=31776
+  _ENTER._serialized_end=31904
+  _PRECOMPUTEENTER._serialized_start=31906
+  _PRECOMPUTEENTER._serialized_end=32023
+  _SETEMOJISTATUS._serialized_start=32025
+  _SETEMOJISTATUS._serialized_end=32098
+  _TELEPORT._serialized_start=32101
+  _TELEPORT._serialized_end=32249
+  _SPAWN._serialized_start=32251
+  _SPAWN._serialized_end=32278
+  _RESPAWN._serialized_start=32280
+  _RESPAWN._serialized_end=32289
+  _RESPAWNATDESK._serialized_start=32291
+  _RESPAWNATDESK._serialized_end=32306
+  _REQUESTTOJOINNOOK._serialized_start=32308
+  _REQUESTTOJOINNOOK._serialized_end=32386
+  _UPDATENOOKPERMISSION._serialized_start=32388
+  _UPDATENOOKPERMISSION._serialized_end=32461
+  _INIT._serialized_start=32463
+  _INIT._serialized_end=32529
+  _MAPADDOBJECT._serialized_start=32531
+  _MAPADDOBJECT._serialized_end=32595
+  _MAPUPDATEOBJECTS._serialized_start=32598
+  _MAPUPDATEOBJECTS._serialized_end=32801
+  _MAPUPDATEOBJECTS_OBJECTSENTRY._serialized_start=6560
+  _MAPUPDATEOBJECTS_OBJECTSENTRY._serialized_end=6619
+  _SHOOTCONFETTI._serialized_start=32803
+  _SHOOTCONFETTI._serialized_end=32854
+  _SETEVENTSTATUS._serialized_start=32856
+  _SETEVENTSTATUS._serialized_end=32929
+  _SETINCONVERSATION._serialized_start=32931
+  _SETINCONVERSATION._serialized_end=33010
+  _SETCURRENTAREA._serialized_start=33012
+  _SETCURRENTAREA._serialized_end=33085
+  _SETVEHICLEID._serialized_start=33087
+  _SETVEHICLEID._serialized_end=33188
+  _SETSPEEDMODIFIER._serialized_start=33190
+  _SETSPEEDMODIFIER._serialized_end=33267
+  _SETISALONE._serialized_start=33269
+  _SETISALONE._serialized_end=33334
+  _SETISMOBILE._serialized_start=33336
+  _SETISMOBILE._serialized_end=33367
+  _PLAYSOUND._serialized_start=33369
+  _PLAYSOUND._serialized_end=33445
+  _STOPSOUND._serialized_start=33447
+  _STOPSOUND._serialized_end=33507
+  _SETFOCUSMODEENDTIME._serialized_start=33509
+  _SETFOCUSMODEENDTIME._serialized_end=33592
+  _SETITEMSTRING._serialized_start=33594
+  _SETITEMSTRING._serialized_end=33665
+  _TRIGGEROBJECT._serialized_start=33667
+  _TRIGGEROBJECT._serialized_end=33738
+  _CUSTOMACTION._serialized_start=33740
+  _CUSTOMACTION._serialized_end=33843
+  _SETFOLLOWTARGET._serialized_start=33845
+  _SETFOLLOWTARGET._serialized_end=33920
+  _REQUESTTOLEAD._serialized_start=33922
+  _REQUESTTOLEAD._serialized_end=33971
+  _ENTERPORTAL._serialized_start=33973
+  _ENTERPORTAL._serialized_end=34085
+  _SETMANUALVIDEOSRC._serialized_start=34087
+  _SETMANUALVIDEOSRC._serialized_end=34166
+  _SETSUBTITLE._serialized_start=34168
+  _SETSUBTITLE._serialized_end=34235
+  _MAPCOMMITSCHANGES._serialized_start=34237
+  _MAPCOMMITSCHANGES._serialized_end=34289
+  _SPEAKERUPDATESSESSION._serialized_start=34292
+  _SPEAKERUPDATESSESSION._serialized_end=34590
+  _CHATREPLY._serialized_start=34592
+  _CHATREPLY._serialized_end=34659
+  _CHATMESSAGEUPDATED._serialized_start=34661
+  _CHATMESSAGEUPDATED._serialized_end=34693
+  _SENDCOMMAND._serialized_start=34695
+  _SENDCOMMAND._serialized_end=34761
+  _REGISTERCOMMAND._serialized_start=34763
+  _REGISTERCOMMAND._serialized_end=34797
+  _CRAFT._serialized_start=34799
+  _CRAFT._serialized_end=34889
+  _CRAFT_INPUTSENTRY._serialized_start=34844
+  _CRAFT_INPUTSENTRY._serialized_end=34889
+  _HIGHFIVE._serialized_start=34891
+  _HIGHFIVE._serialized_end=34949
+  _ADDINVENTORYITEM._serialized_start=34951
+  _ADDINVENTORYITEM._serialized_end=35018
+  _REMOVEINVENTORYITEM._serialized_start=35020
+  _REMOVEINVENTORYITEM._serialized_end=35108
+  _HIPTOBESQUARE._serialized_start=35110
+  _HIPTOBESQUARE._serialized_end=35139
+  _TRIGGERINVENTORYITEM._serialized_start=35141
+  _TRIGGERINVENTORYITEM._serialized_end=35198
+  _SETALLOWSCREENPOINTER._serialized_start=35200
+  _SETALLOWSCREENPOINTER._serialized_end=35251
+  _SETDESKINFO._serialized_start=35253
+  _SETDESKINFO._serialized_end=35333
+  _WAVE._serialized_start=35335
+  _WAVE._serialized_end=35372
+  _SETAWAY._serialized_start=35374
+  _SETAWAY._serialized_end=35433
+  _STARTRECORDING._serialized_start=35435
+  _STARTRECORDING._serialized_end=35511
+  _REQUESTACCESSVIACHECKIN._serialized_start=35514
+  _REQUESTACCESSVIACHECKIN._serialized_end=35684
+  _RESPONDTOACCESSREQUEST._serialized_start=35687
+  _RESPONDTOACCESSREQUEST._serialized_end=35885
+  _RESPONDTOACCESSREQUEST_LOCATIONTYPEENUM._serialized_start=35816
+  _RESPONDTOACCESSREQUEST_LOCATIONTYPEENUM._serialized_end=35868
+  _SETSPACEROLEPERMISSIONOVERRIDE._serialized_start=35887
+  _SETSPACEROLEPERMISSIONOVERRIDE._serialized_end=35970
+  _JOINCHIMEMEETING._serialized_start=35972
+  _JOINCHIMEMEETING._serialized_end=36032
 # @@protoc_insertion_point(module_scope)
